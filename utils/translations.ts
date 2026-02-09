@@ -17,7 +17,7 @@ export const translations = {
       subtitle: 'Validation terrain. Exécution opérationnelle.\nSystèmes prêts dès l’ouverture.',
       ctaPrimary: 'Réserver un échange (30 min)',
       ctaSecondary: 'Découvrir le Diagnostic',
-      trust: ['Confidentialité', 'Sans engagement', 'Réponse sous 48h'],
+      trust: ['Confidentialité', 'Expertise Terrain', 'Réseau Exclusif'],
       stats: {
         expertise: { label: 'Expertise', value: 'F&B / Retail' },
         method: { label: 'Méthode', value: 'Terrain & Systèmes' },
@@ -282,7 +282,7 @@ export const translations = {
       subtitle: 'Field validation. Operational execution.\nSystems ready from day one.',
       ctaPrimary: 'Book a call (30 min)',
       ctaSecondary: 'Discover the Diagnostic',
-      trust: ['Confidential', 'No commitment', 'Response in 48h'],
+      trust: ['Confidential', 'Field Expertise', 'Exclusive Network'],
       stats: {
         expertise: { label: 'Expertise', value: 'F&B / Retail' },
         method: { label: 'Method', value: 'Field & Systems' },
