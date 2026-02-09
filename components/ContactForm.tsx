@@ -35,19 +35,30 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
     
-    // Simulate API call
-    setTimeout(() => {
-      if (formData.email.includes('error')) {
-          setStatus('error');
+    try {
+      const response = await fetch('https://n8n.agdevelopment.co/webhook/framer-contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', budget: '', message: '' });
       } else {
-          setStatus('success');
-          setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', budget: '', message: '' });
+        console.error('Server error:', response.statusText);
+        setStatus('error');
       }
-    }, 1500);
+    } catch (error) {
+      console.error('Network error:', error);
+      setStatus('error');
+    }
   };
 
   if (status === 'success') {
@@ -189,7 +200,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
        {status === 'error' && (
         <div className="mb-6 p-4 rounded-xl bg-red-50 text-red-600 flex items-center gap-3 text-sm">
             <AlertCircle size={18} />
-            Error.
+            Une erreur est survenue.
         </div>
       )}
 
