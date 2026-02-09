@@ -49,7 +49,7 @@ export const Header: React.FC = () => {
             <img 
               src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
               alt="Dodai Studio" 
-              className="h-20 w-auto"
+              className="h-16 md:h-20 w-auto"
             />
           </a>
 
@@ -86,13 +86,29 @@ export const Header: React.FC = () => {
             </a>
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <button 
-            className="md:hidden p-2 text-dodai-charcoal relative z-50"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Right Section */}
+          <div className="md:hidden flex items-center gap-4 relative z-50">
+             {/* Mobile Language Switcher (Always Visible) */}
+             <div className="flex items-center gap-2 text-[10px] font-mono font-bold bg-white/50 backdrop-blur-sm px-2 py-1 rounded-lg border border-gray-100">
+              {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
+                  <button 
+                      key={lang}
+                      onClick={() => handleLangChange(lang)}
+                      className={`uppercase transition-colors ${language === lang ? 'text-dodai-charcoal underline decoration-dodai-red decoration-2 underline-offset-2' : 'text-gray-400'}`}
+                  >
+                      {lang}
+                  </button>
+              ))}
+            </div>
+
+            {/* Mobile Menu Toggle */}
+            <button 
+              className="p-2 text-dodai-charcoal"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -113,19 +129,6 @@ export const Header: React.FC = () => {
               {link.name}
             </a>
           ))}
-          
-          {/* Mobile Lang Switcher */}
-          <div className="flex items-center gap-8 text-xl font-mono py-4 border-t border-gray-200 w-full justify-center mt-4">
-             {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
-                <button 
-                    key={lang}
-                    onClick={() => handleLangChange(lang)}
-                    className={`uppercase transition-colors ${language === lang ? 'text-dodai-charcoal font-bold underline decoration-dodai-red decoration-2 underline-offset-8' : 'text-gray-400'}`}
-                >
-                    {lang}
-                </button>
-            ))}
-          </div>
 
           <a 
             href="#contact"

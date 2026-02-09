@@ -16,17 +16,17 @@ export const Hero: React.FC = () => {
             className="h-32 md:h-64 w-auto mx-auto mb-10 md:mb-12"
           />
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 bg-white text-gray-600 text-xs font-medium mb-8 tracking-wide">
-            <span className="w-1.5 h-1.5 rounded-full bg-dodai-red"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-gray-200 bg-white text-gray-600 text-[9px] md:text-xs font-medium mb-8 tracking-wide">
+            <span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-dodai-red"></span>
             {t.hero.tag}
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-dodai-charcoal mb-8 leading-[1.1]">
-            {t.hero.title} <br className="hidden md:block"/>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-dodai-charcoal mb-8 leading-[1.1] text-balance">
+            {t.hero.title}{' '}
             <span className="text-gray-400">{t.hero.titleSpan}</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line">
+          <p className="text-lg md:text-xl text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line text-balance">
             {t.hero.subtitle}
           </p>
 

@@ -39,11 +39,15 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
     e.preventDefault();
     setStatus('submitting');
     
+    // Explicitly define the webhook URL
+    const WEBHOOK_URL = 'https://n8n.agdevelopment.co/webhook/c1363d8c-709b-4aae-ad10-5561597ad0c0';
+
     try {
-      const response = await fetch('https://n8n.agdevelopment.co/webhook/c1363d8c-709b-4aae-ad10-5561597ad0c0', {
+      const response = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(formData),
       });
@@ -52,11 +56,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
         setStatus('success');
         setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', budget: '', message: '' });
       } else {
-        console.error('Server error:', response.statusText);
+        console.error('Webhook Error:', response.status, response.statusText);
         setStatus('error');
       }
     } catch (error) {
-      console.error('Network error:', error);
+      console.error('Network/CORS Error:', error);
       setStatus('error');
     }
   };
@@ -200,7 +204,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
        {status === 'error' && (
         <div className="mb-6 p-4 rounded-xl bg-red-50 text-red-600 flex items-center gap-3 text-sm">
             <AlertCircle size={18} />
-            Une erreur est survenue.
+            Erreur de connexion (Serveur/CORS).
         </div>
       )}
 
