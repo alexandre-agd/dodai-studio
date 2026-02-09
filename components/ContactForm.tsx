@@ -40,7 +40,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
     setStatus('submitting');
     
     try {
-      const response = await fetch('https://n8n.agdevelopment.co/webhook/framer-contact', {
+      const response = await fetch('https://n8n.agdevelopment.co/webhook/c1363d8c-709b-4aae-ad10-5561597ad0c0', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
