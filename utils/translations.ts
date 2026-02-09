@@ -15,7 +15,7 @@ export const translations = {
       title: 'Les fondations de votre',
       titleSpan: 'business au Japon.',
       subtitle: 'Validation terrain. Exécution opérationnelle.\nSystèmes prêts dès l’ouverture.',
-      ctaPrimary: 'Réserver un échange (20 min)',
+      ctaPrimary: 'Réserver un échange (30 min)',
       ctaSecondary: 'Découvrir le Diagnostic',
       trust: ['Confidentialité', 'Sans engagement', 'Réponse sous 48h'],
       stats: {
@@ -41,7 +41,7 @@ export const translations = {
       solutionSpan: 'Transformer le chaos en système.',
       solutionTag: 'Operational Enablers',
       cards: [
-        { title: 'Réseau & Terrain', desc: 'Accès immédiat à nos partenaires qualifiés et fournisseurs validés. Nous activons un réseau de confiance, pas une recherche Google au dernier moment.' },
+        { title: 'Réseau & Crash-Test', desc: 'Accès à nos partenaires, mais surtout à la vérité du marché. Nous activons notre communauté pour tester votre offre en conditions réelles avant l\'ouverture. Si ça ne marche pas sur papier, on corrige. Si ça ne marche pas en vrai, on pivote.' },
         { title: 'Structure Ops', desc: 'Définition de vos standards, routines et SOPs. Nous structurons les opérations pour stabiliser l\'exécution dès le premier jour.' },
         { title: 'Systèmes & Tech', desc: 'Déploiement de votre stack technique : LINE CRM, dashboard KPIs et automatisations. Nous construisons les outils pour piloter votre activité.' }
       ],
@@ -63,21 +63,21 @@ export const translations = {
         {
           title: 'Validation',
           subtitle: 'Faisabilité & Risques',
-          desc: 'On ne construit pas sur des hypothèses. Avant tout engagement financier, nous confrontons votre vision à la réalité du marché.',
+          desc: 'On ne construit pas sur des hypothèses. Avant tout engagement financier, nous organisons un "Crash Test" terrain. Nous confrontons votre concept et votre pricing à un panel ciblé (Japonais & Expats) pour valider la réalité de la demande, pas juste la théorie.',
           focus: 'Objectif : Go / No-Go argumenté',
           points: ['Audit du Business Plan', 'Chiffrage réaliste CAPEX/OPEX', 'Validation terrain (Panel & Pricing)']
         },
         {
           title: 'Lancement',
           subtitle: 'Configuration & Ouverture',
-          desc: 'Transformation du concept en machine opérationnelle. Nous coordonnons l\'écosystème et installons les standards.',
+          desc: 'Transformation du concept en machine opérationnelle. Nous ne faisons pas que coordonner les travaux : nous installons votre "système d\'exploitation" (Tech & Process) et formons vos équipes pour garantir une exécution fluide et sans friction dès l\'ouverture.',
           focus: 'Objectif : Systèmes prêts le Jour J',
           points: ['Coordination Licences & Travaux', 'Installation Tech (POS, CRM)', 'Recrutement & Formation Staff']
         },
         {
           title: 'Pilotage',
           subtitle: 'Stabilisation & Croissance',
-          desc: 'L\'ouverture n\'est que le début. Nous installons les rituels de gestion pour passer du mode "survie" au mode "rentabilité".',
+          desc: 'L\'ouverture n\'est que le début. Pour éviter l\'essoufflement, nous installons des rituels de gestion pilotés par la donnée. Nous surveillons vos marges et activons la rétention client pour passer rapidement du mode "survie" au mode "rentabilité pérenne".',
           focus: 'Objectif : Rentabilité & Fidélisation',
           points: ['Tableaux de bord financiers & KPIs', 'Optimisation Marges', 'Marketing Automation (LINE)']
         }
@@ -124,7 +124,7 @@ export const translations = {
           price: '600k JPY',
           context: 'À partir de • Ajusté selon complexité',
           desc: 'L\'assurance anti-crash. Nous validons la faisabilité business et administrative avant que vous ne signiez le moindre bail.',
-          features: ['Audit & Challenge Business Plan', 'Interviews terrain & Réseau', 'Panel test Tokyo (Pricing)', 'Budget réaliste & Roadmap'],
+          features: ['Audit & Challenge Business Plan', 'Interviews terrain & Réseau', 'Panel test Tokyo (Dégustation/Concept) avec feedback réel', 'Budget réaliste & Roadmap'],
           cta: 'Réserver un Diagnostic'
         },
         {
@@ -160,7 +160,7 @@ export const translations = {
       step2: 'Quelle est la maturité du projet ?',
       step3: 'Statut de résidence au Japon ?',
       options: {
-        fb: { title: 'F&B / Hospitalité', sub: 'Restaurant, Café, Bar, Wine shop...' },
+        fb: { title: 'F&B / Hospitality', sub: 'Restaurant, Café, Bar, Wine shop...' },
         retail: { title: 'Retail / Boutique', sub: 'Mode, Design, Import, Concept store...' },
         other: { title: 'Services / Autre', sub: 'Agence, Bureau, Showroom...' },
         idea: { title: 'Phase exploratoire', sub: 'J\'ai une idée, je veux valider la faisabilité.' },
@@ -189,13 +189,15 @@ export const translations = {
       tag: 'Experts basés à Tokyo',
       g: {
         role: 'Ops & Réseau (Terrain)',
-        desc: 'Expertise F&B/Retail. Il gère ce qui est physique et relationnel. A déjà ouvert et accompagné plusieurs établissements.',
+        badges: ['14 ans à Tokyo', '5 Ouvertures en propre', 'Import & Retail'],
+        desc: '« En 14 ans à Tokyo, j\'ai ouvert et opéré 3 restaurants, 2 boutiques et structuré une activité d\'import de vins. Je ne suis pas un consultant, je suis un "doer". Je mets mon réseau de fournisseurs et mes cicatrices à votre service pour vous éviter les pièges administratifs et opérationnels que j\'ai dû traverser seul. »',
         list: ['Validation concept terrain', 'Sourcing fournisseurs & deals', 'Coordination partenaires', 'Recrutement clé & Standards', 'Présence soft opening']
       },
       a: {
         role: 'Systèmes & Growth',
-        desc: 'Expertise Structuration & Tech. Il gère ce qui est digital, process et pilotage. Transforme l\'activité en système mesurable.',
-        list: ['Architecture offres & GTM', 'Setup Tech (POS, CRM)', 'Dashboard KPIs & Pilotage', 'Google Business & Réservations', 'Contenus & Templates']
+        badges: ['3 ans à Tokyo', 'Fondateur Omakase', 'Process & Tech'],
+        desc: '« L\'hospitalité est un art, mais sa gestion est une science. Avec Omakase Data, j\'ai compris que sans systèmes, on s\'épuise. Je construis votre "machine" (Structure Ops, CRM, Tech) pour que vous puissiez vous concentrer sur l\'expérience client, pas sur l\'administratif. »',
+        list: ['Architecture offres & GTM', 'Setup Tech (POS, CRM, Auto)', 'Process Clients & Ops', 'Google Business & Réservations', 'Contenus & Templates']
       }
     },
     guardrails: {
@@ -231,7 +233,7 @@ export const translations = {
     contact: {
       title: 'Faisons le point',
       titleSpan: 'sur votre projet.',
-      desc: 'En 20 minutes, nous clarifions votre contexte, vos contraintes et la prochaine étape la plus pertinente.',
+      desc: 'En 30 minutes, nous clarifions votre contexte, vos contraintes et la prochaine étape la plus pertinente.',
       confidentiality: { title: 'Confidentialité', desc: 'Vos idées restent les vôtres. Rien ne sort de cet échange.' },
       response: { title: 'Réponse sous 48h', desc: 'Pas de spam. Juste une recommandation claire.' },
       noCommitment: { title: 'Sans engagement', desc: 'Diagnostic, Build ou Run. On vous dit ce qu\'on en pense.' },
@@ -278,7 +280,7 @@ export const translations = {
       title: 'The foundations of your',
       titleSpan: 'business in Japan.',
       subtitle: 'Field validation. Operational execution.\nSystems ready from day one.',
-      ctaPrimary: 'Book a call (20 min)',
+      ctaPrimary: 'Book a call (30 min)',
       ctaSecondary: 'Discover the Diagnostic',
       trust: ['Confidential', 'No commitment', 'Response in 48h'],
       stats: {
@@ -304,7 +306,7 @@ export const translations = {
       solutionSpan: 'Turning chaos into a system.',
       solutionTag: 'Operational Enablers',
       cards: [
-        { title: 'Network & Field', desc: 'Immediate access to qualified partners and vetted suppliers. We activate a trusted network, not a last-minute Google search.' },
+        { title: 'Network & Crash-Test', desc: 'Access to our partners, but above all to market truth. We activate our community to test your offer in real conditions before opening. If it fails on paper, we fix it. If it fails in real life, we pivot.' },
         { title: 'Ops Structure', desc: 'Definition of standards, routines, and SOPs. We structure operations to stabilize execution from day one.' },
         { title: 'Systems & Tech', desc: 'Deployment of your tech stack: LINE CRM, KPI dashboard, and automations. We build the tools to pilot your business.' }
       ],
@@ -326,21 +328,21 @@ export const translations = {
         {
           title: 'Validation',
           subtitle: 'Feasibility & Risks',
-          desc: 'We don\'t build on assumptions. Before any financial commitment, we confront your vision with the reality of the Japanese market.',
+          desc: 'We don\'t build on assumptions. Before any financial commitment, we organize a field "Crash Test". We confront your concept and pricing with a targeted panel (Japanese & Expats) to validate real demand, not just theory.',
           focus: 'Goal: Data-backed Go/No-Go',
           points: ['Business Plan Audit', 'Realistic CAPEX/OPEX', 'Field Validation (Panel & Pricing)']
         },
         {
           title: 'Launch',
           subtitle: 'Setup & Opening',
-          desc: 'Turning the concept into an operational machine. We coordinate the ecosystem and install standards.',
+          desc: 'Turning the concept into an operational machine. We don\'t just coordinate construction; we install your "operating system" (Tech & Processes) and train your staff to ensure flawless, friction-free execution from the very first second of opening.',
           focus: 'Goal: Systems ready on Day 1',
           points: ['License & Construction Coord.', 'Tech Setup (POS, CRM)', 'Hiring & Staff Training']
         },
         {
           title: 'Steering',
           subtitle: 'Stabilization & Growth',
-          desc: 'Opening is just the start. We install management rituals to move from "survival" mode to "profitability".',
+          desc: 'Opening is just the starting line. To avoid post-launch burnout, we implement data-driven management rituals. We monitor margins and activate customer retention strategies to quickly shift from "survival" mode to "sustainable profitability".',
           focus: 'Goal: Profitability & Retention',
           points: ['Financial Dashboards & KPIs', 'Margin Optimization', 'Marketing Automation (LINE)']
         }
@@ -387,7 +389,7 @@ export const translations = {
           price: '600k JPY',
           context: 'Starting from • Adjusted to complexity',
           desc: 'The anti-crash insurance. We validate business and administrative feasibility before you sign any lease.',
-          features: ['Business Plan Audit & Challenge', 'Field Interviews & Network', 'Tokyo Test Panel (Pricing)', 'Realistic Budget & Roadmap'],
+          features: ['Business Plan Audit & Challenge', 'Field Interviews & Network', 'Tokyo Test Panel (Tasting/Concept) with real feedback', 'Realistic Budget & Roadmap'],
           cta: 'Book a Diagnostic'
         },
         {
@@ -452,13 +454,15 @@ export const translations = {
       tag: 'Experts based in Tokyo',
       g: {
         role: 'Ops & Network (Field)',
-        desc: 'F&B/Retail Expertise. He manages the physical and relational aspects. Has already opened and supported several establishments.',
+        badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
+        desc: '"In 14 years in Tokyo, I have opened and operated 3 restaurants, 2 shops, and structured a wine import business. I am not a consultant; I am a \'doer\'. I put my supplier network and my scars at your service to help you avoid the administrative and operational traps I had to face alone."',
         list: ['Field concept validation', 'Supplier sourcing & deals', 'Partner coordination', 'Key hiring & Service Standards', 'Soft opening presence']
       },
       a: {
         role: 'Systems & Growth',
-        desc: 'Structuring & Tech Expertise. He manages digital, process, and steering. Transforms activity into a measurable system.',
-        list: ['Offer Architecture & GTM', 'Tech Setup (POS, CRM)', 'KPI Dashboard & Steering', 'Google Business & Reservations', 'Content & Templates']
+        badges: ['3 years in Tokyo', 'Omakase Founder', 'Process & Tech'],
+        desc: '"Hospitality is an art, but managing it is a science. With Omakase Data, I realized that without systems, you burn out. I build your \'machine\' (Ops Structure, CRM, Tech) so you can focus on the guest experience, not the admin."',
+        list: ['Offer Architecture & GTM', 'Tech Setup (POS, CRM, Auto)', 'Client Processes & Ops', 'Google Business & Reservations', 'Content & Templates']
       }
     },
     guardrails: {
@@ -494,7 +498,7 @@ export const translations = {
     contact: {
       title: 'Let\'s review',
       titleSpan: 'your project.',
-      desc: 'In 20 minutes, we clarify your context, constraints, and the most relevant next step.',
+      desc: 'In 30 minutes, we clarify your context, constraints, and the most relevant next step.',
       confidentiality: { title: 'Confidentiality', desc: 'Your ideas remain yours. Nothing leaves this discussion.' },
       response: { title: 'Response in 48h', desc: 'No spam. Just a clear recommendation.' },
       noCommitment: { title: 'No commitment', desc: 'Diagnostic, Build, or Run. We tell you what we think.' },
@@ -541,7 +545,7 @@ export const translations = {
       title: '日本でのビジネスを支える',
       titleSpan: '「土台」を築く。',
       subtitle: '現場検証。業務執行。\n開業初日から稼働するシステム構築。',
-      ctaPrimary: '無料相談を予約 (20分)',
+      ctaPrimary: '無料相談を予約 (30分)',
       ctaSecondary: '診断サービスを見る',
       trust: ['秘密厳守', '契約義務なし', '48時間以内に返信'],
       stats: {
@@ -567,7 +571,7 @@ export const translations = {
       solutionSpan: 'カオスをシステムに変える。',
       solutionTag: 'Operational Enablers',
       cards: [
-        { title: 'ネットワーク & 現場', desc: '厳選されたパートナーとサプライヤーへの即時アクセス。ネット検索ではなく、信頼できるネットワークを活用します。' },
+        { title: 'ネットワーク & 実地テスト', desc: 'パートナーへのアクセスだけでなく、市場の真実へのアクセスを提供します。開業前に実際の環境でオファーをテストするためにコミュニティを動員します。紙上で失敗するなら修正し、実地で失敗するならピボットします。' },
         { title: 'オペレーション構築', desc: 'サービス基準、ルーチン、SOP（標準作業手順書）の策定。初日から安定した運営ができるよう体制を整えます。' },
         { title: 'システム & テック', desc: 'LINE CRM、KPIダッシュボード、自動化ツールの導入。ビジネスを操縦するためのツールを構築します。' }
       ],
@@ -589,21 +593,21 @@ export const translations = {
         {
           title: '検証 (Validation)',
           subtitle: '実現可能性 & リスク',
-          desc: '推測でビジネスは作りません。金銭的なコミットメント（賃貸契約等）の前に、市場の現実と照らし合わせます。',
+          desc: '推測でビジネスは作りません。金銭的なコミットメントの前に、私たちは現場での「クラッシュテスト」を実施します。ターゲット層（日本人・外国人）に対してコンセプトと価格をぶつけ、机上の空論ではなく実際の需要を検証します。',
           focus: '目的：根拠ある事業化判断',
           points: ['事業計画書の監査', '現実的な予算策定 (CAPEX/OPEX)', '現場検証 (パネル調査 & 価格設定)']
         },
         {
           title: '立上げ (Launch)',
           subtitle: '設定 & 開業',
-          desc: 'コンセプトを「稼働するマシン」へ。エコシステムの調整とスタンダードの導入を行います。',
+          desc: 'コンセプトを「稼働するマシン」へ。単なる工事の調整だけでなく、店舗の「OS」（Tech & Process）をインストールし、スタッフをトレーニングします。開店初日から摩擦のない、スムーズで完璧なオペレーションを実現します。',
           focus: '目的：初日から回るシステム',
           points: ['許認可・工事の調整', 'テック導入 (POS, CRM)', '採用 & スタッフ研修']
         },
         {
           title: '操縦 (Steering)',
           subtitle: '安定化 & 成長',
-          desc: '開業はスタートに過ぎません。管理ルーチンを導入し、「生存」モードから「収益」モードへと移行させます。',
+          desc: '開業はスタート地点に過ぎません。開業後の失速を防ぐため、データに基づいた管理ルーチンを導入します。利益率を監視し、顧客リテンション施策を実行することで、「生存」モードから「持続的な収益」モードへと迅速に移行させます。',
           focus: '目的：収益化 & リテンション',
           points: ['財務ダッシュボード & KPI', '原価管理の最適化', 'マーケティング自動化 (LINE)']
         }
@@ -650,7 +654,7 @@ export const translations = {
           price: '60万円~',
           context: '難易度により調整',
           desc: '失敗を防ぐための保険です。賃貸契約を結ぶ前に、ビジネスおよび行政手続きの実現可能性を検証します。',
-          features: ['事業計画書の監査 & 修正', '現場インタビュー & ネットワーク', '東京テストパネル (価格受容性)', '現実的な予算 & ロードマップ'],
+          features: ['事業計画書の監査 & 修正', '現場インタビュー & ネットワーク', '東京テストパネル（試食・コンセプト）とリアルなフィードバック', '現実的な予算 & ロードマップ'],
           cta: '診断を予約する'
         },
         {
@@ -715,13 +719,15 @@ export const translations = {
       tag: '東京拠点のエキスパート',
       g: {
         role: 'Ops & ネットワーク (現場)',
-        desc: 'F&B/小売の専門家。物理的・対人的な側面を管理。数多くの店舗立ち上げと支援の実績あり。',
+        badges: ['東京在住14年', '自社5店舗立ち上げ', '輸入 & 小売'],
+        desc: '「東京で14年間、3つのレストランと2つのショップを立ち上げ、ワイン輸入事業も構築しました。私はコンサルタントではなく、実践者です。私が独りで乗り越えなければならなかった行政や現場の落とし穴をあなたが避けられるよう、私のネットワークと経験をすべて提供します。」',
         list: ['現場でのコンセプト検証', 'サプライヤー開拓 & 交渉', 'パートナー調整 (不動産・工事)', '重要人材の採用 & サービス基準', 'ソフトオープニング立ち会い']
       },
       a: {
         role: 'システム & グロース',
-        desc: '構造化 & テックの専門家。デジタル、プロセス、経営管理を担当。ビジネスを測定可能なシステムに変革する。',
-        list: ['オファー設計 & 市場投入', 'テック導入 (POS, CRM)', 'KPIダッシュボード & 経営管理', 'Googleビジネス & 予約管理', 'コンテンツ & テンプレート']
+        badges: ['東京在住3年', 'Omakase 創業者', 'プロセス & Tech'],
+        desc: '「ホスピタリティは芸術ですが、その経営は科学です。Omakase Dataを通じて、システムがなければ疲弊することを知りました。あなたが管理業務ではなく顧客体験に集中できるよう、私はあなたの『マシン』（CRM、Tech、Ops）を構築します。」',
+        list: ['オファー設計 & 市場投入', 'テック導入 (POS, CRM, Auto)', '顧客プロセス & Ops', 'Googleビジネス & 予約管理', 'コンテンツ & テンプレート']
       }
     },
     guardrails: {
@@ -757,7 +763,7 @@ export const translations = {
     contact: {
       title: 'プロジェクトについて',
       titleSpan: 'お話ししましょう。',
-      desc: '20分間で、あなたの状況や制約を整理し、最も適切な次のステップを明確にします。',
+      desc: '30分間で、あなたの状況や制約を整理し、最も適切な次のステップを明確にします。',
       confidentiality: { title: '秘密厳守', desc: 'アイデアはあなたのものです。会話の内容が外部に漏れることはありません。' },
       response: { title: '48時間以内に返信', desc: 'スパムはありません。明確な推奨事項をお送りします。' },
       noCommitment: { title: '契約義務なし', desc: '診断、構築、運営。私たちの見解を率直にお伝えします。' },

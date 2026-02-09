@@ -79,7 +79,9 @@ export const Header: React.FC = () => {
             </div>
 
             <a 
-              href="#contact"
+              href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-dodai-charcoal text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-black transition-colors"
             >
               {t.nav.contact}
@@ -131,7 +133,9 @@ export const Header: React.FC = () => {
           ))}
 
           <a 
-            href="#contact"
+            href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
             className="bg-dodai-charcoal text-white text-lg font-medium px-8 py-4 rounded-full w-full max-w-xs"
           >
@@ -178,7 +182,12 @@ export const Footer: React.FC = () => {
               <li>{t.footer.tokyo}</li>
               <li><a href="mailto:contact@dodaistudio.com" className="hover:text-dodai-charcoal transition-colors">contact@dodaistudio.com</a></li>
               <li>
-                 <a href="#contact" className="inline-flex items-center gap-2 hover:text-dodai-red transition-colors mt-2 font-medium">
+                 <a 
+                   href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb" 
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center gap-2 hover:text-dodai-red transition-colors mt-2 font-medium"
+                 >
                    {t.footer.cta} <ArrowRight size={14} />
                  </a>
               </li>

@@ -6,22 +6,25 @@ export const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-52 md:pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           
+          {/* Logo - kept large as requested */}
           <img 
             src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
             alt="Dodai Studio" 
-            className="h-40 md:h-80 w-auto mx-auto mb-10 md:mb-12"
+            className="h-40 md:h-80 w-auto mb-8 md:mb-10" 
           />
 
-          <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-gray-200 bg-white text-gray-600 text-[9px] md:text-xs font-medium mb-8 tracking-wide">
-            <span className="w-1 md:w-1.5 h-1 md:h-1.5 rounded-full bg-dodai-red"></span>
+          {/* Tag - More subtle, closer to title (Grouped) */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200/60 bg-white/50 backdrop-blur-sm text-gray-500 text-[10px] md:text-xs font-medium tracking-wide mb-5">
+            <span className="w-1.5 h-1.5 rounded-full bg-dodai-red"></span>
             {t.hero.tag}
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-dodai-charcoal mb-8 leading-[1.1] text-balance">
+          {/* Title - Tightened leading and spacing */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-dodai-charcoal mb-8 leading-[1.05] text-balance">
             {t.hero.title}{' '}
             <span className="text-gray-400">{t.hero.titleSpan}</span>
           </h1>
@@ -30,49 +33,52 @@ export const Hero: React.FC = () => {
             {t.hero.subtitle}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             <a 
-              href="#contact" 
-              className="w-full sm:w-auto px-8 py-4 bg-dodai-charcoal text-white rounded-full font-medium hover:bg-black transition-all flex items-center justify-center gap-2"
+              href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb"
+              target="_blank"
+              rel="noopener noreferrer" 
+              className="w-full sm:w-auto px-8 py-4 bg-dodai-charcoal text-white rounded-full font-medium hover:bg-black transition-all flex items-center justify-center gap-2 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:-translate-y-0.5"
             >
               {t.hero.ctaPrimary}
               <ArrowRight size={18} />
             </a>
             <a 
               href="#offres" 
-              className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-200 text-dodai-charcoal rounded-full font-medium hover:bg-gray-50 transition-all"
+              className="w-full sm:w-auto px-8 py-4 bg-white border border-gray-200 text-dodai-charcoal rounded-full font-medium hover:bg-gray-50 transition-all hover:border-gray-300"
             >
               {t.hero.ctaSecondary}
             </a>
           </div>
           
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-xs text-gray-400 uppercase tracking-widest font-medium">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] md:text-xs text-gray-400 uppercase tracking-widest font-medium opacity-80">
             <span>{t.hero.trust[0]}</span>
-            <span>•</span>
+            <span className="text-gray-300">•</span>
             <span>{t.hero.trust[1]}</span>
-            <span>•</span>
+            <span className="text-gray-300">•</span>
             <span>{t.hero.trust[2]}</span>
           </div>
         </div>
 
-        {/* Data Grid */}
-        <div className="mt-24 md:mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
+        {/* Data Grid - Cleaned up spacing */}
+        <div className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-10">
           {[
             t.hero.stats.expertise,
             t.hero.stats.method,
             t.hero.stats.philosophy,
             t.hero.stats.promise
           ].map((item, i) => (
-            <div key={i} className="text-left">
-              <div className="text-xs text-gray-400 mb-2 font-mono uppercase tracking-wider">{item.label}</div>
-              <div className="text-lg font-medium text-dodai-charcoal">{item.value}</div>
+            <div key={i} className="text-left group">
+              <div className="text-[10px] md:text-xs text-gray-400 mb-2 font-mono uppercase tracking-wider group-hover:text-dodai-red transition-colors">{item.label}</div>
+              <div className="text-lg md:text-xl font-medium text-dodai-charcoal">{item.value}</div>
             </div>
           ))}
         </div>
       </div>
       
-      {/* Decorative Red Dot (Japan Flag reference / Accent) */}
-      <div className="absolute top-1/4 right-[-10%] md:right-[5%] w-[400px] h-[400px] bg-dodai-red opacity-[0.03] rounded-full blur-3xl -z-10 pointer-events-none" />
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 right-[-10%] md:right-[5%] w-[400px] h-[400px] bg-dodai-red opacity-[0.02] rounded-full blur-3xl -z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-[-10%] w-[600px] h-[600px] bg-gray-100 opacity-[0.4] rounded-full blur-[100px] -z-10 pointer-events-none mix-blend-multiply" />
     </section>
   );
 };
