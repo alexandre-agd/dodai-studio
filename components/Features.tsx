@@ -1,5 +1,5 @@
 import React from 'react';
-import { TriangleAlert, Network, LayoutTemplate, Settings2, ArrowRight } from 'lucide-react';
+import { AlertTriangle, Network, LayoutTemplate, Settings2, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Philosophy: React.FC = () => {
@@ -36,7 +36,7 @@ export const Philosophy: React.FC = () => {
             
             {/* Alert Icon absolute */}
             <div className="absolute top-8 right-8 text-dodai-red opacity-50 animate-pulse-slow">
-                <TriangleAlert size={48} />
+                <AlertTriangle size={48} />
             </div>
 
             <div className="mb-12 relative z-10">
