@@ -6,14 +6,14 @@ export const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden">
+    <section className="relative pt-32 pb-20 md:pt-52 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           
           <img 
             src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
             alt="Dodai Studio" 
-            className="h-40 md:h-64 w-auto mx-auto mb-12"
+            className="h-32 md:h-64 w-auto mx-auto mb-10 md:mb-12"
           />
 
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gray-200 bg-white text-gray-600 text-xs font-medium mb-8 tracking-wide">
@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
             <span className="text-gray-400">{t.hero.titleSpan}</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line">
+          <p className="text-lg md:text-xl text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line">
             {t.hero.subtitle}
           </p>
 
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Data Grid */}
-        <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
+        <div className="mt-24 md:mt-32 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-200 pt-12">
           {[
             t.hero.stats.expertise,
             t.hero.stats.method,

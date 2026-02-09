@@ -16,6 +16,15 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: t.nav.approach, href: '#approche' },
     { name: t.nav.services, href: '#offres' },
@@ -29,83 +38,89 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-dodai-cream/90 backdrop-blur-md border-b border-gray-200 py-3' : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#" className="block">
-          <img 
-            src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
-            alt="Dodai Studio" 
-            className="h-20 w-auto"
-          />
-        </a>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name} 
-              href={link.href}
-              className="text-sm font-medium text-gray-600 hover:text-dodai-charcoal transition-colors relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-dodai-red after:bottom-[-4px] after:left-0 hover:after:w-full after:transition-all"
-            >
-              {link.name}
-            </a>
-          ))}
-          
-          {/* Language Switcher Desktop */}
-          <div className="flex items-center gap-2 text-xs font-mono border-l border-gray-200 pl-6 ml-2">
-            {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
-                <button 
-                    key={lang}
-                    onClick={() => handleLangChange(lang)}
-                    className={`uppercase transition-colors ${language === lang ? 'text-dodai-charcoal font-bold underline decoration-dodai-red decoration-2 underline-offset-4' : 'text-gray-400 hover:text-gray-600'}`}
-                >
-                    {lang}
-                </button>
-            ))}
-          </div>
-
-          <a 
-            href="#contact"
-            className="bg-dodai-charcoal text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-black transition-colors"
-          >
-            {t.nav.contact}
+    <>
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled || mobileMenuOpen ? 'bg-dodai-cream/90 backdrop-blur-md border-b border-gray-200 py-3' : 'bg-transparent py-6'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+          <a href="#" className="block relative z-50">
+            <img 
+              src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
+              alt="Dodai Studio" 
+              className="h-20 w-auto"
+            />
           </a>
-        </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden p-2 text-dodai-charcoal"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                className="text-sm font-medium text-gray-600 hover:text-dodai-charcoal transition-colors relative after:content-[''] after:absolute after:w-0 after:h-px after:bg-dodai-red after:bottom-[-4px] after:left-0 hover:after:w-full after:transition-all"
+              >
+                {link.name}
+              </a>
+            ))}
+            
+            {/* Language Switcher Desktop */}
+            <div className="flex items-center gap-2 text-xs font-mono border-l border-gray-200 pl-6 ml-2">
+              {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
+                  <button 
+                      key={lang}
+                      onClick={() => handleLangChange(lang)}
+                      className={`uppercase transition-colors ${language === lang ? 'text-dodai-charcoal font-bold underline decoration-dodai-red decoration-2 underline-offset-4' : 'text-gray-400 hover:text-gray-600'}`}
+                  >
+                      {lang}
+                  </button>
+              ))}
+            </div>
 
-      {/* Mobile Nav */}
-      {mobileMenuOpen && (
-        <div className="absolute top-full left-0 right-0 bg-dodai-cream border-b border-gray-200 p-6 md:hidden shadow-lg flex flex-col gap-6 h-screen z-50">
+            <a 
+              href="#contact"
+              className="bg-dodai-charcoal text-white text-sm font-medium px-6 py-2.5 rounded-full hover:bg-black transition-colors"
+            >
+              {t.nav.contact}
+            </a>
+          </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden p-2 text-dodai-charcoal relative z-50"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
+
+      {/* Mobile Nav Overlay */}
+      <div 
+        className={`fixed inset-0 bg-dodai-cream/95 backdrop-blur-xl z-40 md:hidden transition-all duration-500 ease-in-out flex flex-col justify-center px-6 ${
+          mobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col gap-8 items-center text-center">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-2xl font-light text-dodai-charcoal"
+              className="text-3xl font-light text-dodai-charcoal hover:text-dodai-red transition-colors"
             >
               {link.name}
             </a>
           ))}
           
           {/* Mobile Lang Switcher */}
-          <div className="flex items-center gap-6 text-lg font-mono py-4">
+          <div className="flex items-center gap-8 text-xl font-mono py-4 border-t border-gray-200 w-full justify-center mt-4">
              {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
                 <button 
                     key={lang}
                     onClick={() => handleLangChange(lang)}
-                    className={`uppercase transition-colors ${language === lang ? 'text-dodai-charcoal font-bold underline decoration-dodai-red decoration-2 underline-offset-4' : 'text-gray-400'}`}
+                    className={`uppercase transition-colors ${language === lang ? 'text-dodai-charcoal font-bold underline decoration-dodai-red decoration-2 underline-offset-8' : 'text-gray-400'}`}
                 >
                     {lang}
                 </button>
@@ -115,13 +130,13 @@ export const Header: React.FC = () => {
           <a 
             href="#contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="bg-dodai-charcoal text-white text-center font-medium px-5 py-4 rounded-full mt-4"
+            className="bg-dodai-charcoal text-white text-lg font-medium px-8 py-4 rounded-full w-full max-w-xs"
           >
             {t.nav.contact}
           </a>
         </div>
-      )}
-    </header>
+      </div>
+    </>
   );
 };
 
