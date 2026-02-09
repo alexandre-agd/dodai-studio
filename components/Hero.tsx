@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
           <img 
             src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
             alt="Dodai Studio" 
-            className="h-32 md:h-64 w-auto mx-auto mb-10 md:mb-12"
+            className="h-40 md:h-80 w-auto mx-auto mb-10 md:mb-12"
           />
 
           <div className="inline-flex items-center gap-2 px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-gray-200 bg-white text-gray-600 text-[9px] md:text-xs font-medium mb-8 tracking-wide">

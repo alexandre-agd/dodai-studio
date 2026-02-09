@@ -47,9 +47,9 @@ export const Header: React.FC = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           <a href="#" className="block relative z-50">
             <img 
-              src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
+              src="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" 
               alt="Dodai Studio" 
-              className="h-16 md:h-20 w-auto"
+              className="h-10 md:h-12 w-auto"
             />
           </a>
 
@@ -153,9 +153,9 @@ export const Footer: React.FC = () => {
           <div className="col-span-2">
             <a href="#" className="block mb-6">
               <img 
-                src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
+                src="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" 
                 alt="Dodai Studio" 
-                className="h-24 w-auto"
+                className="h-16 w-auto"
               />
             </a>
             <p className="text-gray-500 max-w-sm leading-relaxed whitespace-pre-line">
