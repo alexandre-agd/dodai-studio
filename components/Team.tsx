@@ -27,7 +27,7 @@ export const Team: React.FC = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           <TeamMember 
-            initial="G" 
+            image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Guillaume_fj5if7.png"
             name="Guillaume Duperier" 
             role={t.team.g.role}
             badges={t.team.g.badges}
@@ -36,7 +36,7 @@ export const Team: React.FC = () => {
             responsibilities={t.team.g.list}
           />
           <TeamMember 
-            initial="A" 
+            image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Alex_pue16e.png"
             name="Alexandre Gerard" 
             role={t.team.a.role}
             badges={t.team.a.badges}
@@ -51,35 +51,43 @@ export const Team: React.FC = () => {
 };
 
 const TeamMember: React.FC<{ 
-  initial: string, 
+  image: string, 
   name: string, 
   role: string, 
   badges: string[],
   description: string, 
   responsibilities: string[],
   linkedin: string
-}> = ({ initial, name, role, badges, description, responsibilities, linkedin }) => (
+}> = ({ image, name, role, badges, description, responsibilities, linkedin }) => (
   <div className="group bg-white p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-2xl shadow-gray-200/50 hover:border-transparent hover:shadow-xl transition-all duration-500 relative overflow-hidden flex flex-col h-full">
     
     {/* Header Card */}
-    <div className="flex justify-between items-start mb-6 relative z-10">
+    <div className="flex justify-between items-start mb-8 relative z-10">
         <div className="flex gap-6 items-center">
-            <div className="w-16 h-16 bg-gray-50 text-dodai-charcoal rounded-2xl flex items-center justify-center font-bold text-2xl group-hover:bg-dodai-charcoal group-hover:text-white transition-colors duration-500 flex-shrink-0">
-                {initial}
+            {/* Photo Container with Animation */}
+            <div className="w-24 h-24 rounded-2xl overflow-hidden relative border border-gray-100 shadow-inner flex-shrink-0">
+                <img 
+                    src={image} 
+                    alt={name} 
+                    className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-110 transition-all duration-700 ease-in-out" 
+                />
             </div>
+            
             <div>
                  <h3 className="text-2xl font-bold text-dodai-charcoal leading-tight">{name}</h3>
-                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1">{role}</p>
+                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-1.5">{role}</p>
+                 
+                 <a 
+                    href={linkedin} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-3 text-xs font-medium text-gray-400 hover:text-[#0077b5] transition-colors"
+                >
+                    <Linkedin size={14} />
+                    <span>LinkedIn</span>
+                </a>
             </div>
         </div>
-        <a 
-            href={linkedin} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 text-gray-400 hover:bg-[#0077b5] hover:text-white transition-all duration-300 flex-shrink-0"
-        >
-            <Linkedin size={18} />
-        </a>
     </div>
 
     {/* Highlight Badges */}
@@ -115,7 +123,7 @@ const TeamMember: React.FC<{
     </div>
 
     {/* Tokyo Badge Absolute */}
-    <div className="absolute top-10 right-24 hidden md:flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-gray-300 pointer-events-none">
+    <div className="absolute top-10 right-10 hidden md:flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-gray-300 pointer-events-none">
         <MapPin size={12} /> Tokyo
     </div>
 
