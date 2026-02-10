@@ -6,33 +6,29 @@ export const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+    <section className="relative pt-24 pb-20 md:pt-36 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
           
-          {/* Logo - kept large as requested */}
+          {/* Logo - Removed bottom margin as requested since image has built-in whitespace */}
           <img 
             src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
             alt="Dodai Studio" 
-            className="h-40 md:h-80 w-auto mb-8 md:mb-10" 
+            className="h-40 md:h-80 w-auto mb-0" 
           />
 
-          {/* Tag - More subtle, closer to title (Grouped) */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gray-200/60 bg-white/50 backdrop-blur-sm text-gray-500 text-[10px] md:text-xs font-medium tracking-wide mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-dodai-red"></span>
-            {t.hero.tag}
-          </div>
-          
-          {/* Title - Tightened leading and spacing */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-dodai-charcoal mb-8 leading-[1.05] text-balance">
+          {/* Title - Tighter spacing */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-dodai-charcoal mb-6 leading-[1.05] text-balance">
             {t.hero.title}{' '}
             <span className="text-gray-400">{t.hero.titleSpan}</span>
           </h1>
           
+          {/* Subtitle - Reduced bottom margin */}
           <p className="text-lg md:text-xl text-gray-600 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed font-light whitespace-pre-line text-balance">
             {t.hero.subtitle}
           </p>
 
+          {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             <a 
               href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb"
@@ -50,17 +46,9 @@ export const Hero: React.FC = () => {
               {t.hero.ctaSecondary}
             </a>
           </div>
-          
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[10px] md:text-xs text-gray-400 uppercase tracking-widest font-medium opacity-80">
-            <span>{t.hero.trust[0]}</span>
-            <span className="text-gray-300">•</span>
-            <span>{t.hero.trust[1]}</span>
-            <span className="text-gray-300">•</span>
-            <span>{t.hero.trust[2]}</span>
-          </div>
         </div>
 
-        {/* Data Grid - Cleaned up spacing */}
+        {/* Data Grid */}
         <div className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-gray-100 pt-10">
           {[
             t.hero.stats.expertise,
