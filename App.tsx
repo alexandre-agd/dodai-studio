@@ -36,12 +36,12 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
-      {/* Global Atmospheric Background Blobs */}
+    <div className="min-h-screen relative overflow-x-hidden selection:bg-dodai-red selection:text-white">
+      {/* Global Atmospheric Background Blobs - Softer & More Subtle */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-dodai-gray rounded-full mix-blend-multiply filter blur-[120px] opacity-70 animate-pulse-slow"></div>
-        <div className="absolute top-[20%] right-[-20%] w-[600px] h-[600px] bg-red-50 rounded-full mix-blend-multiply filter blur-[120px] opacity-40"></div>
-        <div className="absolute bottom-0 left-[-10%] w-[900px] h-[900px] bg-gray-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-50"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[1000px] h-[1000px] bg-dodai-gray rounded-full mix-blend-multiply filter blur-[150px] opacity-40"></div>
+        <div className="absolute top-[30%] right-[-10%] w-[800px] h-[800px] bg-red-50 rounded-full mix-blend-multiply filter blur-[150px] opacity-30"></div>
+        <div className="absolute bottom-[-10%] left-[20%] w-[900px] h-[900px] bg-gray-50 rounded-full mix-blend-multiply filter blur-[120px] opacity-60"></div>
       </div>
 
       <Header />

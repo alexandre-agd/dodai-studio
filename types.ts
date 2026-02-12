@@ -1,4 +1,17 @@
+
 export interface ServiceTierProps {
+  name: string;
+  price: string; // "Sur Devis" or main price
+  priceDetail?: string; // "Moyenne constatée..."
+  duration: string;
+  profile: string;
+  scope: { included: boolean; text: string; highlight?: boolean }[];
+  payment: string;
+  isPopular?: boolean;
+  color?: string;
+}
+
+export interface PricingTierProps {
   title: string;
   subtitle: string;
   price: string;
@@ -6,9 +19,27 @@ export interface ServiceTierProps {
   features: string[];
   deliverables?: string[];
   details?: string[];
+  timing: string;
   payment?: string;
-  timing?: string;
   isPopular?: boolean;
+}
+
+export interface StandaloneServiceProps {
+  title: string;
+  subtitle: string;
+  price: string;
+  priceDetail?: string;
+  context: string;
+  description: string;
+  features: string[];
+  cta: string;
+}
+
+export interface AddOnProps {
+  title: string;
+  price: string;
+  description: string;
+  tag?: string;
 }
 
 export interface FaqItem {

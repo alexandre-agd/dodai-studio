@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Loader2, CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
 import { WizardData } from '../App';
@@ -72,7 +73,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
           <CheckCircle size={40} strokeWidth={1.5} />
         </div>
         <h3 className="text-3xl font-bold text-dodai-charcoal mb-4 tracking-tight">{t.contact.form.successTitle}</h3>
-        <p className="text-gray-500 leading-relaxed max-w-sm mx-auto">
+        <p className="text-gray-600 leading-relaxed max-w-sm mx-auto">
           {t.contact.form.successDesc}
         </p>
         <button 
@@ -96,12 +97,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
 
       <div className={`mb-10 ${initialData ? 'mt-6' : ''}`}>
         <h3 className="text-2xl font-bold mb-2 tracking-tight">{t.contact.form.header}</h3>
-        <p className="text-gray-400 text-sm">{t.contact.form.subHeader}</p>
+        <p className="text-gray-500 text-sm">{t.contact.form.subHeader}</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="group">
-          <label htmlFor="name" className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.name}</label>
+          <label htmlFor="name" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.name}</label>
           <input
             type="text"
             id="name"
@@ -109,12 +110,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all placeholder:text-gray-300 font-medium"
+            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all placeholder:text-gray-400 font-medium text-gray-800"
             placeholder="John Doe"
           />
         </div>
         <div className="group">
-          <label htmlFor="email" className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.email}</label>
+          <label htmlFor="email" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.email}</label>
           <input
             type="email"
             id="email"
@@ -122,7 +123,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
             required
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all placeholder:text-gray-300 font-medium ${status === 'error' ? 'bg-red-50 text-red-600' : ''}`}
+            className={`w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all placeholder:text-gray-400 font-medium text-gray-800 ${status === 'error' ? 'bg-red-50 text-red-600' : ''}`}
             placeholder="john@example.com"
           />
         </div>
@@ -130,14 +131,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="group">
-          <label htmlFor="type" className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.type}</label>
+          <label htmlFor="type" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.type}</label>
           <div className="relative">
              <select
                 id="type"
                 name="type"
                 value={formData.type}
                 onChange={handleChange}
-                className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all appearance-none font-medium cursor-pointer"
+                className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all appearance-none font-medium text-gray-800 cursor-pointer"
             >
                 <option value="F&B">F&B (Restaurant, Café)</option>
                 <option value="Retail">Retail (Boutique)</option>
@@ -149,54 +150,54 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
           </div>
         </div>
         <div className="group">
-          <label htmlFor="city" className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.city}</label>
+          <label htmlFor="city" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.city}</label>
           <input
             type="text"
             id="city"
             name="city"
             value={formData.city}
             onChange={handleChange}
-            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium"
+            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800"
           />
         </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="group">
-          <label htmlFor="timing" className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.timing}</label>
+          <label htmlFor="timing" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.timing}</label>
           <input
             type="text"
             id="timing"
             name="timing"
             value={formData.timing}
             onChange={handleChange}
-            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium"
+            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800 placeholder:text-gray-400"
             placeholder="Ex: 3 mois"
           />
         </div>
         <div className="group">
-          <label htmlFor="budget" className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.budget}</label>
+          <label htmlFor="budget" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.budget}</label>
           <input
             type="text"
             id="budget"
             name="budget"
             value={formData.budget}
             onChange={handleChange}
-            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium"
+            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800 placeholder:text-gray-400"
             placeholder="JPY"
           />
         </div>
       </div>
 
       <div className="mb-8 group">
-        <label htmlFor="message" className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.message}</label>
+        <label htmlFor="message" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.message}</label>
         <textarea
           id="message"
           name="message"
           rows={3}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all resize-none font-medium"
+          className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all resize-none font-medium text-gray-800 placeholder:text-gray-400"
           placeholder="..."
         ></textarea>
       </div>
@@ -209,7 +210,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
       )}
 
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-6 border-t border-gray-100">
-        <p className="text-[10px] text-gray-400 max-w-xs text-center md:text-left leading-relaxed">
+        <p className="text-[10px] text-gray-500 max-w-xs text-center md:text-left leading-relaxed">
           {t.contact.form.footer}
         </p>
         <button 

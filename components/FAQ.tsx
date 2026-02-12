@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
 import { FaqItem } from '../types';
@@ -19,15 +20,15 @@ export const FAQ: React.FC = () => {
         
         {/* Standardized Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-6">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter max-w-3xl leading-[1] text-dodai-charcoal">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter max-w-5xl leading-[1] text-dodai-charcoal text-balance">
               {t.faq.title} <br/>
-              <span className="text-gray-300">{t.faq.titleSpan}</span>
+              <span className="text-gray-400">{t.faq.titleSpan}</span>
             </h2>
             <div className="hidden md:block text-right">
-                <p className="text-gray-500 max-w-xs pb-2 font-light">
+                <p className="text-gray-600 max-w-xs pb-2 font-light">
                   {t.faq.subtitle}
                 </p>
-                <p className="text-[10px] font-mono text-gray-400 uppercase tracking-widest">
+                <p className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">
                   {t.faq.tag}
                 </p>
             </div>
@@ -54,7 +55,7 @@ const AccordionItem: React.FC<{ item: FaqItem }> = ({ item }) => {
         className="w-full flex justify-between items-start text-left py-8 group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={`text-xl md:text-2xl font-medium transition-colors duration-300 ${isOpen ? 'text-dodai-charcoal' : 'text-gray-400 group-hover:text-gray-600'}`}>
+        <span className={`text-xl md:text-2xl font-medium transition-colors duration-300 ${isOpen ? 'text-dodai-charcoal' : 'text-gray-500 group-hover:text-gray-700'}`}>
             {item.question}
         </span>
         <div className={`ml-4 mt-1 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${isOpen ? 'bg-dodai-charcoal text-white rotate-45' : 'bg-gray-50 text-gray-400 group-hover:bg-gray-200'}`}>
@@ -64,7 +65,7 @@ const AccordionItem: React.FC<{ item: FaqItem }> = ({ item }) => {
       <div 
         className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}
       >
-        <p className="text-gray-500 leading-relaxed font-light text-lg max-w-2xl">
+        <p className="text-gray-600 leading-relaxed font-normal text-lg max-w-2xl">
           {item.answer}
         </p>
       </div>

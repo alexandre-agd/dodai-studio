@@ -1,8 +1,9 @@
+
 import React from 'react';
-import { ServiceTierProps } from '../types';
+import { PricingTierProps } from '../types';
 import { Check } from 'lucide-react';
 
-const tiers: ServiceTierProps[] = [
+const tiers: PricingTierProps[] = [
   {
     title: "Diagnostic Go/No-Go",
     subtitle: "Avant de s’engager",
