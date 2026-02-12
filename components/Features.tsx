@@ -14,26 +14,41 @@ export const Philosophy: React.FC = () => {
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          let start = 0;
-          const end = 30;
-          const duration = 1500;
-          const incrementTime = duration / end;
+          
+          let startTime: number | null = null;
+          const duration = 2000; // 2 secondes pour une montée élégante
+          const target = 30;
 
-          const timer = setInterval(() => {
-            start += 1;
-            setCount(start);
-            if (start === end) clearInterval(timer);
-          }, incrementTime);
+          const animate = (currentTime: number) => {
+            if (!startTime) startTime = currentTime;
+            const progress = Math.min((currentTime - startTime) / duration, 1);
+            
+            // Easing function: easeOutCubic (Rapide au début, atterrissage doux)
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
+            
+            setCount(Math.floor(easeProgress * target));
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(target); // S'assurer qu'on finit bien sur 30
+            }
+          };
+
+          requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 } // Déclenchement quand 30% de l'élément est visible
     );
 
-    if (countRef.current) {
-      observer.observe(countRef.current);
+    const currentRef = countRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentRef) observer.unobserve(currentRef);
+    };
   }, [hasAnimated]);
 
   return (
@@ -50,7 +65,7 @@ export const Philosophy: React.FC = () => {
              
              <div className="text-center lg:text-left">
                 <div className="flex items-baseline justify-center lg:justify-start">
-                    <span className="text-[10rem] md:text-[14rem] font-bold text-dodai-charcoal leading-[0.8] tracking-tighter">
+                    <span className="text-[10rem] md:text-[14rem] font-bold text-dodai-charcoal leading-[0.8] tracking-tighter tabular-nums">
                         {count}
                     </span>
                     <span className="text-6xl md:text-8xl font-bold text-dodai-red leading-none ml-2 mb-4">%</span>
