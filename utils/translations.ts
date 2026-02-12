@@ -113,33 +113,29 @@ export const translations = {
           category: 'Restaurant',
           title: 'Bistrot & Bar à Vin',
           location: 'Tokyo, Kagurazaka',
-          desc: 'Conception de A à Z. Travaux (3 mois). Recrutement intégral. Carte & Vins.',
-          stat: 'Rentable à M+4',
-          quote: '« Une rigueur qui nous a fait gagner 6 mois. »'
+          tags: ['Travaux (Build)', 'Recrutement', 'Carte & Vins'],
+          stat: 'Rentabilité : M+4',
         },
         {
           category: 'Import & Retail',
           title: 'Cave à Manger',
           location: 'Tokyo, Minato-ku',
-          desc: 'Obtention Licence Import. Logistique internationale. Setup E-commerce.',
-          stat: 'Licence < 2 mois',
-          quote: '« Ils ont débloqué la situation administrative. »'
+          tags: ['Licence Import', 'Logistique', 'E-commerce'],
+          stat: 'Licence : < 60 jours',
         },
         {
           category: 'Mode',
           title: 'Flagship Lunettes',
           location: 'Tokyo, Shibuya',
-          desc: 'Chasse emplacement N°1. Architecture Intérieure. Staffing Bilingue.',
-          stat: 'Ouverture Jour-J',
-          quote: '« Une ouverture millimétrée, sans surprise. »'
+          tags: ['Chasse Immobilière', 'Architecture', 'Staffing'],
+          stat: 'Ouverture : Jour-J',
         },
         {
           category: 'Food',
           title: 'Fromagerie & Épicerie',
           location: 'Tokyo, Azabu-Juban',
-          desc: 'Licence Laitière. Agencement Sur-Mesure. Expérience & Pricing.',
-          stat: 'Panier moyen +40%',
-          quote: '« Le business plan a été respecté à la lettre. »'
+          tags: ['Licence Laitière', 'Agencement', 'Pricing Strategy'],
+          stat: 'Panier Moyen : +40%',
         }
       ]
     },
@@ -277,27 +273,24 @@ export const translations = {
       }
     },
     guardrails: {
-      title: 'Cadre & Garanties :',
-      titleSpan: 'Transparence totale.',
-      subtitle: 'Clarifier les rôles pour avancer vite.',
-      tag: 'Responsabilités',
+      title: 'Transparence.',
+      titleSpan: 'Règles du jeu.',
+      subtitle: 'Pas de zones d\'ombre. Une relation saine dès le départ.',
+      tag: 'Le Pacte',
       limits: {
-        title: 'CE QUE NOUS NE FAISONS PAS',
+        title: 'NOTRE RÔLE',
         list: [
-          'Pas de conseil juridique/fiscal direct (nous coordonnons)',
-          'Pas de garantie de visa (décision souveraine)',
-          'Pas de conciergerie illimitée (support cadré)',
-          'Pas de projets sans capital minimum (~30M JPY)',
-          'Pas de "projets rêves" sans capacité d\'exécution'
+          'Pas d\'Avocats : Nous pilotons la stratégie, les experts certifiés valident.',
+          'Pas de Magie : Nous réduisons les risques, nous n\'effaçons pas la réalité.',
+          'Pas de Conciergerie : Focus 100% business. Pas d\'assistanat personnel.'
         ]
       },
       prereq: {
-        title: 'PRÉREQUIS CLIENTS',
+        title: 'VOTRE RÔLE',
         list: [
-          'Disposer du capital requis (30M+ JPY)',
-          'Éligibilité au visa approprié',
-          'Présence au Japon pendant le Build (M-2 à M+3)',
-          'Présence quotidienne post-ouverture (M0 à M+3)'
+          'Décideur : Vous validez les options rapidement pour ne rien perdre.',
+          'Présent : Vous incarnez le projet sur place au lancement.',
+          'Lucide : Vous acceptez la complexité du marché japonais.'
         ]
       }
     },
@@ -439,33 +432,29 @@ export const translations = {
           category: 'Restaurant',
           title: 'Bistro & Wine Bar',
           location: 'Tokyo, Kagurazaka',
-          desc: 'Conception from A to Z. Construction (3 months). Full team recruitment.',
+          tags: ['Full Build', 'Staffing', 'Menu Engineering'],
           stat: 'Profitable at M+4',
-          quote: '"Without them, I would still be stuck in construction."'
         },
         {
           category: 'Import',
           title: 'Wine Shop & Import',
           location: 'Tokyo, Minato-ku',
-          desc: 'Import licenses. International logistics. E-commerce setup.',
-          stat: 'License in < 2 months',
-          quote: '"They got the license where others failed."'
+          tags: ['Import License', 'Logistics', 'E-commerce'],
+          stat: 'License in < 60 days',
         },
         {
           category: 'Fashion',
           title: 'Eyewear Flagship',
           location: 'Tokyo, Shibuya',
-          desc: 'Prime Location Hunting. Interior Design. Bilingual staffing.',
+          tags: ['Real Estate', 'Interior Design', 'Staffing'],
           stat: 'On-time Opening',
-          quote: '"A pixel-perfect opening on Day 1."'
         },
         {
           category: 'Food',
           title: 'Fromagerie & Grocery',
           location: 'Tokyo, Azabu-Juban',
-          desc: 'Dairy Import License. Boutique Design & Customer Experience.',
-          stat: 'Avg Basket +40% vs plan',
-          quote: '"We saved 6 months on the business plan."'
+          tags: ['Dairy License', 'Design', 'Pricing Strategy'],
+          stat: 'Avg Basket +40%',
         }
       ]
     },
@@ -603,27 +592,24 @@ export const translations = {
       }
     },
     guardrails: {
-      title: 'Framework & Guarantees:',
-      titleSpan: 'Total Transparency.',
-      subtitle: 'Clarifying roles to move fast.',
-      tag: 'Responsibilities',
+      title: 'Framework.',
+      titleSpan: 'Clear Rules.',
+      subtitle: 'No gray areas. A healthy relationship from the start.',
+      tag: 'The Pact',
       limits: {
-        title: 'WHAT WE DO NOT DO',
+        title: 'OUR ROLE',
         list: [
-          'No direct legal/tax advice (we coordinate)',
-          'No visa guarantee (sovereign immigration)',
-          'No unlimited concierge (ticketed support)',
-          'No projects without minimum capital (~30M JPY)',
-          'No "dream projects" without execution capacity'
+          'No Lawyers: We guide strategy, certified experts validate.',
+          'No Magic: We reduce risks, we don\'t erase reality.',
+          'No Concierge: 100% Business focus. No personal assistance.'
         ]
       },
       prereq: {
-        title: 'CLIENT PREREQUISITES',
+        title: 'YOUR ROLE',
         list: [
-          'Have required capital (30M+ JPY)',
-          'Ability to obtain appropriate visa',
-          'Present in Japan during Build (M-2 to M+3)',
-          'Daily presence post-opening (M0-M+3)'
+          'Decider: You validate options quickly to miss nothing.',
+          'Present: You embody the project on-site at launch.',
+          'Lucid: You accept the complexity of the Japanese market.'
         ]
       }
     },
@@ -765,33 +751,29 @@ export const translations = {
           category: 'レストラン',
           title: 'ビストロ & ワインバー',
           location: '東京・神楽坂',
-          desc: 'ゼロからの立ち上げ。工事期間3ヶ月。チーム採用完了。',
-          stat: '4ヶ月目で黒字化',
-          quote: '「彼らがいなければ、まだ工事で止まっていました。」'
+          tags: ['Build Complet', 'Staffing', 'Carte & Vins'],
+          stat: '黒字化：4ヶ月',
         },
         {
           category: '輸入 & 小売',
           title: 'ワインショップ & 輸入',
           location: '東京・港区',
-          desc: '輸入免許取得。国際物流構築。ECサイト立ち上げ。',
-          stat: '免許取得 2ヶ月未満',
-          quote: '「他が失敗したライセンス取得を成し遂げました。」'
+          tags: ['輸入免許', '物流', 'EC構築'],
+          stat: '免許取得：60日未満',
         },
         {
           category: 'ファッション',
           title: 'アイウェア旗艦店',
           location: '東京・渋谷',
-          desc: '物件探索。内装デザイン。バイリンガルスタッフ採用。',
-          stat: '予定通りオープン',
-          quote: '「初日から完璧なオペレーションでした。」'
+          tags: ['物件選定', '内装デザイン', '人材採用'],
+          stat: 'オープン：予定通り',
         },
         {
           category: 'Food',
           title: 'フロマジュリー & 食料品',
           location: '東京・麻布十番',
-          desc: '乳製品輸入免許取得。店舗デザイン & 顧客体験設計。',
-          stat: '客単価 計画比+40%',
-          quote: '「事業計画の段階で6ヶ月分の時間を短縮できました。」'
+          tags: ['乳製品免許', '店舗設計', '価格戦略'],
+          stat: '客単価：+40%',
         }
       ]
     },
@@ -929,27 +911,24 @@ export const translations = {
       }
     },
     guardrails: {
-      title: 'Framework & Guarantees:',
-      titleSpan: 'Total Transparency.',
-      subtitle: 'Clarifying roles to move fast.',
-      tag: 'Responsibilities',
+      title: '透明性。',
+      titleSpan: '明確なルール。',
+      subtitle: 'グレーゾーンなし。最初から健全な関係を。',
+      tag: '誓約',
       limits: {
-        title: 'WHAT WE DO NOT DO',
+        title: '私たちの役割',
         list: [
-          'No direct legal/tax advice (we coordinate)',
-          'No visa guarantee (sovereign immigration)',
-          'No unlimited concierge (ticketed support)',
-          'No projects without minimum capital (~30M JPY)',
-          'No "dream projects" without execution capacity'
+          '弁護士ではありません：戦略を指揮し、専門家が法的に確認します。',
+          '魔法ではありません：リスクを減らしますが、現実を消すことはできません。',
+          'コンシェルジュではありません：100%ビジネス重視。私的な支援はしません。'
         ]
       },
       prereq: {
-        title: 'CLIENT PREREQUISITES',
+        title: 'あなたの役割',
         list: [
-          'Have required capital (30M+ JPY)',
-          'Ability to obtain appropriate visa',
-          'Present in Japan during Build (M-2 to M+3)',
-          'Daily presence post-opening (M0-M+3)'
+          '決断者：チャンスを逃さないよう、迅速にオプションを承認する。',
+          '現場主義：立ち上げ時に現地でプロジェクトを体現する。',
+          '受容力：日本市場の複雑さを受け入れる。'
         ]
       }
     },
