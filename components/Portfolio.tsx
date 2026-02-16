@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { ArrowUpRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Portfolio: React.FC = () => {
@@ -111,9 +110,6 @@ const ProjectCard: React.FC<{
                 <span className="text-[10px] font-bold uppercase tracking-widest text-white/80 border border-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
                     {category}
                 </span>
-             </div>
-             <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 hover:bg-white hover:text-black cursor-pointer">
-                <ArrowUpRight size={18} />
              </div>
         </div>
 

@@ -100,7 +100,7 @@ export const Header: React.FC = () => {
 
             {/* CTA */}
             <a 
-              href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb"
+              href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods"
               target="_blank"
               rel="noopener noreferrer"
               className={`hidden md:flex items-center gap-2 bg-dodai-charcoal text-white font-medium rounded-full hover:bg-black transition-all hover:scale-105 shadow-lg shadow-gray-200 ${
@@ -159,7 +159,7 @@ export const Header: React.FC = () => {
           <div className="w-12 h-px bg-gray-200 my-4"></div>
 
           <a 
-            href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb"
+            href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
@@ -209,7 +209,7 @@ export const Footer: React.FC = () => {
               <li><a href="mailto:contact@dodaistudio.com" className="hover:text-dodai-charcoal transition-colors">contact@dodaistudio.com</a></li>
               <li>
                  <a 
-                   href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb" 
+                   href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods" 
                    target="_blank"
                    rel="noopener noreferrer"
                    className="inline-flex items-center gap-2 text-dodai-charcoal hover:translate-x-1 transition-transform mt-2 font-medium"

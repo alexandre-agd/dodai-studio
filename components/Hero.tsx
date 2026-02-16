@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-24">
             <a 
-              href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/y31dv4lqb"
+              href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods"
               target="_blank"
               rel="noopener noreferrer" 
               className="w-full sm:w-auto px-10 py-5 bg-dodai-charcoal text-white rounded-full font-medium hover:bg-black transition-all flex items-center justify-center gap-2 shadow-2xl shadow-gray-300/50 hover:scale-105 duration-300"

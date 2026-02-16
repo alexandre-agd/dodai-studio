@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { Header, Footer } from './components/Layout';
@@ -8,7 +9,6 @@ import { Methodology } from './components/Methodology';
 import { Portfolio } from './components/Portfolio';
 import { Services } from './components/Services';
 import { Team } from './components/Team';
-import { Guardrails } from './components/Guardrails';
 import { ProjectWizard } from './components/ProjectWizard';
 import { FAQ } from './components/FAQ';
 import { ContactForm } from './components/ContactForm';
@@ -55,7 +55,6 @@ const AppContent: React.FC = () => {
         <div className="reveal"><Services /></div>
         <div className="reveal"><ProjectWizard onComplete={handleWizardComplete} /></div>
         <div className="reveal"><Team /></div>
-        <div className="reveal"><Guardrails /></div>
         <div className="reveal"><FAQ /></div>
 
         {/* Contact Section */}
