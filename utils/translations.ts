@@ -499,8 +499,8 @@ export const translations = {
       build: [
         {
           name: 'Build Essential',
-          price: 'On Estimate',
-          priceDetail: 'Avg: 1.2M - 1.5M JPY',
+          price: '1.2M - 1.5M',
+          priceDetail: 'JPY (Estimated)',
           duration: '6-8 weeks',
           profile: 'Location found + Solid BP',
           payment: '30% / 40% / 30%',
@@ -513,8 +513,8 @@ export const translations = {
         },
         {
           name: 'Build Complete',
-          price: 'On Estimate',
-          priceDetail: 'Avg: 2.0M - 2.5M JPY',
+          price: '2.0M - 2.5M',
+          priceDetail: 'JPY (Estimated)',
           duration: '8-20 weeks',
           profile: 'Full Zero-to-Open',
           payment: '30% / 40% / 30%',
@@ -529,8 +529,8 @@ export const translations = {
         },
         {
           name: 'Build Premium',
-          price: 'On Estimate',
-          priceDetail: 'Avg: 3.0M - 3.5M JPY',
+          price: '3.0M - 3.5M',
+          priceDetail: 'JPY (Estimated)',
           duration: '16-24 weeks',
           profile: 'Ambitious Concept / Franchise',
           payment: '30% / 40% / 30%',
@@ -839,8 +839,8 @@ export const translations = {
       build: [
         {
           name: 'Build Essential',
-          price: '見積もり',
-          priceDetail: '平均：120-150万円',
+          price: '120万 - 150万',
+          priceDetail: 'JPY (概算)',
           duration: '6-8週間',
           profile: '物件あり + 強固なBP',
           payment: '30% / 40% / 30%',
@@ -853,8 +853,8 @@ export const translations = {
         },
         {
           name: 'Build Complete',
-          price: '見積もり',
-          priceDetail: '平均：200-250万円',
+          price: '200万 - 250万',
+          priceDetail: 'JPY (概算)',
           duration: '8-20週間',
           profile: '完全な Zero-to-Open',
           payment: '30% / 40% / 30%',
@@ -869,8 +869,8 @@ export const translations = {
         },
         {
           name: 'Build Premium',
-          price: '見積もり',
-          priceDetail: '平均：300-350万円',
+          price: '300万 - 350万',
+          priceDetail: 'JPY (概算)',
           duration: '16-24週間',
           profile: '大規模コンセプト / フランチャイズ',
           payment: '30% / 40% / 30%',
