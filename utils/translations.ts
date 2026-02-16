@@ -406,19 +406,40 @@ export const translations = {
           phase: 'Phase 1',
           title: 'Diagnostic (Go / No-Go)',
           desc: 'The crash-test. In 1 week, we audit your BP, test the concept on the field, and calculate the real budget.',
-          deliverables: ['Audit Report', 'Realistic Budget (Excel)', 'Roadmap & Risks', 'Partner Intros']
+          details: ['Audit Report', 'Realistic Budget (Excel)', 'Roadmap & Risks', 'Partner Intros']
         },
         {
           phase: 'Phase 2',
           title: 'Build (The 4 Pillars)',
           desc: 'Execution. We coordinate everything: (1) Structure & Compliance, (2) Location & Design, (3) Tech & Ops, (4) Team & Launch.',
-          deliverables: ['Compliance & Lease', 'Tech Stack Installed', 'SOPs & Staff Trained', 'Official Opening']
+          pillars: [
+            {
+              title: 'Structure & Compliance',
+              desc: 'The legal framework.',
+              items: ['Company Formation (GK/KK)', 'Licenses & Permits', 'Corporate Bank Account', 'Accounting']
+            },
+            {
+              title: 'Location & Design',
+              desc: 'The physical space.',
+              items: ['Real Estate Hunting', 'Lease Negotiation', 'Design Coordination', 'Construction Oversight']
+            },
+            {
+              title: 'Tech & Ops',
+              desc: 'The internal engine.',
+              items: ['POS System Setup', 'Supplier Sourcing', 'SOPs & Processes', 'Logistics']
+            },
+            {
+              title: 'Team & Launch',
+              desc: 'The soul of the place.',
+              items: ['Hiring', 'Training & Service', 'Launch Marketing', 'Soft Opening']
+            }
+          ]
         },
         {
           phase: 'Phase 3',
           title: 'Run (Stabilization)',
           desc: 'The critical first 6 months. We stay to optimize margins, adjust ops, and activate marketing (CRM, Retention).',
-          deliverables: ['Financial Dashboard', 'Food Cost Optimization', 'Marketing Automation', 'Ops Rituals']
+          details: ['Financial Dashboard', 'Food Cost Optimization', 'Marketing Automation', 'Ops Rituals']
         }
       ]
     },
@@ -725,19 +746,40 @@ export const translations = {
           phase: 'Phase 1',
           title: '診断 (Diagnostic)',
           desc: 'クラッシュテスト。1週間で事業計画を監査し、現場でコンセプトをテストし、実際の予算を算出します。',
-          deliverables: ['監査レポート', '現実的予算 (Excel)', 'ロードマップ & リスク', 'パートナー紹介']
+          details: ['監査レポート', '現実的予算 (Excel)', 'ロードマップ & リスク', 'パートナー紹介']
         },
         {
           phase: 'Phase 2',
           title: '構築 (Build - 4本柱)',
           desc: '実行フェーズ。すべてを調整します：(1) 構造とコンプライアンス、(2) 物件とデザイン、(3) テックとオペレーション、(4) チームと立ち上げ。',
-          deliverables: ['コンプライアンス & 賃貸', 'テック導入完了', 'SOP & スタッフ研修', '公式オープン']
+          pillars: [
+            {
+              title: '構造 & コンプライアンス',
+              desc: '法的枠組み。',
+              items: ['会社設立 (GK/KK)', '営業許可取得', '法人口座開設', '会計税務']
+            },
+            {
+              title: '物件 & デザイン',
+              desc: '物理的な空間。',
+              items: ['物件探索', '賃貸契約交渉', 'デザイン監修', '内装工事管理']
+            },
+            {
+              title: 'テック & オペレーション',
+              desc: '店舗のエンジン。',
+              items: ['POSレジ導入', '仕入れ先開拓', '業務フロー (SOP)', '物流構築']
+            },
+            {
+              title: 'チーム & 立ち上げ',
+              desc: 'お店の魂。',
+              items: ['人材採用', '接客トレーニング', '開業マーケティング', 'ソフトオープン']
+            }
+          ]
         },
         {
           phase: 'Phase 3',
           title: '運営 (Run - 安定化)',
           desc: '重要な最初の6ヶ月。利益率の最適化、オペレーションの調整、マーケティング（CRM、リテンション）の活性化のために伴走します。',
-          deliverables: ['財務ダッシュボード', '原価管理最適化', 'マーケティング自動化', 'Ops儀式']
+          details: ['財務ダッシュボード', '原価管理最適化', 'マーケティング自動化', 'Ops儀式']
         }
       ]
     },
