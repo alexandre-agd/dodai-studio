@@ -11,17 +11,17 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Fonction pour récupérer la langue depuis l'URL ou par défaut 'fr'
+  // Fonction pour récupérer la langue depuis l'URL ou par défaut 'en'
   const getInitialLanguage = (): Language => {
     if (typeof window !== 'undefined') {
       const params = new URLSearchParams(window.location.search);
       const langParam = params.get('lang');
       // Vérifie si le paramètre est une langue valide
       if (langParam === 'en' || langParam === 'jp' || langParam === 'fr') {
-        return langParam;
+        return langParam as Language;
       }
     }
-    return 'fr';
+    return 'en';
   };
 
   const [language, setLanguageState] = useState<Language>(getInitialLanguage);
