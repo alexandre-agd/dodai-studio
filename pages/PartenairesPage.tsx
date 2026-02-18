@@ -36,14 +36,26 @@ export const PartenairesPage: React.FC = () => {
     partnerType: '',
     website: '',
     linkedin: '',
+    message: '',
   });
 
   useEffect(() => {
     document.title = "Dodai Studio : Devenir Partenaire";
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const normalizeUrl = (url: string) => {
+    if (!url) return null;
+    const trimmed = url.trim();
+    if (!trimmed) return null;
+    // Si l'URL ne commence pas par http:// ou https://, on ajoute https://
+    if (!/^https?:\/\//i.test(trimmed)) {
+      return `https://${trimmed}`;
+    }
+    return trimmed;
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
@@ -67,8 +79,9 @@ export const PartenairesPage: React.FC = () => {
       phone: formData.phone,
       company: formData.company,
       partnerType: formData.partnerType || t.partnersPage.form.pOptions[0],
-      website: formData.website || null,
-      linkedin: formData.linkedin || null,
+      website: normalizeUrl(formData.website),
+      linkedin: normalizeUrl(formData.linkedin),
+      message: formData.message || null,
       source: "Website Partenaires"
     };
 
@@ -356,22 +369,22 @@ export const PartenairesPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Website & LinkedIn */}
+                  {/* Website & LinkedIn - Changed type to text to allow flexible URL formats */}
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.website}</label>
-                      <input name="website" value={formData.website} onChange={handleChange} type="url" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                      <input name="website" value={formData.website} onChange={handleChange} type="text" placeholder={t.partnersPage.form.websitePlaceholder} className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.linkedin}</label>
-                      <input name="linkedin" value={formData.linkedin} onChange={handleChange} type="url" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                      <input name="linkedin" value={formData.linkedin} onChange={handleChange} type="text" placeholder={t.partnersPage.form.linkedinPlaceholder} className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
                     </div>
                   </div>
 
                   {/* Message */}
                   <div className="mb-8">
                     <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.message}</label>
-                    <textarea rows={3} placeholder={t.partnersPage.form.placeholder} className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium resize-none text-dodai-charcoal" />
+                    <textarea name="message" value={formData.message} onChange={handleChange} rows={3} placeholder={t.partnersPage.form.placeholder} className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium resize-none text-dodai-charcoal" />
                   </div>
 
                   {/* Status Error */}

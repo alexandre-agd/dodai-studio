@@ -46,7 +46,7 @@ export const translations = {
         p2: {
           title: 'Agents immobiliers',
           headline: 'Moins de visites pour rien. Plus de baux signés.',
-          text: 'Un client qui n\'a pas de plan solide finit par ne rien signer : ou signe et disparaît 6 mois après. Avant de lui montrer des locaux, référez-le pour un Diagnostic. Il arrive préparé, vous concluez mieux.',
+          text: 'Un client qui n\'a pas de plan solide finit par ne rien signer, ou signe et disparaît 6 mois après. Avant de lui montrer des locaux, référez-le pour un Diagnostic. Il arrive préparé, vous concluez mieux.',
         },
         p3: {
           title: 'Designers & Architectes',
@@ -56,23 +56,23 @@ export const translations = {
         p4: {
           title: 'Fournisseurs F&B',
           headline: 'Un client qui dure, c\'est un client qui commande.',
-          text: '30% des nouveaux commerces F&B ferment en Y1. Derrière chaque fermeture, un fournisseur qui perd un compte récurrent. On structure les projets en amont pour que vos clients survivez : et restent vos clients.',
+          text: '30% des nouveaux commerces F&B ferment en Y1. Derrière chaque fermeture, un fournisseur qui perd un compte récurrent. On structure les projets en amont pour que vos clients survivent et restent vos clients.',
         },
         p6: {
           title: 'Avocats & Scriveners (行政書士)',
           headline: 'Vous montez les dossiers, on structure les projets.',
-          text: 'Vos clients créent leur GK, obtiennent leur Business Manager : mais après, ils sont seuls face à l\'ouverture. Référez-les à Dodai Studio pour structurer l\'opérationnel. On coordonne, vous restez leur référence juridique.',
+          text: 'Vos clients créent leur GK, obtiennent leur Business Manager, mais après, ils sont seuls face à l\'ouverture. Référez-les à Dodai Studio pour structurer l\'opérationnel. On coordonne, vous restez leur référence juridique.',
         },
         p5: {
           title: 'Réseau personnel',
           headline: 'Vous avez une intro à faire ?',
-          text: 'Vous connaissez quelqu\'un qui parle d\'ouvrir un resto, un bar ou un shop à Tokyo. Mettez-nous en contact, on prend le relais. Si ça matche, on vous remercie comme il se doit : sans pression, sans awkward.',
+          text: 'Vous connaissez quelqu\'un qui parle d\'ouvrir un resto, un bar ou un shop à Tokyo. Mettez-nous en contact, on prend le relais. Si ça matche, on vous remercie comme il se doit, sans pression, sans malaise.',
         },
       },
       process: {
         title: 'Comment ça marche ?',
         tag: '4 étapes simples',
-        s1: { t: 'Introduction', d: 'Un email ou un message : la forme la plus simple qui vous convient.' },
+        s1: { t: 'Introduction', d: 'Un email ou un message, la forme la plus simple qui vous convient.' },
         s2: { t: 'Qualification', d: 'On prend contact sous 48h pour voir si on peut vraiment aider.' },
         s3: { t: 'Concrétisation', d: 'Le projet démarre (Diagnostic ou Build). On s\'occupe des fondations ensemble.' },
         s4: { t: 'On vous remercie : vraiment.', d: '10 à 15% de commission sur chaque projet converti. Formalisé, tracé, payé sous 30 jours. Aucune ambiguïté.' },
@@ -85,7 +85,7 @@ export const translations = {
         a2: 'Contrat partenaire signé avant toute référence. Commission versée sous 30 jours après encaissement client.',
         q3: 'Et si le projet n\'aboutit pas ?',
         a3: 'Aucun risque. La commission n\'est due que si le client signe. Zéro obligation de résultat de votre côté.',
-        q4: 'Je ne veux pas recommander quelqu\'un que je ne connais pas.',
+        q4: 'Je ne veux pas recommander quelqu\'un que je ne connais pas personnellement.',
         a4: 'C\'est la bonne question. On peut faire un café d\'abord, à Tokyo ou en visio. Voir comment on travaille, poser vos questions, rencontrer l\'équipe. Si ça vous convient, on formalise. Sinon, pas de problème.',
         q5: 'Je ne veux pas de commission.',
         a5: 'C\'est possible. Vous pouvez simplement nous mettre en contact pour aider votre réseau. On s\'adapte.',
@@ -101,7 +101,9 @@ export const translations = {
         phone: 'Téléphone',
         company: 'Société',
         website: 'Site web (Optionnel)',
+        websitePlaceholder: 'ex: dodai-studio.com',
         linkedin: 'Profil LinkedIn (Optionnel)',
+        linkedinPlaceholder: 'ex: linkedin.com/in/nom',
         profile: 'Votre profil',
         pOptions: [
           'Comptable / Expert-comptable',
@@ -139,7 +141,7 @@ export const translations = {
     philosophy: {
       title: 'L\'intuition ne suffit pas.',
       titleSpan: 'Il faut une structure.',
-      p1: 'Ouvrir un commerce au Japon est un défi de precision. La barrière de la langue, l\'opacité administrative et les codes culturels ne pardonnent aucune approximation.',
+      p1: 'Ouvrir un commerce au Japon est un défi de précision. La barrière de la langue, l\'opacité administrative et les codes culturels ne pardonnent aucune approximation.',
       p2: 'Nous ne sommes pas des consultants de salon. Nous sommes vos partenaires d\'exécution. Nous bâtissons avec vous les fondations juridiques, opérationnelles et techniques pour sécuriser votre investissement.',
       statValue: '30%',
       statLabel: 'Le taux d\'échec.',
@@ -253,6 +255,7 @@ export const translations = {
       titleSpan: 'Clarté & Efficacité.',
       subtitle: 'Choisissez l\'accompagnement adapté à votre maturité.',
       tag: 'Transparence Tarifaire',
+      paymentLabel: 'Paiement',
       addonsTitle: 'Options & Modules',
       addonsSubtitle: 'Des expertises ciblées pour renforcer votre projet.',
       addonsDisclaimer: 'Nous assurons la coordination et la direction artistique. Les frais tiers (photographe, influenceurs, coûts de construction) sont réglés directement aux prestataires.',
@@ -424,7 +427,7 @@ export const translations = {
       title: 'Parlons de',
       titleSpan: 'votre projet.',
       desc: 'En 30 minutes, nous clarifions votre contexte et la prochaine étape.',
-      confidentiality: { title: 'Confidentiality', desc: 'Vos idées restent les vôtres. Rien ne sort de cet échange.' },
+      confidentiality: { title: 'Confidentialité', desc: 'Vos idées restent les vôtres. Rien ne sort de cet échange.' },
       response: { title: 'Réponse sous 48h', desc: 'Pas de spam. Juste une recommandation claire.' },
       noCommitment: { title: 'Sans engagement', desc: 'Diagnostic, Build ou Run. On vous dit ce qu\'on en pense.' },
       form: {
@@ -468,7 +471,7 @@ export const translations = {
     },
     partnersPage: {
       hero: {
-        title: 'Do you know someone who wants to open in Tokyo?',
+        title: 'Know someone who wants to open in Tokyo?',
         titleSpan: '',
         subtitle: 'We build the foundations. You make the intro. We handle the rest.',
         cta: 'Become a partner',
@@ -500,7 +503,7 @@ export const translations = {
         p2: {
           title: 'Real Estate Agents',
           headline: 'Fewer wasted viewings. More signed leases.',
-          text: 'A client without a solid plan often ends up signing nothing : or signs and disappears 6 months later. Before showing them spaces, refer them for a Diagnostic. They arrive prepared, you close more deals.',
+          text: 'A client without a solid plan often ends up signing nothing, or signs and disappears 6 months later. Before showing them spaces, refer them for a Diagnostic. They arrive prepared, you close more deals.',
         },
         p3: {
           title: 'Designers & Architects',
@@ -510,23 +513,23 @@ export const translations = {
         p4: {
           title: 'F&B Suppliers',
           headline: 'A lasting client is a client who keeps ordering.',
-          text: '30% of new F&B businesses close in year 1. Behind every closure is a supplier losing a recurring account. We structure projects upstream so your clients survive : and stay your clients.',
+          text: '30% of new F&B businesses close in year 1. Behind every closure is a supplier losing a recurring account. We structure projects upstream so your clients survive, and stay your clients.',
         },
         p6: {
           title: 'Lawyers & Scriveners',
           headline: 'You build the files, we structure the projects.',
-          text: 'Your clients set up their GK, get their Business Manager visa : but then, they are on their own for the opening. Refer them to Dodai Studio to structure operations. We coordinate, you remain their legal reference.',
+          text: 'Your clients set up their GK, get their Business Manager visa, but then, they are on their own for the opening. Refer them to Dodai Studio to structure operations. We coordinate, you remain their legal reference.',
         },
         p5: {
           title: 'Personal Network',
           headline: 'Have an intro to make?',
-          text: 'Know someone talking about opening a restaurant, bar, or shop in Tokyo? Put us in touch, we\'ll take it from there. If it\'s a match, we\'ll thank you properly : no pressure, no awkwardness.',
+          text: 'Know someone talking about opening a restaurant, bar, or shop in Tokyo? Put us in touch, we\'ll take it from there. If it\'s a match, we\'ll thank you properly, no pressure, no awkwardness.',
         },
       },
       process: {
         title: 'How does it work?',
         tag: '4 simple steps',
-        s1: { t: 'Introduction', d: 'An email or message : whichever simple form works for you.' },
+        s1: { t: 'Introduction', d: 'An email or message, whichever simple form works for you.' },
         s2: { t: 'Qualification', d: 'We reach out within 48h to see if we can truly help.' },
         s3: { t: 'Execution', d: 'Project starts (Diagnostic or Build). We handle the foundations together.' },
         s4: { t: 'We thank you : truly.', d: '10 to 15% commission on every conversion. Clear contract.' },
@@ -539,7 +542,8 @@ export const translations = {
         a2: 'Partner contract signed before any referral. Commission paid within 30 days after client payment.',
         q3: 'What if the project doesn\'t go through?',
         a3: 'No risk. Commission is only due if the client signs. Zero performance obligation on your end.',
-        q4: 'That is the right question. We can have a coffee first, in Tokyo or via video call. See how we work, ask your questions, meet the team. If it suits you, we formalize it. Otherwise, no problem.',
+        q4: 'I don\'t want to recommend someone I don\'t know personally.',
+        a4: 'That is the right question. We can have a coffee first, in Tokyo or via video call. See how we work, ask your questions, meet the team. If it suits you, we formalize it. Otherwise, no problem.',
         q5: 'I don\'t want a commission.',
         a5: 'That\'s fine. You can simply put us in touch to help your network. We adapt to your preference.',
       },
@@ -554,7 +558,9 @@ export const translations = {
         phone: 'Phone',
         company: 'Company',
         website: 'Website (Optional)',
+        websitePlaceholder: 'e.g. example.com',
         linkedin: 'LinkedIn Profile (Optional)',
+        linkedinPlaceholder: 'e.g. linkedin.com/in/yourname',
         profile: 'Your Profile',
         pOptions: [
           'Accountant / CPA',
@@ -706,6 +712,7 @@ export const translations = {
       titleSpan: 'Clear & Effective.',
       subtitle: 'Select the level of support that matches your project\'s maturity.',
       tag: 'Transparent Pricing',
+      paymentLabel: 'Payment',
       addonsTitle: 'Modules & Add-ons',
       addonsSubtitle: 'Targeted expertise to reinforce your project.',
       addonsDisclaimer: 'We handle coordination and art direction. Third-party fees (photographers, influencers, construction costs) are paid directly to providers.',
@@ -930,7 +937,7 @@ export const translations = {
         tag: 'なぜこのプログラムなのか？',
         title: '他が見落としがちな',
         titleSpan: '「土台」を築く。',
-        p1: '日本でのF&B・小売プロジェクトの多くは、アイデア不足で失敗するのではありません。「土台」の欠欠如で失敗するのです。',
+        p1: '日本でのF&B・小売プロジェクトの多くは、アイデア不足で失敗するのではありません。「土台」の欠如で失敗するのです。',
         p2: '実務・現場のギヨームと、システムの管理のアレクサンドル。この二つの補完的な専門知識を、Dodai Studioとして正式に提供することにしました。',
         p3: 'このようなサポートを必要としているプロジェクトをご存知でしたら、ぜひ教えてください。',
       },
@@ -992,7 +999,8 @@ export const translations = {
         a2: '紹介前にパートナー契約を締結します。クライアントからの入金後30日以内にお支払いいたします。',
         q3: 'プロジェクトが成立しなかった場合は？',
         a3: 'リスクはありません。クライアントが成約した場合のみ謝礼が発生します。ノルマ等も一切ありません。',
-        q4: 'その点はごもっともです。まずはコーヒーでも飲みながら、東京で、あるいはオンラインでお話ししませんか。私たちの仕事の進め方を知り、チームに会ってください。ご納得いただければ提携しましょう。',
+        q4: '個人的に知らない人を紹介したくありません。',
+        a4: 'その点はごもっともです。まずはコーヒーでも飲みながら、東京で、あるいはオンラインでお話ししませんか。私たちの仕事の進め方を知り、チームに会ってください。ご納得いただければ提携しましょう。',
         q5: 'コミッションはいりません。',
         a5: '可能です。知人の力になりたいという理由でのご紹介も歓迎します。柔軟に対応いたします。',
       },
@@ -1007,7 +1015,9 @@ export const translations = {
         phone: '電話番号',
         company: '会社名',
         website: 'ウェブサイト (任意)',
+        websitePlaceholder: '例: dodai-studio.com',
         linkedin: 'LinkedIn プロフィール (任意)',
+        linkedinPlaceholder: '例: linkedin.com/in/yourname',
         profile: 'あなたのプロフィール',
         pOptions: [
           '会計士 / 税理士',
@@ -1159,6 +1169,7 @@ export const translations = {
       titleSpan: '明確な料金体系。',
       subtitle: 'プロジェクトのフェーズに合わせた最適なプランをお選びください。',
       tag: 'Pricing',
+      paymentLabel: 'お支払い',
       addonsTitle: 'モジュール & アドオン',
       addonsSubtitle: '必要に応じて追加できる専門機能。',
       addonsDisclaimer: '※ 弊社フィーはプロジェクト管理・ディレクション費用です。実費（施工費、撮影費、広告費等）は各業者へ直接お支払いいただきます。',
@@ -1284,13 +1295,13 @@ export const translations = {
       a: {
         role: 'Stratégie & Systèmes',
         badges: ['Entrepreneur', 'Strategy', 'Systems'],
-        desc: 'ホスピタリティは芸術ですが、収益性は科学です。起業家として、優れたアイデアも構造がなければ生き残れないことを知っています。私は単にツールを導入するのではなく、あなたのビジネスが効率的に回り、計測可能で、拡大できるようなプロセスを設計します。',
+        desc: 'ホスピタリティは芸術ですが、収益性は科学です。起業家として、優れたアイデア भी 構造がなければ生き残れないことを知っています。私は単にツールを導入するのではなく、あなたのビジネスが効率的に回り、計測可能で、拡大できるようなプロセスを設計します。',
         list: ['事業モデル設計', '業務プロセス (SOP) 構築', 'DX・効率化', 'グロース戦略', '経営管理']
       }
     },
     guardrails: {
       title: '透明性とお約束。',
-      titleSpan: '信頼関係のために. ',
+      titleSpan: '信頼関係のために.',
       subtitle: 'グレーゾーンをなくし、最初から健全なパートナーシップを築きます。',
       tag: 'The Pact',
       limits: {
@@ -1313,7 +1324,7 @@ export const translations = {
     faq: {
       title: 'よくある質問',
       titleSpan: 'FAQ',
-      subtitle: 'プロジェクト開始にあたって。',
+      subtitle: 'プロジェクト開始にあたって.',
       tag: 'Clarification',
       q1: '「基本ビルド」「標準ビルド」「プレミアム」の違いは？',
       a1: '「基本（120-150万）」は既に物件確保済みの方など、サポート範囲 को絞ったプランです。「標準（200-250万）」は物件探しから開業までフルサポートする最も一般的なプランです。「プレミアム」はMVP検証や大規模なPRを含むプランです。',
@@ -1332,7 +1343,7 @@ export const translations = {
       desc: '30分の無料相談で、プロジェクトの現状と次のステップを整理します。',
       confidentiality: { title: '完全秘密厳守', desc: 'アイデアやご相談内容が外部に漏れることは一切ありません。' },
       response: { title: '48時間以内に返信', desc: '営業メールは送りません。具体的なネクストアクションをご提案します。' },
-      noCommitment: { title: '契約の義務はありません', desc: '診断、ビルド、運営。私たちが必要かどうか、まずはお話ししましょう。' },
+      noCommitment: { title: '契約の義務はありません', desc: '診断、ビルド、運営. 私たちが必要かどうか、まずはお話ししましょう。' },
       form: {
         header: '無料相談に申し込む',
         subHeader: '以下のフォームにご記入ください。',

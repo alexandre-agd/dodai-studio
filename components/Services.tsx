@@ -52,13 +52,13 @@ export const Services: React.FC = () => {
                 {build.length > 0 && (
                   <>
                     <div className="lg:mt-8">
-                         <BuildTierCard tier={build[0]} />
+                         <BuildTierCard tier={build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} />
                     </div>
                     <div className="relative z-20 transform lg:-translate-y-4">
-                         <BuildTierCard tier={build[1] || build[0]} />
+                         <BuildTierCard tier={build[1] || build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} />
                     </div>
                     <div className="lg:mt-8">
-                         <BuildTierCard tier={build[2] || build[0]} />
+                         <BuildTierCard tier={build[2] || build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} />
                     </div>
                   </>
                 )}
@@ -164,7 +164,7 @@ const StandaloneCard: React.FC<{ service: StandaloneServiceProps, isDiagnostic?:
     );
 };
 
-const BuildTierCard: React.FC<{ tier: ServiceTierProps }> = ({ tier }) => {
+const BuildTierCard: React.FC<{ tier: ServiceTierProps, paymentLabel: string }> = ({ tier, paymentLabel }) => {
     const scope = Array.isArray(tier?.scope) ? tier.scope : [];
     
     return (
@@ -211,7 +211,7 @@ const BuildTierCard: React.FC<{ tier: ServiceTierProps }> = ({ tier }) => {
 
         <div className="mt-auto">
             <div className="mb-6 text-center">
-                 <p className="text-[10px] text-gray-400 font-mono uppercase tracking-wider bg-gray-50 inline-block px-2 py-1 rounded-md">Paiement: {tier?.payment}</p>
+                 <p className="text-[10px] text-gray-400 font-mono uppercase tracking-wider bg-gray-50 inline-block px-2 py-1 rounded-md">{paymentLabel}: {tier?.payment}</p>
             </div>
             <a href="#contact" className={`block w-full py-4 rounded-xl text-center font-bold text-sm transition-all duration-300 ${tier?.isPopular ? 'bg-dodai-charcoal text-white hover:bg-black shadow-lg shadow-gray-300/50 hover:shadow-xl hover:-translate-y-1' : 'bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 hover:text-black'}`}>
                 Choisir
