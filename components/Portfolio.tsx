@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -19,6 +18,7 @@ export const Portfolio: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Restaurant & Wine Bar - Reste en large (Haut Gauche) */}
           <div className="lg:col-span-2 md:col-span-2">
             <ProjectCard 
               category={t.portfolio.projects[0].category}
@@ -31,15 +31,17 @@ export const Portfolio: React.FC = () => {
             />
           </div>
 
+          {/* Fromagerie & Grocery - Devient petit (Haut Droite) */}
           <ProjectCard 
-            category={t.portfolio.projects[1].category}
-            title={t.portfolio.projects[1].title}
-            location={t.portfolio.projects[1].location}
-            tags={t.portfolio.projects[1].tags}
-            stat={t.portfolio.projects[1].stat}
-            image="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2070&auto=format&fit=crop"
+            category={t.portfolio.projects[3].category}
+            title={t.portfolio.projects[3].title}
+            location={t.portfolio.projects[3].location}
+            tags={t.portfolio.projects[3].tags}
+            stat={t.portfolio.projects[3].stat}
+            image="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&q=80&w=2069"
           />
           
+          {/* Eyewear Flagship - Reste petit (Bas Gauche) */}
           <ProjectCard 
             category={t.portfolio.projects[2].category}
             title={t.portfolio.projects[2].title}
@@ -49,14 +51,15 @@ export const Portfolio: React.FC = () => {
             image="https://images.unsplash.com/photo-1577803645773-f96470509666?q=80&w=2070&auto=format&fit=crop"
           />
 
+          {/* Wine Shop & Import - Devient large (Bas Droite) */}
           <div className="lg:col-span-2 md:col-span-2">
              <ProjectCard 
-              category={t.portfolio.projects[3].category}
-              title={t.portfolio.projects[3].title}
-              location={t.portfolio.projects[3].location}
-              tags={t.portfolio.projects[3].tags}
-              stat={t.portfolio.projects[3].stat}
-              image="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&q=80&w=2069"
+              category={t.portfolio.projects[1].category}
+              title={t.portfolio.projects[1].title}
+              location={t.portfolio.projects[1].location}
+              tags={t.portfolio.projects[1].tags}
+              stat={t.portfolio.projects[1].stat}
+              image="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2070&auto=format&fit=crop"
               large
             />
           </div>
