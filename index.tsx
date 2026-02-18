@@ -1,6 +1,5 @@
-
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import { HashRouter } from 'react-router-dom';
 import App from './App';
 import './index.css';
@@ -10,10 +9,9 @@ if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
-const root = ReactDOM.createRoot(rootElement);
+const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    {/* Removed 'future' prop as it is not supported in the current version of HashRouter and causes a type error */}
     <HashRouter>
       <App />
     </HashRouter>

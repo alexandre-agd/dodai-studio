@@ -13,25 +13,85 @@ import {
   Scale,
   Search,
   Wrench,
-  TrendingUp
+  TrendingUp,
+  AlertCircle
 } from 'lucide-react';
 import { HashLink } from 'react-router-hash-link';
 
+const WEBHOOK_URL = 'https://n8n.agdevelopment.co/webhook/website-partenaire';
+
 export const PartenairesPage: React.FC = () => {
-  const { t } = useLanguage();
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const { t, language } = useLanguage();
+  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  // Form state
+  const [formData, setFormData] = useState({
+    firstNameRomaji: '',
+    lastNameRomaji: '',
+    firstNameKanji: '',
+    lastNameKanji: '',
+    email: '',
+    phone: '',
+    company: '',
+    partnerType: '',
+    website: '',
+    linkedin: '',
+  });
 
   useEffect(() => {
     document.title = "Dodai Studio : Devenir Partenaire";
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    setTimeout(() => setFormStatus('success'), 1500);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  // Accès ultra-sécurisé : s'assure que pOptions est toujours un tableau avant le .map
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+
+    // Mapping language code to full names for n8n
+    const languageMapping = {
+      fr: 'Français',
+      en: 'Anglais',
+      jp: 'Japonais'
+    };
+
+    const payload = {
+      email: formData.email,
+      firstNameRomaji: formData.firstNameRomaji,
+      lastNameRomaji: formData.lastNameRomaji,
+      firstNameKanji: formData.firstNameKanji || null,
+      lastNameKanji: formData.lastNameKanji || null,
+      langue: languageMapping[language] || 'Anglais',
+      phone: formData.phone,
+      company: formData.company,
+      partnerType: formData.partnerType || t.partnersPage.form.pOptions[0],
+      website: formData.website || null,
+      linkedin: formData.linkedin || null,
+      source: "Website Partenaires"
+    };
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus('error');
+    }
+  };
+
   const pOptions = (t.partnersPage && t.partnersPage.form && Array.isArray(t.partnersPage.form.pOptions)) 
     ? t.partnersPage.form.pOptions 
     : [];
@@ -226,7 +286,7 @@ export const PartenairesPage: React.FC = () => {
             <p className="text-xl text-gray-200 font-light">{t.partnersPage.form.subtitle}</p>
           </div>
 
-          <div className="w-full max-w-3xl">
+          <div className="w-full max-w-4xl">
             {formStatus === 'success' ? (
               <div className="bg-white rounded-[2.5rem] p-12 text-center text-dodai-charcoal shadow-2xl animate-in fade-in zoom-in duration-500">
                 <div className="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center mb-8 mx-auto">
@@ -234,36 +294,94 @@ export const PartenairesPage: React.FC = () => {
                 </div>
                 <h3 className="text-3xl font-bold mb-4 tracking-tight">{t.partnersPage.form.success}</h3>
                 <p className="text-gray-500">hello@dodai-studio.com</p>
+                <button 
+                  onClick={() => setFormStatus('idle')}
+                  className="mt-8 px-6 py-3 bg-dodai-charcoal text-white rounded-full font-bold hover:bg-black transition-all"
+                >
+                  Envoyer un autre message
+                </button>
               </div>
             ) : (
               <div className="flex flex-col items-center">
                 <form onSubmit={handleFormSubmit} className="w-full bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-dodai-charcoal mb-8">
+                  
+                  {/* Romaji Names */}
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.firstName}</label>
-                      <input required type="text" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                      <input required name="firstNameRomaji" value={formData.firstNameRomaji} onChange={handleChange} type="text" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.lastName}</label>
-                      <input required type="text" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                      <input required name="lastNameRomaji" value={formData.lastNameRomaji} onChange={handleChange} type="text" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
                     </div>
                   </div>
+
+                  {/* Kanji Names (Optional) */}
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.firstNameKanji}</label>
+                      <input name="firstNameKanji" value={formData.firstNameKanji} onChange={handleChange} type="text" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.lastNameKanji}</label>
+                      <input name="lastNameKanji" value={formData.lastNameKanji} onChange={handleChange} type="text" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                    </div>
+                  </div>
+
+                  {/* Email & Phone */}
                   <div className="grid md:grid-cols-2 gap-6 mb-6">
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.email}</label>
-                      <input required type="email" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                      <input required name="email" value={formData.email} onChange={handleChange} type="email" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.phone}</label>
+                      <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                    </div>
+                  </div>
+
+                  {/* Company & Profile */}
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.company}</label>
+                      <input required name="company" value={formData.company} onChange={handleChange} type="text" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
                     </div>
                     <div>
                       <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.profile}</label>
-                      <select className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium appearance-none cursor-pointer text-dodai-charcoal">
+                      <select name="partnerType" value={formData.partnerType} onChange={handleChange} className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium appearance-none cursor-pointer text-dodai-charcoal">
+                        <option value="">{t.partnersPage.form.profile}...</option>
                         {pOptions.map(opt => <option key={opt} value={opt}>{opt}</option>)}
                       </select>
                     </div>
                   </div>
+
+                  {/* Website & LinkedIn */}
+                  <div className="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.website}</label>
+                      <input name="website" value={formData.website} onChange={handleChange} type="url" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.linkedin}</label>
+                      <input name="linkedin" value={formData.linkedin} onChange={handleChange} type="url" className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium text-dodai-charcoal" />
+                    </div>
+                  </div>
+
+                  {/* Message */}
                   <div className="mb-8">
                     <label className="block text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 ml-1">{t.partnersPage.form.message}</label>
                     <textarea rows={3} placeholder={t.partnersPage.form.placeholder} className="w-full px-5 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-dodai-red/20 outline-none font-medium resize-none text-dodai-charcoal" />
                   </div>
+
+                  {/* Status Error */}
+                  {formStatus === 'error' && (
+                    <div className="mb-6 p-4 bg-red-50 text-red-600 rounded-xl flex items-center gap-3 text-sm">
+                      <AlertCircle size={18} />
+                      {t.partnersPage.form.error}
+                    </div>
+                  )}
+
                   <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-6 border-t border-gray-100">
                      <div className="flex items-start gap-3">
                         <input required type="checkbox" id="consent" className="mt-1 w-4 h-4 rounded border-gray-300 text-dodai-red focus:ring-dodai-red" />
@@ -278,7 +396,7 @@ export const PartenairesPage: React.FC = () => {
                      </button>
                   </div>
                 </form>
-                <p className="text-sm text-gray-400 font-light">
+                <p className="text-sm text-gray-400 font-light text-center">
                   {t.partnersPage.form.altContact}
                 </p>
               </div>

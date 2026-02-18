@@ -93,9 +93,15 @@ export const translations = {
       form: {
         title: 'Prêt à nous rejoindre ?',
         subtitle: 'Laissez-nous vos coordonnées, on revient vers vous sous 48h.',
-        firstName: 'Prénom',
-        lastName: 'Nom',
+        firstName: 'Prénom (Romaji)',
+        lastName: 'Nom (Romaji)',
+        firstNameKanji: 'Prénom (Kanji - Optionnel)',
+        lastNameKanji: 'Nom (Kanji - Optionnel)',
         email: 'Email professionnel',
+        phone: 'Téléphone',
+        company: 'Société',
+        website: 'Site web (Optionnel)',
+        linkedin: 'Profil LinkedIn (Optionnel)',
         profile: 'Votre profil',
         pOptions: [
           'Comptable / Expert-comptable',
@@ -112,6 +118,7 @@ export const translations = {
         submit: 'Rentrons en contact',
         altContact: 'Pas encore prêt ? Écrivez-nous directement : hello@dodai-studio.com',
         success: 'Merci ! On revient vers vous très vite.',
+        error: 'Une erreur est survenue. Veuillez réessayer ou nous contacter par email.',
       }
     },
     hero: {
@@ -132,7 +139,7 @@ export const translations = {
     philosophy: {
       title: 'L\'intuition ne suffit pas.',
       titleSpan: 'Il faut une structure.',
-      p1: 'Ouvrir un commerce au Japon est un défi de précision. La barrière de la langue, l\'opacité administrative et les codes culturels ne pardonnent aucune approximation.',
+      p1: 'Ouvrir un commerce au Japon est un défi de precision. La barrière de la langue, l\'opacité administrative et les codes culturels ne pardonnent aucune approximation.',
       p2: 'Nous ne sommes pas des consultants de salon. Nous sommes vos partenaires d\'exécution. Nous bâtissons avec vous les fondations juridiques, opérationnelles et techniques pour sécuriser votre investissement.',
       statValue: '30%',
       statLabel: 'Le taux d\'échec.',
@@ -539,9 +546,15 @@ export const translations = {
       form: {
         title: 'Ready to join?',
         subtitle: 'Leave us your details, we\'ll get back to you within 48h.',
-        firstName: 'First Name',
-        lastName: 'Last Name',
+        firstName: 'First Name (Romaji)',
+        lastName: 'Last Name (Romaji)',
+        firstNameKanji: 'First Name (Kanji - Optional)',
+        lastNameKanji: 'Last Name (Kanji - Optional)',
         email: 'Business Email',
+        phone: 'Phone',
+        company: 'Company',
+        website: 'Website (Optional)',
+        linkedin: 'LinkedIn Profile (Optional)',
         profile: 'Your Profile',
         pOptions: [
           'Accountant / CPA',
@@ -558,6 +571,7 @@ export const translations = {
         submit: 'Let\'s get in touch',
         altContact: 'Not ready yet? Write to us directly: hello@dodai-studio.com',
         success: 'Thank you! We\'ll be in touch very soon.',
+        error: 'An error occurred. Please try again or contact us via email.',
       }
     },
     hero: {
@@ -817,7 +831,7 @@ export const translations = {
       a: {
         role: 'Strategy & Systems',
         badges: ['Entrepreneur', 'Strategy', 'Systems'],
-        desc: 'Hospitality is an art, but profitability is a science. As an entrepreneur, I know that a good idea cannot survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable, and scalable.',
+        desc: '"Hospitality is an art, but profitability is a science. As an entrepreneur, I know that a good idea cannot survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable, and scalable."',
         list: ['Entrepreneur & Manager', 'Business Model Design', 'Operational Processes (SOPs)', 'Digitalization & Efficiency', 'Growth Strategy']
       }
     },
@@ -985,9 +999,15 @@ export const translations = {
       form: {
         title: 'ネットワークに参加',
         subtitle: '以下のフォームにご記入ください。48時間以内に担当よりご連絡いたします。',
-        firstName: '名',
-        lastName: '姓',
+        firstName: '名 (Romaji)',
+        lastName: '姓 (Romaji)',
+        firstNameKanji: '名 (Kanji - 任意)',
+        lastNameKanji: '姓 (Kanji - 任意)',
         email: 'ビジネスメール',
+        phone: '電話番号',
+        company: '会社名',
+        website: 'ウェブサイト (任意)',
+        linkedin: 'LinkedIn プロフィール (任意)',
         profile: 'あなたのプロフィール',
         pOptions: [
           '会計士 / 税理士',
@@ -1004,6 +1024,7 @@ export const translations = {
         submit: 'まずは連絡してみる',
         altContact: 'まだ迷っていますか？直接メールでお問い合わせください: hello@dodai-studio.com',
         success: 'ありがとうございます。48時間以内にご連絡いたします。',
+        error: 'エラーが発生しました。もう一度お試しいただくか、メールでご連絡ください。',
       }
     },
     hero: {
@@ -1269,7 +1290,7 @@ export const translations = {
     },
     guardrails: {
       title: '透明性とお約束。',
-      titleSpan: '信頼関係のために。',
+      titleSpan: '信頼関係のために. ',
       subtitle: 'グレーゾーンをなくし、最初から健全なパートナーシップを築きます。',
       tag: 'The Pact',
       limits: {
@@ -1299,7 +1320,7 @@ export const translations = {
       q2: '「Build」の前に「診断」は必須ですか？',
       a2: '必須ではありませんが、強く推奨しています。事業の実現可能性と予算感をクリアにするためです。なお、診断後にBuild（標準以上）をご契約いただく場合、診断費用の60万円は全額ビルド費用から差し引かれます（実質無料）。',
       q3: '「MVP / ポップアップ」とは何ですか？',
-      a3: '数千万円の投資をして店舗を構える前に、キッチンカーや催事スペース等を使い、6〜10週間限定で実際の営業を行うテストマーケティングです。商品力やオペレーションを低リスクで検証できます。',
+      a3: '数千万円の投資をして店舗を構える前に、キッチンカーや催事スペース等を使い、6〜10週間限定 for 実際の営業を行うテストマーケティングです。商品力やオペレーションを低リスクで検証できます。',
       q4: '契約からオープンまでの期間は？',
       a4: '「基本ビルド」で6〜8週間、「標準ビルド（物件探し含む）」で12〜20週間、「プレミアム（MVP含む）」で16〜24週間程度が目安です。',
       q5: 'どのような成果をコミットしてくれますか？',
