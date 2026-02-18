@@ -1,4 +1,3 @@
-
 import { ServiceTierProps, StandaloneServiceProps, AddOnProps } from '../types';
 
 export type Language = 'fr' | 'en' | 'jp';
@@ -11,6 +10,109 @@ export const translations = {
       team: 'L\'Équipe',
       faq: 'Questions',
       contact: 'Parler à un expert',
+      partners: 'Partenaires',
+    },
+    partnersPage: {
+      hero: {
+        title: 'Vous connaissez quelqu\'un qui veut ouvrir à Tokyo ?',
+        titleSpan: '',
+        subtitle: 'On construit les fondations. Vous faites l\'intro. On s\'occupe du reste.',
+        cta: 'Devenir partenaire',
+      },
+      story: {
+        tag: 'Pourquoi ce programme ?',
+        title: 'On construit ce que',
+        titleSpan: 'les autres oublient.',
+        p1: "La plupart des projets F&B/Retail au Japon ne crashent pas par manque d'idée. Ils crashent par manque de fondations.",
+        p2: "Guillaume côté opérationnel, Alex côté systèmes : deux expertises complémentaires qu'on a décidé d'officialiser sous le nom Dodai Studio.",
+        p3: "Si vous connaissez des projets qui auraient besoin de ça, on aimerait que vous nous le disiez.",
+      },
+      referral: {
+        title: 'Ce que vous référez',
+        subtitle: 'Trois offres, selon où en est le projet.',
+        more: 'Voir les offres en détail →',
+        diag: { t: 'Diagnostic Go/No-Go', d: 'Valider la faisabilité avant les engagements lourds.', p: '600 000 JPY' },
+        build: { t: 'Build Zero-to-Open', d: 'De la structure juridique jusqu\'à l\'ouverture.', p: 'À partir de 1 200 000 JPY' },
+        run: { t: 'Run Abonnement', d: 'Optimisation continue après ouverture.', p: 'À partir de 150 000 JPY / mois' },
+      },
+      personas: {
+        title: 'Pour qui ?',
+        subtitle: 'Un programme adapté à votre métier.',
+        p1: {
+          title: 'Comptables bilingues',
+          headline: 'Vos clients vous demandent plus que la compta.',
+          text: 'Structurer un business plan, choisir une GK ou KK, trouver un bon designer... vos clients vous posent ces questions tous les jours. Référez-les à Dodai Studio. On prend le relais sur l\'opérationnel, vous restez leur comptable de confiance.',
+        },
+        p2: {
+          title: 'Agents immobiliers',
+          headline: 'Moins de visites pour rien. Plus de baux signés.',
+          text: 'Un client qui n\'a pas de plan solide finit par ne rien signer : ou signe et disparaît 6 mois après. Avant de lui montrer des locaux, référez-le pour un Diagnostic. Il arrive préparé, vous concluez mieux.',
+        },
+        p3: {
+          title: 'Designers & Architectes',
+          headline: 'Fini les briefs où tout est à revoir.',
+          text: 'Budget design sous-estimé, timeline irréaliste, contraintes techniques ignorées... ça vous dit quelque chose. Si le client passe par Dodai Studio d\'abord, il arrive avec un cadrage sérieux. Vous faites du bon travail, on vous recommande pour la suite.',
+        },
+        p4: {
+          title: 'Fournisseurs F&B',
+          headline: 'Un client qui dure, c\'est un client qui commande.',
+          text: '30% des nouveaux commerces F&B ferment en Y1. Derrière chaque fermeture, un fournisseur qui perd un compte récurrent. On structure les projets en amont pour que vos clients survivez : et restent vos clients.',
+        },
+        p6: {
+          title: 'Avocats & Scriveners (行政書士)',
+          headline: 'Vous montez les dossiers, on structure les projets.',
+          text: 'Vos clients créent leur GK, obtiennent leur Business Manager : mais après, ils sont seuls face à l\'ouverture. Référez-les à Dodai Studio pour structurer l\'opérationnel. On coordonne, vous restez leur référence juridique.',
+        },
+        p5: {
+          title: 'Réseau personnel',
+          headline: 'Vous avez une intro à faire ?',
+          text: 'Vous connaissez quelqu\'un qui parle d\'ouvrir un resto, un bar ou un shop à Tokyo. Mettez-nous en contact, on prend le relais. Si ça matche, on vous remercie comme il se doit : sans pression, sans awkward.',
+        },
+      },
+      process: {
+        title: 'Comment ça marche ?',
+        tag: '4 étapes simples',
+        s1: { t: 'Introduction', d: 'Un email ou un message : la forme la plus simple qui vous convient.' },
+        s2: { t: 'Qualification', d: 'On prend contact sous 48h pour voir si on peut vraiment aider.' },
+        s3: { t: 'Concrétisation', d: 'Le projet démarre (Diagnostic ou Build). On s\'occupe des fondations ensemble.' },
+        s4: { t: 'On vous remercie : vraiment.', d: '10 à 15% de commission sur chaque projet converti. Formalisé, tracé, payé sous 30 jours. Aucune ambiguïté.' },
+      },
+      faq: {
+        title: 'FAQ Partenaires',
+        q1: 'Je n\'ai pas le temps de faire du commercial pour vous.',
+        a1: 'Aucun effort requis. Un simple email d\'introduction suffit : on prend le relais entièrement ensuite.',
+        q2: 'Comment je suis sûr d\'être payé ?',
+        a2: 'Contrat partenaire signé avant toute référence. Commission versée sous 30 jours après encaissement client.',
+        q3: 'Et si le projet n\'aboutit pas ?',
+        a3: 'Aucun risque. La commission n\'est due que si le client signe. Zéro obligation de résultat de votre côté.',
+        q4: 'Je ne veux pas recommander quelqu\'un que je ne connais pas.',
+        a4: 'C\'est la bonne question. On peut faire un café d\'abord, à Tokyo ou en visio. Voir comment on travaille, poser vos questions, rencontrer l\'équipe. Si ça vous convient, on formalise. Sinon, pas de problème.',
+        q5: 'Je ne veux pas de commission.',
+        a5: 'C\'est possible. Vous pouvez simplement nous mettre en contact pour aider votre réseau. On s\'adapte.',
+      },
+      form: {
+        title: 'Prêt à nous rejoindre ?',
+        subtitle: 'Laissez-nous vos coordonnées, on revient vers vous sous 48h.',
+        firstName: 'Prénom',
+        lastName: 'Nom',
+        email: 'Email professionnel',
+        profile: 'Votre profil',
+        pOptions: [
+          'Comptable / Expert-comptable',
+          'Agent immobilier commercial',
+          'Designer ou Architecte',
+          'Avocat / Scrivener (行政書士)',
+          'Fournisseur (food ou équipement)',
+          'Entrepreneur / Réseau personnel',
+          'Autre'
+        ],
+        message: 'Message (Optionnel)',
+        placeholder: 'Parlez-nous brièvement de votre activité...',
+        consent: 'J\'accepte d\'être recontacté pour discuter du programme partenaire.',
+        submit: 'Rentrons en contact',
+        altContact: 'Pas encore prêt ? Écrivez-nous directement : hello@dodai-studio.com',
+        success: 'Merci ! On revient vers vous très vite.',
+      }
     },
     hero: {
       tag: 'ACCOMPAGNEMENT F&B ET RETAIL AU JAPON',
@@ -31,7 +133,7 @@ export const translations = {
       title: 'L\'intuition ne suffit pas.',
       titleSpan: 'Il faut une structure.',
       p1: 'Ouvrir un commerce au Japon est un défi de précision. La barrière de la langue, l\'opacité administrative et les codes culturels ne pardonnent aucune approximation.',
-      p2: 'Nous ne sommes pas des consultants de salon. Nous sommes vos partenaires d\'exécution. Nous bâtissons avec vous les fondations (Dodai) juridiques, opérationnelles et techniques pour sécuriser votre investissement.',
+      p2: 'Nous ne sommes pas des consultants de salon. Nous sommes vos partenaires d\'exécution. Nous bâtissons avec vous les fondations juridiques, opérationnelles et techniques pour sécuriser votre investissement.',
       statValue: '30%',
       statLabel: 'Le taux d\'échec.',
       statDesc: '30% des commerces ferment leur première année au Japon par manque de préparation. Ne faites pas partie de cette statistique.',
@@ -151,6 +253,7 @@ export const translations = {
         title: 'Diagnostic',
         subtitle: 'GO / NO-GO',
         price: '600k JPY',
+        priceDetail: '(Hors taxes)',
         context: 'Ajusté selon complexité',
         description: 'L\'assurance anti-crash. Nous validons la faisabilité business et administrative avant que vous ne signiez le moindre bail.',
         features: ['Audit & Challenge Business Plan', 'Interviews terrain & Réseau', 'Panel test Tokyo (Dégustation/Concept)', 'Budget réaliste & Roadmap'],
@@ -225,7 +328,7 @@ export const translations = {
     wizard: {
       title: 'Votre projet :',
       titleSpan: 'Quelle prochaine étape ?',
-      subtitle: 'Répondez à 5 questions pour qualifier votre besoin.',
+      subtitle: 'Répondez à 3 questions pour qualifier votre besoin.',
       tag: 'Analyse Immédiate',
       reset: 'Recommencer',
       step1: 'Quelle est la nature du projet ?',
@@ -243,14 +346,14 @@ export const translations = {
         hasVisa: { title: 'Résident', sub: 'J\'ai déjà un visa valide (Époux, Résident Permanent...).' },
       },
       result: {
-        tag: 'Recommandation Dodai',
+        tag: 'Recommandation Dodai Studio',
         cta: 'Réserver mon créneau',
         restart: 'Recommencer',
         recs: {
-          diagStruct: { title: 'Diagnostic & Structure', desc: 'Priorité : Avant de chercher un local, il faut valider la faisabilité administrative pour votre Visa Business Manager. Ne signez rien avant cette validation.' },
+          diagStruct: { title: 'Diagnostic & Structure', desc: 'Priorité : avant de chercher un local, il faut valider la faisabilité administrative pour votre Visa Business Manager. Ne signez rien avant cette validation.' },
           diagGoNoGo: { title: 'Diagnostic Go/No-Go', desc: 'Moment pivot. Ne lancez pas les travaux sur une intuition. Un Diagnostic (600k JPY) permet de chiffrer le budget réel et de valider l\'attraction du concept avant d\'engager les fonds.' },
           buildFast: { title: 'Audit & Build Accéléré', desc: 'Situation urgente. Nous devons auditer immédiatement les engagements pris pour limiter les risques, puis structurer les opérations en mode "commando" pour sécuriser l\'ouverture.' },
-          build: { title: 'Parcours Build (Zero-to-Open)', desc: 'Voyants au vert. Nous pouvons enclencher la Phase 1 : Recherche de local active et Structuration du Modèle Économique.' }
+          build: { title: 'Parcours Build (Zero-to-Open)', desc: 'Voyants au vert. Nous pouvons enclencher la Phase 1 : recherche de local active et structuration du modèle économique.' }
         }
       }
     },
@@ -262,13 +365,13 @@ export const translations = {
       g: {
         role: 'Opérations & Réseau',
         badges: ['14 ans à Tokyo', '5 Ouvertures en propre', 'Import & Retail'],
-        desc: '« En 14 ans à Tokyo, j\'ai ouvert et opéré 3 restaurants, 2 boutiques et structuré une activité d\'import. Je ne suis pas un consultant, je suis un praticien. Je sais calibrer un projet pour qu\'il rencontre précisément sa cible idéale. Je mets mon réseau de fournisseurs et mon expérience du terrain à votre service. »',
+        desc: 'En 14 ans à Tokyo, j\'ai ouvert et opéré 3 restaurants, 2 boutiques et structuré une activité d\'import. Je ne suis pas un consultant, je suis un praticien. Je sais calibrer un projet pour qu\'il rencontre précisément sa cible idéale. Je mets mon réseau de fournisseurs et mon expérience du terrain à votre service.',
         list: ['14 ans Tokyo & 5 ouvertures', 'Validation concept terrain', 'Recherche fournisseurs', 'Coordination partenaires', 'Recrutement & Standards']
       },
       a: {
         role: 'Stratégie & Systèmes',
         badges: ['Entrepreneur', 'Stratégie', 'Systèmes'],
-        desc: '« L\'hospitalité est un art, mais sa rentabilité est une science. En tant qu\'entrepreneur, je sais qu\'une bonne idée ne survit pas sans structure. Je ne suis pas là pour installer des logiciels, mais pour concevoir les processus qui rendront votre business efficace, mesurable et scalable. »',
+        desc: 'L\'hospitalité est un art, mais sa rentabilité est une science. En tant qu\'entrepreneur, je sais qu\'une bonne idée ne survit pas sans structure. Je ne suis pas là pour installer des logiciels, mais pour concevoir les processus qui rendront votre business efficace, mesurable et scalable.',
         list: ['Entrepreneur & Gestionnaire', 'Modélisation Business Plan', 'Processus Opérationnels (SOPs)', 'Digitalisation & Efficacité', 'Stratégie de Croissance']
       }
     },
@@ -280,17 +383,17 @@ export const translations = {
       limits: {
         title: 'NOTRE RÔLE',
         list: [
-          'Pas d\'Avocats : Nous pilotons la stratégie, les experts certifiés valident.',
-          'Pas de Magie : Nous réduisons les risques, nous n\'effaçons pas la réalité.',
-          'Pas de Conciergerie : Focus 100% business. Pas d\'assistanat personnel.'
+          'Pas d\'Avocats : nous pilotons la stratégie, les experts certifiés valident.',
+          'Pas de Magie : nous réduisons les risques, nous n\'effaçons pas la réalité.',
+          'Pas de Conciergerie : focus 100% business. Pas d\'assistanat personnel.'
         ]
       },
       prereq: {
         title: 'VOTRE RÔLE',
         list: [
-          'Décideur : Vous validez les options rapidement pour ne rien perdre.',
-          'Présent : Vous incarnez le projet sur place au lancement.',
-          'Lucide : Vous acceptez la complexité du marché japonais.'
+          'Décideur : vous validez les options rapidement pour ne rien perdre.',
+          'Présent : vous incarnez le projet sur place au lancement.',
+          'Lucide : vous acceptez la complexité du marché japonais.'
         ]
       }
     },
@@ -304,7 +407,7 @@ export const translations = {
       q2: 'Le Diagnostic est-il obligatoire avant le Build ?',
       a2: 'Non, mais fortement recommandé. Il permet de valider la faisabilité et le budget. De plus, si vous signez un Build Complet dans les 30 jours, les 600k du Diagnostic sont déduits de la facture.',
       q3: 'Qu\'est-ce que le MVP / Éphémère ?',
-      a3: 'C\'est un test marché en conditions réelles (kitchen car, corner, pop-up) pendant 6 à 10 semaines. Cela permet de valider votre concept et vos produits avant de signer un bail commercial coûteux.',
+      a3: 'C\'est un test marché en conditions réelles (kitchen car, corner, pop-up) pendant 6 à 10 semaines. Cela permet de valider votre concept et vos produits avant de signer un bail commercial de 3 ans.',
       q4: 'Quels sont les délais entre signature et ouverture ?',
       a4: 'Comptez 6 à 8 semaines pour un Build Essentiel (local trouvé), 12 à 20 semaines pour un Build Complet (avec recherche), et 16 à 24 semaines pour un Premium avec MVP.',
       q5: 'Quels résultats garantissez-vous ?',
@@ -354,6 +457,108 @@ export const translations = {
       team: 'Team',
       faq: 'FAQ',
       contact: 'Book a consultation',
+      partners: 'Partners',
+    },
+    partnersPage: {
+      hero: {
+        title: 'Do you know someone who wants to open in Tokyo?',
+        titleSpan: '',
+        subtitle: 'We build the foundations. You make the intro. We handle the rest.',
+        cta: 'Become a partner',
+      },
+      story: {
+        tag: 'Why this program?',
+        title: 'We build what',
+        titleSpan: 'others forget.',
+        p1: 'Most F&B/Retail projects in Japan don\'t crash due to a lack of ideas. They crash due to a lack of foundations.',
+        p2: 'Guillaume on operations, Alex on systems: two complementary expertise sets that we decided to formalize under the name Dodai Studio.',
+        p3: 'If you know projects that could use this, we\'d love for you to let us know.',
+      },
+      referral: {
+        title: 'What you refer',
+        subtitle: 'Three offers, depending on the project\'s stage.',
+        more: 'View offers in detail →',
+        diag: { t: 'Go/No-Go Diagnostic', d: 'Validate feasibility before heavy commitments.', p: '600,000 JPY' },
+        build: { t: 'Zero-to-Open Build', d: 'From legal structure to opening day.', p: 'From 1,200,000 JPY' },
+        run: { t: 'Run Subscription', d: 'Continuous optimization after opening.', p: 'From 150,000 JPY / month' },
+      },
+      personas: {
+        title: 'For Whom?',
+        subtitle: 'A program tailored to your profession.',
+        p1: {
+          title: 'Bilingual Accountants',
+          headline: 'Your clients are asking for more than accounting.',
+          text: 'Structuring a business plan, choosing a GK or KK, finding a good designer... your clients ask you these questions every day. Refer them to Dodai Studio. We take over the operational side, you remain their trusted accountant.',
+        },
+        p2: {
+          title: 'Real Estate Agents',
+          headline: 'Fewer wasted viewings. More signed leases.',
+          text: 'A client without a solid plan often ends up signing nothing : or signs and disappears 6 months later. Before showing them spaces, refer them for a Diagnostic. They arrive prepared, you close more deals.',
+        },
+        p3: {
+          title: 'Designers & Architects',
+          headline: 'No more briefs where everything needs a redo.',
+          text: 'Underestimated budgets, unrealistic timelines, ignored technical constraints... sounds familiar. If the client goes through Dodai Studio first, they arrive with a serious framework. You do great work, we recommend you for what follows.',
+        },
+        p4: {
+          title: 'F&B Suppliers',
+          headline: 'A lasting client is a client who keeps ordering.',
+          text: '30% of new F&B businesses close in year 1. Behind every closure is a supplier losing a recurring account. We structure projects upstream so your clients survive : and stay your clients.',
+        },
+        p6: {
+          title: 'Lawyers & Scriveners',
+          headline: 'You build the files, we structure the projects.',
+          text: 'Your clients set up their GK, get their Business Manager visa : but then, they are on their own for the opening. Refer them to Dodai Studio to structure operations. We coordinate, you remain their legal reference.',
+        },
+        p5: {
+          title: 'Personal Network',
+          headline: 'Have an intro to make?',
+          text: 'Know someone talking about opening a restaurant, bar, or shop in Tokyo? Put us in touch, we\'ll take it from there. If it\'s a match, we\'ll thank you properly : no pressure, no awkwardness.',
+        },
+      },
+      process: {
+        title: 'How does it work?',
+        tag: '4 simple steps',
+        s1: { t: 'Introduction', d: 'An email or message : whichever simple form works for you.' },
+        s2: { t: 'Qualification', d: 'We reach out within 48h to see if we can truly help.' },
+        s3: { t: 'Execution', d: 'Project starts (Diagnostic or Build). We handle the foundations together.' },
+        s4: { t: 'We thank you : truly.', d: '10 to 15% commission on every conversion. Clear contract.' },
+      },
+      faq: {
+        title: 'Partner FAQ',
+        q1: 'I don\'t have time to do sales for you.',
+        a1: 'No effort required. A simple intro email is enough : we take over completely from there.',
+        q2: 'How can I be sure I\'ll get paid?',
+        a2: 'Partner contract signed before any referral. Commission paid within 30 days after client payment.',
+        q3: 'What if the project doesn\'t go through?',
+        a3: 'No risk. Commission is only due if the client signs. Zero performance obligation on your end.',
+        q4: 'That is the right question. We can have a coffee first, in Tokyo or via video call. See how we work, ask your questions, meet the team. If it suits you, we formalize it. Otherwise, no problem.',
+        q5: 'I don\'t want a commission.',
+        a5: 'That\'s fine. You can simply put us in touch to help your network. We adapt to your preference.',
+      },
+      form: {
+        title: 'Ready to join?',
+        subtitle: 'Leave us your details, we\'ll get back to you within 48h.',
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        email: 'Business Email',
+        profile: 'Your Profile',
+        pOptions: [
+          'Accountant / CPA',
+          'Commercial Real Estate Agent',
+          'Designer or Architect',
+          'Lawyer / Scrivener (行政書士)',
+          'Supplier (food or equipment)',
+          'Entrepreneur / Personal Network',
+          'Other'
+        ],
+        message: 'Message (Optional)',
+        placeholder: 'Tell us briefly about your activity...',
+        consent: 'I agree to be contacted to discuss the partner program.',
+        submit: 'Let\'s get in touch',
+        altContact: 'Not ready yet? Write to us directly: hello@dodai-studio.com',
+        success: 'Thank you! We\'ll be in touch very soon.',
+      }
     },
     hero: {
       tag: 'F&B & RETAIL MARKET ENTRY PARTNER',
@@ -373,7 +578,7 @@ export const translations = {
     philosophy: {
       title: 'Rely on structure,',
       titleSpan: 'not just intuition.',
-      p1: 'In Japan, 30% of restaurants close within their first year. This isn\'t due to a lack of ideas, but a lack of structure (Dodai). Language barriers, administrative opacity, and cultural nuances mean that improvisation comes at a high cost.',
+      p1: 'In Japan, 30% of restaurants close within their first year. This isn\'t due to a lack of ideas, but a lack of structure. Language barriers, administrative opacity, and cultural nuances mean that improvisation comes at a high cost.',
       p2: 'We are not consultants delivering slide decks. We are operational partners. We build the legal, operational, and technical foundations with you to secure your investment.',
       statValue: '30%',
       statLabel: 'Failure Rate.',
@@ -494,6 +699,7 @@ export const translations = {
         title: 'Diagnostic',
         subtitle: 'GO / NO-GO',
         price: '600k JPY',
+        priceDetail: '(Excl. Tax)',
         context: 'Starting from • Adjusted by complexity',
         description: 'Your anti-failure insurance. We validate business and administrative feasibility before you sign a lease. If you proceed to Build, this fee is fully credited.',
         features: ['Business Plan Audit', 'Field Interviews & Network', 'Real CAPEX/OPEX Costing', 'Qualified Partner Intros'],
@@ -586,14 +792,14 @@ export const translations = {
         hasVisa: { title: 'Resident', sub: 'I have a valid visa (Spouse, PR, Work...).' },
       },
       result: {
-        tag: 'Dodai Recommendation',
+        tag: 'Dodai Studio Recommendation',
         cta: 'Book my slot',
         restart: 'Start over',
         recs: {
-          diagStruct: { title: 'Diagnostic & Structure', desc: 'Critical: Before looking for a location, prioritizing administrative feasibility for your Business Manager Visa is essential. Do not sign anything until this is validated.' },
+          diagStruct: { title: 'Diagnostic & Structure', desc: 'Critical: before looking for a location, prioritizing administrative feasibility for your Business Manager Visa is essential. Do not sign anything until this is validated.' },
           diagGoNoGo: { title: 'Go/No-Go Diagnostic', desc: 'This is the pivotal moment. Do not start construction on a hunch. A Diagnostic (600k JPY) calculates the real budget and validates concept appeal before you commit funds.' },
           buildFast: { title: 'Audit & Rapid Build', desc: 'Urgent situation. We need to immediately audit commitments to mitigate risk, then structure operations in "commando" mode to secure the opening.' },
-          build: { title: 'Build Pathway (Zero-to-Open)', desc: 'All lights are green. We can initiate Phase 1: Active site selection and Business Model structuring.' }
+          build: { title: 'Build Pathway (Zero-to-Open)', desc: 'All lights are green. We can initiate Phase 1: active site selection and business model structuring.' }
         }
       }
     },
@@ -605,13 +811,13 @@ export const translations = {
       g: {
         role: 'Ops & Network (Field)',
         badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
-        desc: '"In 14 years in Tokyo, I have opened and operated 3 restaurants, 2 shops, and structured a wine import business. I am not just a consultant; I am an operator. I know how to calibrate a project so that it precisely meets its ideal target. I put my supplier network and my hard-learned lessons at your service to help you avoid the traps I faced alone."',
+        desc: 'In 14 years in Tokyo, I have opened and operated 3 restaurants, 2 shops, and structured a wine import business. I am not just a consultant; I am an operator. I know how to calibrate a project so that it precisely meets its ideal target. I put my supplier network and my hard-learned lessons at your service to help you avoid the traps I faced alone.',
         list: ['Field concept validation', 'Supplier sourcing & deals', 'Partner coordination', 'Hiring & Service Standards']
       },
       a: {
         role: 'Strategy & Systems',
         badges: ['Entrepreneur', 'Strategy', 'Systems'],
-        desc: '"Hospitality is an art, but profitability is a science. As an entrepreneur, I know that a good idea cannot survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable, and scalable."',
+        desc: 'Hospitality is an art, but profitability is a science. As an entrepreneur, I know that a good idea cannot survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable, and scalable.',
         list: ['Entrepreneur & Manager', 'Business Model Design', 'Operational Processes (SOPs)', 'Digitalization & Efficiency', 'Growth Strategy']
       }
     },
@@ -623,17 +829,17 @@ export const translations = {
       limits: {
         title: 'OUR ROLE',
         list: [
-          'Not Lawyers: We guide strategy; certified experts validate.',
-          'No Silver Bullets: We reduce risk, but we cannot erase reality.',
+          'Not Lawyers: we guide strategy; certified experts validate.',
+          'No Silver Bullets: we reduce risk, but we cannot erase reality.',
           'Strictly Business: 100% focus on the project. No concierge services.'
         ]
       },
       prereq: {
         title: 'YOUR ROLE',
         list: [
-          'Decision Maker: You validate options quickly to avoid delays.',
-          'Present: You embody the project on-site during launch.',
-          'Realistic: You accept the complexity of the Japanese market.'
+          'Decision Maker: you validate options quickly to avoid delays.',
+          'Present: you embody the project on-site during launch.',
+          'Realistic: you accept the complexity of the Japanese market.'
         ]
       }
     },
@@ -697,6 +903,108 @@ export const translations = {
       team: 'チーム',
       faq: 'よくある質問',
       contact: '無料相談を予約',
+      partners: 'パートナー',
+    },
+    partnersPage: {
+      hero: {
+        title: '東京で店を開きたい知人はいませんか？',
+        titleSpan: '',
+        subtitle: '私たちが「土台」を構築します。あなたは紹介をするだけ。あとはお任せください。',
+        cta: 'パートナー登録する',
+      },
+      story: {
+        tag: 'なぜこのプログラムなのか？',
+        title: '他が見落としがちな',
+        titleSpan: '「土台」を築く。',
+        p1: '日本でのF&B・小売プロジェクトの多くは、アイデア不足で失敗するのではありません。「土台」の欠欠如で失敗するのです。',
+        p2: '実務・現場のギヨームと、システムの管理のアレクサンドル。この二つの補完的な専門知識を、Dodai Studioとして正式に提供することにしました。',
+        p3: 'このようなサポートを必要としているプロジェクトをご存知でしたら、ぜひ教えてください。',
+      },
+      referral: {
+        title: 'ご紹介いただく内容',
+        subtitle: 'プロジェクトの段階に合わせた3つのプラン。',
+        more: 'プランの詳細を見る →',
+        diag: { t: '診断 (Diagnostic)', d: '本格的な投資の前に、事業の実現可能性を検証します。', p: '600,000 JPY' },
+        build: { t: '構築 (Build)', d: '法的枠組みから開業当日までの完全な並走。', p: '1,200,000 JPY〜' },
+        run: { t: '運営サポート (Run)', d: '開業後の継続的な収益最適化。', p: '月額 150,000 JPY〜' },
+      },
+      personas: {
+        title: '対象となる方',
+        subtitle: 'それぞれの専門分野に合わせたメリットをご提案。',
+        p1: {
+          title: 'バイリンガル会計士',
+          headline: '会計業務以上の相談を受けていませんか？',
+          text: '事業計画の策定、法人（GK/KK）の選択、デザイナー探し...。クライアントからのこうした相談に、Dodai Studio が実務面で並走します。オペレーションは私たちが引き受け、先生方は信頼される会計士として本来の業務に専念いただけます。',
+        },
+        p2: {
+          title: '店舗専門不動産業',
+          headline: '無駄な内見を減らし、成約率を最大化する。',
+          text: '具体的な計画がない顧客は、結局成約に至らないか、開店後半年で撤退してしまいます。物件案内の前に、弊社の「診断」をご活用ください。準備の整った質の高い顧客となり、先生方の成約率向上に貢献します。',
+        },
+        p3: {
+          title: 'デザイナー・設計士',
+          headline: '修正ばかりのブリーフとは、もうお別れです。',
+          text: '過小評価された予算、非現実的な納期、無視された技術的制約...。Dodai Studio が事前にプロジェクトを構造化することで、設計に集中できる環境を整えます。質の高い仕事が可能になり、次回の案件紹介にも繋がります。',
+        },
+        p4: {
+          title: '食品・什器サプライヤー',
+          headline: '長く続く店こそ、最高の取引先になる。',
+          text: '飲食店・小売店の30%が1年以内に閉店します。閉店はサプライヤーにとっての損失です。初期段階で私たちが事業基盤を固めることで、貴社の顧客の生存率を高め、長期的な取引を支えます。',
+        },
+        p6: {
+          title: '弁護士・行政書士',
+          headline: '書類は先生が, 実務は私たちが整えます。',
+          text: '法人設立や経営管理ビザの取得が終わると、顧客は開業という未知の領域に一人で直面します。実務面での伴走は Dodai Studio にお任せください。先生方は法的支柱として、私たちはオペレーションの土台として、顧客の成功を支えます。',
+        },
+        p5: {
+          title: '起業家 / 個人ネットワーク',
+          headline: '東京で店を開きたい知人はいませんか？',
+          text: 'レストラン、バー、ショップの開業を検討している知人がいれば、ぜひご紹介ください。私たちが責任を持って形にします。成約時には、紹介プログラムに基づき謝礼をお支払いします。強引な勧誘等は一切ありません。',
+        },
+      },
+      process: {
+        title: '仕組み',
+        tag: '4つの簡単ステップ',
+        s1: { t: 'ご紹介', d: 'メールやメッセージなど、お客様のご都合の良い方法でご紹介ください。' },
+        s2: { t: 'ヒアリング', d: '48時間以内にコンタクトし、私たちが本当にお役に立てるかを確認します。' },
+        s3: { t: '契約成立', d: 'プロジェクトが始動。私たちが責任を持って事業の土台を構築します。' },
+        s4: { t: '謝礼のお支払い : 誠心誠意対応します', d: '成約ごとに10〜15%のコミッション。透明性の高い契約に基づき、30日以内にお支払い。' },
+      },
+      faq: {
+        title: 'パートナー様 FAQ',
+        q1: '営業活動をする時間はありません。',
+        a1: '営業は不要です。紹介メールを一本送っていただくだけで、その後のフォローはすべて弊社が行います。',
+        q2: '支払いは確実にされますか？',
+        a2: '紹介前にパートナー契約を締結します。クライアントからの入金後30日以内にお支払いいたします。',
+        q3: 'プロジェクトが成立しなかった場合は？',
+        a3: 'リスクはありません。クライアントが成約した場合のみ謝礼が発生します。ノルマ等も一切ありません。',
+        q4: 'その点はごもっともです。まずはコーヒーでも飲みながら、東京で、あるいはオンラインでお話ししませんか。私たちの仕事の進め方を知り、チームに会ってください。ご納得いただければ提携しましょう。',
+        q5: 'コミッションはいりません。',
+        a5: '可能です。知人の力になりたいという理由でのご紹介も歓迎します。柔軟に対応いたします。',
+      },
+      form: {
+        title: 'ネットワークに参加',
+        subtitle: '以下のフォームにご記入ください。48時間以内に担当よりご連絡いたします。',
+        firstName: '名',
+        lastName: '姓',
+        email: 'ビジネスメール',
+        profile: 'あなたのプロフィール',
+        pOptions: [
+          '会計士 / 税理士',
+          '店舗専門不動産業',
+          'デザイナー / 設計士',
+          '弁護士 / 行政書士',
+          'サプライヤー',
+          '起業家 / 個人ネットワーク',
+          'その他'
+        ],
+        message: 'メッセージ (任意)',
+        placeholder: 'あなたの活動内容や、どのような紹介が可能かをお聞かせください...',
+        consent: 'パートナープログラムに関する連絡を受け取ることに同意します。',
+        submit: 'まずは連絡してみる',
+        altContact: 'まだ迷っていますか？直接メールでお問い合わせください: hello@dodai-studio.com',
+        success: 'ありがとうございます。48時間以内にご連絡いたします。',
+      }
     },
     hero: {
       tag: '日本市場参入・開業支援（F&B / リテール）',
@@ -716,47 +1024,47 @@ export const translations = {
     philosophy: {
       title: '直感だけでなく、',
       titleSpan: '構造（仕組み）で勝つ。',
-      p1: '日本市場は甘くありません。言語の壁、複雑な行政手続き、独特の商慣習。「土台（Dodai）」の欠如が原因で、多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
-      p2: '私たちは、綺麗なスライドを納品するコンサルタントではありません。私たちは「実行の伴走者」です。法的・実務的・技術的な基盤をあなたと共に構築し、投資を成功へと導きます。',
+      p1: '日本市場は甘くありません。言語の壁, 複雑な行政手続き, 独特の商慣習。土台（Dodai Studio）の欠如が原因で, 多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
+      p2: '私たちは, 綺麗なスライドを納品するコンサルタントではありません。私たちは「実行の伴走者」です。法的・実務・技術的な基盤をあなたと共に構築し, 投資を成功へと導きます。',
       statValue: '30%',
       statLabel: '1年以内の閉店率',
-      statDesc: '準備不足による撤退を防ぐために、私たちは存在します。',
+      statDesc: '準備不足による撤退を防ぐために, 私たちは存在します。',
       solutionTitle: 'メソドロジー：',
-      solutionSpan: '翻弄されず、操縦する。',
+      solutionSpan: '翻弄されず, 操縦する。',
       solutionTag: 'Zero-to-Open',
       cards: [
-        { title: '現場検証', desc: '投資前のデューデリジェンス：事業計画の監査、ターゲット層への実地テスト、競合調査。ビジネスとしての勝算を検証します。' },
-        { title: 'システム & データ', desc: '店舗OSの構築：POSレジ、LINE CRM、財務ダッシュボードの導入。勘ではなく、リアルタイムの数字で経営を判断します。' },
-        { title: '即戦力ネットワーク', desc: '独自のパートナー網を開放：バイリンガル行政書士、店舗専門の不動産仲介、交渉済みサプライヤーへ即座にアクセス。' },
-        { title: 'MVP / テストマーケ', desc: '長期賃貸契約のリスクを負う前に、ポップアップやキッチンカーでコンセプトを市場検証します。' }
+        { title: '現場検証', desc: '投資前のデューデリジェンス：事業計画の監査, ターゲット層への実地テスト, 競合調査。ビジネスとしての勝算を検証します。' },
+        { title: 'システム & データ', desc: '店舗OSの構築：POSレジ, LINE CRM, 財務ダッシュボードの導入. 勘ではなく, リアルタイムの数字で経営を判断します。' },
+        { title: '即戦力ネットワーク', desc: '独自のパートナー網を開放：バイリンガル行政書士, 店舗専門の不動産仲介, 交渉済みサプライヤーへ即座にアクセス。' },
+        { title: 'MVP / テストマーケ', desc: '長期賃貸契約のリスクを負う前に, ポップアップやキッチンカーでコンセプトを市場検証します。' }
       ],
       ctaTitle: '運任せにしない。',
-      ctaDesc: 'あなたのビジョンには、完璧な実行力が不可欠です。',
+      ctaDesc: 'あなたのビジョンには, 完璧な実行力が不可欠です。',
       ctaButton: 'サービス一覧を見る'
     },
     definition: {
       kanji: '土台',
       pronunciation: 'n. Dodai',
       def1: '基礎・根幹。',
-      def2: '目には見えないが、全体を支える最も重要な構造。'
+      def2: '目には見えないが, 全体を支える最も重要な構造。'
     },
     methodology: {
       title: 'プロセス：',
       titleSpan: 'Zero-to-Open。',
-      subtitle: 'アイデアを収益性の高いビジネスに変える、3つのフェーズ。',
+      subtitle: 'アイデアを収益性の高いビジネスに変える, 3つのフェーズ。',
       steps: [
         {
           phase: 'Phase 1',
           title: '診断 (Diagnostic)',
           subtitle: '事業性評価 (Go/No-Go)',
-          desc: '投資前のストレステスト。1週間で事業計画を精査し、現場での受容性をテストし、現実的な予算（CAPEX/OPEX）を算出します。',
+          desc: '投資前のストレステスト。1週間で事業計画を精査し, 現場での受容性をテストし, 現実的な予算（CAPEX/OPEX）を算出します。',
           details: ['事業計画監査', 'コンセプト検証', '実予算算出', 'ロードマップ策定']
         },
         {
           phase: 'Phase 2',
           title: '構築 (Build)',
           subtitle: '実行の4本柱',
-          desc: '開業準備の完全なオーケストレーション。以下の4つの領域を同時並行で進行し、遅滞なきオープンを実現します。',
+          desc: '開業準備の完全なオーケストレーション。以下の4つの領域を同時並行で進行し, 遅滞なきオープンを実現します。',
           pillars: [
             {
               title: '事業基盤・コンプライアンス',
@@ -783,8 +1091,8 @@ export const translations = {
         {
           phase: 'Phase 3',
           title: '運営 (Run)',
-          subtitle: '安定化・グロース',
-          desc: '最も重要な開業後の6ヶ月間。オペレーションの微調整、原価率の最適化、CRMによるリピーター獲得を伴走支援します。',
+          subtitle: '安定化・グロース支援',
+          desc: '最も重要な開業後の6ヶ月間。オペレーションの微調整, 原価率の最適化, CRMによるリピーター獲得を伴走支援します。',
           details: ['財務ダッシュボード', '原価管理 (Food Cost)', 'CRM/MA運用', '月次経営会議']
         }
       ]
@@ -837,6 +1145,7 @@ export const translations = {
         title: '診断 (Diagnostic)',
         subtitle: 'GO / NO-GO 判断',
         price: '60万円',
+        priceDetail: '（固定料金）',
         context: '（税別）• プロジェクト規模により調整',
         description: '失敗を防ぐための保険です。本格的な投資（Build）に進む前に、事業と行政手続きの実現可能性を検証します。Buildをご契約いただく場合、この費用は全額充当されます。',
         features: ['事業計画 & コンセプト監査', '現場インタビュー & 競合調査', '実CAPEX/OPEX算出', '適格パートナー紹介'],
@@ -900,7 +1209,7 @@ export const translations = {
         cta: '運営サポートを利用する'
       } as StandaloneServiceProps,
       addons: [
-        { title: 'MVP / ポップアップ', price: '要見積もり', description: '長期賃貸契約のリスクを負う前に、キッチンカーや催事スペースでコンセプトを市場検証します。' },
+        { title: 'MVP / ポップアップ', price: '要見積もり', description: '長期賃貸契約のリスクを負う前に, キッチンカーや催事スペース等を使い, 6〜10週間限定で実際の営業を行うテストマーケティングです。商品力やオペレーションを低リスクで検証できます。' },
         { title: '東京パネルテスト', price: '30万円〜', description: 'ターゲット層（外国人/日本人）20〜30名を集めた試食・ヒアリング会を実施し、受容性を確認します。' },
         { title: 'PR & コンテンツ', price: '20万円〜', description: 'ローンチパッケージ：プロカメラマンによる撮影 + プレスリリース配信 + インフルエンサー招聘。' },
         { title: '採用プレミアム', price: '20万円', description: '店長・料理長クラスの採用代行。強化されたスクリーニングと早期退職時の保証付き。' }
@@ -920,7 +1229,7 @@ export const translations = {
       options: {
         fb: { title: '飲食 / ホスピタリティ', sub: 'レストラン、カフェ、バー、ワインショップ...' },
         retail: { title: '小売 / 物販', sub: 'アパレル、デザイン雑貨、輸入販売、コンセプトストア...' },
-        other: { title: 'サービス / その他', sub: 'エージェンシー、オフィス、ショールーム...' },
+        other: { title: 'サービス / その他', sub: 'エージェンシー、オフィス, ショールーム...' },
         idea: { title: '構想段階', sub: 'アイデアがあり、実現可能性や市場性を確認したい。' },
         ready: { title: '開始準備完了', sub: '資金の目処がつき、物件を探し始める段階。' },
         urgent: { title: '進行中 / 緊急', sub: '既に契約済み、またはトラブルを抱えておりサポートが必要。' },
@@ -929,7 +1238,7 @@ export const translations = {
         hasVisa: { title: '国内在住 / ビザあり', sub: '有効なビザ（配偶者、永住者、就労等）を持っている。' },
       },
       result: {
-        tag: 'Dodaiからの推奨',
+        tag: 'Dodai Studioからの推奨',
         cta: '無料相談枠を予約する',
         restart: 'やり直す',
         recs: {
@@ -948,13 +1257,13 @@ export const translations = {
       g: {
         role: 'Ops & Network (Field)',
         badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
-        desc: '「東京で14年間、3つのレストランと2つのショップを開業・運営し、ワイン輸入事業も立ち上げました。私はコンサルタントではなく、現場の実践者です。ターゲット層に正確に響くようプロジェクトを調整（キャリブレーション）する術を知っています。サプライヤーとのネットワークや、私自身が経験した数々の失敗と教訓をすべて提供し、あなたが同じ落とし穴に落ちないようサポートします。」',
+        desc: '東京で14年間、3つのレストランと2つのショップを開業・運営し、ワイン輸入事業も立ち上げました。私はコンサルタントではなく、現場の実践者です。ターゲット層に正確に響くようプロジェクトを調整する術を知っています。サプライヤーとのネットワークや、私自身が経験した数々の失敗と教訓をすべて提供し、あなたが同じ落とし穴に落ちないようサポートします。',
         list: ['現場コンセプト検証', 'サプライヤー開拓・交渉', 'パートナー連携', '採用・サービス基準策定']
       },
       a: {
-        role: 'Strategy & Systems',
+        role: 'Stratégie & Systèmes',
         badges: ['Entrepreneur', 'Strategy', 'Systems'],
-        desc: '「ホスピタリティはアートですが、利益を生み出す仕組みはサイエンスです。起業家として、優れたアイデアも構造（Structure）がなければ生き残れないことを知っています。私は単にツールを導入するのではなく、あなたのビジネスが効率的に回り、計測可能で、拡大できるような『プロセス』を設計します。」',
+        desc: 'ホスピタリティは芸術ですが、収益性は科学です。起業家として、優れたアイデアも構造がなければ生き残れないことを知っています。私は単にツールを導入するのではなく、あなたのビジネスが効率的に回り、計測可能で、拡大できるようなプロセスを設計します。',
         list: ['事業モデル設計', '業務プロセス (SOP) 構築', 'DX・効率化', 'グロース戦略', '経営管理']
       }
     },
@@ -966,17 +1275,17 @@ export const translations = {
       limits: {
         title: '私たちのスタンス',
         list: [
-          '弁護士ではありません：戦略の指揮は執りますが、法的判断は専門家が承認します。',
-          '魔法は使いません：リスクを極限まで減らしますが、市場の現実を変えることはできません。',
-          'コンシェルジュではありません：ビジネスの成功に100%フォーカスします。私的な生活サポートは行いません。'
+          'Pas d\'Avocats : nous pilotons la stratégie, les experts certifiés valident.',
+          'Pas de Magie : nous réduisons les risques, nous n\'effaçons pas la réalité.',
+          'Pas de Conciergerie : focus 100% business. Pas d\'assistanat personnel.'
         ]
       },
       prereq: {
         title: 'お客様へのお願い',
         list: [
-          '決断者であること：好機を逃さないよう、迅速な意思決定をお願いします。',
-          '現場へのコミット：立ち上げ期は、オーナーとして現場でプロジェクトを牽引してください。',
-          '現実を受け入れること：日本市場の複雑さや商慣習を理解し、尊重する姿勢が必要です。'
+          '決断者であること : 好機を逃さないよう、迅速な意思決定をお願いします。',
+          '現場へのコミット : オーナーとして現場でプロジェクトを牽引してください。',
+          '現実を受け入れること : 日本市場の複雑さや商慣習を理解し, 尊重する姿勢が必要です。'
         ]
       }
     },
@@ -986,7 +1295,7 @@ export const translations = {
       subtitle: 'プロジェクト開始にあたって。',
       tag: 'Clarification',
       q1: '「基本ビルド」「標準ビルド」「プレミアム」の違いは？',
-      a1: '「基本（120-150万）」は既に物件確保済みの方など、サポート範囲を絞ったプランです。「標準（200-250万）」は物件探しから開業までフルサポートする最も一般的なプランです。「プレミアム」はMVP検証や大規模なPRを含むプランです。',
+      a1: '「基本（120-150万）」は既に物件確保済みの方など、サポート範囲 को絞ったプランです。「標準（200-250万）」は物件探しから開業までフルサポートする最も一般的なプランです。「プレミアム」はMVP検証や大規模なPRを含むプランです。',
       q2: '「Build」の前に「診断」は必須ですか？',
       a2: '必須ではありませんが、強く推奨しています。事業の実現可能性と予算感をクリアにするためです。なお、診断後にBuild（標準以上）をご契約いただく場合、診断費用の60万円は全額ビルド費用から差し引かれます（実質無料）。',
       q3: '「MVP / ポップアップ」とは何ですか？',
@@ -1023,7 +1332,7 @@ export const translations = {
       }
     },
     footer: {
-      desc: '日本でのビジネス成功のための「土台」を築く。\n現場検証、実行支援、そして収益化までを一貫サポート。',
+      desc: '日本でのビジネス成功のための「土台」を築く。\n現場検証、実行支援、および収益化までを一貫サポート。',
       studio: 'Studio',
       contact: 'Contact',
       rights: 'All rights reserved.',

@@ -52,3 +52,11 @@ export interface TeamMemberProps {
   role: string;
   description: string;
 }
+
+// Added WizardData interface for centralized type management
+export interface WizardData {
+  sector: string;
+  stage: string;
+  visa: string;
+  recommendation?: string;
+}

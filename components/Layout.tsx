@@ -1,6 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../utils/translations';
 
@@ -8,6 +8,10 @@ export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const location = useLocation();
+
+  // Détection robuste du type de page
+  const isDarkPage = location.pathname.startsWith('/partenaires');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,7 +21,6 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -27,10 +30,11 @@ export const Header: React.FC = () => {
   }, [mobileMenuOpen]);
 
   const navLinks = [
-    { name: t.nav.approach, href: '#approche' },
-    { name: t.nav.services, href: '#offres' },
-    { name: t.nav.team, href: '#equipe' },
-    { name: t.nav.faq, href: '#faq' },
+    { name: t.nav.approach, href: '/#approche' },
+    { name: t.nav.services, href: '/#offres' },
+    { name: t.nav.team, href: '/#equipe' },
+    { name: t.nav.faq, href: '/#faq' },
+    { name: t.nav.partners, href: '/partenaires' },
   ];
 
   const handleLangChange = (lang: Language) => {
@@ -55,28 +59,30 @@ export const Header: React.FC = () => {
             }`}
         >
           {/* Logo */}
-          <a href="#" className="block relative z-50 group flex-shrink-0">
+          <Link to="/" className="block relative z-50 group flex-shrink-0" onClick={() => { setMobileMenuOpen(false); window.scrollTo(0,0); }}>
             <img 
               src="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" 
               alt="Dodai Studio" 
-              className={`w-auto transition-all duration-500 ${isScrolled ? 'h-8' : 'h-12'}`}
+              className={`w-auto transition-all duration-500 ${isScrolled ? 'h-8' : 'h-12'} ${!isScrolled && isDarkPage ? 'brightness-0 invert' : ''}`}
             />
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className={`hidden md:flex items-center gap-1 transition-all duration-500 ${isScrolled ? 'ml-4' : 'ml-0'}`}>
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.name} 
-                href={link.href}
+                to={link.href}
                 className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
                     isScrolled 
                     ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' 
-                    : 'text-gray-600 hover:text-dodai-charcoal'
+                    : isDarkPage 
+                      ? 'text-gray-100 hover:text-white hover:bg-white/10' // Contraste amélioré (gray-200 -> gray-100)
+                      : 'text-gray-600 hover:text-dodai-charcoal'
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -90,7 +96,9 @@ export const Header: React.FC = () => {
                       className={`uppercase w-6 h-6 rounded-full flex items-center justify-center transition-all ${
                           language === lang 
                           ? 'bg-dodai-charcoal text-white font-bold' 
-                          : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                          : isDarkPage && !isScrolled
+                            ? 'text-gray-200 hover:text-white hover:bg-white/10' // Contraste amélioré (gray-400 -> gray-200)
+                            : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                       }`}
                   >
                       {lang}
@@ -105,14 +113,14 @@ export const Header: React.FC = () => {
               rel="noopener noreferrer"
               className={`hidden md:flex items-center gap-2 bg-dodai-charcoal text-white font-medium rounded-full hover:bg-black transition-all hover:scale-105 shadow-lg shadow-gray-200 ${
                   isScrolled ? 'text-xs px-5 py-2.5' : 'text-sm px-6 py-3'
-              }`}
+              } ${!isScrolled && isDarkPage ? 'bg-white text-dodai-charcoal hover:bg-gray-100 shadow-none' : ''}`}
             >
               {t.nav.contact}
             </a>
 
             {/* Mobile Menu Toggle */}
             <button 
-              className="md:hidden p-2 text-dodai-charcoal hover:bg-gray-100 rounded-full transition-colors relative z-50"
+              className={`md:hidden p-2 rounded-full transition-colors relative z-50 ${isDarkPage && !isScrolled ? 'text-white hover:bg-white/10' : 'text-dodai-charcoal hover:bg-gray-100'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -146,14 +154,14 @@ export const Header: React.FC = () => {
             </div>
 
           {navLinks.map((link) => (
-            <a 
+            <Link 
               key={link.name} 
-              href={link.href}
+              to={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className="text-4xl font-light text-dodai-charcoal hover:text-gray-500 transition-colors tracking-tight"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
 
           <div className="w-12 h-px bg-gray-200 my-4"></div>
@@ -177,17 +185,17 @@ export const Footer: React.FC = () => {
   const { t } = useLanguage();
   
   return (
-    <footer className="bg-white pt-20 pb-10 border-t border-gray-100">
+    <footer className="bg-white pt-20 pb-10 border-t border-gray-100 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           <div className="col-span-2">
-            <a href="#" className="block mb-8">
+            <Link to="/" className="block mb-8" onClick={() => window.scrollTo(0,0)}>
               <img 
                 src="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" 
                 alt="Dodai Studio" 
                 className="h-12 w-auto opacity-80 grayscale hover:grayscale-0 transition-all duration-500"
               />
-            </a>
+            </Link>
             <p className="text-gray-500 max-w-sm leading-relaxed whitespace-pre-line font-light text-sm">
               {t.footer.desc}
             </p>
@@ -196,9 +204,9 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-[10px] uppercase tracking-widest mb-6 text-gray-400">{t.footer.studio}</h4>
             <ul className="space-y-3 text-sm text-dodai-charcoal font-medium">
-              <li><a href="#approche" className="hover:text-gray-600 transition-colors">{t.nav.approach}</a></li>
-              <li><a href="#offres" className="hover:text-gray-600 transition-colors">{t.nav.services}</a></li>
-              <li><a href="#equipe" className="hover:text-gray-600 transition-colors">{t.nav.team}</a></li>
+              <li><Link to="/#approche" className="hover:text-gray-600 transition-colors">{t.nav.approach}</Link></li>
+              <li><Link to="/#offres" className="hover:text-gray-600 transition-colors">{t.nav.services}</Link></li>
+              <li><Link to="/partenaires" className="hover:text-gray-600 transition-colors">{t.nav.partners}</Link></li>
             </ul>
           </div>
           
@@ -206,7 +214,7 @@ export const Footer: React.FC = () => {
             <h4 className="font-bold text-[10px] uppercase tracking-widest mb-6 text-gray-400">{t.footer.contact}</h4>
             <ul className="space-y-3 text-sm text-gray-600 font-light">
               <li>{t.footer.tokyo}</li>
-              <li><a href="mailto:contact@dodaistudio.com" className="hover:text-dodai-charcoal transition-colors">contact@dodaistudio.com</a></li>
+              <li><a href="mailto:hello@dodai-studio.com" className="hover:text-dodai-charcoal transition-colors">hello@dodai-studio.com</a></li>
               <li>
                  <a 
                    href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods" 

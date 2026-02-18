@@ -1,5 +1,5 @@
-
 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { translations, Language } from '../utils/translations';
 
 interface LanguageContextType {
@@ -10,46 +10,74 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Fonction pour récupérer la langue depuis l'URL ou par défaut 'en'
-  const getInitialLanguage = (): Language => {
-    if (typeof window !== 'undefined') {
-      const params = new URLSearchParams(window.location.search);
-      const langParam = params.get('lang');
-      // Vérifie si le paramètre est une langue valide
-      if (langParam === 'en' || langParam === 'jp' || langParam === 'fr') {
-        return langParam as Language;
+/**
+ * Proxy de sécurité pour les traductions.
+ * Empêche les crashs React si une clé est manquante.
+ */
+const createSafeTranslationProxy = (obj: any, lang: string, path: string = ''): any => {
+  return new Proxy(obj || {}, {
+    get(target, prop) {
+      // Ignorer les symboles internes React pour ne pas interférer avec le moteur de rendu
+      if (typeof prop !== 'string' || prop === 'then' || prop === 'toJSON' || prop === '$$typeof') {
+        return target[prop];
       }
+      
+      const currentPath = path ? `${path}.${prop}` : prop;
+      const value = target[prop];
+
+      if (value === undefined) {
+        console.warn(`[Dodai Studio] Missing translation key: "${currentPath}" for language: "${lang}"`);
+        return `[Missing: ${currentPath}]`;
+      }
+
+      // Si c'est un tableau, on le renvoie tel quel
+      if (Array.isArray(value)) {
+        return value;
+      }
+
+      // Si c'est un objet, on continue la récursion de sécurité
+      if (typeof value === 'object' && value !== null) {
+        return createSafeTranslationProxy(value, lang, currentPath);
+      }
+
+      return value;
+    }
+  });
+};
+
+export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  const getUrlLanguage = (): Language => {
+    const lang = searchParams.get('lang');
+    if (lang === 'en' || lang === 'jp' || lang === 'fr') {
+      return lang as Language;
     }
     return 'en';
   };
 
-  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
+  const [language, setLanguageState] = useState<Language>(getUrlLanguage());
 
-  // Fonction personnalisée pour changer la langue et mettre à jour l'URL
+  // Synchronisation descendante : l'URL change -> on met à jour le state
+  useEffect(() => {
+    const urlLang = getUrlLanguage();
+    if (urlLang !== language) {
+      setLanguageState(urlLang);
+    }
+  }, [searchParams]);
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    if (typeof window !== 'undefined') {
-      const url = new URL(window.location.href);
-      url.searchParams.set('lang', lang);
-      window.history.pushState({}, '', url);
-    }
+    setSearchParams({ lang }, { replace: true });
   };
 
-  // Écoute les changements via les boutons Précédent/Suivant du navigateur
-  useEffect(() => {
-    const handlePopState = () => {
-      setLanguageState(getInitialLanguage());
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+  // On protège l'objet de traduction avec notre Proxy
+  const safeTranslations = createSafeTranslationProxy(translations[language], language);
 
   const value = {
     language,
     setLanguage,
-    t: translations[language],
+    t: safeTranslations,
   };
 
   return (

@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+/* Font removed from CSS to avoid render-blocking; moved to index.html with preconnect */
 
 body {
   background-color: #FFFEF2;
   color: #2C2C2C;
   font-family: 'Noto Sans JP', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -14,13 +17,19 @@ body {
     scrollbar-width: none;
 }
 
-/* Scroll Reveal Classes */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+  animation: revealFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  will-change: transform, opacity;
 }
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+
+@keyframes revealFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

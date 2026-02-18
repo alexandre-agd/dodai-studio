@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Loader2, CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
-import { WizardData } from '../App';
+// Corrected import from App to types to fix WizardData member error
+import { WizardData } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface ContactFormProps {
