@@ -16,7 +16,7 @@ import { WizardData } from '../types';
 
 export const HomePage: React.FC = () => {
   const [prefilledData, setPrefilledData] = useState<WizardData | null>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     document.title = "Dodai Studio : Les fondations de votre business au Japon";
@@ -30,6 +30,28 @@ export const HomePage: React.FC = () => {
     }
   };
 
+  const handleServicesSelected = (services: string[]) => {
+    const localizedSector = language === 'fr' ? 'Services Sélectionnés' : (language === 'jp' ? '選択されたサービス' : 'Selected Services');
+    const localizedVisa = language === 'fr' ? 'À la carte' : (language === 'jp' ? 'ア・ラ・カルト' : 'À la carte');
+
+    setPrefilledData({
+      sector: localizedSector,
+      stage: services.join(', '),
+      visa: localizedVisa,
+    });
+  };
+
+  const handleAddonsSelected = (addons: string[]) => {
+    const localizedSector = language === 'fr' ? 'Add-ons Sélectionnés' : (language === 'jp' ? '選択されたアドオン' : 'Selected Add-ons');
+    const localizedVisa = language === 'fr' ? 'Modules Optionnels' : (language === 'jp' ? '追加モジュール' : 'Optional Modules');
+
+    setPrefilledData({
+      sector: localizedSector,
+      stage: addons.join(', '),
+      visa: localizedVisa,
+    });
+  };
+
   return (
     <main>
       {/* Hero displays instantly for best performance */}
@@ -39,7 +61,7 @@ export const HomePage: React.FC = () => {
       <div className="reveal"><Definition /></div>
       <div className="reveal"><Methodology /></div>
       <div className="reveal"><Portfolio /></div>
-      <div className="reveal"><Services /></div>
+      <div className="reveal"><Services onServicesSelected={handleServicesSelected} onAddonsSelected={handleAddonsSelected} /></div>
       <div className="reveal"><ProjectWizard onComplete={handleWizardComplete} /></div>
       <div className="reveal"><Team /></div>
       <div className="reveal"><FAQ /></div>

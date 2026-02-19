@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Loader2, CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
 // Corrected import from App to types to fix WizardData member error
@@ -25,13 +24,25 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
   // Pre-fill form when initialData changes
   useEffect(() => {
     if (initialData) {
+      const isServiceSelection = initialData.sector === 'Services Sélectionnés' || initialData.sector === 'Selected Services' || initialData.sector === '選択されたサービス';
+      const isAddonSelection = initialData.sector === 'Add-ons Sélectionnés' || initialData.sector === 'Selected Add-ons' || initialData.sector === '選択されたアドオン';
+      
+      let message = '';
+      if (isServiceSelection) {
+        message = `${t.contact.form.labelSelected} \n- ${initialData.stage.split(', ').join('\n- ')}\n`;
+      } else if (isAddonSelection) {
+        message = `${t.contact.form.labelAddonsSelected} \n- ${initialData.stage.split(', ').join('\n- ')}\n`;
+      } else {
+        message = `${t.contact.form.labelProject} ${initialData.sector} (${initialData.stage}). \n${t.contact.form.labelVisa} ${initialData.visa}.\n`;
+      }
+
       setFormData(prev => ({
         ...prev,
-        type: initialData.sector === 'Autre' ? 'Autre' : initialData.sector,
-        message: `Project: ${initialData.sector} (${initialData.stage}). \nVisa Status: ${initialData.visa}.\n`
+        type: (isServiceSelection || isAddonSelection) ? 'F&B' : (initialData.sector === 'Autre' || initialData.sector === 'Other' || initialData.sector === 'その他' ? 'Autre' : initialData.sector),
+        message: message
       }));
     }
-  }, [initialData]);
+  }, [initialData, t.contact.form]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -91,7 +102,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
     <form onSubmit={handleSubmit} className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl text-dodai-charcoal relative overflow-hidden transition-all duration-500">
       
       {initialData && (
-        <div className="absolute top-0 left-0 right-0 bg-gray-50 py-2 text-center text-[10px] font-bold uppercase tracking-widest text-dodai-charcoal flex items-center justify-center gap-2">
+        <div className="absolute top-0 left-0 right-0 bg-dodai-red py-2 text-center text-[10px] font-bold uppercase tracking-widest text-white flex items-center justify-center gap-2">
            <Sparkles size={12} /> {t.contact.form.prefill}
         </div>
       )}

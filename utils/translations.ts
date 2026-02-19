@@ -74,7 +74,7 @@ export const translations = {
         tag: '4 étapes simples',
         s1: { t: 'Introduction', d: 'Un email ou un message, la forme la plus simple qui vous convient.' },
         s2: { t: 'Qualification', d: 'On prend contact sous 48h pour voir si on peut vraiment aider.' },
-        s3: { t: 'Concrétisation', d: 'Le projet démarre (Diagnostic ou Build). On s\'occupe des fondations ensemble.' },
+        s3: { t: 'Concrétisation', d: 'Le projet démarre (Diagnostic ou Build). On s\'occupes des fondations ensemble.' },
         s4: { t: 'On vous remercie : vraiment.', d: '10 à 15% de commission sur chaque projet converti. Formalisé, tracé, payé sous 30 jours. Aucune ambiguïté.' },
       },
       faq: {
@@ -256,6 +256,26 @@ export const translations = {
       subtitle: 'Choisissez l\'accompagnement adapté à votre maturité.',
       tag: 'Transparence Tarifaire',
       paymentLabel: 'Paiement',
+      toggleZero: 'Zero-to-Open',
+      toggleAlaCarte: 'À la carte',
+      choose: 'Choisir',
+      phaseDiag: 'Phase Diagnostic',
+      phaseBuild: 'Phase Build',
+      phaseRun: 'Phase Run',
+      modeZeroTitle: 'Accompagnement Complet',
+      modeZeroDesc: 'Des packages clés en main pour une ouverture sereine, de l\'idée au premier client.',
+      modeAlaCarteTitle: 'Modules Spécifiques',
+      modeAlaCarteDesc: 'Besoin d\'aide sur un sujet précis ? Sélectionnez uniquement les piliers dont vous avez besoin.',
+      alaCartePrice: 'Sur devis — ajusté selon périmètre et complexité',
+      recapTitle: 'Services sélectionnés',
+      recapAddonsTitle: 'Add-ons sélectionnés',
+      recapCta: 'Demander un devis personnalisé',
+      piliers: [
+        { title: 'Structure & Compliance', desc: 'Création de société, licences, banque, comptabilité.' },
+        { title: 'Location & Design', desc: 'Recherche de local, négociation bail, coordination aménagement.' },
+        { title: 'Tech & Ops', desc: 'POS, CRM LINE, SOPs, process opérationnel, automatisations.' },
+        { title: 'Team & Launch', desc: 'Recrutement, formation, soft opening, lancement.' }
+      ],
       addonsTitle: 'Options & Modules',
       addonsSubtitle: 'Des expertises ciblées pour renforcer votre projet.',
       addonsDisclaimer: 'Nous assurons la coordination et la direction artistique. Les frais tiers (photographe, influenceurs, coûts de construction) sont réglés directement aux prestataires.',
@@ -278,7 +298,7 @@ export const translations = {
           profile: 'Local trouvé + Projet mûr',
           payment: '30% / 40% / 30%',
           scope: [
-            { included: true, text: 'Pilier 1: Structure & Conformité' },
+            { included: true, text: 'Pilier 1: Structure & Compliance' },
             { included: true, text: 'Pilier 3: Technique & Opérations' },
             { included: true, text: 'Pilier 4: Équipe & Lancement' },
             { included: false, text: 'Pilier 2: Recherche Local', highlight: false }
@@ -293,7 +313,7 @@ export const translations = {
           payment: '30% / 40% / 30%',
           isPopular: true,
           scope: [
-            { included: true, text: 'Pilier 1: Structure & Conformité' },
+            { included: true, text: 'Pilier 1: Structure & Compliance' },
             { included: true, text: 'Pilier 2: Lieu & Design (Recherche incluse)' },
             { included: true, text: 'Pilier 3: Technique & Opérations' },
             { included: true, text: 'Pilier 4: Équipe & Lancement' },
@@ -328,9 +348,9 @@ export const translations = {
       } as StandaloneServiceProps,
       addons: [
         { title: 'MVP / Éphémère', price: 'Sur Devis', description: 'Testez votre concept en réel (Kitchen car / Corner) avant le bail commercial.' },
-        { title: 'Panel Test Tokyo', price: 'À partir de 300k JPY', description: 'Session dégustation 20-30 cibles (Expats/Japonais) pour valider l\'offre.' },
-        { title: 'Presse & Image', price: 'À partir de 200k JPY', description: 'Pack lancement : Shooting pro + Relations presse & Influenceurs.' },
-        { title: 'Recrutement Premium', price: '200k JPY', description: 'Présélection renforcée et garantie de remplacement.' }
+        { title: 'Panel Test Tokyo', price: 'Sur Devis', description: 'Session dégustation 20-30 cibles (Expats/Japonais) pour valider l\'offre.' },
+        { title: 'Presse & Image', price: 'Sur Devis', description: 'Pack lancement : Shooting pro + Relations presse & Influenceurs.' },
+        { title: 'Recrutement Premium', price: 'Sur Devis', description: 'Présélection renforcée et garantie de remplacement.' }
       ] as AddOnProps[],
       footer: '* Les fourchettes indiquées sont des estimations basées sur des projets standards. Un devis final précisera le montant exact.',
       footerLink: 'Voir le détail.'
@@ -446,7 +466,11 @@ export const translations = {
         successDesc: 'Merci. Nous analysons votre demande et revenons vers vous sous 48h ouvrées.',
         new: 'Envoyer un autre message',
         footer: 'En envoyant ce formulaire, vous acceptez d’être recontacté.',
-        prefill: 'Pré-rempli via le Diagnostic'
+        prefill: 'Pré-rempli via le Diagnostic',
+        labelSelected: 'Services "À la carte" sélectionnés :',
+        labelAddonsSelected: 'Add-ons sélectionnés :',
+        labelProject: 'Projet :',
+        labelVisa: 'Statut Visa :'
       }
     },
     footer: {
@@ -713,6 +737,26 @@ export const translations = {
       subtitle: 'Select the level of support that matches your project\'s maturity.',
       tag: 'Transparent Pricing',
       paymentLabel: 'Payment',
+      toggleZero: 'Zero-to-Open',
+      toggleAlaCarte: 'À la carte',
+      choose: 'Choose',
+      phaseDiag: 'Diagnostic Phase',
+      phaseBuild: 'Build Phase',
+      phaseRun: 'Run Phase',
+      modeZeroTitle: 'Full Support Packages',
+      modeZeroDesc: 'Turnkey solutions for a smooth opening, from idea to first customer.',
+      modeAlaCarteTitle: 'Specific Modules',
+      modeAlaCarteDesc: 'Need help with a specific topic? Select only the pillars you need.',
+      alaCartePrice: 'On quote — adjusted by scope and complexity',
+      recapTitle: 'Selected services',
+      recapAddonsTitle: 'Selected add-ons',
+      recapCta: 'Request a custom quote',
+      piliers: [
+        { title: 'Structure & Compliance', desc: 'Incorporation, licenses, banking, accounting.' },
+        { title: 'Location & Design', desc: 'Site selection, lease negotiation, design coordination.' },
+        { title: 'Tech & Ops', desc: 'POS, LINE CRM, SOPs, operational processes, automation.' },
+        { title: 'Team & Launch', desc: 'Recruitment, training, soft opening, launch.' }
+      ],
       addonsTitle: 'Modules & Add-ons',
       addonsSubtitle: 'Targeted expertise to reinforce your project.',
       addonsDisclaimer: 'We handle coordination and art direction. Third-party fees (photographers, influencers, construction costs) are paid directly to providers.',
@@ -730,7 +774,7 @@ export const translations = {
         {
           name: 'Build Essential',
           price: '1.2M - 1.5M',
-          priceDetail: 'JPY (Est.)',
+          priceDetail: 'JPY (Estimated)',
           duration: '6-8 weeks',
           profile: 'Location Secured + Solid BP',
           payment: '30% / 40% / 30%',
@@ -744,7 +788,7 @@ export const translations = {
         {
           name: 'Build Complete',
           price: '2.0M - 2.5M',
-          priceDetail: 'JPY (Est.)',
+          priceDetail: 'JPY (Estimated)',
           duration: '8-20 weeks',
           profile: 'Full Zero-to-Open',
           payment: '30% / 40% / 30%',
@@ -760,7 +804,7 @@ export const translations = {
         {
           name: 'Build Premium',
           price: '3.0M - 3.5M',
-          priceDetail: 'JPY (Est.)',
+          priceDetail: 'JPY (Estimated)',
           duration: '16-24 weeks',
           profile: 'Ambitious Concept / Franchise',
           payment: '30% / 40% / 30%',
@@ -785,9 +829,9 @@ export const translations = {
       } as StandaloneServiceProps,
       addons: [
         { title: 'MVP / Pop-up', price: 'Custom Quote', description: 'Test your concept in the real world (Kitchen car / Corner) before signing a commercial lease.' },
-        { title: 'Tokyo Panel Test', price: 'From 300k JPY', description: 'Tasting session with 20-30 targets (Expats/Japanese) to validate the offering.' },
-        { title: 'PR & Content', price: 'From 200k JPY', description: 'Launch package: Professional Photography + PR & Influencer outreach.' },
-        { title: 'Premium Hiring', price: '200k JPY', description: 'Enhanced pre-selection and replacement guarantee.' }
+        { title: 'Tokyo Panel Test', price: 'Custom Quote', description: 'Tasting session with 20-30 targets (Expats/Japanese) to validate the offering.' },
+        { title: 'PR & Content', price: 'Custom Quote', description: 'Launch package: Professional Photography + PR & Influencer outreach.' },
+        { title: 'Premium Hiring', price: 'Custom Quote', description: 'Enhanced pre-selection and replacement guarantee.' }
       ] as AddOnProps[],
       footer: '* Build rates are management fees only. They do not cover construction costs or third-party vendor fees.',
       footerLink: 'See details.'
@@ -903,7 +947,11 @@ export const translations = {
         successDesc: 'Thank you. We are analyzing your request and will get back to you within 48 business hours.',
         new: 'Send another message',
         footer: 'By sending this form, you agree to be contacted.',
-        prefill: 'Pre-filled via Diagnostic'
+        prefill: 'Pre-filled via Diagnostic',
+        labelSelected: 'Selected "À la carte" services:',
+        labelAddonsSelected: 'Selected add-ons:',
+        labelProject: 'Project:',
+        labelVisa: 'Visa Status:'
       }
     },
     footer: {
@@ -938,14 +986,14 @@ export const translations = {
         title: '他が見落としがちな',
         titleSpan: '「土台」を築く。',
         p1: '日本でのF&B・小売プロジェクトの多くは、アイデア不足で失敗するのではありません。「土台」の欠如で失敗するのです。',
-        p2: '実務・現場のギヨームと、システムの管理のアレクサンドル。この二つの補完的な専門知識を、Dodai Studioとして正式に提供することにしました。',
-        p3: 'このようなサポートを必要としているプロジェクトをご存知でしたら、ぜひ教えてください。',
+        p2: '実務・現場のギヨームと, システムの管理のアレクサンドル。この二つの補完的な専門知識を, Dodai Studioとして正式に提供することにしました。',
+        p3: 'このようなサポートを必要としているプロジェクトをご存知でしたら, ぜひ教えてください。',
       },
       referral: {
         title: 'ご紹介いただく内容',
         subtitle: 'プロジェクトの段階に合わせた3つのプラン。',
         more: 'プランの詳細を見る →',
-        diag: { t: '診断 (Diagnostic)', d: '本格的な投資の前に、事業の実現可能性を検証します。', p: '600,000 JPY' },
+        diag: { t: '診断 (Diagnostic)', d: '本格的な投資の前に, 事業の実現可能性を検証します。', p: '600,000 JPY' },
         build: { t: '構築 (Build)', d: '法的枠組みから開業当日までの完全な並走。', p: '1,200,000 JPY〜' },
         run: { t: '運営サポート (Run)', d: '開業後の継続的な収益最適化。', p: '月額 150,000 JPY〜' },
       },
@@ -955,52 +1003,52 @@ export const translations = {
         p1: {
           title: 'バイリンガル会計士',
           headline: '会計業務以上の相談を受けていませんか？',
-          text: '事業計画の策定、法人（GK/KK）の選択、デザイナー探し...。クライアントからのこうした相談に、Dodai Studio が実務面で並走します。オペレーションは私たちが引き受け、先生方は信頼される会計士として本来の業務に専念いただけます。',
+          text: '事業計画の策定, 法人（GK/KK）の選択, デザイナー探し...。クライアントからのこうした相談に, Dodai Studio が実務面で並走します。オペレーションは私たちが引き受け, 先生方は信頼される会計士として本来の業務に専念いただけます。',
         },
         p2: {
           title: '店舗専門不動産業',
-          headline: '無駄な内見を減らし、成約率を最大化する。',
-          text: '具体的な計画がない顧客は、結局成約に至らないか、開店後半年で撤退してしまいます。物件案内の前に、弊社の「診断」をご活用ください。準備の整った質の高い顧客となり、先生方の成約率向上に貢献します。',
+          headline: '無駄な内見を減らし, 成約率を最大化する。',
+          text: '具体的な計画がない顧客は, 結局成約に至らないか, 開店後半年で撤退してしまいます。物件案内の前に, 弊社の「診断」をご活用ください。準備の整った質の高い顧客となり, 先生方の成約率向上に貢献します。',
         },
         p3: {
           title: 'デザイナー・設計士',
-          headline: '修正ばかりのブリーフとは、もうお別れです。',
-          text: '過小評価された予算、非現実的な納期、無視された技術的制約...。Dodai Studio が事前にプロジェクトを構造化することで、設計に集中できる環境を整えます。質の高い仕事が可能になり、次回の案件紹介にも繋がります。',
+          headline: '修正ばかり de ブリーフとは, もうお別れです。',
+          text: '過小評価された予算, 非現実的な納期, 無視された技術的制約...。Dodai Studio が事前にプロジェクトを構造化することで, 設計に集中できる環境を整えます。質の高い仕事が可能になり, 次回の案件紹介にも繋がります。',
         },
         p4: {
           title: '食品・什器サプライヤー',
-          headline: '長く続く店こそ、最高の取引先になる。',
-          text: '飲食店・小売店の30%が1年以内に閉店します。閉店はサプライヤーにとっての損失です。初期段階で私たちが事業基盤を固めることで、貴社の顧客の生存率を高め、長期的な取引を支えます。',
+          headline: '長く続く店こそ, 最高の取引先になる。',
+          text: '飲食店・小売店の30%が1年以内に閉店します。閉店はサプライヤーにとっての損失です。初期段階で私たちが事業基盤を固めることで, 貴社の顧客の生存率を高め, 長期的な取引を支えます。',
         },
         p6: {
           title: '弁護士・行政書士',
           headline: '書類は先生が, 実務は私たちが整えます。',
-          text: '法人設立や経営管理ビザの取得が終わると、顧客は開業という未知の領域に一人で直面します。実務面での伴走は Dodai Studio にお任せください。先生方は法的支柱として、私たちはオペレーションの土台として、顧客の成功を支えます。',
+          text: '法人設立や経営管理ビザの取得が終わると, 顧客は開業という未知の領域に一人で直面します。実務面での伴走は Dodai Studio にお任せください。先生方は法的支柱として, 私たちはオペレーションの土台として, 顧客の成功を支えます。',
         },
         p5: {
           title: '起業家 / 個人ネットワーク',
           headline: '東京で店を開きたい知人はいませんか？',
-          text: 'レストラン、バー、ショップの開業を検討している知人がいれば、ぜひご紹介ください。私たちが責任を持って形にします。成約時には、紹介プログラムに基づき謝礼をお支払いします。強引な勧誘等は一切ありません。',
+          text: 'レストラン, バー, ショップの開業を検討している知人がいれば, ぜひご紹介ください。私たちが責任を持って形にします。成約時には, 紹介プログラムに基づき謝礼をお支払いします。強引な勧誘等は一切ありません。',
         },
       },
       process: {
         title: '仕組み',
         tag: '4つの簡単ステップ',
-        s1: { t: 'ご紹介', d: 'メールやメッセージなど、お客様のご都合の良い方法でご紹介ください。' },
-        s2: { t: 'ヒアリング', d: '48時間以内にコンタクトし、私たちが本当にお役に立てるかを確認します。' },
+        s1: { t: 'ご紹介', d: 'メールやメッセージなど, お客様のご都合の良い方法でご紹介ください。' },
+        s2: { t: 'ヒアリング', d: '48時間以内にコンタクトし, 私たちが本当にお役に立てるかを確認します。' },
         s3: { t: '契約成立', d: 'プロジェクトが始動。私たちが責任を持って事業の土台を構築します。' },
-        s4: { t: '謝礼のお支払い : 誠心誠意対応します', d: '成約ごとに10〜15%のコミッション。透明性の高い契約に基づき、30日以内にお支払い。' },
+        s4: { t: '謝礼のお支払い : 誠心誠意対応します', d: '成約ごとに10〜15%のコミッション。透明性の高い契約に基づき, 30日以内にお支払い。' },
       },
       faq: {
         title: 'パートナー様 FAQ',
         q1: '営業活動をする時間はありません。',
-        a1: '営業は不要です。紹介メールを一本送っていただくだけで、その後のフォローはすべて弊社が行います。',
+        a1: '営業は不要です。紹介メールを一本送っていただくだけで, その後のフォローはすべて弊社が行います。',
         q2: '支払いは確実にされますか？',
         a2: '紹介前にパートナー契約を締結します。クライアントからの入金後30日以内にお支払いいたします。',
         q3: 'プロジェクトが成立しなかった場合は？',
         a3: 'リスクはありません。クライアントが成約した場合のみ謝礼が発生します。ノルマ等も一切ありません。',
         q4: '個人的に知らない人を紹介したくありません。',
-        a4: 'その点はごもっともです。まずはコーヒーでも飲みながら、東京で、あるいはオンラインでお話ししませんか。私たちの仕事の進め方を知り、チームに会ってください。ご納得いただければ提携しましょう。',
+        a4: 'その点はごもっともです。まずはコーヒーでも飲みながら, 東京で, あるいはオンラインでお話ししませんか。私たちの仕事の進め方を知り, チームに会ってください。ご納得いただければ提携しましょう。',
         q5: 'コミッションはいりません。',
         a5: '可能です。知人の力になりたいという理由でのご紹介も歓迎します。柔軟に対応いたします。',
       },
@@ -1029,19 +1077,19 @@ export const translations = {
           'その他'
         ],
         message: 'メッセージ (任意)',
-        placeholder: 'あなたの活動内容や、どのような紹介が可能かをお聞かせください...',
+        placeholder: 'あなたの活動内容や, どのような紹介が可能かをお聞かせください...',
         consent: 'パートナープログラムに関する連絡を受け取ることに同意します。',
         submit: 'まずは連絡してみる',
         altContact: 'まだ迷っていますか？直接メールでお問い合わせください: hello@dodai-studio.com',
         success: 'ありがとうございます。48時間以内にご連絡いたします。',
-        error: 'エラーが発生しました。もう一度お試しいただくか、メールでご連絡ください。',
+        error: 'エラーが発生しました。もう一度お試しいただくか, メールでご連絡ください。',
       }
     },
     hero: {
       tag: '日本市場参入・開業支援（F&B / リテール）',
-      title: '日本での成功は、',
+      title: '日本での成功は, ',
       titleSpan: '強固な「土台」から。',
-      subtitle: '現場診断から収益化まで。\nあなたのビジョンを、永続的なビジネスへと昇華させます。',
+      subtitle: '現場診断から収益化まで。\nあなたのビジョンを, 永続的なビジネスへと昇華させます。',
       ctaPrimary: '無料相談を予約 (30分)',
       ctaSecondary: '診断サービスを見る',
       trust: ['完全秘密厳守', '現場主義', '透明性'],
@@ -1053,9 +1101,9 @@ export const translations = {
       }
     },
     philosophy: {
-      title: '直感だけでなく、',
+      title: '直感だけでなく, ',
       titleSpan: '構造（仕組み）で勝つ。',
-      p1: '日本市場は甘くありません。言語の壁, 複雑な行政手続き, 独特の商慣習。土台（Dodai Studio）の欠如が原因で, 多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
+      p1: '日本市場は甘くありません. 言語の壁, 複雑な行政手続き, 独特の商慣習. 土台（Dodai Studio）の欠如が原因で, 多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
       p2: '私たちは, 綺麗なスライドを納品するコンサルタントではありません。私たちは「実行の伴走者」です。法的・実務・技術的な基盤をあなたと共に構築し, 投資を成功へと導きます。',
       statValue: '30%',
       statLabel: '1年以内の閉店率',
@@ -1065,7 +1113,7 @@ export const translations = {
       solutionTag: 'Zero-to-Open',
       cards: [
         { title: '現場検証', desc: '投資前のデューデリジェンス：事業計画の監査, ターゲット層への実地テスト, 競合調査。ビジネスとしての勝算を検証します。' },
-        { title: 'システム & データ', desc: '店舗OSの構築：POSレジ, LINE CRM, 財務ダッシュボードの導入. 勘ではなく, リアルタイムの数字で経営を判断します。' },
+        { title: 'システム & データ', desc: '店舗OSの構築：POSレジ, LINE CRM, 財務ダッシュボードの導入. 勘ではなく, リアルタイム of 数字で経営を判断します。' },
         { title: '即戦力ネットワーク', desc: '独自のパートナー網を開放：バイリンガル行政書士, 店舗専門の不動産仲介, 交渉済みサプライヤーへ即座にアクセス。' },
         { title: 'MVP / テストマーケ', desc: '長期賃貸契約のリスクを負う前に, ポップアップやキッチンカーでコンセプトを市場検証します。' }
       ],
@@ -1088,14 +1136,14 @@ export const translations = {
           phase: 'Phase 1',
           title: '診断 (Diagnostic)',
           subtitle: '事業性評価 (Go/No-Go)',
-          desc: '投資前のストレステスト。1週間で事業計画を精査し, 現場での受容性をテストし, 現実的な予算（CAPEX/OPEX）を算出します。',
+          desc: '投資前のストレステスト. 1週間で事業計画を精査し, 現場での受容性をテストし, 現実的な予算（CAPEX/OPEX）を算出します。',
           details: ['事業計画監査', 'コンセプト検証', '実予算算出', 'ロードマップ策定']
         },
         {
           phase: 'Phase 2',
           title: '構築 (Build)',
           subtitle: '実行の4本柱',
-          desc: '開業準備の完全なオーケストレーション。以下の4つの領域を同時並行で進行し, 遅滞なきオープンを実現します。',
+          desc: '開業準備の完全なオーケストレーション. 以下の4つの領域を同時並行で進行し, 遅滞なきオープンを実現します。',
           pillars: [
             {
               title: '事業基盤・コンプライアンス',
@@ -1123,7 +1171,7 @@ export const translations = {
           phase: 'Phase 3',
           title: '運営 (Run)',
           subtitle: '安定化・グロース支援',
-          desc: '最も重要な開業後の6ヶ月間。オペレーションの微調整, 原価率の最適化, CRMによるリピーター獲得を伴走支援します。',
+          desc: '最も重要な開業後の6ヶ月間. オペレーションの微調整, 原価率の最適化, CRMによるリピーター獲得を伴走支援します。',
           details: ['財務ダッシュボード', '原価管理 (Food Cost)', 'CRM/MA運用', '月次経営会議']
         }
       ]
@@ -1170,6 +1218,26 @@ export const translations = {
       subtitle: 'プロジェクトのフェーズに合わせた最適なプランをお選びください。',
       tag: 'Pricing',
       paymentLabel: 'お支払い',
+      toggleZero: 'Zero-to-Open',
+      toggleAlaCarte: 'ア・ラ・カルト',
+      choose: '選択',
+      phaseDiag: '診断フェーズ',
+      phaseBuild: '構築フェーズ',
+      phaseRun: '運営フェーズ',
+      modeZeroTitle: '一括サポートパッケージ',
+      modeZeroDesc: 'アイデアから最初のお客様まで、スムーズな開業のためのターンキーソリューション。',
+      modeAlaCarteTitle: '特定モジュール',
+      modeAlaCarteDesc: '特定のトピックのみサポートが必要ですか？必要な柱だけを選択してください。',
+      alaCartePrice: '御見積 — 範囲と難易度に応じて調整',
+      recapTitle: '選択されたサービス',
+      recapAddonsTitle: '選択されたアドオン',
+      recapCta: '個別見積もりを依頼する',
+      piliers: [
+        { title: '事業基盤・コンプライアンス', desc: '法人設立, 各種ライセンス, 銀行口座, 会計セットアップ。' },
+        { title: '物件選定・デザイン', desc: '物件探し, 賃貸交渉, 内装デザイン監修。' },
+        { title: 'システム・業務構築', desc: 'POSレジ, LINE CRM, SOP作成, 業務自動化。' },
+        { title: 'チーム・開業準備', desc: '採用支援, 研修, ソフトオープン, 本開業。' }
+      ],
       addonsTitle: 'モジュール & アドオン',
       addonsSubtitle: '必要に応じて追加できる専門機能。',
       addonsDisclaimer: '※ 弊社フィーはプロジェクト管理・ディレクション費用です。実費（施工費、撮影費、広告費等）は各業者へ直接お支払いいただきます。',
@@ -1236,17 +1304,17 @@ export const translations = {
         price: '15万円',
         priceDetail: '/月（税別）',
         context: '6ヶ月契約〜',
-        description: '「6ヶ月目の壁」を越えるために。月次の管理ルーチンを導入し、継続的に収益性とオペレーション品質を最適化します。',
+        description: '「6ヶ月目の壁」を越えるために。月次の管理ルーチンを導入し, 継続的に収益性とオペレーション品質を最適化します。',
         features: ['KPIダッシュボード & 定例レビュー', '原価 (Food Cost) 最適化', 'LINE公式アカウント運用 (MA)', '四半期ごとの経営監査'],
         cta: '運営サポートを利用する'
       } as StandaloneServiceProps,
       addons: [
-        { title: 'MVP / ポップアップ', price: '要見積もり', description: '長期賃貸契約のリスクを負う前に, キッチンカーや催事スペース等を使い, 6〜10週間限定で実際の営業を行うテストマーケティングです。商品力やオペレーションを低リスクで検証できます。' },
-        { title: '東京パネルテスト', price: '30万円〜', description: 'ターゲット層（外国人/日本人）20〜30名を集めた試食・ヒアリング会を実施し、受容性を確認します。' },
-        { title: 'PR & コンテンツ', price: '20万円〜', description: 'ローンチパッケージ：プロカメラマンによる撮影 + プレスリリース配信 + インフルエンサー招聘。' },
-        { title: '採用プレミアム', price: '20万円', description: '店長・料理長クラスの採用代行。強化されたスクリーニングと早期退職時の保証付き。' }
+        { title: 'MVP / ポップアップ', price: '要見積もり', description: '長期賃貸契約のリスクを負う前に, キッチンカーや催事スペース等を使い, 6〜10週間限定 for 実際の営業を行うテストマーケティングです. 商品力やオペレーションを低リスクで検証できます。' },
+        { title: '東京パネルテスト', price: '要見積もり', description: 'ターゲット層（外国人/日本人）20〜30名を集めた試食・ヒアリング会を実施し、受容性を確認します。' },
+        { title: 'PR & コンテンツ', price: '要見積もり', description: 'ローンチパッケージ：プロカメラマンによる撮影 + プレスリリース配信 + インフルエンサー招聘。' },
+        { title: '採用プレミアム', price: '要見積もり', description: '店長・料理長クラスの採用代行. 強化されたスクリーニングと早期退職時の保証付き。' }
       ] as AddOnProps[],
-      footer: '* 上記ビルド費用はマネジメントフィーです。内装工事費などの実費は含まれません。詳細は個別にお見積もりいたします。',
+      footer: '* 上記ビルド費用はマネジメントフィーです。内装工事費などの実費は含まれません. 詳細は個別にお見積もりいたします。',
       footerLink: '詳細を見る'
     },
     wizard: {
@@ -1256,15 +1324,15 @@ export const translations = {
       tag: '即時診断',
       reset: 'リセット',
       step1: 'どのような業態をお考えですか？',
-      step2: '現在のプロジェクト状況は？',
+      step2: '現在のプロジェクト状況 is？',
       step3: '日本での在留資格は？',
       options: {
-        fb: { title: '飲食 / ホスピタリティ', sub: 'レストラン、カフェ、バー、ワインショップ...' },
+        fb: { title: '飲食 / ホスピタリティ', sub: 'レストラン、カフェ、バー, ワインショップ...' },
         retail: { title: '小売 / 物販', sub: 'アパレル、デザイン雑貨、輸入販売、コンセプトストア...' },
         other: { title: 'サービス / その他', sub: 'エージェンシー、オフィス, ショールーム...' },
         idea: { title: '構想段階', sub: 'アイデアがあり、実現可能性や市場性を確認したい。' },
-        ready: { title: '開始準備完了', sub: '資金の目処がつき、物件を探し始める段階。' },
-        urgent: { title: '進行中 / 緊急', sub: '既に契約済み、またはトラブルを抱えておりサポートが必要。' },
+        ready: { title: '開始準備完了', sub: '資金の目処がつき, 物件を探し始める段階。' },
+        urgent: { title: '進行中 / 緊急', sub: '既に契約済み, またはトラブルを抱えておりサポートが必要。' },
         noVisa: { title: '海外在住 / ビザなし', sub: '経営管理ビザ等の取得からサポートが必要。' },
         processVisa: { title: '申請準備中', sub: 'すでに行政書士等と手続きを開始している。' },
         hasVisa: { title: '国内在住 / ビザあり', sub: '有効なビザ（配偶者、永住者、就労等）を持っている。' },
@@ -1274,10 +1342,10 @@ export const translations = {
         cta: '無料相談枠を予約する',
         restart: 'やり直す',
         recs: {
-          diagStruct: { title: '診断 & 体制構築', desc: '重要：物件を探す前に、経営管理ビザ取得の要件を満たす事業計画の策定が最優先です。行政書士との連携が必要なため、まずはご相談ください。' },
-          diagGoNoGo: { title: '事業性診断 (Go/No-Go)', desc: 'ここが分岐点です。直感だけで進めるのは危険です。「診断パック（60万円）」を通じて、実際の予算感と勝ち筋を明確にしてから、投資判断を行うことを強く推奨します。' },
-          buildFast: { title: '監査 & 緊急ビルド', desc: '緊急性が高い状況です。リスクを最小化するために現状の契約内容を直ちに監査し、最短でオープンするための「集中ビルド」体制を構築します。' },
-          build: { title: 'ビルド工程 (Zero-to-Open)', desc: '準備は整っています。フェーズ1：積極的な物件ソーシングと、並行した事業基盤の構築を直ちに開始しましょう。' }
+          diagStruct: { title: '診断 & 体制構築', desc: '重要：物件を探す前に、経営管理ビザ取得の要件を満たす事業計画の策定が最優先です. 行政書士との連携が必要なため, まずはご相談ください。' },
+          diagGoNoGo: { title: '事業性診断 (Go/No-Go)', desc: 'ここが分岐点です. 直感だけで進めるのは危険です.「診断パック（60万円）」を通じて、実際の予算感と勝ち筋を明確にしてから, 投資判断を行うことを強く推奨します。' },
+          buildFast: { title: '監査 & 緊急ビルド', desc: '緊急性が高い状況です. リスクを最小化するために現状の契約内容を直ちに監査し, 最短でオープンするための「集中ビルド」体制を構築します。' },
+          build: { title: 'ビルド工程 (Zero-to-Open)', desc: '準備は整っています. フェーズ1：積極的な物件ソーシングと, 並行した事業基盤の構築を直ちに開始しましょう。' }
         }
       }
     },
@@ -1289,13 +1357,13 @@ export const translations = {
       g: {
         role: 'Ops & Network (Field)',
         badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
-        desc: '東京で14年間、3つのレストランと2つのショップを開業・運営し、ワイン輸入事業も立ち上げました。私はコンサルタントではなく、現場の実践者です。ターゲット層に正確に響くようプロジェクトを調整する術を知っています。サプライヤーとのネットワークや、私自身が経験した数々の失敗と教訓をすべて提供し、あなたが同じ落とし穴に落ちないようサポートします。',
+        desc: '東京で14年間、3つのレストランと2つのショップを開業・運営し、ワイン輸入事業も立ち上げました. 私はコンサルタントではなく、現場の実践者です. ターゲット層に正確に響くようプロジェクトを調整する術を知っています. サプライヤーとのネットワークや、私自身が経験した数々の失敗と教訓をすべて提供し、あなたが同じ落とし穴に落ちないようサポートします。',
         list: ['現場コンセプト検証', 'サプライヤー開拓・交渉', 'パートナー連携', '採用・サービス基準策定']
       },
       a: {
         role: 'Stratégie & Systèmes',
         badges: ['Entrepreneur', 'Strategy', 'Systems'],
-        desc: 'ホスピタリティは芸術ですが、収益性は科学です。起業家として、優れたアイデア भी 構造がなければ生き残れないことを知っています。私は単にツールを導入するのではなく、あなたのビジネスが効率的に回り、計測可能で、拡大できるようなプロセスを設計します。',
+        desc: 'ホスピタリティは芸術ですが, 収益性は科学です. 起業家として、優れたアイデアも構造がなければ生き残れないことを知っています. 私は単にツールを導入するのではなく、あなたのビジネスが効率的に回り, 計測可能で, 拡大できるようなプロセスを設計します。',
         list: ['事業モデル設計', '業務プロセス (SOP) 構築', 'DX・効率化', 'グロース戦略', '経営管理']
       }
     },
@@ -1308,7 +1376,7 @@ export const translations = {
         title: '私たちのスタンス',
         list: [
           'Pas d\'Avocats : nous pilotons la stratégie, les experts certifiés valident.',
-          'Pas de Magie : nous réduisons les risques, nous n\'effaçons pas la réalité.',
+          'Pas de Magie : nous réduisons risk, nous n\'effaçons pas la réalité.',
           'Pas de Conciergerie : focus 100% business. Pas d\'assistanat personnel.'
         ]
       },
@@ -1327,23 +1395,23 @@ export const translations = {
       subtitle: 'プロジェクト開始にあたって.',
       tag: 'Clarification',
       q1: '「基本ビルド」「標準ビルド」「プレミアム」の違いは？',
-      a1: '「基本（120-150万）」は既に物件確保済みの方など、サポート範囲 को絞ったプランです。「標準（200-250万）」は物件探しから開業までフルサポートする最も一般的なプランです。「プレミアム」はMVP検証や大規模なPRを含むプランです。',
+      a1: '「基本（120-150万）」は既に物件確保済みの方など、サポート範囲を絞ったプランです.「標準（200-250万）」は物件探しから開業までフルサポートする最も一般的なプランです.「プレミアム」はMVP検証や大規模なPRを含むプランです。',
       q2: '「Build」の前に「診断」は必須ですか？',
-      a2: '必須ではありませんが、強く推奨しています。事業の実現可能性と予算感をクリアにするためです。なお、診断後にBuild（標準以上）をご契約いただく場合、診断費用の60万円は全額ビルド費用から差し引かれます（実質無料）。',
+      a2: '必須ではありませんが, 強く推奨しています. 事業の実現可能性と予算感をクリアにするためです. なお、診断後にBuild（標準以上）をご契約いただく場合、診断費用の60万円は全額ビルド費用から差し引かれます（実質無料）。',
       q3: '「MVP / ポップアップ」とは何ですか？',
-      a3: '数千万円の投資をして店舗を構える前に、キッチンカーや催事スペース等を使い、6〜10週間限定 for 実際の営業を行うテストマーケティングです。商品力やオペレーションを低リスクで検証できます。',
+      a3: '数千万円の投資をして店舗を構える前に、キッチンカーや催事スペース等を使い、6〜10週間限定 for 実際の営業を行うテストマーケティングです. 商品力やオペレーションを低リスクで検証できます。',
       q4: '契約からオープンまでの期間は？',
       a4: '「基本ビルド」で6〜8週間、「標準ビルド（物件探し含む）」で12〜20週間、「プレミアム（MVP含む）」で16〜24週間程度が目安です。',
       q5: 'どのような成果をコミットしてくれますか？',
-      a5: '事業の成功そのものを保証することはできませんが、業界標準の健全な指標（開業6ヶ月での単月黒字化、原価率30%前後、人件費率35%以下、食べログ3.0以上など）を達成できるよう、構造と仕組みを徹底的に作り込みます。'
+      a5: '事業の成功そのものを保証することはできませんが, 業界標準の健全な指標（開業6ヶ月での単月黒字化、原価率30%前後、人件費率35%以下、食べログ3.0以上など）を達成できるよう, 構造と仕組みを徹底的に作り込みます。'
     },
     contact: {
       title: 'あなたのビジョンを',
       titleSpan: 'お聞かせください。',
-      desc: '30分の無料相談で、プロジェクトの現状と次のステップを整理します。',
+      desc: '30分の無料相談で, プロジェクトの現状と次のステップを整理します。',
       confidentiality: { title: '完全秘密厳守', desc: 'アイデアやご相談内容が外部に漏れることは一切ありません。' },
-      response: { title: '48時間以内に返信', desc: '営業メールは送りません。具体的なネクストアクションをご提案します。' },
-      noCommitment: { title: '契約の義務はありません', desc: '診断、ビルド、運営. 私たちが必要かどうか、まずはお話ししましょう。' },
+      response: { title: '48時間以内に返信', desc: '営業メールは送りません. 具体的なネクストアクションをご提案します。' },
+      noCommitment: { title: '契約の義務はありません', desc: '診断、ビルド、運営. 私たちが必要かどうか, まずはお話ししましょう。' },
       form: {
         header: '無料相談に申し込む',
         subHeader: '以下のフォームにご記入ください。',
@@ -1357,10 +1425,14 @@ export const translations = {
         submit: '送信する',
         submitting: '送信中...',
         successTitle: '送信完了',
-        successDesc: 'お問い合わせありがとうございます。内容を確認し、48営業時間以内に担当者よりご連絡いたします。',
+        successDesc: 'お問い合わせありがとうございます. 内容を確認し, 48営業時間以内に担当者よりご連絡いたします。',
         new: '別のメッセージを送る',
-        footer: '送信することで、弊社からの連絡を受け取ることに同意したものとみなされます。',
-        prefill: '診断結果からのプレフィル'
+        footer: '送信することで, 弊社からの連絡を受け取ることに同意したものとみなされます。',
+        prefill: '診断結果からのプレフィル',
+        labelSelected: '選択されたア・ラ・カルトサービス：',
+        labelAddonsSelected: '選択されたアドオン：',
+        labelProject: 'プロジェクト：',
+        labelVisa: 'ビザステータス：'
       }
     },
     footer: {

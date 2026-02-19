@@ -107,16 +107,14 @@ export const Header: React.FC = () => {
             </div>
 
             {/* CTA */}
-            <a 
-              href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link 
+              to="/#contact"
               className={`hidden md:flex items-center gap-2 bg-dodai-charcoal text-white font-medium rounded-full hover:bg-black transition-all hover:scale-105 shadow-lg shadow-gray-200 ${
                   isScrolled ? 'text-xs px-5 py-2.5' : 'text-sm px-6 py-3'
               } ${!isScrolled && isDarkPage ? 'bg-white text-dodai-charcoal hover:bg-gray-100 shadow-none' : ''}`}
             >
               {t.nav.contact}
-            </a>
+            </Link>
 
             {/* Mobile Menu Toggle */}
             <button 
@@ -166,15 +164,13 @@ export const Header: React.FC = () => {
 
           <div className="w-12 h-px bg-gray-200 my-4"></div>
 
-          <a 
-            href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link 
+            to="/#contact"
             onClick={() => setMobileMenuOpen(false)}
             className="bg-dodai-charcoal text-white text-lg font-medium px-8 py-4 rounded-full w-full max-w-xs shadow-xl"
           >
             {t.nav.contact}
-          </a>
+          </Link>
         </div>
       </div>
     </>
@@ -216,14 +212,12 @@ export const Footer: React.FC = () => {
               <li>{t.footer.tokyo}</li>
               <li><a href="mailto:hello@dodai-studio.com" className="hover:text-dodai-charcoal transition-colors">hello@dodai-studio.com</a></li>
               <li>
-                 <a 
-                   href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods" 
-                   target="_blank"
-                   rel="noopener noreferrer"
+                 <Link 
+                   to="/#contact"
                    className="inline-flex items-center gap-2 text-dodai-charcoal hover:translate-x-1 transition-transform mt-2 font-medium"
                  >
                    {t.footer.cta} <ArrowRight size={14} />
-                 </a>
+                 </Link>
               </li>
             </ul>
           </div>
