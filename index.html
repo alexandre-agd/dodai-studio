@@ -8,6 +8,7 @@
     
     <!-- Critical Asset Preload -->
     <link rel="preload" as="image" href="https://res.cloudinary.com/dehnuytil/image/upload/f_auto,q_auto,w_800/v1770612903/Dodai-logo_mfemab.png" fetchpriority="high">
+    <link rel="stylesheet" href="index.css">
 
     <!-- Tailwind Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -37,7 +38,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- FIXED IMPORT MAP: Single version source to prevent useRef errors -->
+    <!-- STABLE IMPORT MAP: Corrected to only include runtime dependencies -->
     <script type="importmap">
 {
   "imports": {
@@ -72,7 +73,7 @@
                     s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
                     if (d.head) d.head.appendChild(s);
                 })(document, window, 'BrevoConversations');
-            }, 4000); 
+            }, 5000); 
         });
     </script>
   </body>

@@ -6,32 +6,34 @@ export const Hero: React.FC = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 overflow-hidden">
+    <section className="relative pt-24 pb-20 md:pt-40 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center relative z-10">
           
-          {/* Logo Optimized for LCP */}
-          <div className="h-40 md:h-80 w-auto mb-0 flex items-center justify-center overflow-hidden">
+          {/* Logo Optimized for CLS & LCP */}
+          <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] mb-4 flex items-center justify-center overflow-hidden">
             <img 
               src="https://res.cloudinary.com/dehnuytil/image/upload/f_auto,q_auto,w_800/v1770612903/Dodai-logo_mfemab.png" 
-              alt="Dodai Studio" 
-              className="h-full w-auto"
+              alt="Dodai Studio Logo" 
+              width="400"
+              height="400"
+              className="w-full h-full object-contain"
               fetchpriority="high"
               loading="eager"
               decoding="sync"
             />
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-dodai-charcoal mb-8 leading-[0.95] max-w-5xl text-balance">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-dodai-charcoal mb-8 leading-[0.95] max-w-5xl text-balance animate-fade-in-up">
             {t.hero.title}{' '}
             <span className="text-gray-400">{t.hero.titleSpan}</span>
           </h1>
           
-          <p className="text-lg md:text-2xl text-gray-600 mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed font-light whitespace-pre-line text-balance">
+          <p className="text-lg md:text-2xl text-gray-600 mb-10 md:mb-14 max-w-3xl mx-auto leading-relaxed font-light whitespace-pre-line text-balance opacity-0 animate-fade-in-up [animation-delay:200ms] [animation-fill-mode:forwards]">
             {t.hero.subtitle}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-24">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-20 opacity-0 animate-fade-in-up [animation-delay:400ms] [animation-fill-mode:forwards]">
             <a 
               href="https://calendar.notion.so/meet/alexandre-wj1kv1td2/f3jm44ods"
               target="_blank"
@@ -50,7 +52,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left border-t border-gray-200 pt-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center md:text-left border-t border-gray-200 pt-12 opacity-0 animate-fade-in-up [animation-delay:600ms] [animation-fill-mode:forwards]">
           {[
             t.hero.stats.expertise,
             t.hero.stats.method,
@@ -65,6 +67,7 @@ export const Hero: React.FC = () => {
         </div>
       </div>
       
+      {/* Background Ambience */}
       <div className="absolute top-1/4 right-[-10%] md:right-[5%] w-[500px] h-[500px] bg-dodai-red opacity-[0.02] rounded-full blur-[100px] -z-10 pointer-events-none" />
       <div className="absolute bottom-0 left-[-10%] w-[800px] h-[800px] bg-white opacity-60 rounded-full blur-[120px] -z-10 pointer-events-none mix-blend-overlay" />
     </section>
