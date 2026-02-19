@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -8,11 +8,11 @@ import { Language } from '../utils/translations';
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [offresOpen, setOffresOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
-  // Détection robuste du type de page pour adapter le style du header
-  const isDarkPage = location.pathname.startsWith('/partenaires');
+  const isDarkPage = location.pathname.startsWith('/partenaires') || location.pathname.startsWith('/run');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,14 +29,6 @@ export const Header: React.FC = () => {
       document.body.style.overflow = 'unset';
     }
   }, [mobileMenuOpen]);
-
-  const navLinks = [
-    { name: t.nav.approach, href: '/#approche' },
-    { name: t.nav.services, href: '/#offres' },
-    { name: t.nav.team, href: '/#equipe' },
-    { name: t.nav.faq, href: '/#faq' },
-    { name: t.nav.partners, href: '/partenaires' },
-  ];
 
   const handleLangChange = (lang: Language) => {
     setLanguage(lang);
@@ -69,13 +61,15 @@ export const Header: React.FC = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className={`hidden md:flex items-center gap-1 transition-all duration-500 ${isScrolled ? 'ml-4' : 'ml-0'}`}>
-            {navLinks.map((link) => (
-              <Link 
-                smooth
-                key={link.name} 
-                to={link.href}
-                className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
+          <nav className="hidden md:flex items-center gap-1">
+            {/* OFFRES DROPDOWN */}
+            <div 
+              className="relative group"
+              onMouseEnter={() => setOffresOpen(true)}
+              onMouseLeave={() => setOffresOpen(false)}
+            >
+              <button 
+                className={`flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
                     isScrolled 
                     ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' 
                     : isDarkPage 
@@ -83,9 +77,22 @@ export const Header: React.FC = () => {
                       : 'text-gray-600 hover:text-dodai-charcoal'
                 }`}
               >
-                {link.name}
-              </Link>
-            ))}
+                {t.nav.offres}
+                <ChevronDown size={14} className={`transition-transform duration-300 ${offresOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div className={`absolute top-full left-0 pt-2 transition-all duration-300 ${offresOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
+                <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 min-w-[200px]">
+                  <Link smooth to="/#offres" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.services.phaseDiag}</Link>
+                  <Link smooth to="/#offres" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.services.phaseBuild}</Link>
+                  <Link smooth to="/run" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.nav.run}</Link>
+                </div>
+              </div>
+            </div>
+
+            <Link smooth to="/#approche" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.approach}</Link>
+            <Link smooth to="/#equipe" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.team}</Link>
           </nav>
 
           <div className="flex items-center gap-4">
@@ -108,7 +115,6 @@ export const Header: React.FC = () => {
               ))}
             </div>
 
-            {/* CTA - Book Consultation (now internal scroll) */}
             <Link 
               smooth
               to="/#contact"
@@ -119,7 +125,6 @@ export const Header: React.FC = () => {
               {t.nav.contact}
             </Link>
 
-            {/* Mobile Menu Toggle */}
             <button 
               className={`md:hidden p-2 rounded-full transition-colors relative z-50 ${isDarkPage && !isScrolled ? 'text-white hover:bg-white/10' : 'text-dodai-charcoal hover:bg-gray-100'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -136,9 +141,9 @@ export const Header: React.FC = () => {
           mobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-[20px] pointer-events-none'
         }`}
       >
-        <div className="flex flex-col gap-8 items-center text-center">
+        <div className="flex flex-col gap-6 items-center text-center">
             {/* Mobile Language Switcher */}
-            <div className="flex items-center gap-6 mb-8">
+            <div className="flex items-center gap-6 mb-4">
               {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
                   <button 
                       key={lang}
@@ -154,28 +159,26 @@ export const Header: React.FC = () => {
               ))}
             </div>
 
-          {navLinks.map((link) => (
-            <Link 
-              smooth
-              key={link.name} 
-              to={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-4xl font-light text-dodai-charcoal hover:text-gray-500 transition-colors tracking-tight"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {/* OFFRES COLLAPSIBLE MOBILE */}
+          <div className="w-full flex flex-col items-center">
+            <button onClick={() => setOffresOpen(!offresOpen)} className="text-4xl font-light text-dodai-charcoal flex items-center gap-3 tracking-tight">
+              {t.nav.offres}
+              <ChevronDown className={`transition-transform duration-300 ${offresOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`overflow-hidden transition-all duration-500 flex flex-col gap-4 mt-4 ${offresOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <Link smooth to="/#offres" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.services.phaseDiag}</Link>
+              <Link smooth to="/#offres" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.services.phaseBuild}</Link>
+              <Link smooth to="/run" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.nav.run}</Link>
+            </div>
+          </div>
+
+          <Link smooth to="/#approche" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.approach}</Link>
+          <Link smooth to="/#equipe" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.team}</Link>
+          <Link smooth to="/partenaires" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.partners}</Link>
 
           <div className="w-12 h-px bg-gray-200 my-4"></div>
 
-          <Link 
-            smooth
-            to="/#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="bg-dodai-charcoal text-white text-lg font-medium px-8 py-4 rounded-full w-full max-w-xs shadow-xl"
-          >
-            {t.nav.contact}
-          </Link>
+          <Link smooth to="/#contact" onClick={() => setMobileMenuOpen(false)} className="bg-dodai-charcoal text-white text-lg font-medium px-8 py-4 rounded-full w-full max-w-xs shadow-xl">{t.nav.contact}</Link>
         </div>
       </div>
     </>

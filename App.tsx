@@ -4,9 +4,10 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { Header, Footer } from './components/Layout';
 import { ScrollToTop } from './components/ScrollToTop';
 
-// Import direct pour éviter les problèmes de résolution de modules asynchrones pendant la réparation
+// Import direct pour éviter les problèmes de résolution de modules asynchrones
 import { HomePage } from './pages/HomePage';
 import { PartenairesPage } from './pages/PartenairesPage';
+import { RunPage } from './pages/RunPage';
 
 const AppContent: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const AppContent: React.FC = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/partenaires" element={<PartenairesPage />} />
+          <Route path="/run" element={<RunPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

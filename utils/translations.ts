@@ -5,12 +5,73 @@ export type Language = 'fr' | 'en' | 'jp';
 export const translations = {
   fr: {
     nav: {
-      approach: 'Notre Approche',
+      offres: 'Offres',
+      approach: 'Méthode',
       services: 'Nos Offres',
       team: 'L\'Équipe',
       faq: 'Questions',
-      contact: 'Parler à un expert',
+      contact: 'Contact',
       partners: 'Partenaires',
+      run: 'Le Run Mensuel',
+    },
+    runPage: {
+      hero: {
+        h1: 'Le plus dur, ce n\'est pas d\'ouvrir.',
+        h1Span: 'C\'est ce qui vient après.',
+        subtitle: 'Marges qui fondent, clients irréguliers, staff instable ou simplement l\'envie de scaler sans tout porter seul. Le Run, c\'est votre partenaire opérationnel mensuel au Japon.',
+        cta: 'Activer le Run',
+      },
+      audience: {
+        title: 'Pour qui ?',
+        p1: { t: 'Post-Build Dodai Studio', d: 'Votre commerce vient d\'ouvrir. On reste avec vous pour éviter le crash des 6 premiers mois.' },
+        p2: { t: 'Ouvert depuis 6-18 mois', d: 'Ça galère : pas de systèmes, marges qui fondent, clients qui ne reviennent pas. On restructure ce qui bloque.' },
+        p3: { t: 'Envie de scaler', d: 'Ça tourne, vous voulez passer à la suite : 2e point de vente, franchise, optimisation : on prépare avec vous.' },
+        p4: { t: 'Franchise / International', d: 'Vous êtes déjà implanté, vous avez besoin d\'un partenaire terrain Japon sur le long terme.' },
+      },
+      monthly: {
+        title: 'Chaque mois, ensemble',
+        note: '+ Audit stratégique trimestriel 90 min avec roadmap trimestre suivant',
+        c1: { t: 'Rituels opérationnels', d: 'Calls bi-hebdo avec Guillaume (ops terrain) et Alex (systèmes) + review KPIs mensuelle.' },
+        c2: { t: 'Campagne mensuelle', d: 'On crée l\'offre, on rédige, on design, on diffuse : vous validez en 1 clic, on envoie.' },
+        c3: { t: 'Templates prêts à l\'emploi', d: '1 template promo ou événement par mois, visuel + texte, utilisable immédiatement.' },
+        c4: { t: 'Veille & réactivité', d: 'Monitoring réputation, alertes KPIs critiques, ligne directe async : réponse sous 48h.' },
+      },
+      modules: {
+        title: 'Modules optionnels',
+        subtitle: 'Des expertises ciblées pour accélérer votre croissance.',
+        note: 'Les modules s\'activent selon vos priorités. Tout est cadré sur devis.',
+        m1: { t: 'Acquisition', d: 'Plus de clients, plus de récurrence, réputation active.' },
+        m2: { t: 'Rentabilité', d: 'Marges optimisées, coûts maîtrisés, fournisseurs renégociés.' },
+        m3: { t: 'Saisonnalité', d: 'Offres et promos calées sur le calendrier japonais (Golden Week, Obon, Noël…).' },
+      },
+      pricing: {
+        tag: 'À PARTIR DE • ENGAGEMENT 6 MOIS',
+        price: '150 000 JPY',
+        unit: '/ mois',
+        features: [
+          'Calls bi-hebdo (Guillaume + Alex)',
+          '1 campagne mensuelle complète',
+          'Outils de capture clients (QR, CRM)',
+          'Monitoring réputation & alertes KPIs',
+          'Audit stratégique trimestriel (90 min)',
+          'Ligne directe async : réponse < 48h'
+        ],
+        footer: 'Modules additionnels sur devis. Anciens clients Build : conditions préférentielles.',
+        urgent: 'Vous êtes en urgence ? On commence par un diagnostic rapide avant de lancer le Run.'
+      },
+      faq: {
+        title: 'FAQ Run',
+        q1: 'Faut-il avoir fait un Build Dodai Studio pour accéder au Run ?',
+        a1: 'Non. Bien que ce soit le prolongement naturel de notre accompagnement, nous acceptons des commerces déjà ouverts après un audit initial.',
+        q2: 'Mon commerce est déjà ouvert depuis plus d\'un an : vous pouvez quand même intervenir ?',
+        a2: 'Oui. Dans ce cas, nous commençons souvent par une phase de "Cleanup" le premier mois pour remettre les systèmes à plat avant de passer en routine Run.',
+        q3: 'Suis-je engagé sur la durée ?',
+        a3: 'Le Run demande de la continuité pour voir les résultats. L\'engagement initial est de 6 mois, renouvelable mensuellement ensuite.',
+        q4: 'La campagne mensuelle : comment ça se passe ?',
+        a4: 'On définit l\'angle ensemble lors de la review mensuelle. Dodai Studio produit tout (texte, visuel, setup CRM). Vous validez, on lance.',
+        q5: 'Comment se passe le suivi au quotidien ?',
+        a5: 'Via une ligne directe asynchrone (Slack ou WhatsApp) pour les questions urgentes et deux calls de 30min par mois pour le pilotage.',
+      }
     },
     partnersPage: {
       hero: {
@@ -23,7 +84,7 @@ export const translations = {
         tag: 'Pourquoi ce programme ?',
         title: 'On construit ce que',
         titleSpan: 'les autres oublient.',
-        p1: "La plupart des projets F&B/Retail au Japon ne crashent pas par manque d'idée. Ils crashent par manque de fondations.",
+        p1: "La plupart des projets F&B/Retail au Japon ne crashent pas par manque d'idée, ils crashent par manque de fondations.",
         p2: "Guillaume côté opérationnel, Alex côté systèmes : deux expertises complémentaires qu'on a décidé d'officialiser sous le nom Dodai Studio.",
         p3: "Si vous connaissez des projets qui auraient besoin de ça, on aimerait que vous nous le disiez.",
       },
@@ -161,7 +222,7 @@ export const translations = {
     },
     definition: {
       kanji: '土台',
-      pronunciation: 'n. Dodai',
+      pronunciation: 'n. Dodai Studio',
       def1: 'Fondations.',
       def2: 'La base invisible mais essentielle qui permet à l\'édifice de durer.'
     },
@@ -199,7 +260,7 @@ export const translations = {
               items: ['Système Caisse (POS)', 'Sourcing Fournisseurs', 'Process (SOPs)', 'Logistique']
             },
             {
-              title: 'Équipe & Lancement',
+              title: 'Technique & Opérations',
               desc: 'L\'âme du lieu.',
               items: ['Recrutement', 'Formation & Service', 'Marketing Lancement', 'Soft Opening']
             }
@@ -266,7 +327,7 @@ export const translations = {
       modeZeroDesc: 'Des packages clés en main pour une ouverture sereine, de l\'idée au premier client.',
       modeAlaCarteTitle: 'Modules Spécifiques',
       modeAlaCarteDesc: 'Besoin d\'aide sur un sujet précis ? Sélectionnez uniquement les piliers dont vous avez besoin.',
-      alaCartePrice: 'Sur devis — ajusté selon périmètre et complexité',
+      alaCartePrice: 'Sur devis : ajusté selon périmètre et complexité',
       recapTitle: 'Services sélectionnés',
       recapAddonsTitle: 'Add-ons sélectionnés',
       recapCta: 'Demander un devis personnalisé',
@@ -486,12 +547,73 @@ export const translations = {
   },
   en: {
     nav: {
+      offres: 'Offers',
       approach: 'Methodology',
       services: 'Services',
       team: 'Team',
       faq: 'FAQ',
-      contact: 'Book a consultation',
+      contact: 'Contact',
       partners: 'Partners',
+      run: 'The Run Monthly',
+    },
+    runPage: {
+      hero: {
+        h1: 'The hard part isn\'t opening.',
+        h1Span: 'It\'s what comes after.',
+        subtitle: 'Shrinking margins, irregular customers, unstable staff or simply the desire to scale without carrying it all alone. The Run is your monthly operational partner in Japan.',
+        cta: 'Activate the Run',
+      },
+      audience: {
+        title: 'Who is this for?',
+        p1: { t: 'Post-Build Dodai Studio', d: 'Your shop just opened. We stay with you to avoid the first 6-month crash.' },
+        p2: { t: 'Open for 6-18 months', d: 'Struggling: no systems, melting margins, no repeat customers. We restructure the bottlenecks.' },
+        p3: { t: 'Scale Ready', d: 'It\'s working, you want to grow: 2nd location, franchise, optimization : we prepare with you.' },
+        p4: { t: 'Franchise / International', d: 'Already established, you need a long-term Japan field partner.' },
+      },
+      monthly: {
+        title: 'Every Month, Together',
+        note: '+ 90-min quarterly strategic audit with roadmap for the following quarter',
+        c1: { t: 'Operational Rituals', d: 'Bi-weekly calls with Guillaume (field ops) and Alex (systems) + monthly KPI review.' },
+        c2: { t: 'Monthly Campaign', d: 'We create the offer, write, design, and distribute : you approve in one click, we send.' },
+        c3: { t: 'Ready-to-use Templates', d: '1 promo or event template per month, visual + text, usable immediately.' },
+        c4: { t: 'Monitoring & Response', d: 'Reputation monitoring, critical KPI alerts, async direct line : response under 48h.' },
+      },
+      modules: {
+        title: 'Optional Modules',
+        subtitle: 'Targeted expertise to accelerate your growth.',
+        note: 'Modules are activated based on your priorities. All quoted on scope.',
+        m1: { t: 'Acquisition', d: 'More customers, higher recurrence, active reputation management.' },
+        m2: { t: 'Profitability', d: 'Optimized margins, controlled costs, renegotiated suppliers.' },
+        m3: { t: 'Seasonality', d: 'Offers and promos synced with the Japanese calendar (Golden Week, Obon, Christmas…).' },
+      },
+      pricing: {
+        tag: 'STARTING FROM • 6-MONTH COMMITMENT',
+        price: '150,000 JPY',
+        unit: '/ month',
+        features: [
+          'Bi-weekly calls (Guillaume + Alex)',
+          '1 full monthly campaign',
+          'Customer capture tools (QR, CRM)',
+          'Reputation monitoring & KPI alerts',
+          'Quarterly strategic audit (90 min)',
+          'Async direct line : response < 48h'
+        ],
+        footer: 'Additional modules by quote. Build alumni: preferential rates.',
+        urgent: 'In an emergency? We start with a quick Diagnostic before launching the Run.'
+      },
+      faq: {
+        title: 'Run FAQ',
+        q1: 'Do I need a Dodai Studio Build to access the Run?',
+        a1: 'No. While it is the natural extension of our Build support, we accept already-open businesses after an initial audit.',
+        q2: 'My shop has been open for over a year : can you still help?',
+        a2: 'Yes. In this case, we often start with a "Cleanup" phase in the first month to fix systems before moving into the Run routine.',
+        q3: 'Is there a commitment period?',
+        a3: 'The Run requires continuity to see results. The initial commitment is 6 months, then monthly renewable.',
+        q4: 'Monthly campaign : how does it actually work?',
+        a4: 'We define the angle together during the monthly review. Dodai Studio produces everything (copy, visual, CRM setup). You approve, we launch.',
+        q5: 'What is the daily follow-up like?',
+        a5: 'Via an asynchronous direct line (Slack or WhatsApp) for urgent questions and two 30-min calls per month for steering.',
+      }
     },
     partnersPage: {
       hero: {
@@ -504,7 +626,7 @@ export const translations = {
         tag: 'Why this program?',
         title: 'We build what',
         titleSpan: 'others forget.',
-        p1: 'Most F&B/Retail projects in Japan don\'t crash due to a lack of ideas. They crash due to a lack of foundations.',
+        p1: 'Most F&B/Retail projects in Japan don\'t crash due to a lack of ideas, they crash due to a lack of foundations.',
         p2: 'Guillaume on operations, Alex on systems: two complementary expertise sets that we decided to formalize under the name Dodai Studio.',
         p3: 'If you know projects that could use this, we\'d love for you to let us know.',
       },
@@ -557,19 +679,6 @@ export const translations = {
         s2: { t: 'Qualification', d: 'We reach out within 48h to see if we can truly help.' },
         s3: { t: 'Execution', d: 'Project starts (Diagnostic or Build). We handle the foundations together.' },
         s4: { t: 'We thank you : truly.', d: '10 to 15% commission on every conversion. Clear contract.' },
-      },
-      faq: {
-        title: 'Partner FAQ',
-        q1: 'I don\'t have time to do sales for you.',
-        a1: 'No effort required. A simple intro email is enough : we take over completely from there.',
-        q2: 'How can I be sure I\'ll get paid?',
-        a2: 'Partner contract signed before any referral. Commission paid within 30 days after client payment.',
-        q3: 'What if the project doesn\'t go through?',
-        a3: 'No risk. Commission is only due if the client signs. Zero performance obligation on your end.',
-        q4: 'I don\'t want to recommend someone I don\'t know personally.',
-        a4: 'That is the right question. We can have a coffee first, in Tokyo or via video call. See how we work, ask your questions, meet the team. If it suits you, we formalize it. Otherwise, no problem.',
-        q5: 'I don\'t want a commission.',
-        a5: 'That\'s fine. You can simply put us in touch to help your network. We adapt to your preference.',
       },
       form: {
         title: 'Ready to join?',
@@ -642,7 +751,7 @@ export const translations = {
     },
     definition: {
       kanji: '土台',
-      pronunciation: 'n. Dodai',
+      pronunciation: 'n. Dodai Studio',
       def1: 'Foundations.',
       def2: 'The unseen but essential base that allows the structure to stand tall.'
     },
@@ -747,7 +856,7 @@ export const translations = {
       modeZeroDesc: 'Turnkey solutions for a smooth opening, from idea to first customer.',
       modeAlaCarteTitle: 'Specific Modules',
       modeAlaCarteDesc: 'Need help with a specific topic? Select only the pillars you need.',
-      alaCartePrice: 'On quote — adjusted by scope and complexity',
+      alaCartePrice: 'On quote : adjusted by scope and complexity',
       recapTitle: 'Selected services',
       recapAddonsTitle: 'Selected add-ons',
       recapCta: 'Request a custom quote',
@@ -821,6 +930,7 @@ export const translations = {
         title: 'Run',
         subtitle: 'GROWTH & SCALE',
         price: '150k JPY',
+        unit: '/ month',
         priceDetail: '/month',
         context: 'Starting from • 6-month commitment',
         description: 'Avoid the "6-month slump". We install management routines and continuously optimize profitability.',
@@ -967,12 +1077,73 @@ export const translations = {
   },
   jp: {
     nav: {
+      offres: 'プラン',
       approach: 'アプローチ',
       services: 'サービス一覧',
       team: 'チーム',
       faq: 'よくある質問',
       contact: '無料相談を予約',
       partners: 'パートナー',
+      run: '運営サポート (Run)',
+    },
+    runPage: {
+      hero: {
+        h1: '難しいのは、開業することではない。',
+        h1Span: 'その後だ。',
+        subtitle: '削られる利益率、不安定な客数、定着しないスタッフ。あるいは一人で全てを背負わずに成長させたい。Run（運営サポート）は、日本での月次オペレーション・パートナーです。',
+        cta: '運営サポートを利用する',
+      },
+      audience: {
+        title: '対象となる方',
+        p1: { t: 'Dodai Studio Build 完了後', d: '開店直後。最初の6ヶ月で挫折しないよう、私たちが伴走を続けます。' },
+        p2: { t: '開業から6〜18ヶ月', d: '課題に直面：仕組みがなく、利益率が低下。リピーターが増えない。根本から再構築します。' },
+        p3: { t: 'スケールアップ準備', d: '順調だからこそ次へ：2店舗目、FC化、最適化。次なる成長を共に準備します。' },
+        p4: { t: '海外ブランド / FC', d: '日本進出済みで、現場を熟知した長期的なローカル・パートナーを求めている。' },
+      },
+      monthly: {
+        title: '毎月の伴走内容',
+        note: '＋ 90分の四半期戦略監査（次期ロードマップ策定）',
+        c1: { t: 'オペレーション習慣化', d: 'ギヨーム（現場）およびアレックス（システム）との隔週MTG ＋ 月次KPIレビュー。' },
+        c2: { t: '月次キャンペーン', d: '施策の立案からコピー、デザイン、配信まで。承認ひとつで実行されます。' },
+        c3: { t: '即戦力テンプレート', d: '毎月1つの販促・イベント用テンプレート（画像＋文章）を提供し、即時運用可能。' },
+        c4: { t: '監視と即応体制', d: '評判モニタリング、重要KPIアラート、Slack/LINEでの直接相談（48時間以内返信）。' },
+      },
+      modules: {
+        title: 'オプション・モジュール',
+        subtitle: '成長を加速させるための専門的なアプローチ。',
+        note: '優先順位に合わせてモジュールを有効化します。全て個別見積もりとなります。',
+        m1: { t: '集客（Acquisition）', d: '新規獲得、リピート率向上、オンライン評判の活性化。' },
+        m2: { t: '収益性（Profitability）', d: '原価率の最適化、コスト管理、サプライヤー再交渉。' },
+        m3: { t: '季節施策（Seasonality）', d: '日本のカレンダー（GW、お盆、クリスマス）に合わせた特化施策。' },
+      },
+      pricing: {
+        tag: '15万円（税別）から • 6ヶ月契約〜',
+        price: '150,000 JPY',
+        unit: ' / 月',
+        features: [
+          '隔週定例MTG (ギヨーム ＋ アレックス)',
+          '月次キャンペーン 1件（完結型）',
+          '顧客獲得ツール (QR, CRM運用)',
+          '評判モニタリング ＆ KPIアラート',
+          '四半期戦略監査 (90分)',
+          '直接相談ライン : 48時間以内返信'
+        ],
+        footer: '※追加モジュールは別途見積もり。Buildプラン卒業生は優待価格あり。',
+        urgent: '緊急の課題がありますか？Runを開始する前に、まずは短期診断（Diagnostic）から始めましょう。'
+      },
+      faq: {
+        title: 'Run FAQ',
+        q1: 'Dodai Studioの「Build」を利用していなくてもRunを契約できますか？',
+        a1: 'はい。基本的にはBuildからの継続を推奨していますが、すでに開業済みの店舗でも初期監査を経てお引き受け可能です。',
+        q2: '開業から1年以上経過していますが、サポート可能ですか？',
+        a2: '可能です。その場合、初月は「クリーンアップ」フェーズとして、仕組みの再構築を行ってから定常運転へ移行します。',
+        q3: '最低契約期間はありますか？',
+        a3: '成果を出すためには継続性が必要です。初期契約は6ヶ月間、その後は月次更新となります。',
+        q4: '月次キャンペーンの詳細は？',
+        a4: '月次レビュー時に施策を決定します。Dodai Studioが制作物（文章・画像・設定）を全て作成し、承認後に配信します。',
+        q5: '日常的な連絡方法は？',
+        a5: 'SlackやWhatsApp等のチャットツールで随時相談可能です。加えて、月2回の定例ビデオ通話で軌道修正を行います。',
+      }
     },
     partnersPage: {
       hero: {
@@ -985,8 +1156,8 @@ export const translations = {
         tag: 'なぜこのプログラムなのか？',
         title: '他が見落としがちな',
         titleSpan: '「土台」を築く。',
-        p1: '日本でのF&B・小売プロジェクトの多くは、アイデア不足で失敗するのではありません。「土台」の欠如で失敗するのです。',
-        p2: '実務・現場のギヨームと, システムの管理のアレクサンドル。この二つの補完的な専門知識を, Dodai Studioとして正式に提供することにしました。',
+        p1: '日本でのF&B・小売プロジェクトの多くは、アイデア不足で失敗するのではありません、 「土台」の欠如で失敗するのです。',
+        p2: '実務・現場のギヨームと, システムの管理のアレクサンドル. この二つの補完的な専門知識を, Dodai Studioとして正式に提供することにしました。',
         p3: 'このようなサポートを必要としているプロジェクトをご存知でしたら, ぜひ教えてください。',
       },
       referral: {
@@ -1036,25 +1207,25 @@ export const translations = {
         tag: '4つの簡単ステップ',
         s1: { t: 'ご紹介', d: 'メールやメッセージなど, お客様のご都合の良い方法でご紹介ください。' },
         s2: { t: 'ヒアリング', d: '48時間以内にコンタクトし, 私たちが本当にお役に立てるかを確認します。' },
-        s3: { t: '契約成立', d: 'プロジェクトが始動。私たちが責任を持って事業の土台を構築します。' },
+        s3: { t: '契約成立', d: 'プロジェクトが始動. 私たちが責任を持って事業の土台を構築します。' },
         s4: { t: '謝礼のお支払い : 誠心誠意対応します', d: '成約ごとに10〜15%のコミッション。透明性の高い契約に基づき, 30日以内にお支払い。' },
       },
       faq: {
         title: 'パートナー様 FAQ',
         q1: '営業活動をする時間はありません。',
-        a1: '営業は不要です。紹介メールを一本送っていただくだけで, その後のフォローはすべて弊社が行います。',
+        a1: '営業は不要です. 紹介メールを一本送っていただくだけで, その後のフォローはすべて弊社が行います。',
         q2: '支払いは確実にされますか？',
-        a2: '紹介前にパートナー契約を締結します。クライアントからの入金後30日以内にお支払いいたします。',
+        a2: '紹介前にパートナー契約を締結します. クライアントからの入金後30日以内にお支払いいたします。',
         q3: 'プロジェクトが成立しなかった場合は？',
-        a3: 'リスクはありません。クライアントが成約した場合のみ謝礼が発生します。ノルマ等も一切ありません。',
+        a3: 'リスクはありません. クライアントが成約した場合のみ謝礼が発生します. ノルマ等も一切ありません。',
         q4: '個人的に知らない人を紹介したくありません。',
-        a4: 'その点はごもっともです。まずはコーヒーでも飲みながら, 東京で, あるいはオンラインでお話ししませんか。私たちの仕事の進め方を知り, チームに会ってください。ご納得いただければ提携しましょう。',
+        a4: 'その点はごもっともです. まずはコーヒーでも飲みながら, 東京で, あるいはオンラインでお話ししませんか. 私たちの仕事の進め方を知り, チームに会ってください. ご納得いただければ提携しましょう。',
         q5: 'コミッションはいりません。',
-        a5: '可能です。知人の力になりたいという理由でのご紹介も歓迎します。柔軟に対応いたします。',
+        a5: '可能です. 知人の力になりたいという raison でのご紹介 also 歓迎します. 柔軟に対応いたします。',
       },
       form: {
         title: 'ネットワークに参加',
-        subtitle: '以下のフォームにご記入ください。48時間以内に担当よりご連絡いたします。',
+        subtitle: '以下のフォームにご記入ください. 48時間以内に担当よりご連絡いたします。',
         firstName: '名 (Romaji)',
         lastName: '姓 (Romaji)',
         firstNameKanji: '名 (Kanji - 任意)',
@@ -1081,8 +1252,8 @@ export const translations = {
         consent: 'パートナープログラムに関する連絡を受け取ることに同意します。',
         submit: 'まずは連絡してみる',
         altContact: 'まだ迷っていますか？直接メールでお問い合わせください: hello@dodai-studio.com',
-        success: 'ありがとうございます。48時間以内にご連絡いたします。',
-        error: 'エラーが発生しました。もう一度お試しいただくか, メールでご連絡ください。',
+        success: 'ありがとうございます. 48時間以内にご連絡いたします。',
+        error: 'エラーが発生しました. もう一度お試しいただくか, メールでご連絡ください。',
       }
     },
     hero: {
@@ -1095,7 +1266,7 @@ export const translations = {
       trust: ['完全秘密厳守', '現場主義', '透明性'],
       stats: {
         expertise: { label: '専門分野', value: '飲食 / 小売' },
-        method: { label: '手法', value: 'Zero-to-Open' },
+        stats: { label: '手法', value: 'Zero-to-Open' },
         philosophy: { label: 'アプローチ', value: '実行パートナー' },
         promise: { label: 'お約束', value: '現場での実行' },
       }
@@ -1103,8 +1274,8 @@ export const translations = {
     philosophy: {
       title: '直感だけでなく, ',
       titleSpan: '構造（仕組み）で勝つ。',
-      p1: '日本市場は甘くありません. 言語の壁, 複雑な行政手続き, 独特の商慣習. 土台（Dodai Studio）の欠如が原因で, 多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
-      p2: '私たちは, 綺麗なスライドを納品するコンサルタントではありません。私たちは「実行の伴走者」です。法的・実務・技術的な基盤をあなたと共に構築し, 投資を成功へと導きます。',
+      p1: '日本市場は甘くありません. 言語の壁, 複雑な行政手続き, 独特s商慣習. 土台（Dodai Studio）の欠如が原因で, 多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
+      p2: '私たちは, 綺麗なスライドを納品するコンサルタントではありません. 私たちは「実行の伴走者」です. 法的・実務・技術的な基盤をあなたと共に構築し, 投資を成功へと導きます。',
       statValue: '30%',
       statLabel: '1年以内の閉店率',
       statDesc: '準備不足による撤退を防ぐために, 私たちは存在します。',
@@ -1112,7 +1283,7 @@ export const translations = {
       solutionSpan: '翻弄されず, 操縦する。',
       solutionTag: 'Zero-to-Open',
       cards: [
-        { title: '現場検証', desc: '投資前のデューデリジェンス：事業計画の監査, ターゲット層への実地テスト, 競合調査。ビジネスとしての勝算を検証します。' },
+        { title: '現場検証', desc: '投資前のデューデリジェンス：事業計画の監査, ターゲット層への実地テスト, 競合調査. ビジネスとしての勝算を検証します。' },
         { title: 'システム & データ', desc: '店舗OSの構築：POSレジ, LINE CRM, 財務ダッシュボードの導入. 勘ではなく, リアルタイム of 数字で経営を判断します。' },
         { title: '即戦力ネットワーク', desc: '独自のパートナー網を開放：バイリンガル行政書士, 店舗専門の不動産仲介, 交渉済みサプライヤーへ即座にアクセス。' },
         { title: 'MVP / テストマーケ', desc: '長期賃貸契約のリスクを負う前に, ポップアップやキッチンカーでコンセプトを市場検証します。' }
@@ -1123,7 +1294,7 @@ export const translations = {
     },
     definition: {
       kanji: '土台',
-      pronunciation: 'n. Dodai',
+      pronunciation: 'n. Dodai Studio',
       def1: '基礎・根幹。',
       def2: '目には見えないが, 全体を支える最も重要な構造。'
     },
@@ -1228,7 +1399,7 @@ export const translations = {
       modeZeroDesc: 'アイデアから最初のお客様まで、スムーズな開業のためのターンキーソリューション。',
       modeAlaCarteTitle: '特定モジュール',
       modeAlaCarteDesc: '特定のトピックのみサポートが必要ですか？必要な柱だけを選択してください。',
-      alaCartePrice: '御見積 — 範囲と難易度に応じて調整',
+      alaCartePrice: '御見積 : 範囲と難易度に応じて調整',
       recapTitle: '選択されたサービス',
       recapAddonsTitle: '選択されたアドオン',
       recapCta: '個別見積もりを依頼する',
@@ -1240,14 +1411,14 @@ export const translations = {
       ],
       addonsTitle: 'モジュール & アドオン',
       addonsSubtitle: '必要に応じて追加できる専門機能。',
-      addonsDisclaimer: '※ 弊社フィーはプロジェクト管理・ディレクション費用です。実費（施工費、撮影費、広告費等）は各業者へ直接お支払いいただきます。',
+      addonsDisclaimer: '※ 弊社フィーはプロジェクト管理・ディレクション費用です. 実費（施工費、撮影費、広告費等）は各業者へ直接お支払いいただきます。',
       diagnostic: {
         title: '診断 (Diagnostic)',
         subtitle: 'GO / NO-GO 判断',
         price: '60万円',
         priceDetail: '（固定料金）',
         context: '（税別）• プロジェクト規模により調整',
-        description: '失敗を防ぐための保険です。本格的な投資（Build）に進む前に、事業と行政手続きの実現可能性を検証します。Buildをご契約いただく場合、この費用は全額充当されます。',
+        description: '失敗を防ぐための保険です. 本格的な投資（Build）に進む前に、事業と行政手続きの実現可能性を検証します. Buildをご契約いただく場合、この費用は全額充当されます。',
         features: ['事業計画 & コンセプト監査', '現場インタビュー & 競合調査', '実CAPEX/OPEX算出', '適格パートナー紹介'],
         cta: '診断を予約する'
       } as StandaloneServiceProps,
@@ -1304,7 +1475,7 @@ export const translations = {
         price: '15万円',
         priceDetail: '/月（税別）',
         context: '6ヶ月契約〜',
-        description: '「6ヶ月目の壁」を越えるために。月次の管理ルーチンを導入し, 継続的に収益性とオペレーション品質を最適化します。',
+        description: '「6ヶ月目の壁」を越えるために. 月次の管理ルーチンを導入し, 継続的に収益性とオペレーション品質を最適化します。',
         features: ['KPIダッシュボード & 定例レビュー', '原価 (Food Cost) 最適化', 'LINE公式アカウント運用 (MA)', '四半期ごとの経営監査'],
         cta: '運営サポートを利用する'
       } as StandaloneServiceProps,
@@ -1314,7 +1485,7 @@ export const translations = {
         { title: 'PR & コンテンツ', price: '要見積もり', description: 'ローンチパッケージ：プロカメラマンによる撮影 + プレスリリース配信 + インフルエンサー招聘。' },
         { title: '採用プレミアム', price: '要見積もり', description: '店長・料理長クラスの採用代行. 強化されたスクリーニングと早期退職時の保証付き。' }
       ] as AddOnProps[],
-      footer: '* 上記ビルド費用はマネジメントフィーです。内装工事費などの実費は含まれません. 詳細は個別にお見積もりいたします。',
+      footer: '* 上記ビルド費用はマネジメントフィーです. 内装工事費などの実費は含まれません. 詳細は個別にお見積もりいたします。',
       footerLink: '詳細を見る'
     },
     wizard: {
@@ -1357,7 +1528,7 @@ export const translations = {
       g: {
         role: 'Ops & Network (Field)',
         badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
-        desc: '東京で14年間、3つのレストランと2つのショップを開業・運営し、ワイン輸入事業も立ち上げました. 私はコンサルタントではなく、現場の実践者です. ターゲット層に正確に響くようプロジェクトを調整する術を知っています. サプライヤーとのネットワークや、私自身が経験した数々の失敗と教訓をすべて提供し、あなたが同じ落とし穴に落ちないようサポートします。',
+        desc: '東京で14年間、3つのレストランと2つのショップを開業・運営し、ワイン輸入事業 also 立ち上げました. 私はコンサルタントではなく、現場の実践者です. ターゲット層に正確に響くようプロジェクトを調整する術を知っています. サプライヤーとのネットワークや、私自身が経験した数々の失敗と教訓をすべて提供し、あなたが同じ落とし穴に落ちないようサポートします。',
         list: ['現場コンセプト検証', 'サプライヤー開拓・交渉', 'パートナー連携', '採用・サービス基準策定']
       },
       a: {
@@ -1368,7 +1539,7 @@ export const translations = {
       }
     },
     guardrails: {
-      title: '透明性とお約束。',
+      title: '透明性とお約束.',
       titleSpan: '信頼関係のために.',
       subtitle: 'グレーゾーンをなくし、最初から健全なパートナーシップを築きます。',
       tag: 'The Pact',
@@ -1397,7 +1568,7 @@ export const translations = {
       q1: '「基本ビルド」「標準ビルド」「プレミアム」の違いは？',
       a1: '「基本（120-150万）」は既に物件確保済みの方など、サポート範囲を絞ったプランです.「標準（200-250万）」は物件探しから開業までフルサポートする最も一般的なプランです.「プレミアム」はMVP検証や大規模なPRを含むプランです。',
       q2: '「Build」の前に「診断」は必須ですか？',
-      a2: '必須ではありませんが, 強く推奨しています. 事業の実現可能性と予算感をクリアにするためです. なお、診断後にBuild（標準以上）をご契約いただく場合、診断費用の60万円は全額ビルド費用から差し引かれます（実質無料）。',
+      a2: '必須ではありませんが, 強く推奨しています. 事業的 実現可能性と予算感をクリアにするためです. なお、診断後にBuild（標準以上）をご契約いただく場合、診断費用の60万円は全額ビルド費用から差し引かれます（実質無料）。',
       q3: '「MVP / ポップアップ」とは何ですか？',
       a3: '数千万円の投資をして店舗を構える前に、キッチンカーや催事スペース等を使い、6〜10週間限定 for 実際の営業を行うテストマーケティングです. 商品力やオペレーションを低リスクで検証できます。',
       q4: '契約からオープンまでの期間は？',
