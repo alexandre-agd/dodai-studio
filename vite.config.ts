@@ -7,21 +7,6 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: false,
-    minify: 'esbuild',
-    rollupOptions: {
-      external: [
-        'react',
-        'react-dom',
-        'react-router-dom',
-        'react-router-hash-link',
-        'lucide-react'
-      ],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
-        }
-      }
-    }
+    minify: 'esbuild'
   }
 })
