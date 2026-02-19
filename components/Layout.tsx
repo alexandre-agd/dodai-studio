@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../utils/translations';
 
@@ -10,7 +11,7 @@ export const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
-  // Détection robuste du type de page
+  // Détection robuste du type de page pour adapter le style du header
   const isDarkPage = location.pathname.startsWith('/partenaires');
 
   useEffect(() => {
@@ -59,7 +60,7 @@ export const Header: React.FC = () => {
             }`}
         >
           {/* Logo */}
-          <Link to="/" className="block relative z-50 group flex-shrink-0" onClick={() => { setMobileMenuOpen(false); window.scrollTo(0,0); }}>
+          <Link smooth to="/" className="block relative z-50 group flex-shrink-0" onClick={() => { setMobileMenuOpen(false); window.scrollTo(0,0); }}>
             <img 
               src="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" 
               alt="Dodai Studio" 
@@ -71,13 +72,14 @@ export const Header: React.FC = () => {
           <nav className={`hidden md:flex items-center gap-1 transition-all duration-500 ${isScrolled ? 'ml-4' : 'ml-0'}`}>
             {navLinks.map((link) => (
               <Link 
+                smooth
                 key={link.name} 
                 to={link.href}
                 className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
                     isScrolled 
                     ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' 
                     : isDarkPage 
-                      ? 'text-gray-100 hover:text-white hover:bg-white/10' // Contraste amélioré (gray-200 -> gray-100)
+                      ? 'text-gray-100 hover:text-white hover:bg-white/10'
                       : 'text-gray-600 hover:text-dodai-charcoal'
                 }`}
               >
@@ -97,7 +99,7 @@ export const Header: React.FC = () => {
                           language === lang 
                           ? 'bg-dodai-charcoal text-white font-bold' 
                           : isDarkPage && !isScrolled
-                            ? 'text-gray-200 hover:text-white hover:bg-white/10' // Contraste amélioré (gray-400 -> gray-200)
+                            ? 'text-gray-200 hover:text-white hover:bg-white/10'
                             : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
                       }`}
                   >
@@ -106,8 +108,9 @@ export const Header: React.FC = () => {
               ))}
             </div>
 
-            {/* CTA */}
+            {/* CTA - Book Consultation (now internal scroll) */}
             <Link 
+              smooth
               to="/#contact"
               className={`hidden md:flex items-center gap-2 bg-dodai-charcoal text-white font-medium rounded-full hover:bg-black transition-all hover:scale-105 shadow-lg shadow-gray-200 ${
                   isScrolled ? 'text-xs px-5 py-2.5' : 'text-sm px-6 py-3'
@@ -153,6 +156,7 @@ export const Header: React.FC = () => {
 
           {navLinks.map((link) => (
             <Link 
+              smooth
               key={link.name} 
               to={link.href}
               onClick={() => setMobileMenuOpen(false)}
@@ -165,6 +169,7 @@ export const Header: React.FC = () => {
           <div className="w-12 h-px bg-gray-200 my-4"></div>
 
           <Link 
+            smooth
             to="/#contact"
             onClick={() => setMobileMenuOpen(false)}
             className="bg-dodai-charcoal text-white text-lg font-medium px-8 py-4 rounded-full w-full max-w-xs shadow-xl"
@@ -185,7 +190,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-20">
           <div className="col-span-2">
-            <Link to="/" className="block mb-8" onClick={() => window.scrollTo(0,0)}>
+            <Link smooth to="/" className="block mb-8" onClick={() => window.scrollTo(0,0)}>
               <img 
                 src="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" 
                 alt="Dodai Studio" 
@@ -200,9 +205,9 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-[10px] uppercase tracking-widest mb-6 text-gray-400">{t.footer.studio}</h4>
             <ul className="space-y-3 text-sm text-dodai-charcoal font-medium">
-              <li><Link to="/#approche" className="hover:text-gray-600 transition-colors">{t.nav.approach}</Link></li>
-              <li><Link to="/#offres" className="hover:text-gray-600 transition-colors">{t.nav.services}</Link></li>
-              <li><Link to="/partenaires" className="hover:text-gray-600 transition-colors">{t.nav.partners}</Link></li>
+              <li><Link smooth to="/#approche" className="hover:text-gray-600 transition-colors">{t.nav.approach}</Link></li>
+              <li><Link smooth to="/#offres" className="hover:text-gray-600 transition-colors">{t.nav.services}</Link></li>
+              <li><Link smooth to="/partenaires" className="hover:text-gray-600 transition-colors">{t.nav.partners}</Link></li>
             </ul>
           </div>
           
@@ -213,6 +218,7 @@ export const Footer: React.FC = () => {
               <li><a href="mailto:hello@dodai-studio.com" className="hover:text-dodai-charcoal transition-colors">hello@dodai-studio.com</a></li>
               <li>
                  <Link 
+                   smooth
                    to="/#contact"
                    className="inline-flex items-center gap-2 text-dodai-charcoal hover:translate-x-1 transition-transform mt-2 font-medium"
                  >
