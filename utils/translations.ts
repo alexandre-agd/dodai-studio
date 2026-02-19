@@ -33,16 +33,29 @@ export const translations = {
         note: '+ Audit stratégique trimestriel 90 min avec roadmap trimestre suivant',
         c1: { t: 'Rituels opérationnels', d: 'Calls bi-hebdo avec Guillaume (ops terrain) et Alex (systèmes) + review KPIs mensuelle.' },
         c2: { t: 'Campagne mensuelle', d: 'On crée l\'offre, on rédige, on design, on diffuse : vous validez en 1 clic, on envoie.' },
-        c3: { t: 'Templates prêts à l\'emploi', d: '1 template promo ou événement par mois, visuel + texte, utilisable immédiatement.' },
+        c3: { t: 'Assets de Campagnes', d: '1 pack promo ou événement par mois, visuel + texte premium, utilisable immédiatement.' },
         c4: { t: 'Veille & réactivité', d: 'Monitoring réputation, alertes KPIs critiques, ligne directe async : réponse sous 48h.' },
       },
       modules: {
         title: 'Modules optionnels',
         subtitle: 'Des expertises ciblées pour accélérer votre croissance.',
         note: 'Les modules s\'activent selon vos priorités. Tout est cadré sur devis.',
+        price: 'SUR DEVIS',
         m1: { t: 'Acquisition', d: 'Plus de clients, plus de récurrence, réputation active.' },
         m2: { t: 'Rentabilité', d: 'Marges optimisées, coûts maîtrisés, fournisseurs renégociés.' },
         m3: { t: 'Saisonnalité', d: 'Offres et promos calées sur le calendrier japonais (Golden Week, Obon, Noël…).' },
+      },
+      team: {
+        g: {
+          role: 'Ops & Réseau',
+          desc: 'Présent sur le terrain pour les rituels opérationnels, la gestion des fournisseurs et le maintien des standards de service de votre staff.',
+          list: ['Rituels Opérationnels', 'Standards de Service', 'Sourcing Fournisseurs', 'Coordination Terrain']
+        },
+        a: {
+          role: 'Systèmes & Growth',
+          desc: 'Le moteur de votre rentabilité digitale : CRM, automatisations LINE, analyse des KPIs et production des contenus marketing mensuels.',
+          list: ['CRM & Automations', 'Pilotage KPIs', 'Stratégie Acquisition', 'Contenus Marketing']
+        }
       },
       pricing: {
         tag: 'À PARTIR DE • ENGAGEMENT 6 MOIS',
@@ -496,7 +509,7 @@ export const translations = {
       q1: 'Quelle différence entre Build Essentiel, Complet et Premium ?',
       a1: 'L\'Essentiel (1.2-1.5M) est pour ceux qui ont déjà un local et un plan solide. Le Complet (2-2.5M) inclut la recherche de local et est choisi par 80% des clients. Le Premium (3-3.5M) inclut MVP, Relations Presse et contenus pour les lancements d\'envergure.',
       q2: 'Le Diagnostic est-il obligatoire avant le Build ?',
-      a2: 'Non, mais fortement recommandé. Il permet de valider la faisabilité et le budget. De plus, si vous signez un Build Complet dans les 30 jours, les 600k du Diagnostic sont déduits de la facture.',
+      a2: 'Non, mais fortement recommandé. Il permet de valider la faisabilité et le budget. De plus, si vous signez un Build Complet dans les 30 jours, les 600k du Diagnostic sont de déduits de la facture.',
       q3: 'Qu\'est-ce que le MVP / Éphémère ?',
       a3: 'C\'est un test marché en conditions réelles (kitchen car, corner, pop-up) pendant 6 à 10 semaines. Cela permet de valider votre concept et vos produits avant de signer un bail commercial de 3 ans.',
       q4: 'Quels sont les délais entre signature et ouverture ?',
@@ -575,16 +588,29 @@ export const translations = {
         note: '+ 90-min quarterly strategic audit with roadmap for the following quarter',
         c1: { t: 'Operational Rituals', d: 'Bi-weekly calls with Guillaume (field ops) and Alex (systems) + monthly KPI review.' },
         c2: { t: 'Monthly Campaign', d: 'We create the offer, write, design, and distribute : you approve in one click, we send.' },
-        c3: { t: 'Ready-to-use Templates', d: '1 promo or event template per month, visual + text, usable immediately.' },
+        c3: { t: 'Campaign Assets', d: '1 premium promo or event pack per month, visual + copy, usable immediately.' },
         c4: { t: 'Monitoring & Response', d: 'Reputation monitoring, critical KPI alerts, async direct line : response under 48h.' },
       },
       modules: {
         title: 'Optional Modules',
         subtitle: 'Targeted expertise to accelerate your growth.',
         note: 'Modules are activated based on your priorities. All quoted on scope.',
+        price: 'QUOTED ON SCOPE',
         m1: { t: 'Acquisition', d: 'More customers, higher recurrence, active reputation management.' },
         m2: { t: 'Profitability', d: 'Optimized margins, controlled costs, renegotiated suppliers.' },
         m3: { t: 'Seasonality', d: 'Offers and promos synced with the Japanese calendar (Golden Week, Obon, Christmas…).' },
+      },
+      team: {
+        g: {
+          role: 'Ops & Network',
+          desc: 'Present on the ground for operational rituals, supplier management and maintaining your staff\'s service standards.',
+          list: ['Operational Rituals', 'Service Standards', 'Supplier Sourcing', 'Field Coordination']
+        },
+        a: {
+          role: 'Systems & Growth',
+          desc: 'The engine of your digital profitability: CRM, LINE automations, KPI analysis and production of monthly marketing content.',
+          list: ['CRM & Automations', 'KPI Steering', 'Acquisition Strategy', 'Marketing Content']
+        }
       },
       pricing: {
         tag: 'STARTING FROM • 6-MONTH COMMITMENT',
@@ -992,7 +1018,7 @@ export const translations = {
       a: {
         role: 'Strategy & Systems',
         badges: ['Entrepreneur', 'Strategy', 'Systems'],
-        desc: '"Hospitality is an art, but profitability is a science. As an entrepreneur, I know that a good idea cannot survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable, and scalable."',
+        desc: 'Hospitality is an art, but profitability is a science. As an entrepreneur, I know that a good idea cannot survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable, and scalable.',
         list: ['Entrepreneur & Manager', 'Business Model Design', 'Operational Processes (SOPs)', 'Digitalization & Efficiency', 'Growth Strategy']
       }
     },
@@ -1105,16 +1131,29 @@ export const translations = {
         note: '＋ 90分の四半期戦略監査（次期ロードマップ策定）',
         c1: { t: 'オペレーション習慣化', d: 'ギヨーム（現場）およびアレックス（システム）との隔週MTG ＋ 月次KPIレビュー。' },
         c2: { t: '月次キャンペーン', d: '施策の立案からコピー、デザイン、配信まで。承認ひとつで実行されます。' },
-        c3: { t: '即戦力テンプレート', d: '毎月1つの販促・イベント用テンプレート（画像＋文章）を提供し、即時運用可能。' },
+        c3: { t: 'キャンペーンアセット', d: '毎月1つの販促・イベント用プレミアムパック（画像＋文章）を提供し、即時運用可能。' },
         c4: { t: '監視と即応体制', d: '評判モニタリング、重要KPIアラート、Slack/LINEでの直接相談（48時間以内返信）。' },
       },
       modules: {
         title: 'オプション・モジュール',
         subtitle: '成長を加速させるための専門的なアプローチ。',
         note: '優先順位に合わせてモジュールを有効化します。全て個別見積もりとなります。',
+        price: '個別見積もり',
         m1: { t: '集客（Acquisition）', d: '新規獲得、リピート率向上、オンライン評判の活性化。' },
         m2: { t: '収益性（Profitability）', d: '原価率の最適化、コスト管理、サプライヤー再交渉。' },
         m3: { t: '季節施策（Seasonality）', d: '日本のカレンダー（GW、お盆、クリスマス）に合わせた特化施策。' },
+      },
+      team: {
+        g: {
+          role: 'Ops & ネットワーク',
+          desc: '定例のオペレーション、サプライヤー管理、スタッフのサービス基準の維持のために現場でサポートします。',
+          list: ['オペレーションの習慣化', 'サービス基準', 'サプライヤー開拓', '現場コーディネート']
+        },
+        a: {
+          role: 'システム & グロース',
+          desc: 'デジタル収益性のエンジン：CRM、LINE自動化、KPI分析、月次のマーケティングコンテンツ制作を担当します。',
+          list: ['CRM & 自動化', 'KPI管理', '集客戦略', 'マーケティングコンテンツ']
+        }
       },
       pricing: {
         tag: '15万円（税別）から • 6ヶ月契約〜',
@@ -1149,7 +1188,7 @@ export const translations = {
       hero: {
         title: '東京で店を開きたい知人はいませんか？',
         titleSpan: '',
-        subtitle: '私たちが「土台」を構築します。あなたは紹介をするだけ。あとはお任せください。',
+        subtitle: '私たちが「土台」を構築します。あなたは紹介をするだけ. あとはお任せください。',
         cta: 'パートナー登録する',
       },
       story: {
@@ -1174,32 +1213,32 @@ export const translations = {
         p1: {
           title: 'バイリンガル会計士',
           headline: '会計業務以上の相談を受けていませんか？',
-          text: '事業計画の策定, 法人（GK/KK）の選択, デザイナー探し...。クライアントからのこうした相談に, Dodai Studio が実務面で並走します。オペレーションは私たちが引き受け, 先生方は信頼される会計士として本来の業務に専念いただけます。',
+          text: '事業計画の策定, 法人（GK/KK）の選択, デザイナー探し...。クライアントからのこうした相談に, Dodai Studio が実務面で並走します. オペレーションは私たちが引き受け, 先生方は信頼される会計士として本来の業務に専念いただけます。',
         },
         p2: {
           title: '店舗専門不動産業',
           headline: '無駄な内見を減らし, 成約率を最大化する。',
-          text: '具体的な計画がない顧客は, 結局成約に至らないか, 開店後半年で撤退してしまいます。物件案内の前に, 弊社の「診断」をご活用ください。準備の整った質の高い顧客となり, 先生方の成約率向上に貢献します。',
+          text: '具体的な計画がない顧客は, 結局成約に至らないか, 開店後半年で撤退してしまいます. 物件案内の前に, 弊社の「診断」をご活用ください. 準備の整った質の高い顧客となり, 先生方の成約率向上に貢献します。',
         },
         p3: {
           title: 'デザイナー・設計士',
-          headline: '修正ばかり de ブリーフとは, もうお別れです。',
-          text: '過小評価された予算, 非現実的な納期, 無視された技術的制約...。Dodai Studio が事前にプロジェクトを構造化することで, 設計に集中できる環境を整えます。質の高い仕事が可能になり, 次回の案件紹介にも繋がります。',
+          headline: '修正ばかりのブリーフとは, もうお別れです。',
+          text: '過小評価された予算, 非現実的な納期, 無視された技術적制約...。Dodai Studio が事前にプロジェクトを構造化することで, 設計に集中できる環境を整えます. 質の高い仕事が可能になり, 次回の案件紹介にも繋がります。',
         },
         p4: {
           title: '食品・什器サプライヤー',
           headline: '長く続く店こそ, 最高の取引先になる。',
-          text: '飲食店・小売店の30%が1年以内に閉店します。閉店はサプライヤーにとっての損失です。初期段階で私たちが事業基盤を固めることで, 貴社の顧客の生存率を高め, 長期的な取引を支えます。',
+          text: '飲食店・小売店の30%が1年以内に閉店します. 閉店はサプライヤーにとっての損失です. 初期段階で私たちが事業基盤を固めることで, 貴社の顧客の生存率を高め, 長期的な取引を支えます。',
         },
         p6: {
           title: '弁護士・行政書士',
           headline: '書類は先生が, 実務は私たちが整えます。',
-          text: '法人設立や経営管理ビザの取得が終わると, 顧客は開業という未知の領域に一人で直面します。実務面での伴走は Dodai Studio にお任せください。先生方は法的支柱として, 私たちはオペレーションの土台として, 顧客の成功を支えます。',
+          text: '法人設立や経営管理ビザの取得が終わると, 顧客は開業という未知の領域に一人で直面します. 実務面での伴走は Dodai Studio にお任せください. 先生方は法的支柱として, 私たちはオペレーションの土台として, 顧客の成功を支えます。',
         },
         p5: {
           title: '起業家 / 個人ネットワーク',
           headline: '東京で店を開きたい知人はいませんか？',
-          text: 'レストラン, バー, ショップの開業を検討している知人がいれば, ぜひご紹介ください。私たちが責任を持って形にします。成約時には, 紹介プログラムに基づき謝礼をお支払いします。強引な勧誘等は一切ありません。',
+          text: 'レストラン, バー, ショップの開業を検討している知人がいれば, ぜひご紹介ください. 私たちが責任を持って形にします. 成約時には, 紹介プログラムに基づき謝礼をお支払いします. 強引な勧誘等は一切ありません。',
         },
       },
       process: {
@@ -1208,7 +1247,7 @@ export const translations = {
         s1: { t: 'ご紹介', d: 'メールやメッセージなど, お客様のご都合の良い方法でご紹介ください。' },
         s2: { t: 'ヒアリング', d: '48時間以内にコンタクトし, 私たちが本当にお役に立てるかを確認します。' },
         s3: { t: '契約成立', d: 'プロジェクトが始動. 私たちが責任を持って事業の土台を構築します。' },
-        s4: { t: '謝礼のお支払い : 誠心誠意対応します', d: '成約ごとに10〜15%のコミッション。透明性の高い契約に基づき, 30日以内にお支払い。' },
+        s4: { t: '謝礼のお支払い : 誠心誠意対応します', d: '成約ごとに10〜15%のコミッション. 透明性の高い契約に基づき, 30日以内にお支払い。' },
       },
       faq: {
         title: 'パートナー様 FAQ',
@@ -1221,7 +1260,7 @@ export const translations = {
         q4: '個人的に知らない人を紹介したくありません。',
         a4: 'その点はごもっともです. まずはコーヒーでも飲みながら, 東京で, あるいはオンラインでお話ししませんか. 私たちの仕事の進め方を知り, チームに会ってください. ご納得いただければ提携しましょう。',
         q5: 'コミッションはいりません。',
-        a5: '可能です. 知人の力になりたいという raison でのご紹介 also 歓迎します. 柔軟に対応いたします。',
+        a5: '可能です. 知人の力になりたいという理由でのご紹介も歓迎します. 柔軟に対応いたします。',
       },
       form: {
         title: 'ネットワークに参加',
@@ -1274,7 +1313,7 @@ export const translations = {
     philosophy: {
       title: '直感だけでなく, ',
       titleSpan: '構造（仕組み）で勝つ。',
-      p1: '日本市場は甘くありません. 言語の壁, 複雑な行政手続き, 独特s商慣習. 土台（Dodai Studio）の欠如が原因で, 多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
+      p1: '日本市場は甘くありません. 言語の壁, 複雑な行政手続き, 独特な商慣習. 土台（Dodai Studio）の欠如が原因で, 多くの海外発プロジェクトが1年以内に撤退を余儀なくされています。',
       p2: '私たちは, 綺麗なスライドを納品するコンサルタントではありません. 私たちは「実行の伴走者」です. 法的・実務・技術的な基盤をあなたと共に構築し, 投資を成功へと導きます。',
       statValue: '30%',
       statLabel: '1年以内の閉店率',
@@ -1284,7 +1323,7 @@ export const translations = {
       solutionTag: 'Zero-to-Open',
       cards: [
         { title: '現場検証', desc: '投資前のデューデリジェンス：事業計画の監査, ターゲット層への実地テスト, 競合調査. ビジネスとしての勝算を検証します。' },
-        { title: 'システム & データ', desc: '店舗OSの構築：POSレジ, LINE CRM, 財務ダッシュボードの導入. 勘ではなく, リアルタイム of 数字で経営を判断します。' },
+        { title: 'システム & データ', desc: '店舗OSの構築：POSレジ, LINE CRM, 財務ダッシュボードの導入. 勘ではなく, リアルタイムの数字で経営を判断します。' },
         { title: '即戦力ネットワーク', desc: '独自のパートナー網を開放：バイリンガル行政書士, 店舗専門の不動産仲介, 交渉済みサプライヤーへ即座にアクセス。' },
         { title: 'MVP / テストマーケ', desc: '長期賃貸契約のリスクを負う前に, ポップアップやキッチンカーでコンセプトを市場検証します。' }
       ],
@@ -1565,7 +1604,7 @@ export const translations = {
       titleSpan: 'FAQ',
       subtitle: 'プロジェクト開始にあたって.',
       tag: 'Clarification',
-      q1: '「基本ビルド」「標準ビルド」「プレミアム」の違いは？',
+      q1: '「基本ビルド」「標準ビルド」「プレミアム」の違い is？',
       a1: '「基本（120-150万）」は既に物件確保済みの方など、サポート範囲を絞ったプランです.「標準（200-250万）」は物件探しから開業までフルサポートする最も一般的なプランです.「プレミアム」はMVP検証や大規模なPRを含むプランです。',
       q2: '「Build」の前に「診断」は必須ですか？',
       a2: '必須ではありませんが, 強く推奨しています. 事業的 実現可能性と予算感をクリアにするためです. なお、診断後にBuild（標準以上）をご契約いただく場合、診断費用の60万円は全額ビルド費用から差し引かれます（実質無料）。',

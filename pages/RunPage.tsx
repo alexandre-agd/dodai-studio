@@ -85,13 +85,70 @@ export const RunPage: React.FC = () => {
             <ReferralBlock icon={<Target size={24} />} title={t.runPage.monthly.c3.t} text={t.runPage.monthly.c3.d} />
             <ReferralBlock icon={<LineChart size={24} />} title={t.runPage.monthly.c4.t} text={t.runPage.monthly.c4.d} />
           </div>
-          <p className="text-center italic text-gray-500 font-light text-lg">
+          <p className="text-center italic text-gray-500 font-light text-lg text-balance">
             {t.runPage.monthly.note}
           </p>
         </div>
       </section>
 
-      {/* SECTION 4: MODULES OPTIONNELS */}
+      {/* SECTION 4: PRICING (Now placed before modules, and rebalanced) */}
+      <section className="py-24 md:py-32 bg-[#F5F5F7] relative">
+        <div className="max-w-5xl mx-auto px-6">
+           <div className="rounded-[3rem] p-1 bg-[#1d1d1f] shadow-2xl shadow-black/30">
+              <div className="rounded-[2.8rem] p-8 md:p-16 bg-[#1d1d1f] text-white border border-white/5">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+                  
+                  {/* Left Side: Offer Identity & Price */}
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-4 py-1.5 rounded-full border text-blue-400 border-blue-400/40 bg-blue-400/10 mb-8 inline-block">
+                        {t.runPage.pricing.tag}
+                    </span>
+                    <h3 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">Run</h3>
+                    <div className="flex items-baseline gap-2 mb-10">
+                        <span className="text-4xl md:text-6xl font-bold">{t.runPage.pricing.price}</span>
+                        <span className="text-xl text-gray-400">{t.runPage.pricing.unit}</span>
+                    </div>
+                    
+                    <Link 
+                      smooth
+                      to="/run#contact-run"
+                      className="hidden md:inline-flex px-12 py-6 bg-white text-dodai-charcoal rounded-full font-bold hover:bg-dodai-red hover:text-white transition-all text-center items-center gap-3 shadow-xl hover:scale-105"
+                    >
+                      {t.runPage.hero.cta} <ArrowRight size={20} />
+                    </Link>
+                  </div>
+
+                  {/* Right Side: Features List */}
+                  <div className="bg-white/5 rounded-3xl p-8 border border-white/5">
+                    <ul className="space-y-6">
+                        {t.runPage.pricing.features.map((f, i) => (
+                          <li key={i} className="flex gap-4 items-start">
+                            <div className="mt-1 w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/20">
+                              <Check size={12} strokeWidth={4} className="text-white" />
+                            </div>
+                            <span className="text-gray-200 font-medium leading-tight">{f}</span>
+                          </li>
+                        ))}
+                    </ul>
+                  </div>
+
+                  {/* Mobile CTA */}
+                  <div className="md:hidden">
+                    <Link 
+                        smooth
+                        to="/run#contact-run"
+                        className="w-full inline-flex px-10 py-5 bg-white text-dodai-charcoal rounded-full font-bold hover:bg-gray-100 transition-all text-center justify-center items-center gap-2"
+                      >
+                        {t.runPage.hero.cta} <ArrowRight size={18} />
+                      </Link>
+                  </div>
+                </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: MODULES OPTIONNELS */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-16 text-center md:text-left">
@@ -100,9 +157,9 @@ export const RunPage: React.FC = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <AddonCard title={t.runPage.modules.m1.t} price="SUR DEVIS" desc={t.runPage.modules.m1.d} />
-            <AddonCard title={t.runPage.modules.m2.t} price="SUR DEVIS" desc={t.runPage.modules.m2.d} />
-            <AddonCard title={t.runPage.modules.m3.t} price="SUR DEVIS" desc={t.runPage.modules.m3.d} />
+            <AddonCard title={t.runPage.modules.m1.t} price={t.runPage.modules.price} desc={t.runPage.modules.m1.d} />
+            <AddonCard title={t.runPage.modules.m2.t} price={t.runPage.modules.price} desc={t.runPage.modules.m2.d} />
+            <AddonCard title={t.runPage.modules.m3.t} price={t.runPage.modules.price} desc={t.runPage.modules.m3.d} />
           </div>
 
           <div className="text-center">
@@ -111,76 +168,34 @@ export const RunPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 5: LE DUO RUN (Team) */}
+      {/* SECTION 6: LE DUO RUN (Team) */}
       <section className="py-24 md:py-32 bg-dodai-cream/30 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
             <MemberCard 
               image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Guillaume_fj5if7.png"
               name="Guillaume Duperier" 
-              role="Ops & Réseau"
+              role={t.runPage.team.g.role}
               linkedin="https://www.linkedin.com/in/g-duperier-apero/"
-              description="Présent sur le terrain pour les rituels opérationnels, la gestion des fournisseurs et le maintien des standards de service de votre staff."
-              list={['Rituels Opérationnels', 'Standards de Service', 'Sourcing Fournisseurs', 'Coordination Terrain']}
+              description={t.runPage.team.g.desc}
+              list={t.runPage.team.g.list}
             />
             <MemberCard 
               image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Alex_pue16e.png"
               name="Alexandre Gerard" 
-              role="Systèmes & Growth"
+              role={t.runPage.team.a.role}
               linkedin="https://www.linkedin.com/in/alexandre-gerard-27533453/"
-              description="Le moteur de votre rentabilité digitale : CRM, automatisations LINE, analyse des KPIs et production des contenus marketing mensuels."
-              list={['CRM & Automations', 'Pilotage KPIs', 'Stratégie Acquisition', 'Contenus Marketing']}
+              description={t.runPage.team.a.desc}
+              list={t.runPage.team.a.list}
             />
           </div>
-        </div>
-      </section>
-
-      {/* SECTION 6: PRICING (Standalone Run Card) */}
-      <section className="py-32 bg-[#F5F5F7] relative">
-        <div className="max-w-4xl mx-auto px-6">
-           <div className="rounded-[2.5rem] p-1 bg-[#1d1d1f] shadow-2xl shadow-black/30">
-              <div className="rounded-[2.3rem] p-8 md:px-12 md:py-16 bg-[#1d1d1f] text-white border border-white/5 flex flex-col md:flex-row gap-12 items-center justify-between">
-                <div className="flex-1">
-                   <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-4 py-1.5 rounded-full border text-blue-400 border-blue-400/40 bg-blue-400/10 mb-8 inline-block">
-                      {t.runPage.pricing.tag}
-                   </span>
-                   <h3 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Run</h3>
-                   <div className="flex items-baseline gap-2 mb-10">
-                      <span className="text-4xl md:text-5xl font-bold">{t.runPage.pricing.price}</span>
-                      <span className="text-xl text-gray-400">{t.runPage.pricing.unit}</span>
-                   </div>
-                   <ul className="space-y-4 mb-10">
-                      {t.runPage.pricing.features.map((f, i) => (
-                        <li key={i} className="flex gap-4 items-center">
-                          <Check size={18} className="text-blue-500 shrink-0" />
-                          <span className="text-gray-300 font-medium">{f}</span>
-                        </li>
-                      ))}
-                   </ul>
-                   <Link 
-                    smooth
-                    to="/run#contact-run"
-                    className="w-full md:w-auto inline-flex px-10 py-5 bg-white text-dodai-charcoal rounded-full font-bold hover:bg-gray-100 transition-all text-center justify-center items-center gap-2"
-                   >
-                    {t.runPage.hero.cta} <ArrowRight size={18} />
-                   </Link>
-                </div>
-              </div>
-           </div>
-           
-           <div className="mt-12 text-center space-y-4">
-              <p className="text-gray-500 text-sm font-medium">{t.runPage.pricing.footer}</p>
-              <Link smooth to="/run#contact-run" className="block text-dodai-charcoal font-bold hover:text-dodai-red transition-colors">
-                {t.runPage.pricing.urgent}
-              </Link>
-           </div>
         </div>
       </section>
 
       {/* SECTION 7: FAQ */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-20 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-20 text-center text-balance">
             {t.runPage.faq.title}
           </h2>
           <div className="space-y-4">
@@ -219,7 +234,7 @@ export const RunPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.confidentiality.title}</h4>
-                    <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300">
+                    <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300 text-balance">
                       {t.contact.confidentiality.desc}
                     </p>
                   </div>
