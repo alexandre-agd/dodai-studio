@@ -32,7 +32,9 @@ export const HomePage: React.FC = () => {
 
   return (
     <main>
-      <div className="reveal"><Hero /></div>
+      {/* Hero displays instantly for best performance */}
+      <Hero />
+      
       <div className="reveal"><Philosophy /></div>
       <div className="reveal"><Definition /></div>
       <div className="reveal"><Methodology /></div>

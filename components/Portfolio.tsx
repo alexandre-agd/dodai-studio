@@ -18,7 +18,6 @@ export const Portfolio: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Restaurant & Wine Bar - Reste en large (Haut Gauche) */}
           <div className="lg:col-span-2 md:col-span-2">
             <ProjectCard 
               category={t.portfolio.projects[0].category}
@@ -26,32 +25,29 @@ export const Portfolio: React.FC = () => {
               location={t.portfolio.projects[0].location}
               tags={t.portfolio.projects[0].tags}
               stat={t.portfolio.projects[0].stat}
-              image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop"
+              image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format,compress&q=80&w=1200"
               large
             />
           </div>
 
-          {/* Fromagerie & Grocery - Devient petit (Haut Droite) */}
           <ProjectCard 
             category={t.portfolio.projects[3].category}
             title={t.portfolio.projects[3].title}
             location={t.portfolio.projects[3].location}
             tags={t.portfolio.projects[3].tags}
             stat={t.portfolio.projects[3].stat}
-            image="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&q=80&w=2069"
+            image="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format,compress&q=80&w=800"
           />
           
-          {/* Eyewear Flagship - Reste petit (Bas Gauche) */}
           <ProjectCard 
             category={t.portfolio.projects[2].category}
             title={t.portfolio.projects[2].title}
             location={t.portfolio.projects[2].location}
             tags={t.portfolio.projects[2].tags}
             stat={t.portfolio.projects[2].stat}
-            image="https://images.unsplash.com/photo-1577803645773-f96470509666?q=80&w=2070&auto=format&fit=crop"
+            image="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format,compress&q=80&w=800"
           />
 
-          {/* Wine Shop & Import - Devient large (Bas Droite) */}
           <div className="lg:col-span-2 md:col-span-2">
              <ProjectCard 
               category={t.portfolio.projects[1].category}
@@ -59,7 +55,7 @@ export const Portfolio: React.FC = () => {
               location={t.portfolio.projects[1].location}
               tags={t.portfolio.projects[1].tags}
               stat={t.portfolio.projects[1].stat}
-              image="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?q=80&w=2070&auto=format&fit=crop"
+              image="https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea?auto=format,compress&q=80&w=1200"
               large
             />
           </div>
@@ -76,7 +72,7 @@ const ProjectCard: React.FC<{
   tags?: string[], 
   stat: string, 
   image: string, 
-  large?: boolean 
+  large?: boolean
 }> = ({ category, title, location, tags, stat, image, large }) => (
   <div className={`group relative overflow-hidden rounded-[2rem] bg-gray-900 ${large ? 'h-[500px]' : 'h-[500px]'}`}>
     <img 

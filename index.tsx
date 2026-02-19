@@ -10,9 +10,11 @@ if (!rootElement) {
 }
 
 const root = createRoot(rootElement);
+
+// We add future flags to silence React Router v6 warnings about v7
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <App />
     </HashRouter>
   </React.StrictMode>

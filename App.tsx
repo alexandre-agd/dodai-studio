@@ -1,20 +1,12 @@
-
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { Header, Footer } from './components/Layout';
 import { ScrollToTop } from './components/ScrollToTop';
 
-// Lazy loading des pages pour réduire le bundle initial
-const HomePage = lazy(() => import('./pages/HomePage').then(module => ({ default: module.HomePage })));
-const PartenairesPage = lazy(() => import('./pages/PartenairesPage').then(module => ({ default: module.PartenairesPage })));
-
-// Loader minimaliste pour le Suspense
-const PageLoader = () => (
-  <div className="min-h-[60vh] flex items-center justify-center bg-dodai-cream">
-    <div className="w-8 h-8 border-2 border-dodai-charcoal border-t-transparent rounded-full animate-spin"></div>
-  </div>
-);
+// Import direct pour éviter les problèmes de résolution de modules asynchrones pendant la réparation
+import { HomePage } from './pages/HomePage';
+import { PartenairesPage } from './pages/PartenairesPage';
 
 const AppContent: React.FC = () => {
   return (
@@ -29,13 +21,11 @@ const AppContent: React.FC = () => {
       <Header />
       
       <div className="flex-grow">
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/partenaires" element={<PartenairesPage />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
-        </Suspense>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/partenaires" element={<PartenairesPage />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
       </div>
 
       <Footer />
