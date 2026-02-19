@@ -9,14 +9,19 @@ export default defineConfig({
     sourcemap: false,
     minify: 'esbuild',
     rollupOptions: {
+      external: [
+        'react',
+        'react-dom',
+        'react-router-dom',
+        'react-router-hash-link',
+        'lucide-react'
+      ],
       output: {
-        manualChunks: {
-          'vendor-react': ['react', 'react-dom'],
-          'vendor-router': ['react-router-dom', 'react-router-hash-link'],
-          'vendor-icons': ['lucide-react']
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM'
         }
       }
-    },
-    chunkSizeWarningLimit: 1000
+    }
   }
 })

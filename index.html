@@ -6,6 +6,9 @@
     <link rel="icon" type="image/png" href="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" />
     <title>Dodai Studio - Les fondations de votre business au Japon</title>
     
+    <!-- Runtime Environment Polyfill -->
+    <script>window.process = { env: { NODE_ENV: 'production' } };</script>
+
     <!-- Performance Optimizations -->
     <link rel="preconnect" href="https://esm.sh">
     <link rel="preload" as="image" href="https://res.cloudinary.com/dehnuytil/image/upload/f_auto,q_auto,w_800/v1770612903/Dodai-logo_mfemab.png" fetchpriority="high">
@@ -39,7 +42,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     
-    <!-- CLEAN IMPORT MAP: Production-ready runtime dependencies only -->
+    <!-- CLEAN IMPORT MAP: Production runtime only -->
     <script type="importmap">
 {
   "imports": {
