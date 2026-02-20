@@ -6,9 +6,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 interface ContactFormProps {
   initialData?: WizardData | null;
   isRunPage?: boolean;
+  isDiagnosticPage?: boolean;
 }
 
-export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage }) => {
+export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage, isDiagnosticPage }) => {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
@@ -16,6 +17,8 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
     type: 'F&B',
     city: 'Tokyo',
     timing: '',
+    projectStatus: '',
+    validationNeeds: '',
     budget: '',
     message: '',
     currentConcept: '',
@@ -35,7 +38,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
       } else if (isAddonSelection) {
         message = `${t.contact.form.labelAddonsSelected} \n- ${initialData.stage.split(', ').join('\n- ')}\n`;
       } else {
-        message = `${t.contact.form.labelProject} ${initialData.sector} (${initialData.stage}). \n${t.contact.form.labelVisa} ${initialData.visa}.\n`;
+        message = `${t.contact.form.labelProject} ${initialData.sector} (${initialData.stage}). \nDéfi : ${initialData.challenge}.\n`;
       }
 
       setFormData(prev => ({
@@ -68,7 +71,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', budget: '', message: '', currentConcept: '', mainChallenge: '' });
+        setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', projectStatus: '', validationNeeds: '', budget: '', message: '', currentConcept: '', mainChallenge: '' });
       } else {
         console.error('Webhook Error:', response.status, response.statusText);
         setStatus('error');
@@ -176,6 +179,27 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
                 className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800"
               />
             </>
+          ) : isDiagnosticPage ? (
+            <>
+              <label htmlFor="projectStatus" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.projectStatus}</label>
+              <div className="relative">
+                <select
+                  id="projectStatus"
+                  name="projectStatus"
+                  value={formData.projectStatus}
+                  onChange={handleChange}
+                  className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all appearance-none font-medium text-gray-800 cursor-pointer"
+                >
+                  <option value="">{t.contact.form.projectStatus}...</option>
+                  {t.contact.form.projectOptions.map((opt: string) => (
+                    <option key={opt} value={opt}>{opt}</option>
+                  ))}
+                </select>
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+              </div>
+            </>
           ) : (
             <>
               <label htmlFor="city" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.city}</label>
@@ -214,6 +238,19 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
               </div>
+            </>
+          ) : isDiagnosticPage ? (
+            <>
+              <label htmlFor="validationNeeds" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.validationNeeds}</label>
+              <input
+                type="text"
+                id="validationNeeds"
+                name="validationNeeds"
+                value={formData.validationNeeds}
+                onChange={handleChange}
+                placeholder={t.contact.form.validationPlaceholder}
+                className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800"
+              />
             </>
           ) : (
             <>

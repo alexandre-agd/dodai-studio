@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { 
   ArrowRight, 
   Check, 
-  Plus, 
-  Target, 
   Zap, 
+  Target, 
   LineChart, 
   MessageSquare,
   Users,
@@ -54,7 +53,16 @@ export const RunPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 2: POUR QUI ? (Cards) */}
+      {/* Discrete Pathway Mention Under Hero - Simplified for safety */}
+      <div className="bg-white py-8 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+            <p className="text-sm text-gray-400 font-medium italic">
+              {t.runPage.hero.pathway}
+            </p>
+        </div>
+      </div>
+
+      {/* SECTION 2: POUR QUI ? */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-20 text-center md:text-left">
@@ -63,10 +71,16 @@ export const RunPage: React.FC = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <AudienceCard title={t.runPage.audience.p1.t} desc={t.runPage.audience.p1.d} icon={<Zap size={24} />} />
+            <AudienceCard 
+              title={t.runPage.audience.p1.t} 
+              desc={t.runPage.audience.p1.d} 
+              icon={<Zap size={24} />} 
+              linkText={t.runPage.audience.p1.link}
+              linkHref="/build"
+            />
             <AudienceCard title={t.runPage.audience.p2.t} desc={t.runPage.audience.p2.d} icon={<Target size={24} />} />
-            <AudienceCard title={t.runPage.audience.p3.t} desc={t.runPage.audience.p3.d} icon={<LineChart size={24} />} />
             <AudienceCard title={t.runPage.audience.p4.t} desc={t.runPage.audience.p4.d} icon={<Users size={24} />} />
+            <AudienceCard title={t.runPage.audience.p3.t} desc={t.runPage.audience.p3.d} icon={<LineChart size={24} />} />
           </div>
         </div>
       </section>
@@ -90,14 +104,12 @@ export const RunPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 4: PRICING (Now placed before modules, and rebalanced) */}
+      {/* SECTION 4: PRICING */}
       <section className="py-24 md:py-32 bg-[#F5F5F7] relative">
         <div className="max-w-5xl mx-auto px-6">
            <div className="rounded-[3rem] p-1 bg-[#1d1d1f] shadow-2xl shadow-black/30">
               <div className="rounded-[2.8rem] p-8 md:p-16 bg-[#1d1d1f] text-white border border-white/5">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-                  
-                  {/* Left Side: Offer Identity & Price */}
                   <div>
                     <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-4 py-1.5 rounded-full border text-blue-400 border-blue-400/40 bg-blue-400/10 mb-8 inline-block">
                         {t.runPage.pricing.tag}
@@ -117,12 +129,11 @@ export const RunPage: React.FC = () => {
                     </Link>
                   </div>
 
-                  {/* Right Side: Features List */}
                   <div className="bg-white/5 rounded-3xl p-8 border border-white/5">
                     <ul className="space-y-6">
                         {t.runPage.pricing.features.map((f, i) => (
                           <li key={i} className="flex gap-4 items-start">
-                            <div className="mt-1 w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/20">
+                            <div className="mt-1 w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/30">
                               <Check size={12} strokeWidth={4} className="text-white" />
                             </div>
                             <span className="text-gray-200 font-medium leading-tight">{f}</span>
@@ -130,45 +141,14 @@ export const RunPage: React.FC = () => {
                         ))}
                     </ul>
                   </div>
-
-                  {/* Mobile CTA */}
-                  <div className="md:hidden">
-                    <Link 
-                        smooth
-                        to="/run#contact-run"
-                        className="w-full inline-flex px-10 py-5 bg-white text-dodai-charcoal rounded-full font-bold hover:bg-gray-100 transition-all text-center justify-center items-center gap-2"
-                      >
-                        {t.runPage.hero.cta} <ArrowRight size={18} />
-                      </Link>
-                  </div>
                 </div>
               </div>
            </div>
         </div>
       </section>
 
-      {/* SECTION 5: MODULES OPTIONNELS */}
+      {/* SECTION 5: DUO & TEAM */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 text-center md:text-left">
-             <h3 className="text-3xl md:text-4xl font-bold text-dodai-charcoal mb-3">{t.runPage.modules.title}</h3>
-             <p className="text-gray-600 font-light text-lg">{t.runPage.modules.subtitle}</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <AddonCard title={t.runPage.modules.m1.t} price={t.runPage.modules.price} desc={t.runPage.modules.m1.d} />
-            <AddonCard title={t.runPage.modules.m2.t} price={t.runPage.modules.price} desc={t.runPage.modules.m2.d} />
-            <AddonCard title={t.runPage.modules.m3.t} price={t.runPage.modules.price} desc={t.runPage.modules.m3.d} />
-          </div>
-
-          <div className="text-center">
-            <p className="text-sm text-gray-400 font-medium">{t.runPage.modules.note}</p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 6: LE DUO RUN (Team) */}
-      <section className="py-24 md:py-32 bg-dodai-cream/30 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
             <MemberCard 
@@ -191,23 +171,7 @@ export const RunPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 7: FAQ */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-20 text-center text-balance">
-            {t.runPage.faq.title}
-          </h2>
-          <div className="space-y-4">
-             <FAQItem q={t.runPage.faq.q1} a={t.runPage.faq.a1} />
-             <FAQItem q={t.runPage.faq.q2} a={t.runPage.faq.a2} />
-             <FAQItem q={t.runPage.faq.q3} a={t.runPage.faq.a3} />
-             <FAQItem q={t.runPage.faq.q4} a={t.runPage.faq.a4} />
-             <FAQItem q={t.runPage.faq.q5} a={t.runPage.faq.a5} />
-          </div>
-        </div>
-      </section>
-
-      {/* Final Contact Section (Home Style) */}
+      {/* CONTACT FORM */}
       <section id="contact-run" className="py-24 md:py-32 bg-[#1d1d1f] text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
@@ -233,7 +197,7 @@ export const RunPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.confidentiality.title}</h4>
-                    <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300 text-balance">
+                    <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300">
                       {t.contact.confidentiality.desc}
                     </p>
                   </div>
@@ -250,21 +214,14 @@ export const RunPage: React.FC = () => {
                     </p>
                   </div>
                 </div>
-
-                 <div className="flex gap-6 items-start group">
-                  <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 group-hover:bg-white group-hover:text-dodai-charcoal transition-all duration-500">
-                    <MessageSquare size={20} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.noCommitment.title}</h4>
-                    <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300">
-                      {t.contact.noCommitment.desc}
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
-            <div>
+            <div className="flex flex-col gap-10">
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <p className="text-sm text-gray-400 italic">
+                  {t.contact.formHintRun}
+                </p>
+              </div>
               <ContactForm isRunPage />
             </div>
           </div>
@@ -275,13 +232,26 @@ export const RunPage: React.FC = () => {
 };
 
 // SUB-COMPONENTS
-const AudienceCard: React.FC<{ title: string, desc: string, icon: React.ReactNode }> = ({ title, desc, icon }) => (
+const AudienceCard: React.FC<{ 
+  title: string, 
+  desc: string, 
+  icon: React.ReactNode, 
+  linkText?: string, 
+  linkHref?: string 
+}> = ({ title, desc, icon, linkText, linkHref }) => (
   <div className="p-8 rounded-[2.5rem] bg-gray-50 border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-500 group">
     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-dodai-charcoal mb-6 shadow-sm group-hover:bg-dodai-charcoal group-hover:text-white transition-all">
       {icon}
     </div>
     <h4 className="text-xl font-bold text-dodai-charcoal mb-3 tracking-tight">{title}</h4>
-    <p className="text-gray-500 leading-relaxed text-sm font-medium">{desc}</p>
+    <p className="text-gray-500 leading-relaxed text-sm font-medium mb-4">{desc}</p>
+    {linkText && linkHref && (
+      <div className="mt-auto pt-4 border-t border-gray-200">
+        <Link smooth to={linkHref} className="text-xs font-bold text-dodai-red hover:text-dodai-charcoal transition-colors underline underline-offset-4 decoration-dodai-red/20">
+          {linkText}
+        </Link>
+      </div>
+    )}
   </div>
 );
 
@@ -294,33 +264,6 @@ const ReferralBlock: React.FC<{ icon: React.ReactNode, title: string, text: stri
     <p className="text-gray-600 leading-relaxed font-light">{text}</p>
   </div>
 );
-
-const AddonCard: React.FC<{ title: string, price: string, desc: string }> = ({ title, price, desc }) => (
-  <div className="p-8 rounded-3xl bg-white border border-gray-200 flex flex-col justify-between h-full hover:shadow-2xl transition-all duration-500">
-    <div>
-      <h4 className="font-bold text-xl mb-3 text-dodai-charcoal">{title}</h4>
-      <p className="text-[11px] font-bold text-dodai-red mb-5 font-mono uppercase tracking-widest">{price}</p>
-      <p className="text-sm text-gray-700 leading-relaxed font-medium">{desc}</p>
-    </div>
-  </div>
-);
-
-const FAQItem: React.FC<{ q: string, a: string }> = ({ q, a }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="border-b border-gray-100 last:border-none">
-      <button onClick={() => setIsOpen(!isOpen)} className="w-full py-8 flex justify-between items-center text-left group">
-        <span className={`text-xl md:text-2xl font-medium transition-colors ${isOpen ? 'text-dodai-charcoal' : 'text-gray-500 group-hover:text-dodai-charcoal'}`}>{q}</span>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-dodai-charcoal text-white rotate-45' : 'bg-gray-100 text-gray-400'}`}>
-           <Plus size={18} />
-        </div>
-      </button>
-      <div className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-8 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <p className="text-gray-600 leading-relaxed font-normal text-lg max-w-3xl">{a}</p>
-      </div>
-    </div>
-  );
-};
 
 const MemberCard: React.FC<{ 
   image: string, 

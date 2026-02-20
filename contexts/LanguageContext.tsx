@@ -11,39 +11,27 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 /**
- * Proxy de sécurité pour les traductions.
- * Empêche les crashs React si une clé est manquante.
+ * Deep merge utility to ensure fallback values for missing translation keys.
+ * Merges source into target recursively.
  */
-const createSafeTranslationProxy = (obj: any, lang: string, path: string = ''): any => {
-  return new Proxy(obj || {}, {
-    get(target, prop) {
-      // Ignorer les symboles internes React pour ne pas interférer avec le moteur de rendu
-      if (typeof prop !== 'string' || prop === 'then' || prop === 'toJSON' || prop === '$$typeof') {
-        return target[prop];
+function deepMerge(target: any, source: any): any {
+  if (!source) return target;
+  const output = { ...target };
+  
+  Object.keys(source).forEach(key => {
+    if (source[key] && typeof source[key] === 'object' && !Array.isArray(source[key])) {
+      if (!(key in target)) {
+        Object.assign(output, { [key]: source[key] });
+      } else {
+        output[key] = deepMerge(target[key], source[key]);
       }
-      
-      const currentPath = path ? `${path}.${prop}` : prop;
-      const value = target[prop];
-
-      if (value === undefined) {
-        console.warn(`[Dodai Studio] Missing translation key: "${currentPath}" for language: "${lang}"`);
-        return `[Missing: ${currentPath}]`;
-      }
-
-      // Si c'est un tableau, on le renvoie tel quel
-      if (Array.isArray(value)) {
-        return value;
-      }
-
-      // Si c'est un objet, on continue la récursion de sécurité
-      if (typeof value === 'object' && value !== null) {
-        return createSafeTranslationProxy(value, lang, currentPath);
-      }
-
-      return value;
+    } else {
+      Object.assign(output, { [key]: source[key] });
     }
   });
-};
+  
+  return output;
+}
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -58,7 +46,6 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const [language, setLanguageState] = useState<Language>(getUrlLanguage());
 
-  // Synchronisation descendante : l'URL change -> on met à jour le state
   useEffect(() => {
     const urlLang = getUrlLanguage();
     if (urlLang !== language) {
@@ -71,13 +58,15 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     setSearchParams({ lang }, { replace: true });
   };
 
-  // On protège l'objet de traduction avec notre Proxy
-  const safeTranslations = createSafeTranslationProxy(translations[language], language);
+  // Merge selected language with French as a base to prevent missing keys/objects
+  const mergedT = language === 'fr' 
+    ? translations.fr 
+    : deepMerge(translations.fr, translations[language]);
 
   const value = {
     language,
     setLanguage,
-    t: safeTranslations,
+    t: mergedT as typeof translations.fr,
   };
 
   return (

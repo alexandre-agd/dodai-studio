@@ -35,7 +35,7 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
   };
 
   const handleRecapCta = () => {
-    const selectedNames = selectedPillars.map(idx => piliers[idx].title);
+    const selectedNames = selectedPillars.map(idx => piliers[idx]?.title).filter(Boolean) as string[];
     if (onServicesSelected) {
       onServicesSelected(selectedNames);
     }
@@ -46,7 +46,7 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
   };
 
   const handleAddonsRecapCta = () => {
-    const selectedAddonNames = selectedAddons.map(idx => addons[idx].title);
+    const selectedAddonNames = selectedAddons.map(idx => addons[idx]?.title).filter(Boolean) as string[];
     if (onAddonsSelected) {
       onAddonsSelected(selectedAddonNames);
     }
@@ -65,6 +65,13 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
+        {/* Context line for the pathway */}
+        <div className="mb-12 text-center">
+            <p className="text-xs text-gray-400 font-medium tracking-wide">
+              {t.services?.pathContext}
+            </p>
+        </div>
+
         {/* Header Section */}
         <div className="mb-24 text-center">
             <span className="inline-block py-1 px-3 rounded-full bg-white border border-gray-200 text-[10px] font-bold uppercase tracking-widest text-dodai-red mb-6 shadow-sm">
@@ -136,13 +143,13 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
                   {build.length > 0 && (
                     <>
                       <div className="lg:mt-8 h-full">
-                           <BuildTierCard tier={build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} chooseLabel={t.services?.choose} />
+                           <BuildTierCard tier={build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} chooseLabel={t.services?.choose || 'Choisir'} />
                       </div>
                       <div className="relative z-20 transform lg:-translate-y-4 h-full">
-                           <BuildTierCard tier={build[1] || build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} chooseLabel={t.services?.choose} />
+                           <BuildTierCard tier={build[1] || build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} chooseLabel={t.services?.choose || 'Choisir'} />
                       </div>
                       <div className="lg:mt-8 h-full">
-                           <BuildTierCard tier={build[2] || build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} chooseLabel={t.services?.choose} />
+                           <BuildTierCard tier={build[2] || build[0]} paymentLabel={t.services?.paymentLabel || 'Paiement'} chooseLabel={t.services?.choose || 'Choisir'} />
                       </div>
                     </>
                   )}
@@ -179,7 +186,7 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
                       {selectedPillars.map(idx => (
                         <div key={idx} className="bg-white/10 px-5 py-2 rounded-2xl text-[11px] whitespace-nowrap font-bold border border-white/5 flex items-center gap-2 transition-all hover:bg-white/20">
                           <Check size={12} className="text-dodai-red" />
-                          {piliers[idx].title}
+                          {piliers[idx]?.title}
                         </div>
                       ))}
                    </div>
@@ -269,7 +276,7 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
                         {selectedAddons.map(idx => (
                           <div key={idx} className="bg-white/10 px-5 py-2 rounded-2xl text-[11px] whitespace-nowrap font-bold border border-white/5 flex items-center gap-2 transition-all hover:bg-white/20">
                             <Check size={12} className="text-dodai-red" />
-                            {addons[idx].title}
+                            {addons[idx]?.title}
                           </div>
                         ))}
                      </div>
@@ -297,7 +304,7 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
 };
 
 const StandaloneCard: React.FC<{ service: StandaloneServiceProps, isDiagnostic?: boolean, isRun?: boolean }> = ({ service, isDiagnostic, isRun }) => {
-    const features = Array.isArray(service.features) ? service.features : [];
+    const features = Array.isArray(service?.features) ? service.features : [];
     
     return (
     <div className={`rounded-[2.5rem] p-1 transition-all duration-500 hover:-translate-y-1 ${isDiagnostic ? 'bg-dodai-charcoal shadow-2xl shadow-dodai-charcoal/20' : isRun ? 'bg-[#1d1d1f] shadow-2xl shadow-black/30' : 'bg-white shadow-xl shadow-gray-200/50'}`}>
@@ -306,18 +313,18 @@ const StandaloneCard: React.FC<{ service: StandaloneServiceProps, isDiagnostic?:
             <div className="flex-1 w-full md:w-auto py-4 md:py-0">
                 <div className="flex items-center gap-3 mb-5">
                     <span className={`text-[10px] font-mono uppercase tracking-widest font-bold px-4 py-1.5 rounded-full border ${isDiagnostic ? 'text-dodai-red border-dodai-red/40 bg-dodai-red/10' : isRun ? 'text-blue-400 border-blue-400/40 bg-blue-400/10' : 'text-gray-500 border-gray-200 bg-gray-50'}`}>
-                        {service.subtitle}
+                        {service?.subtitle}
                     </span>
                 </div>
-                <h3 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">{service.title}</h3>
+                <h3 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">{service?.title}</h3>
                 <p className={`text-xl leading-relaxed mb-10 font-light max-w-md ${isDiagnostic || isRun ? 'text-gray-300' : 'text-gray-700'}`}>
-                    {service.description}
+                    {service?.description}
                 </p>
                 <div className="flex flex-col sm:flex-row items-baseline gap-3">
-                    <span className="text-4xl font-bold tracking-tight">{service.price}</span>
-                    {service.priceDetail && <span className={`text-sm font-bold uppercase tracking-wide ${isDiagnostic || isRun ? 'text-gray-400' : 'text-gray-500'}`}>{service.priceDetail}</span>}
+                    <span className="text-4xl font-bold tracking-tight">{service?.price}</span>
+                    {service?.priceDetail && <span className={`text-sm font-bold uppercase tracking-wide ${isDiagnostic || isRun ? 'text-gray-400' : 'text-gray-500'}`}>{service.priceDetail}</span>}
                 </div>
-                <p className={`text-[11px] font-mono mt-3 uppercase tracking-widest ${isDiagnostic || isRun ? 'text-gray-500' : 'text-gray-400'}`}>{service.context}</p>
+                <p className={`text-[11px] font-mono mt-3 uppercase tracking-widest ${isDiagnostic || isRun ? 'text-gray-500' : 'text-gray-400'}`}>{service?.context}</p>
             </div>
             
             <div className={`flex-1 w-full md:max-w-md p-8 md:p-10 rounded-[2rem] backdrop-blur-md ${isDiagnostic ? 'bg-white/5 border border-white/10' : isRun ? 'bg-white/5 border border-white/5' : 'bg-gray-50 border border-gray-200'}`}>
@@ -332,7 +339,7 @@ const StandaloneCard: React.FC<{ service: StandaloneServiceProps, isDiagnostic?:
                     ))}
                 </ul>
                 <a href="#contact" className={`w-full py-5 rounded-2xl font-bold text-sm flex items-center justify-center gap-3 transition-all hover:scale-[1.02] active:scale-95 ${isDiagnostic ? 'bg-white text-dodai-charcoal hover:bg-gray-100' : isRun ? 'bg-white text-black hover:bg-gray-200' : 'bg-dodai-charcoal text-white hover:bg-black'}`}>
-                    {service.cta} <ArrowRight size={18} />
+                    {service?.cta} <ArrowRight size={18} />
                 </a>
             </div>
         </div>

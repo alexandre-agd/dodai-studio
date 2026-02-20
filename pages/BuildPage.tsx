@@ -15,7 +15,8 @@ import {
   MessageSquare,
   Sparkles,
   Lock,
-  Clock
+  Clock,
+  Search
 } from 'lucide-react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { ContactForm } from '../components/ContactForm';
@@ -73,6 +74,31 @@ export const BuildPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Discrete Pathway Mention Under Hero */}
+      <div className="bg-white py-8 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+            <p className="text-sm text-gray-400 font-medium italic">
+              {t.buildPage.hero.pathway.split('. ').map((part, i) => (
+                <span key={i}>
+                  {i === 0 ? part : ''}
+                  {i === 1 ? (
+                    <>
+                      . <Link to="/diagnostic" className="text-dodai-charcoal hover:text-dodai-red font-bold transition-colors underline underline-offset-4 decoration-dodai-charcoal/20">Diagnostic</Link>
+                      {' ? Jump straight to choosing your format below. Not sure yet? '}
+                      <Link to="/diagnostic" className="text-dodai-charcoal hover:text-dodai-red font-bold transition-colors underline underline-offset-4 decoration-dodai-charcoal/20">Start there</Link>
+                      .
+                    </>
+                  ) : ''}
+                </span>
+              ))}
+              {/* Fallback for simple translation rendering */}
+              <span className="hidden">
+                {t.buildPage.hero.pathway}
+              </span>
+            </p>
+        </div>
+      </div>
 
       {/* SECTION 2: TIMELINE (What actually happens) */}
       <section className="py-24 md:py-48 bg-white">
@@ -140,10 +166,10 @@ export const BuildPage: React.FC = () => {
 
             {/* VIEW 2: A LA CARTE */}
             <div className={`grid md:grid-cols-2 lg:grid-cols-4 gap-6 transition-all duration-500 ${view === 'alaCarte' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none absolute inset-0'}`}>
-               <PillarCard title={t.buildPage.pillars.p1.t} desc={t.buildPage.pillars.p1.d} isSelected={selectedPillars.includes(0)} onToggle={() => togglePillar(0)} quote={t.buildPage.pillars.quote} />
-               <PillarCard title={t.buildPage.pillars.p2.t} desc={t.buildPage.pillars.p2.d} isSelected={selectedPillars.includes(1)} onToggle={() => togglePillar(1)} quote={t.buildPage.pillars.quote} />
-               <PillarCard title={t.buildPage.pillars.p3.t} desc={t.buildPage.pillars.p3.d} isSelected={selectedPillars.includes(2)} onToggle={() => togglePillar(2)} quote={t.buildPage.pillars.quote} />
-               <PillarCard title={t.buildPage.pillars.p4.t} desc={t.buildPage.pillars.p4.d} isSelected={selectedPillars.includes(3)} onToggle={() => togglePillar(3)} quote={t.buildPage.pillars.quote} />
+               <PillarCard title={t.buildPage.pillars.p1.t} desc={t.buildPage.pillars.p1.d} value={t.buildPage.pillars.p1.v} isSelected={selectedPillars.includes(0)} onToggle={() => togglePillar(0)} quote={t.buildPage.pillars.quote} />
+               <PillarCard title={t.buildPage.pillars.p2.t} desc={t.buildPage.pillars.p2.d} value={t.buildPage.pillars.p2.v} isSelected={selectedPillars.includes(1)} onToggle={() => togglePillar(1)} quote={t.buildPage.pillars.quote} />
+               <PillarCard title={t.buildPage.pillars.p3.t} desc={t.buildPage.pillars.p3.d} value={t.buildPage.pillars.p3.v} isSelected={selectedPillars.includes(2)} onToggle={() => togglePillar(2)} quote={t.buildPage.pillars.quote} />
+               <PillarCard title={t.buildPage.pillars.p4.t} desc={t.buildPage.pillars.p4.d} value={t.buildPage.pillars.p4.v} isSelected={selectedPillars.includes(3)} onToggle={() => togglePillar(3)} quote={t.buildPage.pillars.quote} />
             </div>
           </div>
 
@@ -178,7 +204,7 @@ export const BuildPage: React.FC = () => {
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.buildPage.network.title}
             </h2>
-            <p className="text-xl text-gray-500 font-light max-w-2xl">{t.buildPage.network.subtitle}</p>
+            <p className="text-xl text-gray-500 font-light max-w-3xl">{t.buildPage.network.subtitle}</p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
@@ -201,8 +227,9 @@ export const BuildPage: React.FC = () => {
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">{t.buildPage.addons.title}</h2>
             <p className="text-xl text-gray-500 font-light">{t.buildPage.addons.subtitle}</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
              <AddonCard title={t.buildPage.addons.m1.t} desc={t.buildPage.addons.m1.d} price={t.buildPage.addons.quote} />
+             <AddonCard title={t.buildPage.addons.m4.t} desc={t.buildPage.addons.m4.d} price={t.buildPage.addons.quote} />
              <AddonCard title={t.buildPage.addons.m2.t} desc={t.buildPage.addons.m2.d} price={t.buildPage.addons.quote} />
              <AddonCard title={t.buildPage.addons.m3.t} desc={t.buildPage.addons.m3.d} price={t.buildPage.addons.quote} />
           </div>
@@ -247,7 +274,14 @@ export const BuildPage: React.FC = () => {
                 <ContactInfoBlock icon={<MessageSquare size={20} />} title={t.contact.noCommitment.title} desc={t.contact.noCommitment.desc} />
               </div>
             </div>
-            <div>
+            
+            <div className="flex flex-col gap-10">
+              {/* Discrete Pathway Mention before form */}
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <p className="text-sm text-gray-400 italic">
+                  {t.contact.formHintBuild}
+                </p>
+              </div>
               <ContactForm />
             </div>
           </div>
@@ -293,7 +327,7 @@ const TierCard: React.FC<{ tag: string, title: string, desc: string, price: stri
   </div>
 );
 
-const PillarCard: React.FC<{ title: string, desc: string, isSelected: boolean, onToggle: () => void, quote: string }> = ({ title, desc, isSelected, onToggle, quote }) => (
+const PillarCard: React.FC<{ title: string, desc: string, value: string, isSelected: boolean, onToggle: () => void, quote: string }> = ({ title, desc, value, isSelected, onToggle, quote }) => (
   <button 
     onClick={onToggle}
     className={`relative text-left p-10 rounded-[2.5rem] h-full transition-all duration-500 flex flex-col border-2 group active:scale-95 ${
@@ -306,7 +340,8 @@ const PillarCard: React.FC<{ title: string, desc: string, isSelected: boolean, o
         {isSelected ? <Check size={20} strokeWidth={3} /> : <Plus size={20} />}
     </div>
     <h4 className={`text-xl font-bold mb-4 tracking-tight ${isSelected ? 'text-white' : 'text-dodai-charcoal'}`}>{title}</h4>
-    <p className={`text-sm leading-relaxed mb-10 ${isSelected ? 'text-gray-300' : 'text-gray-600'}`}>{desc}</p>
+    <p className={`text-sm leading-relaxed mb-4 ${isSelected ? 'text-gray-300' : 'text-gray-600'}`}>{desc}</p>
+    <p className={`text-sm font-bold italic mb-10 ${isSelected ? 'text-dodai-red' : 'text-dodai-red'}`}>{value}</p>
     <div className={`mt-auto pt-6 border-t ${isSelected ? 'border-white/10' : 'border-gray-100'}`}>
       <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-dodai-red">{quote}</span>
     </div>

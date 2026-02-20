@@ -23,7 +23,29 @@ export const HomePage: React.FC = () => {
   }, []);
 
   const handleWizardComplete = (data: WizardData) => {
-    setPrefilledData(data);
+    // Localize data before sending to form
+    const localizedData = { ...data };
+    
+    // Resolve stage label with safety
+    const options = t.wizard?.options;
+    if (options) {
+      if (data.stage === 'stage1') localizedData.stage = options.stage1?.title || 'Stage 1';
+      if (data.stage === 'stage2') localizedData.stage = options.stage2?.title || 'Stage 2';
+      if (data.stage === 'stage3') localizedData.stage = options.stage3?.title || 'Stage 3';
+      if (data.stage === 'stage4') localizedData.stage = options.stage4?.title || 'Stage 4';
+
+      // Challenge is handled by id, find label with safety
+      const findLabel = (id: string, list: any[]) => {
+        if (!Array.isArray(list)) return id;
+        return list.find(o => o.id === id)?.title || id;
+      };
+
+      if (data.stage === 'stage1' || data.stage === 'stage2') localizedData.challenge = findLabel(data.challenge, options.q3_early);
+      else if (data.stage === 'stage3') localizedData.challenge = findLabel(data.challenge, options.q3_ready);
+      else if (data.stage === 'stage4') localizedData.challenge = findLabel(data.challenge, options.q3_open);
+    }
+
+    setPrefilledData(localizedData);
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -37,7 +59,7 @@ export const HomePage: React.FC = () => {
     setPrefilledData({
       sector: localizedSector,
       stage: services.join(', '),
-      visa: localizedVisa,
+      challenge: localizedVisa,
     });
   };
 
@@ -48,7 +70,7 @@ export const HomePage: React.FC = () => {
     setPrefilledData({
       sector: localizedSector,
       stage: addons.join(', '),
-      visa: localizedVisa,
+      challenge: localizedVisa,
     });
   };
 
@@ -90,9 +112,9 @@ export const HomePage: React.FC = () => {
                     <Lock size={20} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.confidentiality.title}</h4>
+                    <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.confidentiality?.title}</h4>
                     <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300">
-                      {t.contact.confidentiality.desc}
+                      {t.contact.confidentiality?.desc}
                     </p>
                   </div>
                 </div>
@@ -102,9 +124,9 @@ export const HomePage: React.FC = () => {
                     <Clock size={20} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.response.title}</h4>
+                    <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.response?.title}</h4>
                     <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300">
-                      {t.contact.response.desc}
+                      {t.contact.response?.desc}
                     </p>
                   </div>
                 </div>
@@ -114,15 +136,20 @@ export const HomePage: React.FC = () => {
                     <MessageSquare size={20} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.noCommitment.title}</h4>
+                    <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{t.contact.noCommitment?.title}</h4>
                     <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300">
-                      {t.contact.noCommitment.desc}
+                      {t.contact.noCommitment?.desc}
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            <div>
+            <div className="flex flex-col gap-10">
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <p className="text-sm text-gray-400 italic">
+                  {t.contact.formHintHome}
+                </p>
+              </div>
               <ContactForm initialData={prefilledData} />
             </div>
           </div>

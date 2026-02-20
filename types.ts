@@ -53,10 +53,11 @@ export interface TeamMemberProps {
   description: string;
 }
 
-// Added WizardData interface for centralized type management
+// Updated WizardData interface for the new logic
 export interface WizardData {
   sector: string;
   stage: string;
-  visa: string;
+  challenge: string;
   recommendation?: string;
+  resultCase?: 1 | 2 | 3 | 4;
 }

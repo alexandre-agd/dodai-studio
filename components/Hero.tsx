@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { HashLink as Link } from 'react-router-hash-link';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Hero: React.FC = () => {
@@ -34,19 +35,20 @@ export const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-20">
-            <a 
-              href="#contact" 
+            <Link 
+              smooth
+              to="/#contact" 
               className="w-full sm:w-auto px-10 py-5 bg-dodai-charcoal text-white rounded-full font-medium hover:bg-black transition-all flex items-center justify-center gap-2 shadow-2xl shadow-gray-300/50 hover:scale-105 duration-300"
             >
               {t.hero.ctaPrimary}
               <ArrowRight size={18} />
-            </a>
-            <a 
-              href="#offres" 
-              className="w-full sm:w-auto px-10 py-5 bg-transparent border border-gray-200 text-dodai-charcoal rounded-full font-medium hover:bg-gray-50 transition-all hover:border-gray-400"
+            </Link>
+            <Link 
+              to="/diagnostic" 
+              className="w-full sm:w-auto px-10 py-5 bg-transparent border border-gray-200 text-dodai-charcoal rounded-full font-medium hover:bg-gray-50 transition-all hover:border-gray-400 text-center"
             >
               {t.hero.ctaSecondary}
-            </a>
+            </Link>
           </div>
         </div>
 

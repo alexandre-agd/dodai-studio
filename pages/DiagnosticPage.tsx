@@ -12,7 +12,8 @@ import {
   Map, 
   Lock, 
   Clock, 
-  MessageSquare
+  MessageSquare,
+  ShieldCheck
 } from 'lucide-react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { ContactForm } from '../components/ContactForm';
@@ -60,9 +61,10 @@ export const DiagnosticPage: React.FC = () => {
       {/* SECTION 2: POUR QUI ? */}
       <section className="py-24 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             <AudienceCard title={t.diagnosticPage.audience.p1.t} desc={t.diagnosticPage.audience.p1.d} />
             <AudienceCard title={t.diagnosticPage.audience.p2.t} desc={t.diagnosticPage.audience.p2.d} />
+            <AudienceCard title={t.diagnosticPage.audience.p3.t} desc={t.diagnosticPage.audience.p3.d} isRunContext />
           </div>
         </div>
       </section>
@@ -76,13 +78,25 @@ export const DiagnosticPage: React.FC = () => {
             </h2>
             <div className="w-20 h-1 bg-dodai-red mx-auto opacity-20"></div>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-20">
             <ScopeBlock number="01" icon={<BarChart3 size={24} />} title={t.diagnosticPage.scope.s1.t} desc={t.diagnosticPage.scope.s1.d} />
             <ScopeBlock number="02" icon={<Search size={24} />} title={t.diagnosticPage.scope.s2.t} desc={t.diagnosticPage.scope.s2.d} />
             <ScopeBlock number="03" icon={<CircleDollarSign size={24} />} title={t.diagnosticPage.scope.s3.t} desc={t.diagnosticPage.scope.s3.d} />
             <ScopeBlock number="04" icon={<MapPin size={24} />} title={t.diagnosticPage.scope.s4.t} desc={t.diagnosticPage.scope.s4.d} />
             <ScopeBlock number="05" icon={<Users size={24} />} title={t.diagnosticPage.scope.s5.t} desc={t.diagnosticPage.scope.s5.d} />
             <ScopeBlock number="06" icon={<Map size={24} />} title={t.diagnosticPage.scope.s6.t} desc={t.diagnosticPage.scope.s6.d} />
+          </div>
+
+          {/* Guillaume Contextual Mention */}
+          <div className="flex justify-center">
+            <div className="flex items-start gap-4 max-w-3xl bg-white p-6 rounded-3xl border border-dodai-charcoal/5 shadow-sm group hover:border-dodai-red/20 transition-colors">
+               <div className="w-10 h-10 rounded-full bg-dodai-cream flex items-center justify-center shrink-0 text-dodai-red">
+                  <ShieldCheck size={20} />
+               </div>
+               <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                 {t.diagnosticPage.guillaumeMention}
+               </p>
+            </div>
           </div>
         </div>
       </section>
@@ -94,7 +108,9 @@ export const DiagnosticPage: React.FC = () => {
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.diagnosticPage.deliverables.title}
             </h2>
-            <p className="text-gray-500 text-lg font-light">Une vision limpide pour décider sereinement.</p>
+            <p className="text-gray-500 text-lg font-light">
+              {t.diagnosticPage.deliverables.subtitle}
+            </p>
           </div>
           <div className="grid md:grid-cols-1 gap-4">
             {t.diagnosticPage.deliverables.items.map((item: string, i: number) => (
@@ -116,18 +132,15 @@ export const DiagnosticPage: React.FC = () => {
       <section className="py-32 md:py-56 bg-[#F5F5F7] relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 relative">
           <div className="group relative">
-            {/* Minimal card styling without neon effects */}
             <div className="relative rounded-[3.5rem] bg-white p-2 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.1)] overflow-hidden transform group-hover:-translate-y-1 transition-all duration-700">
               <div className="relative rounded-[3.2rem] bg-dodai-charcoal text-white border border-white/5 px-8 py-16 md:px-20 md:py-24 text-center">
                 <div className="flex flex-col items-center">
-                  {/* Sober Tag */}
                   <div className="mb-10">
                     <span className="inline-flex items-center text-[10px] font-mono uppercase tracking-[0.3em] font-bold px-6 py-2.5 rounded-full border border-white/20 bg-white/5 text-dodai-red">
                       {t.diagnosticPage.pricing.tag}
                     </span>
                   </div>
 
-                  {/* Clean Price Display */}
                   <div className="mb-10">
                     <h3 className="text-6xl md:text-[8rem] font-bold tracking-tighter leading-none">
                       {t.diagnosticPage.pricing.price.split(' ')[0]}
@@ -135,12 +148,10 @@ export const DiagnosticPage: React.FC = () => {
                     </h3>
                   </div>
 
-                  {/* Description */}
                   <p className="text-xl md:text-2xl text-gray-400 font-light mb-16 max-w-xl mx-auto leading-relaxed text-balance">
                     {t.diagnosticPage.pricing.note}
                   </p>
                   
-                  {/* Clean CTA */}
                   <div className="w-full max-w-sm">
                     <Link 
                       smooth
@@ -152,7 +163,6 @@ export const DiagnosticPage: React.FC = () => {
                     </Link>
                   </div>
 
-                  {/* Footer Link */}
                   <div className="mt-16 pt-12 border-t border-white/10 w-full">
                     <Link to="/run" className="inline-flex items-center gap-2 text-sm italic text-gray-500 hover:text-white transition-colors">
                       {t.diagnosticPage.pricing.footer}
@@ -203,8 +213,15 @@ export const DiagnosticPage: React.FC = () => {
                 <ContactInfoBlock icon={<MessageSquare size={20} />} title={t.contact.noCommitment.title} desc={t.contact.noCommitment.desc} />
               </div>
             </div>
-            <div>
-              <ContactForm />
+            
+            <div className="flex flex-col gap-10">
+              {/* Discrete Pathway Mention */}
+              <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
+                <p className="text-sm text-gray-400 italic">
+                  {t.contact.formHintDiagnostic}
+                </p>
+              </div>
+              <ContactForm isDiagnosticPage />
             </div>
           </div>
         </div>
@@ -214,13 +231,18 @@ export const DiagnosticPage: React.FC = () => {
 };
 
 // SUB-COMPONENTS
-const AudienceCard: React.FC<{ title: string, desc: string }> = ({ title, desc }) => (
-  <div className="p-10 rounded-[2.5rem] bg-gray-50 border border-gray-100 flex flex-col h-full hover:shadow-2xl hover:bg-white transition-all duration-500 group">
+const AudienceCard: React.FC<{ title: string, desc: string, isRunContext?: boolean }> = ({ title, desc, isRunContext }) => (
+  <div className={`p-10 rounded-[2.5rem] border flex flex-col h-full hover:shadow-2xl transition-all duration-500 group relative overflow-hidden ${isRunContext ? 'bg-dodai-cream/30 border-dodai-red/10' : 'bg-gray-50 border-gray-100 hover:bg-white'}`}>
     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-dodai-charcoal mb-8 shadow-sm group-hover:bg-dodai-charcoal group-hover:text-white transition-all">
       <Plus size={24} />
     </div>
-    <h4 className="text-2xl font-bold text-dodai-charcoal mb-4 tracking-tight leading-tight">{title}</h4>
+    <h4 className="text-2xl font-bold text-dodai-charcoal mb-4 tracking-tight leading-tight group-hover:text-black">{title}</h4>
     <p className="text-gray-500 leading-relaxed text-lg font-medium">{desc}</p>
+    {isRunContext && (
+      <div className="absolute top-4 right-6">
+         <span className="text-[9px] font-bold uppercase tracking-widest text-dodai-red/50">Post-Opening Support</span>
+      </div>
+    )}
   </div>
 );
 
