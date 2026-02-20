@@ -53,7 +53,7 @@ export const translations = {
       },
       pathway: 'Le Diagnostic est la première étape. Le Build et le Run suivent quand vous êtes prêt.',
       pricing: {
-        tag: 'REALITY CHECK • PAYÉ EN TOTALITÉ AVANT DÉMARRAGE',
+        tag: 'REALITY CHECK',
         price: '600 000 JPY',
         note: 'Couvre l\'intégralité du périmètre ci-dessus. Calendrier ajusté selon vos disponibilités.',
         footer: 'Déjà ouvert et besoin d\'un autre type d\'aide ? Le Run de Dodai Studio est peut-être pour vous.',
@@ -163,7 +163,7 @@ export const translations = {
           d: 'Testez votre concept en réel avant de signer un bail commercial de 3 ans. Validez offre et prix.',
         },
         m2: {
-          t: 'Presse & Contenu',
+          t: 'Presse & Content',
           d: 'Pack lancement : Photos pro, relations presse et influenceurs. Mobilisez la bonne audience.',
         },
         m3: {
@@ -234,7 +234,7 @@ export const translations = {
         }
       },
       pricing: {
-        tag: 'À PARTIR DE • ENGAGEMENT 6 MOIS',
+        tag: 'LE RUN MENSUEL',
         price: '150 000 JPY',
         unit: '/ mois',
         features: [
@@ -245,7 +245,7 @@ export const translations = {
           'Audit stratégique trimestriel (90 min)',
           'Ligne directe async : réponse < 48h'
         ],
-        footer: 'Modules additionnels sur devis. Anciens clients de Dodai Studio : conditions préférentielles.',
+        footer: 'Modules additionnels sur devis. Engagement initial requis.',
         urgent: 'Vous êtes en urgence ? On commence par un diagnostic rapide avant de lancer le Run.'
       },
       faq: {
@@ -548,7 +548,7 @@ export const translations = {
         subtitle: 'REALITY CHECK',
         price: '600k JPY',
         priceDetail: '(Hors taxes)',
-        context: 'Ajusté selon complexité',
+        context: 'Reality Check',
         description: 'L\'assurance anti-crash de votre projet au Japon. Nous validons la faisabilité business et administrative avant que vous ne signiez le moindre bail.',
         features: ['Audit & Challenge Business Plan', 'Interviews terrain & Réseau', 'Panel test Tokyo (Dégustation/Concept)', 'Mapping des partenaires clés'],
         cta: 'Réserver un Diagnostic'
@@ -605,7 +605,7 @@ export const translations = {
         subtitle: 'GROWTH & SCALE',
         price: '150k JPY',
         priceDetail: '/mois',
-        context: 'À partir de • Engagement 6 mois',
+        context: 'Le Run Mensuel',
         description: 'Ne laissez pas le soufflé retomber. Nous installons les rituels de pilotage pour optimiser la rentabilité et la fidélisation.',
         features: ['Pilotage financier & KPIs', 'Optimisation Ops & Food Cost', 'Marketing Automation & CRM', 'Audit trimestriel complet'],
         cta: 'Activer le Run'
@@ -836,7 +836,7 @@ export const translations = {
       },
       pathway: 'The Diagnostic is the first step. Build and Run follow when you are ready.',
       pricing: {
-        tag: 'REALITY CHECK • PAID IN FULL BEFORE START',
+        tag: 'REALITY CHECK',
         price: '600,000 JPY',
         note: 'Covers the entire scope above. Schedule adjusted to your availability.',
         footer: 'Already open? The Run by Dodai Studio might be for you.',
@@ -1005,7 +1005,7 @@ export const translations = {
         }
       },
       pricing: {
-        tag: 'FROM • 6-MONTH COMMITMENT',
+        tag: 'MONTHLY RUN',
         price: '150,000 JPY',
         unit: '/ month',
         features: [
@@ -1016,7 +1016,7 @@ export const translations = {
           'Quarterly strategic audit',
           'Direct async line'
         ],
-        footer: 'Additional modules on quote. Preferred rates for alumni.',
+        footer: 'Additional modules on quote. Initial commitment required.',
         urgent: 'In an emergency? We start with a quick Diagnostic.'
       },
       faq: {
@@ -1241,7 +1241,7 @@ export const translations = {
         subtitle: 'REALITY CHECK',
         price: '600k JPY',
         priceDetail: '(Excl. Tax)',
-        context: 'On complexity',
+        context: 'Reality Check',
         description: 'Your anti-crash insurance. We validate before you sign.',
         features: ['BP Audit', 'Field Interviews', 'Panel Test', 'Partner Mapping'],
         cta: 'Book a Diagnostic'
@@ -1256,7 +1256,7 @@ export const translations = {
         subtitle: 'GROWTH',
         price: '150k JPY',
         priceDetail: '/mo',
-        context: '6-mo commitment',
+        context: 'Monthly Run',
         description: 'Pilot profitability and retention rituals.',
         features: ['Financial Steering', 'Cost Optimization', 'CRM', 'Quarterly Audit'],
         cta: 'Activate Run'
@@ -1378,7 +1378,7 @@ export const translations = {
         cta: '診断を予約する',
       },
       audience: {
-        p1: { t: 'プロジェクトはあるが、計画が未定', d: 'コンセプトはあるが、日本での実現可能性に不安がある。' },
+        p1: { t: 'プロジェクトはあるが、計画が未定', d: 'コンセプトはあるが、日本での実現可能性 en不安がある。' },
         p2: { t: '構造化されたプロジェクトで来日', d: '事業計画はあるが、日本のシステムが不透明。すべてを検証します。' },
         p3: { t: '開店済みだが、何かがうまくいかない', d: '優先順位を外部から見直したい。監査し、最適な道を提案します。' },
       },
@@ -1399,7 +1399,7 @@ export const translations = {
       },
       pathway: '診断は第一歩です。準備が整い次第、BuildとRunが続きます。',
       pricing: {
-        tag: '全額前払い',
+        tag: '現実チェック',
         price: '600,000 JPY',
         note: '上記全範囲をカバー。スケジュールは調整可能。',
         footer: 'すでに開店済みですか？Runが適しているかもしれません。',
@@ -1510,7 +1510,7 @@ export const translations = {
         q1: '診断は必須？', a1: 'いいえ、ですが推奨します。',
         q2: '期間は？', a2: '8〜20週間。',
         q3: '30/40/30？', a3: '契約、中間、開店時の分割払い。',
-        q4: '1本柱のみ可能？', a4: 'はい、ア・ラ・カルトで。',
+        q4: '1本柱のみ possible？', a4: 'はい、ア・ラ・カルトで。',
         q5: '開店後は？', a5: '初期サポート後、Runへ移行。',
       }
     },
@@ -1550,11 +1550,11 @@ export const translations = {
         a: { role: 'グロース', desc: 'CRM、自動化、KPI。', list: ['CRM', 'KPI', '戦略', 'コンテンツ'] }
       },
       pricing: {
-        tag: '6ヶ月〜',
+        tag: '月次運営',
         price: '150,000 JPY',
         unit: '/ 月',
         features: ['隔週コール', '月次施策', '顧客ツール', '評判監視', '四半期監査', 'ダイレクトライン'],
-        footer: '追加は見積. 卒業生優待あり。',
+        footer: '追加は見積. 初期契約期間が必要です。',
         urgent: '緊急？診断から。'
       },
       faq: {
@@ -1570,10 +1570,10 @@ export const translations = {
     partnersPage: {
       hero: { title: '東京で開店したい知人がいますか？', titleSpan: '', subtitle: '土台を築きます。紹介するだけ。', cta: 'パートナーになる' },
       story: { tag: 'なぜ？', title: '他が忘れる', titleSpan: '土台を。', p1: '多くの失敗は土台不足。', p2: '現場とシステムの専門をDodai Studioに。', p3: '紹介してください。' },
-      referral: { title: '紹介内容', subtitle: '3つのオファー。', footer: 'すでに開店しているが期待通りの成果が出ていない店舗をご存知ですか？ Runプランがその課題を解決します。', more: '詳細 →', diag: { t: '診断', d: '妥当性検証。', p: '600k' }, build: { t: '構築', d: '開店まで。', p: '1.2M〜' }, run: { t: '運営', d: '最適化。', p: '150k/月〜' } },
+      referral: { title: '紹介内容', subtitle: '3つのオファー。', footer: 'すでに開店しているが期待通りの成果が出ていない店舗をご知存ですか？ Runプランがその課題を解決します。', more: '詳細 →', diag: { t: '診断', d: '妥当性検証。', p: '600k' }, build: { t: '構築', d: '開店まで。', p: '1.2M〜' }, run: { t: '運営', d: '最適化。', p: '150k/月〜' } },
       personas: {
         title: '誰向け？', subtitle: '職種に合わせた。',
-        p1: { title: '会計士', headline: '会計以上の相談。', text: '実務を我々が。' },
+        p1: { title: '会計士', headline: '会計以上の相談。', text: '実務を我々が. ' },
         p2: { title: '不動産', headline: '成約率向上. ', text: '計画なき客に診断を. ' },
         p3: { title: '設計', headline: '良いブリーフ. ', text: '我々が前段を. ' },
         p4: { title: '仕入れ', headline: '継続は注文. ', text: '生存率を高める. ' },
@@ -1641,9 +1641,9 @@ export const translations = {
       title: 'サービス:', titleSpan: '効率. ', subtitle: '適したものを. ', tag: '透明', paymentLabel: '支払', toggleZero: 'Zero', toggleAlaCarte: '単品', choose: '選ぶ', phaseDiag: '診断', phaseBuild: '構築', phaseRun: '運用', modeZeroTitle: 'フル', modeZeroDesc: '一括. ', modeAlaCarteTitle: 'モジュール', modeAlaCarteDesc: '必要な分. ', alaCartePrice: '見積', recapTitle: '選択', recapAddonsTitle: 'アドオン', recapCta: '見積依頼', pathContext: 'Diag > Build > Run.',
       piliers: [{ title: '法', desc: '会計' }, { title: '地', desc: 'デザイン' }, { title: '動', desc: 'SOP' }, { title: '人', desc: '研修' }],
       addonsTitle: 'アドオン', addonsSubtitle: '専門. ', addonsDisclaimer: 'Dodai管理費. ',
-      diagnostic: { title: '診断', subtitle: 'チェック', price: '600k', context: '規模別', description: '保険. ', features: ['監査', '面談', 'テスト', 'マップ'], cta: '予約' } as StandaloneServiceProps,
+      diagnostic: { title: '診断', subtitle: 'チェック', price: '600k', context: 'Reality Check', description: '保険. ', features: ['監査', '面談', 'テスト', 'マップ'], cta: '予約' } as StandaloneServiceProps,
       build: [{ name: '基本', price: '1.2M', scope: [{ included: true, text: '法' }] }, { name: '標準', isPopular: true, price: '2.0M', scope: [{ included: true, text: '地' }] }, { name: '上位', price: '3.0M', scope: [{ included: true, text: 'MVP' }] }] as ServiceTierProps[],
-      run: { title: 'Run', subtitle: 'グロース', price: '150k', context: '6ヶ月', description: '収益性. ', features: ['財務', '原価', 'MA', '監査'], cta: '開始' } as StandaloneServiceProps,
+      run: { title: 'Run', subtitle: 'グロース', price: '150k', context: '月次運営', description: '収益性. ', features: ['財務', '原価', 'MA', '監査'], cta: '開始' } as StandaloneServiceProps,
       addons: [{ title: 'MVP', price: '見積', description: 'テスト. ' }, { title: 'テスト', price: '見積', description: 'パネル. ' }, { title: 'PR', price: '見積', description: '写真. ' }, { title: '採用', price: '見積', description: '選定. ' }] as AddOnProps[],
       footer: '日本での構築. ', footerLink: '詳細. '
     },
@@ -1659,7 +1659,7 @@ export const translations = {
     contact: {
       title: '話し', titleSpan: 'ましょう. ', desc: '30分. ', 
       formHintDiagnostic: 'リアリティチェックを予約してください。24時間以内にご連絡します。',
-      formHintBuild: 'すべてのBuildは、本当に必要なことを把握するための20分の通話から始まります。',
+      formHintBuild: 'すべてのBuild is、本当に必要なことを把握するための20分の通話から始まります。',
       formHintRun: '売り込みはありません。何がうまくいっていないか、どう改善するかについての率直な会話だけです。',
       formHintHome: '現状を教えてください。次のステップをお伝えします。',
       confidentiality: { title: '機密', desc: '守ります. ' }, response: { title: '48h', desc: '推奨. ' }, noCommitment: { title: '自由', desc: '提案. ' },

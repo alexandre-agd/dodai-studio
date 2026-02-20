@@ -37,7 +37,7 @@ export const DiagnosticPage: React.FC = () => {
             {/* AJUSTEMENT 4: Tag "REALITY CHECK" plus contrasté et typé badge rouge */}
             <div className="flex justify-center mb-8">
               <span className="inline-flex py-2 px-6 rounded-full bg-dodai-red text-white text-[11px] font-bold uppercase tracking-[0.3em] shadow-lg shadow-dodai-red/20 animate-fade-in-up">
-                {t.diagnosticPage.hero.tag}
+                REALITY CHECK
               </span>
             </div>
             <h1 className="text-4xl md:text-8xl font-bold tracking-tighter leading-[0.95] text-balance max-w-5xl mx-auto animate-fade-in-up">
@@ -76,6 +76,7 @@ export const DiagnosticPage: React.FC = () => {
       {/* SECTION 3: CE QU'ON COUVRE (Dark Section) */}
       {/* AJUSTEMENT 3: Fond sombre pour alterner le rythme visuel */}
       <section className="py-32 md:py-48 bg-dodai-charcoal relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px]"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="mb-24 text-center">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
@@ -142,6 +143,7 @@ export const DiagnosticPage: React.FC = () => {
                 <div className="flex flex-col items-center">
                   <div className="mb-10">
                     <span className="inline-flex items-center text-[10px] font-mono uppercase tracking-[0.3em] font-bold px-6 py-2.5 rounded-full border border-white/20 bg-white/5 text-dodai-red">
+                      <span className="mr-2 text-base leading-none">·</span>
                       {t.diagnosticPage.pricing.tag}
                     </span>
                   </div>
