@@ -10,7 +10,8 @@ import {
   Users,
   Linkedin,
   Lock,
-  Clock
+  Clock,
+  Plus
 } from 'lucide-react';
 import { HashLink as Link } from 'react-router-hash-link';
 import { ContactForm } from '../components/ContactForm';
@@ -53,12 +54,14 @@ export const RunPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Discrete Pathway Mention Under Hero - Simplified for safety */}
-      <div className="bg-white py-8 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-            <p className="text-sm text-gray-400 font-medium italic">
+      {/* AJUSTEMENT 4: Encart sobre sous le hero */}
+      <div className="bg-gray-50 py-10 border-b border-gray-200">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm text-center">
+            <p className="text-base md:text-lg text-gray-600 font-medium italic">
               {t.runPage.hero.pathway}
             </p>
+          </div>
         </div>
       </div>
 
@@ -70,6 +73,7 @@ export const RunPage: React.FC = () => {
               {t.runPage.audience.title}
             </h2>
           </div>
+          {/* AJUSTEMENT 3: Cartes plus hautes et texte plus grand */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <AudienceCard 
               title={t.runPage.audience.p1.t} 
@@ -85,20 +89,22 @@ export const RunPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 3: CE QU'ON FAIT ENSEMBLE */}
-      <section className="py-24 md:py-32 bg-dodai-cream">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-20 text-center md:text-left">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">
+      {/* AJUSTEMENT 1: Section Mensuelle en fond sombre et resserrée */}
+      <section className="py-32 md:py-48 bg-dodai-charcoal relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px]"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="mb-20 text-center">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 leading-none">
               {t.runPage.monthly.title}
             </h2>
+            <div className="w-20 h-1 bg-dodai-red mx-auto opacity-30 mt-6"></div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
             <ReferralBlock icon={<Zap size={24} />} title={t.runPage.monthly.c1.t} text={t.runPage.monthly.c1.d} />
             <ReferralBlock icon={<MessageSquare size={24} />} title={t.runPage.monthly.c2.t} text={t.runPage.monthly.c2.d} />
             <ReferralBlock icon={<LineChart size={24} />} title={t.runPage.monthly.c4.t} text={t.runPage.monthly.c4.d} />
           </div>
-          <p className="text-center italic text-gray-500 font-light text-lg text-balance">
+          <p className="text-center italic text-gray-400 font-light text-lg text-balance">
             {t.runPage.monthly.note}
           </p>
         </div>
@@ -147,10 +153,10 @@ export const RunPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 5: DUO & TEAM */}
+      {/* AJUSTEMENT 2: Section équipe plus proche et bullets plus grands */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             <MemberCard 
               image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Guillaume_fj5if7.png"
               name="Guillaume Duperier" 
@@ -239,16 +245,17 @@ const AudienceCard: React.FC<{
   linkText?: string, 
   linkHref?: string 
 }> = ({ title, desc, icon, linkText, linkHref }) => (
-  <div className="p-8 rounded-[2.5rem] bg-gray-50 border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all duration-500 group">
+  <div className="p-10 rounded-[2.5rem] bg-gray-50 border border-gray-100 flex flex-col min-h-[380px] hover:shadow-xl transition-all duration-500 group">
     <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-dodai-charcoal mb-6 shadow-sm group-hover:bg-dodai-charcoal group-hover:text-white transition-all">
       {icon}
     </div>
-    <h4 className="text-xl font-bold text-dodai-charcoal mb-3 tracking-tight">{title}</h4>
-    <p className="text-gray-500 leading-relaxed text-sm font-medium mb-4">{desc}</p>
+    <h4 className="text-2xl font-bold text-dodai-charcoal mb-4 tracking-tight leading-tight">{title}</h4>
+    <p className="text-gray-600 leading-relaxed text-base font-medium mb-6">{desc}</p>
     {linkText && linkHref && (
-      <div className="mt-auto pt-4 border-t border-gray-200">
-        <Link smooth to={linkHref} className="text-xs font-bold text-dodai-red hover:text-dodai-charcoal transition-colors underline underline-offset-4 decoration-dodai-red/20">
+      <div className="mt-auto pt-6 border-t border-gray-200">
+        <Link smooth to={linkHref} className="inline-flex items-center gap-1.5 text-sm font-bold text-dodai-red hover:text-dodai-charcoal transition-colors underline underline-offset-4 decoration-dodai-red/20">
           {linkText}
+          <ArrowRight size={14} />
         </Link>
       </div>
     )}
@@ -256,12 +263,12 @@ const AudienceCard: React.FC<{
 );
 
 const ReferralBlock: React.FC<{ icon: React.ReactNode, title: string, text: string }> = ({ icon, title, text }) => (
-  <div className="bg-white p-10 rounded-[2.5rem] border border-gray-100 flex flex-col items-start hover:shadow-lg transition-all group h-full">
-    <div className="w-12 h-12 bg-dodai-cream rounded-2xl flex items-center justify-center text-dodai-charcoal mb-8 group-hover:bg-dodai-charcoal group-hover:text-white transition-colors">
+  <div className="bg-white/5 p-10 rounded-[2.5rem] border border-white/10 flex flex-col items-start hover:bg-white/10 hover:shadow-2xl transition-all group h-full">
+    <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-dodai-red mb-8 group-hover:bg-dodai-red group-hover:text-white transition-colors">
       {icon}
     </div>
-    <h4 className="text-2xl font-bold text-dodai-charcoal mb-4 tracking-tight">{title}</h4>
-    <p className="text-gray-600 leading-relaxed font-light">{text}</p>
+    <h4 className="text-2xl font-bold text-white mb-4 tracking-tight group-hover:text-dodai-red transition-colors">{title}</h4>
+    <p className="text-gray-400 leading-relaxed font-light text-lg">{text}</p>
   </div>
 );
 
@@ -291,11 +298,11 @@ const MemberCard: React.FC<{
             {description}
         </p>
     </div>
-    <div className="mt-auto border-t border-gray-100 pt-6">
-        <ul className="grid gap-3">
+    <div className="mt-auto border-t border-gray-100 pt-8">
+        <ul className="grid gap-4">
              {list.map((item, i) => (
-                <li key={i} className="text-sm text-gray-500 flex items-center gap-2 group-hover:text-gray-600 transition-colors">
-                    <span className="w-1 h-1 bg-gray-400 rounded-full group-hover:bg-dodai-red transition-colors"></span>
+                <li key={i} className="text-base text-gray-500 flex items-center gap-3 group-hover:text-gray-700 transition-colors font-medium">
+                    <span className="w-1.5 h-1.5 bg-gray-400 rounded-full group-hover:bg-dodai-red transition-colors shrink-0"></span>
                     {item}
                 </li>
              ))}

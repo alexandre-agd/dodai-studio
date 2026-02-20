@@ -63,7 +63,7 @@ export const translations = {
         q1: 'Mon business plan n\'est pas finalisé, est-ce un problème ?',
         a1: 'Non. Nous travaillons aussi bien sur des concepts bruts que sur des plans structurés. Moins c\'est finalisé, plus l\'audit apporte de valeur au projet.',
         q2: 'Et si le résultat n\'est pas positif ?',
-        a2: 'Il y a quatre issues possibles : Go, Go avec ajustements, Attendre, ou No-Go. Dans tous les cas, vous repartez avec un argumentaire tel qu\'il est et des étapes concrètes. Une réponse honnête maintenant vaut mieux qu\'une erreur coûteuse plus tard.',
+        a2: 'Il y a quatre issues possibles : Go, Go avec ajustements, Attendre, ou No-Go. Dans tous les cas, vous repartez avec un argumentaire tel qu\'il est et des étapes concretes. Une réponse honnête maintenant vaut mieux qu\'une erreur coûteuse plus tard.',
         q3: 'Suis-je engagé à passer en Build après le Diagnostic ?',
         a3: 'Absolument pas. Le Diagnostic est indépendant. Il vous donne les clés pour décider s\'il faut continuer avec Dodai Studio ou prendre une autre voie en toute confiance.',
         q4: 'Le Diagnostic peut-il se faire à distance ?',
@@ -102,21 +102,38 @@ export const translations = {
         essential: {
           tag: 'LOCATION SECURED',
           title: 'Build Essentiel',
-          desc: 'Piliers 1, 3, 4 complets. Audit du local et support post-ouverture 15 jours inclus.',
+          bullets: [
+            'Pilier 1 : Structure et Conformité',
+            'Pilier 3 : Tech et Opérations',
+            'Pilier 4 : Équipe et Lancement',
+            'Pilier 2 : Audit du local (pas de recherche)',
+            'Support post-ouverture : 15 jours'
+          ],
           price: '1.2M - 1.5M JPY',
-          note: 'Estimé • Paiement 30/40/30'
+          note: 'À partir de • Paiement 30/40/30'
         },
         complete: {
           tag: 'FULL ZERO-TO-OPEN',
           title: 'Build Complet',
-          desc: 'Les 4 piliers complets. Support post-ouverture 30 jours.',
+          bullets: [
+            'Les 4 piliers inclus',
+            'Recherche de local et négociation du bail',
+            'Introductions partenaires',
+            'Support post-ouverture : 30 jours'
+          ],
           price: '2.0M - 2.5M JPY',
-          note: 'Estimé • Paiement 30/40/30'
+          note: 'À partir de • Paiement 30/40/30'
         },
         premium: {
           tag: 'AMBITIOUS CONCEPT',
           title: 'Build Premium',
-          desc: 'Tout le complet + MVP/Pop-up + PR 3 mois + Photo pack + Support 60j.',
+          bullets: [
+            'Tout le Build Complet',
+            'Activation MVP / Pop-up incluse',
+            'Presse et Contenu : 3 mois',
+            'Pack photo professionnel',
+            'Support post-ouverture : 60 jours'
+          ],
           price: '3.0M - 3.5M JPY',
           note: 'Estimé • Paiement 30/40/30'
         }
@@ -160,17 +177,17 @@ export const translations = {
       },
       postBuild: 'Après l\'ouverture, le Run prend le relais. Rituels mensuels, campagnes CRM, suivi des KPIs.',
       faq: {
-        title: 'Build FAQ',
-        q1: 'Dois-je obligatoirement avoir fait le Diagnostic ?',
-        a1: 'Pas nécessairement. Si votre projet est déjà mûr et votre business plan solide, nous pouvons passer directement au Build avec Dodai Studio. Le Diagnostic est conseillé si la faisabilité reste à valider.',
-        q2: 'Combien de temps prend un Build ?',
-        a2: 'Cela dépend du périmètre. Avec local : 8 à 12 semaines. Sans local : 12 à 20 semaines incluant la recherche. Nous alignons le calendrier avant de démarrer.',
-        q3: 'Que signifie le paiement 30/40/30 ?',
-        a3: '30% à la signature, 40% à la fin de la première phase (structure, local), et 30% à l\'ouverture. Vous payez à mesure que la valeur est livrée.',
-        q4: 'Puis-je ne prendre qu\'un ou deux piliers ?',
-        a4: 'Oui. Utilisez le mode "À la carte" pour sélectionner uniquement ce dont vous avez besoin. Dodai Studio s\'adapte à ce qui est déjà en place.',
-        q5: 'Que se passe-t-il après l\'ouverture ?',
-        a5: 'Le Build inclut un support post-ouverture (15 à 60 jours selon la formule). Ensuite, l\'abonnement Run prend le relais pour le pilotage mensuel et l\'optimisation.',
+        title: 'FAQ',
+        q1: 'Quelle différence entre Build Essentiel, Complet et Premium ?',
+        a1: 'L\'Essentiel (1.2-1.5M) est pour ceux qui ont déjà un local et un plan solide. Le Complet (2-2.5M) inclut la recherche de local et est choisi par 80% des clients de Dodai Studio. Le Premium (3-3.5M) inclut MVP, Relations Presse et contenus pour les lancements d\'envergure.',
+        q2: 'Le Diagnostic est-il obligatoire avant le Build ?',
+        a2: 'Non, mais fortement recommandé. Il permet de valider la faisabilité et le budget avant de s\'engager dans un Build complet.',
+        q3: 'Qu\'est-ce que le MVP / Éphémère ?',
+        a3: 'C\'est un test marché en conditions réelles (kitchen car, corner, pop-up) pendant 6 à 10 semaines. Cela permet de valider votre concept et vos produits avant de signer un bail commercial de 3 ans.',
+        q4: 'Quels sont les délais entre signature et ouverture ?',
+        a4: 'Comptez 6 à 8 semaines pour un Build Essentiel (local trouvé), 12 à 20 semaines pour un Build Complet (avec recherche), et 16 à 24 semaines pour un Premium avec MVP.',
+        q5: 'Quels résultats garantissez-vous ?',
+        a5: 'Nous ne garantissons pas le succès (qui dépend de vous), mais Dodai Studio structure pour atteindre les standards du marché : équilibre financier à M+6, coût matière 28-32%, ratio personnel <35%, et notation >3.0.'
       }
     },
     runPage: {
@@ -275,6 +292,7 @@ export const translations = {
       referral: {
         title: 'Ce que vous référez',
         subtitle: 'Trois offres, selon l\'avancement du projet.',
+        footer: 'Vous connaissez un commerce déjà ouvert qui ne performe pas comme prévu ? L\'abonnement Run est fait pour cela.',
         more: 'Voir les offres en détail →',
         diag: { t: 'Diagnostic Reality Check', d: 'Valider la faisabilité avant les engagements lourds.', p: '600 000 JPY' },
         build: { t: 'Build Zero-to-Open', d: 'De la structure juridique jusqu\'à l\'ouverture.', p: 'À partir de 1 200 000 JPY' },
@@ -301,7 +319,7 @@ export const translations = {
         p4: {
           title: 'Fournisseurs F&B',
           headline: 'Un client qui dure, c\'est un client qui commande.',
-          text: '30% des nouveaux commerces F&B ferment en première année. Derrière chaque fermeture, un fournisseur qui perd un compte récurrent. Nous structurons les projets en amont pour que vos clients survivent et restent vos clients.',
+          text: '30% des nouveaux commerces F&B ferment en première année. Derrière chaque fermeture, un fournisseur qui perd un compte récurrent. Nous structurons les projets en amont pour que vos clients survive et restent vos clients.',
         },
         p6: {
           title: 'Avocats & Scriveners (行政書士)',
@@ -311,16 +329,16 @@ export const translations = {
         p5: {
           title: 'Réseau personnel',
           headline: 'Vous avez une intro à faire ?',
-          text: 'Vous connaissez quelqu\'un qui parle d\'ouvrir un resto, un bar ou un shop à Tokyo. Mettez-nous en contact, nous prenons le relais. Si cela matche, nous vous remercions comme il se doit, sans pression.',
+          text: 'Mettez-nous en contact. S\'il y a un fit, nous avançons ensemble.',
         },
       },
       process: {
         title: 'Comment ça marche ?',
         tag: '4 étapes simples',
-        s1: { t: 'Introduction', d: 'Un email ou un message, la forme la plus simple qui vous convient.' },
-        s2: { t: 'Qualification', d: 'Nous prenons contact sous 48h pour voir si nous pouvons aider.' },
-        s3: { t: 'Concrétisation', d: 'Le projet démarre (Diagnostic ou Build). Nous nous occupons des fondations ensemble.' },
-        s4: { t: 'On vous remercie : vraiment.', d: '10 à 15% de commission sur chaque projet converti. Formalisé, tracé, payé sous 30 jours. Aucune ambiguïté.' },
+        s1: { t: 'Introduction', d: 'Un email or a message, simple for you.' },
+        s2: { t: 'Qualification', d: 'We follow up within 48h to see how we can help.' },
+        s3: { t: 'Concrétisation', d: 'The project kicks off. Dodai Studio manages from Day 1.' },
+        s4: { t: 'Récompense', d: 'Every successful referral is rewarded. Terms are discussed together.' },
       },
       form: {
         title: 'Prêt à nous rejoindre ?',
@@ -867,23 +885,40 @@ export const translations = {
         essential: {
           tag: 'LOCATION SECURED',
           title: 'Essential Build',
-          desc: 'Pillars 1, 3, 4. Site audit and 15-day post-opening support.',
+          bullets: [
+            'Pillar 1 : Structure and Compliance',
+            'Pillar 3 : Tech and Operations',
+            'Pillar 4 : Team and Launch',
+            'Pillar 2 : Site audit only (no search)',
+            'Post-opening support : 15 days'
+          ],
           price: '1.2M - 1.5M JPY',
-          note: 'Est. • 30/40/30 Payment'
+          note: 'Starting from • 30/40/30 Payment'
         },
         complete: {
           tag: 'FULL ZERO-TO-OPEN',
           title: 'Complete Build',
-          desc: 'All 4 pillars. 30-day post-opening support.',
+          bullets: [
+            'All 4 pillars included',
+            'Location search and lease negotiation',
+            'Partner introductions',
+            'Post-opening support : 30 days'
+          ],
           price: '2.0M - 2.5M JPY',
-          note: 'Est. • 30/40/30 Payment'
+          note: 'Starting from • 30/40/30 Payment'
         },
         premium: {
           tag: 'AMBITIOUS CONCEPT',
           title: 'Premium Build',
-          desc: 'Complete + MVP + 3-mo PR + Photo pack + 60-day support.',
+          bullets: [
+            'Everything in Complete Build',
+            'MVP / Pop-up activation included',
+            'PR and Content : 3 months',
+            'Professional photo package',
+            'Post-opening support : 60 days'
+          ],
           price: '3.0M - 3.5M JPY',
-          note: 'Est. • 30/40/30 Payment'
+          note: 'Estimated • 30/40/30 Payment'
         }
       },
       pillars: {
@@ -913,7 +948,7 @@ export const translations = {
       },
       postBuild: 'After opening, the Run takes over for monthly monitoring.',
       faq: {
-        title: 'Build FAQ',
+        title: 'FAQ',
         q1: 'Is the Diagnostic mandatory?',
         a1: 'No, but recommended if feasibility remains to be validated.',
         q2: 'How long does a Build take?',
@@ -1022,6 +1057,7 @@ export const translations = {
       referral: {
         title: 'What you refer',
         subtitle: 'Three offers depending on project stage.',
+        footer: 'Know a business that is already open but not performing as expected? The Run subscription is built for that.',
         more: 'See details →',
         diag: { t: 'Diagnostic Reality Check', d: 'Validate feasibility before heavy commitments.', p: '600,000 JPY' },
         build: { t: 'Build Zero-to-Open', d: 'From legal to opening.', p: 'From 1,200,000 JPY' },
@@ -1035,15 +1071,15 @@ export const translations = {
         p3: { title: 'Designers & Architects', headline: 'No more bad briefs.', text: 'If the client goes through us first, they come with serious framing.' },
         p4: { title: 'F&B Suppliers', headline: 'A client who lasts is a client who orders.', text: 'We structure projects so your clients survive and stay yours.' },
         p6: { title: 'Lawyers & Scriveners', headline: 'You build files, we structure projects.', text: 'Refer them for operational coordination.' },
-        p5: { title: 'Personal Network', headline: 'Have an intro?', text: 'If you know someone opening a shop, put us in touch.' },
+        p5: { title: 'Personal Network', headline: 'Have an intro?', text: 'Put us in touch. If it is a good fit, we move forward together.' },
       },
       process: {
         title: 'How it works',
         tag: '4 simple steps',
         s1: { t: 'Introduction', d: 'An email or message.' },
         s2: { t: 'Qualification', d: 'We reach out under 48h.' },
-        s3: { t: 'Execution', d: 'Project starts. We handle foundations.' },
-        s4: { t: 'Rewards', d: '10-15% commission on every project. Paid in 30 days.' },
+        s3: { t: 'Execution', d: 'The project starts. Dodai Studio handles execution from day one.' },
+        s4: { t: 'Rewards', d: 'Every successful referral is properly acknowledged. Terms discussed together.' },
       },
       form: {
         title: 'Ready to join?',
@@ -1265,10 +1301,7 @@ export const translations = {
       }
     },
     faq: {
-      title: 'FAQ:',
-      titleSpan: 'Answers.',
-      subtitle: 'Your questions answered.',
-      tag: 'Clarification',
+      title: 'FAQ',
       q1: 'Difference between tiers?', a1: 'Essential is for those with sites. Complete includes search. Premium adds MVP and PR.',
       q2: 'Diagnostic mandatory?', a2: 'No, but recommended to validate budget.',
       q3: 'What is MVP?', a3: 'Real condition market test (pop-up) before lease.',
@@ -1375,7 +1408,7 @@ export const translations = {
         title: '診断 FAQ',
         q1: '計画が未完成でも大丈夫？', a1: 'はい。早い段階ほど監査の価値が高まります。',
         q2: '結果がネガティブな場合は？', a2: '後で失敗するより、今正直な答えを得る方が価値があります。',
-        q3: 'Buildへの移行 is 必須？', a3: 'いいえ。診断は独立したサービスです。',
+        q3: 'Buildへの移行 is 必須？', a3: 'いいえ。診断 is independent サービスです。',
         q4: 'リモートで可能？', a4: '部分的。BP監査は可能ですが、内見は現地で行います。',
         q5: '期間は？', a5: '複雑さによります。事前に定義します。',
       }
@@ -1383,7 +1416,7 @@ export const translations = {
     buildPage: {
       hero: {
         tag: 'ZERO TO OPEN',
-        title: 'コンセプトからオープンまで。',
+        title: 'コンセプトからオープンまで. ',
         subtitle: '法的、立地、テック、チーム、ローンチ。Dodai Studioが実行を担います。',
         cta: '構築を開始',
         secondary: 'まずは診断から。',
@@ -1407,9 +1440,44 @@ export const translations = {
         recapCta: '相談する'
       },
       tiers: {
-        essential: { tag: '立地確定済み', title: 'エッセンシャル', desc: '1,3,4本柱。15日サポート。', price: '1.2M - 1.5M JPY', note: '概算 • 分割' },
-        complete: { tag: 'フル', title: 'コンプリート', desc: '全4本柱。30日サポート。', price: '2.0M - 2.5M JPY', note: '概算 • 分割' },
-        premium: { tag: '大規模', title: 'プレミアム', desc: 'MVP + PR + 写真。60日サポート。', price: '3.0M - 3.5M JPY', note: '概算 • 分割' }
+        essential: {
+          tag: '立地確定済み',
+          title: 'エッセンシャル',
+          bullets: [
+            '柱1：構造とコンプライアンス',
+            '柱3：テックと運用',
+            '柱4：チームとローンチ',
+            '柱2：物件監査のみ（検索なし）',
+            '開店後サポート：15日間'
+          ],
+          price: '1.2M - 1.5M JPY',
+          note: 'から • 30/40/30 支払い'
+        },
+        complete: {
+          tag: 'フル',
+          title: 'コンプリート',
+          bullets: [
+            '全4本柱を含む',
+            '物件検索と賃貸交渉',
+            'パートナー紹介',
+            '開店後サポート：30日間'
+          ],
+          price: '2.0M - 2.5M JPY',
+          note: 'から • 30/40/30 支払い'
+        },
+        premium: {
+          tag: '大規模',
+          title: 'プレミアム',
+          bullets: [
+            'コンプリートの全内容',
+            'MVP/ポップアップの有効化を含む',
+            'PRとコンテンツ：3ヶ月間',
+            'プロフェッショナル写真パック',
+            '開店後サポート：60日間'
+          ],
+          price: '3.0M - 3.5M JPY',
+          note: '概算 • 30/40/30 支払い'
+        }
       },
       pillars: {
         p1: { t: 'コンプライアンス', d: '設立、ライセンス。', v: '法的基盤。' },
@@ -1436,9 +1504,9 @@ export const translations = {
         m3: { t: '採用', d: 'プレミアム選定。' },
         m4: { t: 'テスト', d: 'ユーザー調査。' }
       },
-      postBuild: '開店後はRunが引き継ぎます。',
+      postBuild: '開店後はRun que引き継ぎます。',
       faq: {
-        title: 'Build FAQ',
+        title: 'よくある質問',
         q1: '診断は必須？', a1: 'いいえ、ですが推奨します。',
         q2: '期間は？', a2: '8〜20週間。',
         q3: '30/40/30？', a3: '契約、中間、開店時の分割払い。',
@@ -1502,7 +1570,7 @@ export const translations = {
     partnersPage: {
       hero: { title: '東京で開店したい知人がいますか？', titleSpan: '', subtitle: '土台を築きます。紹介するだけ。', cta: 'パートナーになる' },
       story: { tag: 'なぜ？', title: '他が忘れる', titleSpan: '土台を。', p1: '多くの失敗は土台不足。', p2: '現場とシステムの専門をDodai Studioに。', p3: '紹介してください。' },
-      referral: { title: '紹介内容', subtitle: '3つのオファー。', more: '詳細 →', diag: { t: '診断', d: '妥当性検証。', p: '600k' }, build: { t: '構築', d: '開店まで。', p: '1.2M〜' }, run: { t: '運営', d: '最適化。', p: '150k/月〜' } },
+      referral: { title: '紹介内容', subtitle: '3つのオファー。', footer: 'すでに開店しているが期待通りの成果が出ていない店舗をご存知ですか？ Runプランがその課題を解決します。', more: '詳細 →', diag: { t: '診断', d: '妥当性検証。', p: '600k' }, build: { t: '構築', d: '開店まで。', p: '1.2M〜' }, run: { t: '運営', d: '最適化。', p: '150k/月〜' } },
       personas: {
         title: '誰向け？', subtitle: '職種に合わせた。',
         p1: { title: '会計士', headline: '会計以上の相談。', text: '実務を我々が。' },
@@ -1510,9 +1578,9 @@ export const translations = {
         p3: { title: '設計', headline: '良いブリーフ. ', text: '我々が前段を. ' },
         p4: { title: '仕入れ', headline: '継続は注文. ', text: '生存率を高める. ' },
         p6: { title: '法務', headline: '実務の連動. ', text: '運用を支援. ' },
-        p5: { title: '個人', headline: '紹介？', text: '繋いでください. ' }
+        p5: { title: '個人', headline: '紹介？', text: 'ぜひご紹介ください。適合性が高ければ、共に進めていきましょう。' },
       },
-      process: { title: '仕組み', tag: '4ステップ', s1: { t: '紹介', d: 'メール. ' }, s2: { t: '確認', d: '48h以内. ' }, s3: { t: '開始', d: '土台構築. ' }, s4: { t: '謝礼', d: '10-15% 30日. ' } },
+      process: { title: '仕組み', tag: '4ステップ', s1: { t: '紹介', d: 'メール. ' }, s2: { t: '確認', d: '48h以内. ' }, s3: { t: '開始', d: 'プロジェクト開始。Dodai Studioが初日から実行を担います。' }, s4: { t: '謝礼', d: '紹介が成立した場合、適切に謝礼をさせていただきます。詳細は個別にご相談ください。' } },
       form: {
         title: '参加する', subtitle: '48h以内. ', firstName: '名', lastName: '姓', firstNameKanji: '名（漢字）', lastNameKanji: '姓（漢字）', email: 'メール', phone: '電話', company: '社名', website: 'サイト', websitePlaceholder: 'url', linkedin: 'LinkedIn', linkedinPlaceholder: 'url', profile: 'プロフ', pOptions: ['会計', '不動産', '設計', '法務', '仕入', '起業', '他'], message: 'メッセージ', placeholder: '活動...', consent: '同意. ', submit: '連絡', altContact: 'または hello@dodai-studio.com', success: '感謝！', error: 'エラー. '
       },
@@ -1581,11 +1649,11 @@ export const translations = {
     },
     wizard: {
       title: 'プロジェ:', titleSpan: '次は？', subtitle: '3問. ', tag: '解析', reset: 'リセット', step1: '種別？', step2: '段階？', step3: '課題？',
-      options: { fb: { title: '飲食' }, retail: { title: '小売' }, stage1: { title: "案" }, stage2: { title: "計画" }, step3: { title: "物件" }, stage4: { title: "開店済" }, q3_early: [{ id: 'viable', title: "妥当性" }], q3_ready: [{ id: 'coord', title: "調整" }], q3_open: [{ id: 'margins', title: "マージン" }] },
+      options: { fb: { title: '飲食' }, retail: { title: '小売' }, stage1: { title: "案" }, stage2: { title: "計画" }, stage3: { title: "物件" }, stage4: { title: "開店済" }, q3_early: [{ id: 'viable', title: "妥当性" }], q3_ready: [{ id: 'coord', title: "調整" }], q3_open: [{ id: 'margins', title: "マージン" }] },
       result: { tag: '解析', secondaryCta: '相談', restart: '戻', case1: { title: '診断. ', link: '/diagnostic' }, case2: { title: 'Build. ', link: '/build' }, case3: { title: '単品. ', link: '/build' }, case4: { title: 'Run. ', link: '/run' } }
     },
     faq: {
-      title: 'FAQ:', titleSpan: '回答. ', subtitle: '疑問. ', tag: '詳細',
+      title: 'よくある質問',
       q1: '違い？', a1: '範囲. ', q2: '必須？', a2: '推奨. ', q3: 'MVP？', a3: 'テスト. ', q4: '期間？', a4: '8-20週. ', q5: '保証？', a5: '基準構築. '
     },
     contact: {

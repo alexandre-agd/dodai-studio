@@ -16,7 +16,8 @@ import {
   TrendingUp,
   AlertCircle
 } from 'lucide-react';
-import { HashLink } from 'react-router-hash-link';
+// Changed HashLink to HashLink as Link to fix "Cannot find name 'Link'" error and match usage
+import { HashLink as Link } from 'react-router-hash-link';
 
 const WEBHOOK_URL = 'https://n8n.agdevelopment.co/webhook/website-partenaire';
 
@@ -207,7 +208,7 @@ export const PartenairesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* NEW SECTION: CE QUE VOUS RÉFÉREZ */}
+      {/* SECTION: CE QUE VOUS RÉFÉREZ */}
       <section className="py-24 md:py-32 bg-dodai-cream">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-20 text-center md:text-left">
@@ -238,13 +239,17 @@ export const PartenairesPage: React.FC = () => {
             />
           </div>
 
-          <div className="mt-12 text-center md:text-left">
-            <HashLink 
+          <div className="mt-12 flex flex-col md:flex-row items-center justify-between gap-8 border-t border-dodai-charcoal/10 pt-12">
+            <p className="text-sm text-gray-500 italic max-w-xl text-center md:text-left">
+              {/* Correctly using the imported Link name */}
+              {t.partnersPage.referral.footer} <Link to="/run" className="text-dodai-charcoal hover:text-dodai-red font-bold underline underline-offset-4 decoration-dodai-charcoal/20 transition-colors">{t.nav.run}</Link>.
+            </p>
+            <Link 
               to="/#offres" 
-              className="inline-flex items-center gap-2 text-sm font-bold text-dodai-charcoal hover:text-dodai-red transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-bold text-dodai-charcoal hover:text-dodai-red transition-colors group whitespace-nowrap"
             >
               {t.partnersPage.referral.more}
-            </HashLink>
+            </Link>
           </div>
         </div>
       </section>

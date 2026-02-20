@@ -75,31 +75,6 @@ export const BuildPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Discrete Pathway Mention Under Hero */}
-      <div className="bg-white py-8 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-            <p className="text-sm text-gray-400 font-medium italic">
-              {t.buildPage.hero.pathway.split('. ').map((part, i) => (
-                <span key={i}>
-                  {i === 0 ? part : ''}
-                  {i === 1 ? (
-                    <>
-                      . <Link to="/diagnostic" className="text-dodai-charcoal hover:text-dodai-red font-bold transition-colors underline underline-offset-4 decoration-dodai-charcoal/20">Diagnostic</Link>
-                      {' ? Jump straight to choosing your format below. Not sure yet? '}
-                      <Link to="/diagnostic" className="text-dodai-charcoal hover:text-dodai-red font-bold transition-colors underline underline-offset-4 decoration-dodai-charcoal/20">Start there</Link>
-                      .
-                    </>
-                  ) : ''}
-                </span>
-              ))}
-              {/* Fallback for simple translation rendering */}
-              <span className="hidden">
-                {t.buildPage.hero.pathway}
-              </span>
-            </p>
-        </div>
-      </div>
-
       {/* SECTION 2: TIMELINE (What actually happens) */}
       <section className="py-24 md:py-48 bg-white">
         <div className="max-w-7xl mx-auto px-6">
@@ -159,9 +134,9 @@ export const BuildPage: React.FC = () => {
           <div className="relative min-h-[600px]">
             {/* VIEW 1: TIERED (Zero-to-Open) */}
             <div className={`grid lg:grid-cols-3 gap-8 transition-all duration-500 ${view === 'tiered' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none absolute inset-0'}`}>
-               <TierCard tag={t.buildPage.tiers.essential.tag} title={t.buildPage.tiers.essential.title} desc={t.buildPage.tiers.essential.desc} price={t.buildPage.tiers.essential.price} note={t.buildPage.tiers.essential.note} />
-               <TierCard tag={t.buildPage.tiers.complete.tag} title={t.buildPage.tiers.complete.title} desc={t.buildPage.tiers.complete.desc} price={t.buildPage.tiers.complete.price} note={t.buildPage.tiers.complete.note} isPopular />
-               <TierCard tag={t.buildPage.tiers.premium.tag} title={t.buildPage.tiers.premium.title} desc={t.buildPage.tiers.premium.desc} price={t.buildPage.tiers.premium.price} note={t.buildPage.tiers.premium.note} />
+               <TierCard tag={t.buildPage.tiers.essential.tag} title={t.buildPage.tiers.essential.title} bullets={t.buildPage.tiers.essential.bullets} price={t.buildPage.tiers.essential.price} note={t.buildPage.tiers.essential.note} />
+               <TierCard tag={t.buildPage.tiers.complete.tag} title={t.buildPage.tiers.complete.title} bullets={t.buildPage.tiers.complete.bullets} price={t.buildPage.tiers.complete.price} note={t.buildPage.tiers.complete.note} isPopular />
+               <TierCard tag={t.buildPage.tiers.premium.tag} title={t.buildPage.tiers.premium.title} bullets={t.buildPage.tiers.premium.bullets} price={t.buildPage.tiers.premium.price} note={t.buildPage.tiers.premium.note} />
             </div>
 
             {/* VIEW 2: A LA CARTE */}
@@ -220,12 +195,13 @@ export const BuildPage: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 5: MODULES & ADD-ONS */}
-      <section className="py-24 md:py-48 bg-dodai-cream/50 border-y border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-20 text-center md:text-left">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">{t.buildPage.addons.title}</h2>
-            <p className="text-xl text-gray-500 font-light">{t.buildPage.addons.subtitle}</p>
+      {/* SECTION 5: MODULES AND OPTIONS (Dark) */}
+      <section className="py-32 md:py-56 bg-dodai-charcoal relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px]"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="mb-24 text-center md:text-left">
+            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6 leading-none">{t.buildPage.addons.title}</h2>
+            <p className="text-xl text-gray-400 font-light">{t.buildPage.addons.subtitle}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
              <AddonCard title={t.buildPage.addons.m1.t} desc={t.buildPage.addons.m1.d} price={t.buildPage.addons.quote} />
@@ -242,7 +218,7 @@ export const BuildPage: React.FC = () => {
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-20 text-center">
             {t.buildPage.faq.title}
           </h2>
-          <div className="space-y-4">
+          <div className="space-y-6">
              <FAQItem q={t.buildPage.faq.q1} a={t.buildPage.faq.a1} />
              <FAQItem q={t.buildPage.faq.q2} a={t.buildPage.faq.a2} />
              <FAQItem q={t.buildPage.faq.q3} a={t.buildPage.faq.a3} />
@@ -276,7 +252,6 @@ export const BuildPage: React.FC = () => {
             </div>
             
             <div className="flex flex-col gap-10">
-              {/* Discrete Pathway Mention before form */}
               <div className="bg-white/5 p-6 rounded-2xl border border-white/5">
                 <p className="text-sm text-gray-400 italic">
                   {t.contact.formHintBuild}
@@ -305,19 +280,26 @@ const TimelineStep: React.FC<{ number: string, icon: React.ReactNode, title: str
   </div>
 );
 
-const TierCard: React.FC<{ tag: string, title: string, desc: string, price: string, note: string, isPopular?: boolean }> = ({ tag, title, desc, price, note, isPopular }) => (
+const TierCard: React.FC<{ tag: string, title: string, bullets: string[], price: string, note: string, isPopular?: boolean }> = ({ tag, title, bullets, price, note, isPopular }) => (
   <div className={`relative p-10 md:p-12 rounded-[3rem] h-full transition-all duration-500 flex flex-col group ${isPopular ? 'bg-dodai-charcoal text-white shadow-2xl scale-100 lg:scale-105 z-10 border border-white/5' : 'bg-white border border-gray-200 text-dodai-charcoal hover:shadow-xl hover:-translate-y-1'}`}>
     {isPopular && (
       <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-dodai-red text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-full shadow-2xl ring-4 ring-dodai-charcoal">
         RECOMMENDED
       </div>
     )}
-    <div className="mb-10 text-center">
-      <span className={`text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-4 block ${isPopular ? 'text-dodai-red' : 'text-dodai-red'}`}>{tag}</span>
-      <h4 className="text-3xl font-bold mb-4 tracking-tight leading-none">{title}</h4>
-      <p className={`text-sm leading-relaxed mb-10 ${isPopular ? 'text-gray-300' : 'text-gray-500'}`}>{desc}</p>
+    <div className="text-center">
+      <span className={`text-[10px] font-mono font-bold uppercase tracking-[0.2em] mb-4 block text-dodai-red`}>{tag}</span>
+      <h4 className="text-3xl font-bold mb-8 tracking-tight leading-none">{title}</h4>
+      <ul className="text-left space-y-3 mb-6">
+        {bullets.map((bullet, idx) => (
+          <li key={idx} className="flex items-start gap-3">
+            <div className={`mt-1 flex-shrink-0 w-1.5 h-1.5 rounded-full ${isPopular ? 'bg-dodai-red' : 'bg-dodai-charcoal'}`}></div>
+            <span className={`text-sm font-medium leading-relaxed ${isPopular ? 'text-gray-300' : 'text-gray-600'}`}>{bullet}</span>
+          </li>
+        ))}
+      </ul>
     </div>
-    <div className="mt-auto pt-10 border-t border-white/10 text-center">
+    <div className="mt-auto pt-8 border-t border-white/10 text-center">
       <span className="text-3xl font-bold block mb-2">{price}</span>
       <p className={`text-[10px] font-mono uppercase tracking-widest ${isPopular ? 'text-gray-500' : 'text-gray-400'}`}>{note}</p>
       <Link smooth to="/build#contact-build" className={`mt-10 block w-full py-5 rounded-2xl text-center font-bold text-sm transition-all duration-300 active:scale-95 ${isPopular ? 'bg-white text-dodai-charcoal hover:bg-dodai-red hover:text-white' : 'bg-dodai-charcoal text-white hover:bg-black'}`}>
@@ -359,10 +341,10 @@ const NetworkCard: React.FC<{ icon: React.ReactNode, title: string, desc: string
 );
 
 const AddonCard: React.FC<{ title: string, desc: string, price: string }> = ({ title, desc, price }) => (
-  <div className="p-10 rounded-[2.5rem] bg-white border border-gray-100 hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
-    <h3 className="text-2xl font-bold text-dodai-charcoal mb-4 group-hover:text-dodai-red transition-colors tracking-tight">{title}</h3>
-    <p className="text-base text-gray-600 leading-relaxed mb-12 flex-grow font-light">{desc}</p>
-    <div className="pt-8 border-t border-gray-100">
+  <div className="p-10 rounded-[2.5rem] bg-white/5 border border-white/10 hover:border-white/20 hover:bg-white/10 hover:shadow-2xl transition-all duration-500 group h-full flex flex-col">
+    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-dodai-red transition-colors tracking-tight">{title}</h3>
+    <p className="text-base text-gray-400 leading-relaxed mb-12 flex-grow font-light group-hover:text-gray-300 transition-colors">{desc}</p>
+    <div className="pt-8 border-t border-white/5">
       <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-dodai-red">{price}</span>
     </div>
   </div>
@@ -372,13 +354,13 @@ const FAQItem: React.FC<{ q: string, a: string }> = ({ q, a }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <div className="border-b border-gray-100 last:border-none">
-      <button onClick={() => setIsOpen(!isOpen)} className="w-full py-8 flex justify-between items-center text-left group">
-        <span className={`text-xl md:text-2xl font-medium transition-colors ${isOpen ? 'text-dodai-charcoal' : 'text-gray-500 group-hover:text-dodai-charcoal'}`}>{q}</span>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-dodai-charcoal text-white rotate-45' : 'bg-gray-100 text-gray-400'}`}>
-           <Plus size={18} />
+      <button onClick={() => setIsOpen(!isOpen)} className="w-full py-10 flex justify-between items-center text-left group">
+        <span className={`text-xl md:text-2xl font-bold transition-colors ${isOpen ? 'text-dodai-charcoal' : 'text-gray-400 group-hover:text-dodai-charcoal'}`}>{q}</span>
+        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-sm ${isOpen ? 'bg-dodai-charcoal text-white rotate-45' : 'bg-gray-100 text-dodai-charcoal group-hover:bg-dodai-red group-hover:text-white'}`}>
+           <Plus size={24} />
         </div>
       </button>
-      <div className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-8 opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-10 opacity-100' : 'max-h-0 opacity-0'}`}>
         <p className="text-gray-600 leading-relaxed font-normal text-lg max-w-3xl">{a}</p>
       </div>
     </div>
