@@ -4,10 +4,12 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { Header, Footer } from './components/Layout';
 import { ScrollToTop } from './components/ScrollToTop';
 
-// Import direct pour éviter les problèmes de résolution de modules asynchrones
+// Import direct
 import { HomePage } from './pages/HomePage';
 import { PartenairesPage } from './pages/PartenairesPage';
 import { RunPage } from './pages/RunPage';
+import { DiagnosticPage } from './pages/DiagnosticPage';
+import { BuildPage } from './pages/BuildPage';
 
 const AppContent: React.FC = () => {
   return (
@@ -26,6 +28,8 @@ const AppContent: React.FC = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/partenaires" element={<PartenairesPage />} />
           <Route path="/run" element={<RunPage />} />
+          <Route path="/diagnostic" element={<DiagnosticPage />} />
+          <Route path="/build" element={<BuildPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

@@ -79,10 +79,9 @@ export const RunPage: React.FC = () => {
               {t.runPage.monthly.title}
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             <ReferralBlock icon={<Zap size={24} />} title={t.runPage.monthly.c1.t} text={t.runPage.monthly.c1.d} />
             <ReferralBlock icon={<MessageSquare size={24} />} title={t.runPage.monthly.c2.t} text={t.runPage.monthly.c2.d} />
-            <ReferralBlock icon={<Target size={24} />} title={t.runPage.monthly.c3.t} text={t.runPage.monthly.c3.d} />
             <ReferralBlock icon={<LineChart size={24} />} title={t.runPage.monthly.c4.t} text={t.runPage.monthly.c4.d} />
           </div>
           <p className="text-center italic text-gray-500 font-light text-lg text-balance">
@@ -266,7 +265,7 @@ export const RunPage: React.FC = () => {
               </div>
             </div>
             <div>
-              <ContactForm />
+              <ContactForm isRunPage />
             </div>
           </div>
         </div>

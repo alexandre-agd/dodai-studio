@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
-  const isDarkPage = location.pathname.startsWith('/partenaires') || location.pathname.startsWith('/run');
+  const isDarkPage = location.pathname.startsWith('/partenaires') || location.pathname.startsWith('/run') || location.pathname.startsWith('/diagnostic') || location.pathname.startsWith('/build');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
         <div 
             className={`mx-auto flex items-center justify-between transition-all duration-500 ${
                 isScrolled 
-                ? 'max-w-4xl bg-white/80 backdrop-blur-xl border border-white/20 shadow-xl shadow-gray-200/20 rounded-full px-6 py-3' 
+                ? 'max-w-5xl bg-white/80 backdrop-blur-xl border border-white/20 shadow-xl shadow-gray-200/20 rounded-full px-6 py-3' 
                 : 'max-w-7xl px-6 bg-transparent'
             }`}
         >
@@ -84,8 +84,8 @@ export const Header: React.FC = () => {
               {/* Dropdown Menu */}
               <div className={`absolute top-full left-0 pt-2 transition-all duration-300 ${offresOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}`}>
                 <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-2 min-w-[200px]">
-                  <Link smooth to="/#offres" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.services.phaseDiag}</Link>
-                  <Link smooth to="/#offres" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.services.phaseBuild}</Link>
+                  <Link smooth to="/diagnostic" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.nav.diagnostic}</Link>
+                  <Link smooth to="/build" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.nav.build}</Link>
                   <Link smooth to="/run" className="block px-4 py-2.5 text-sm text-gray-600 hover:text-dodai-charcoal hover:bg-gray-50 rounded-xl transition-colors">{t.nav.run}</Link>
                 </div>
               </div>
@@ -93,6 +93,7 @@ export const Header: React.FC = () => {
 
             <Link smooth to="/#approche" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.approach}</Link>
             <Link smooth to="/#equipe" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.team}</Link>
+            <Link smooth to="/partenaires" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.partners}</Link>
           </nav>
 
           <div className="flex items-center gap-4">
@@ -166,8 +167,8 @@ export const Header: React.FC = () => {
               <ChevronDown className={`transition-transform duration-300 ${offresOpen ? 'rotate-180' : ''}`} />
             </button>
             <div className={`overflow-hidden transition-all duration-500 flex flex-col gap-4 mt-4 ${offresOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'}`}>
-              <Link smooth to="/#offres" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.services.phaseDiag}</Link>
-              <Link smooth to="/#offres" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.services.phaseBuild}</Link>
+              <Link smooth to="/diagnostic" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.nav.diagnostic}</Link>
+              <Link smooth to="/build" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.nav.build}</Link>
               <Link smooth to="/run" onClick={() => setMobileMenuOpen(false)} className="text-xl text-gray-500">{t.nav.run}</Link>
             </div>
           </div>
@@ -185,58 +186,57 @@ export const Header: React.FC = () => {
   );
 };
 
+// Added Footer component to resolve "Module './components/Layout' has no exported member 'Footer'" error.
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
-  
   return (
-    <footer className="bg-white pt-20 pb-10 border-t border-gray-100 mt-auto">
+    <footer className="bg-dodai-charcoal text-white py-20 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-12 mb-20">
-          <div className="col-span-2">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="lg:col-span-2">
             <Link smooth to="/" className="block mb-8" onClick={() => window.scrollTo(0,0)}>
               <img 
-                src="https://res.cloudinary.com/dehnuytil/image/upload/v1770622850/favicon_defxjo.png" 
+                src="https://res.cloudinary.com/dehnuytil/image/upload/v1770612903/Dodai-logo_mfemab.png" 
                 alt="Dodai Studio" 
-                className="h-12 w-auto opacity-80 grayscale hover:grayscale-0 transition-all duration-500"
+                className="h-10 w-auto brightness-0 invert"
               />
             </Link>
-            <p className="text-gray-500 max-w-sm leading-relaxed whitespace-pre-line font-light text-sm">
+            <p className="text-gray-400 text-lg font-light leading-relaxed max-w-sm whitespace-pre-line">
               {t.footer.desc}
             </p>
           </div>
           
           <div>
-            <h4 className="font-bold text-[10px] uppercase tracking-widest mb-6 text-gray-400">{t.footer.studio}</h4>
-            <ul className="space-y-3 text-sm text-dodai-charcoal font-medium">
-              <li><Link smooth to="/#approche" className="hover:text-gray-600 transition-colors">{t.nav.approach}</Link></li>
-              <li><Link smooth to="/#offres" className="hover:text-gray-600 transition-colors">{t.nav.services}</Link></li>
-              <li><Link smooth to="/partenaires" className="hover:text-gray-600 transition-colors">{t.nav.partners}</Link></li>
+            <h4 className="text-xs font-mono uppercase tracking-widest text-dodai-red mb-8 font-bold">{t.footer.studio}</h4>
+            <ul className="space-y-4">
+              <li><Link smooth to="/diagnostic" className="text-gray-400 hover:text-white transition-colors">{t.nav.diagnostic}</Link></li>
+              <li><Link smooth to="/build" className="text-gray-400 hover:text-white transition-colors">{t.nav.build}</Link></li>
+              <li><Link smooth to="/run" className="text-gray-400 hover:text-white transition-colors">{t.nav.run}</Link></li>
+              <li><Link smooth to="/partenaires" className="text-gray-400 hover:text-white transition-colors">{t.nav.partners}</Link></li>
             </ul>
           </div>
-          
+
           <div>
-            <h4 className="font-bold text-[10px] uppercase tracking-widest mb-6 text-gray-400">{t.footer.contact}</h4>
-            <ul className="space-y-3 text-sm text-gray-600 font-light">
-              <li>{t.footer.tokyo}</li>
-              <li><a href="mailto:hello@dodai-studio.com" className="hover:text-dodai-charcoal transition-colors">hello@dodai-studio.com</a></li>
-              <li>
-                 <Link 
-                   smooth
-                   to="/#contact"
-                   className="inline-flex items-center gap-2 text-dodai-charcoal hover:translate-x-1 transition-transform mt-2 font-medium"
-                 >
-                   {t.footer.cta} <ArrowRight size={14} />
-                 </Link>
+            <h4 className="text-xs font-mono uppercase tracking-widest text-dodai-red mb-8 font-bold">{t.footer.contact}</h4>
+            <ul className="space-y-4">
+              <li className="text-gray-400">{t.footer.tokyo}</li>
+              <li><a href="mailto:hello@dodai-studio.com" className="text-gray-400 hover:text-white transition-colors">hello@dodai-studio.com</a></li>
+              <li className="pt-4">
+                <Link smooth to="/#contact" className="inline-flex items-center gap-2 bg-white text-dodai-charcoal px-6 py-3 rounded-full text-sm font-bold hover:bg-dodai-red hover:text-white transition-all">
+                  {t.footer.cta}
+                </Link>
               </li>
             </ul>
           </div>
         </div>
-        
-        <div className="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 font-mono uppercase tracking-widest">
-          <p>&copy; {new Date().getFullYear()} Dodai Studio. {t.footer.rights}</p>
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-gray-600">{t.footer.legal}</a>
-            <a href="#" className="hover:text-gray-600">{t.footer.privacy}</a>
+
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs text-gray-500">
+            © {new Date().getFullYear()} Dodai Studio. {t.footer.rights}
+          </p>
+          <div className="flex gap-8">
+            <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.legal}</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.privacy}</a>
           </div>
         </div>
       </div>

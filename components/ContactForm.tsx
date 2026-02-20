@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Loader2, CheckCircle, AlertCircle, Sparkles } from 'lucide-react';
-// Corrected import from App to types to fix WizardData member error
 import { WizardData } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface ContactFormProps {
   initialData?: WizardData | null;
+  isRunPage?: boolean;
 }
 
-export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
+export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage }) => {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,10 +17,11 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
     city: 'Tokyo',
     timing: '',
     budget: '',
-    message: ''
+    message: '',
+    currentConcept: '',
+    mainChallenge: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const { t } = useLanguage();
 
   // Pre-fill form when initialData changes
   useEffect(() => {
@@ -52,7 +54,6 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
     e.preventDefault();
     setStatus('submitting');
     
-    // Explicitly define the webhook URL
     const WEBHOOK_URL = 'https://n8n.agdevelopment.co/webhook/c1363d8c-709b-4aae-ad10-5561597ad0c0';
 
     try {
@@ -67,7 +68,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', budget: '', message: '' });
+        setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', budget: '', message: '', currentConcept: '', mainChallenge: '' });
       } else {
         console.error('Webhook Error:', response.status, response.statusText);
         setStatus('error');
@@ -162,30 +163,72 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData }) => {
           </div>
         </div>
         <div className="group">
-          <label htmlFor="city" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.city}</label>
-          <input
-            type="text"
-            id="city"
-            name="city"
-            value={formData.city}
-            onChange={handleChange}
-            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800"
-          />
+          {isRunPage ? (
+            <>
+              <label htmlFor="currentConcept" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.runPage.form.concept}</label>
+              <input
+                type="text"
+                id="currentConcept"
+                name="currentConcept"
+                value={formData.currentConcept}
+                onChange={handleChange}
+                placeholder={t.runPage.form.conceptPlaceholder}
+                className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800"
+              />
+            </>
+          ) : (
+            <>
+              <label htmlFor="city" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.city}</label>
+              <input
+                type="text"
+                id="city"
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800"
+              />
+            </>
+          )}
         </div>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="group">
-          <label htmlFor="timing" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.timing}</label>
-          <input
-            type="text"
-            id="timing"
-            name="timing"
-            value={formData.timing}
-            onChange={handleChange}
-            className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800 placeholder:text-gray-400"
-            placeholder="Ex: 3 mois"
-          />
+          {isRunPage ? (
+            <>
+              <label htmlFor="mainChallenge" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.runPage.form.challenge}</label>
+              <div className="relative">
+                 <select
+                    id="mainChallenge"
+                    name="mainChallenge"
+                    value={formData.mainChallenge}
+                    onChange={handleChange}
+                    className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all appearance-none font-medium text-gray-800 cursor-pointer"
+                >
+                    <option value="">{t.runPage.form.challenge}...</option>
+                    {t.runPage.form.challenges.map((c: string) => (
+                      <option key={c} value={c}>{c}</option>
+                    ))}
+                </select>
+                <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <label htmlFor="timing" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.timing}</label>
+              <input
+                type="text"
+                id="timing"
+                name="timing"
+                value={formData.timing}
+                onChange={handleChange}
+                className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800 placeholder:text-gray-400"
+                placeholder="Ex: 3 mois"
+              />
+            </>
+          )}
         </div>
         <div className="group">
           <label htmlFor="budget" className="block text-xs font-bold text-gray-500 uppercase tracking-widest mb-2 ml-1 group-focus-within:text-dodai-charcoal transition-colors">{t.contact.form.budget}</label>
