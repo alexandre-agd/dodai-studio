@@ -1,155 +1,230 @@
-
 import React from 'react';
-import { PricingTierProps } from '../types';
-import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const tiers: PricingTierProps[] = [
-  {
-    title: "Diagnostic Go/No-Go",
-    subtitle: "Avant de s’engager",
-    price: "600k JPY",
-    description: "Vous obtenez un Go/No-Go argumenté, une roadmap d’ouverture et les premiers branchements utiles pour avancer proprement.",
-    features: [
-      "Audit du business plan",
-      "Interviews terrain (réseau)",
-      "Panel test Tokyo (appétence & pricing)",
-      "Benchmark concurrence (visites)",
-      "Chiffrage réaliste CAPEX/OPEX"
-    ],
-    deliverables: [
-      "Synthèse (≤10 pages)",
-      "Budget (Excel)",
-      "Roadmap visuelle",
-      "Intros email partenaires"
-    ],
-    timing: "~1 semaine de travail",
-    payment: "100% à la signature"
-  },
-  {
-    title: "Build",
-    subtitle: "Du concept à l'ouverture",
-    price: "2.5M JPY",
-    description: "Accompagnement complet : vous restez décisionnaire final ; nous facilitons, coordonnons et exécutons avec vous.",
-    features: [
-      "Setup : Structure, licences, banque, sourcing",
-      "Build : Coordination travaux, POS, CRM",
-      "Ops : SOPs, recrutement & formation",
-      "Launch : Soft opening, support de mise en route"
-    ],
-    details: [
-      "Option : Build modulaire possible",
-      "Paiement : 30/40/30",
-    ],
-    timing: "8–10 semaines (estimatif)",
-    isPopular: true
-  },
-  {
-    title: "Run",
-    subtitle: "Stabiliser & Optimiser",
-    price: "Dès 150k JPY/mois",
-    description: "Un accompagnement cadré pour éviter le pilotage au feeling et installer une amélioration continue.",
-    features: [
-      "Pilotage : Rituels & Dashboard KPIs",
-      "Ops : Ajustements routines & Qualité",
-      "CRM : Automatisations & tests d'offres",
-      "Support asynchrone cadré"
-    ],
-    deliverables: [
-      "Revue mensuelle KPIs + Décisions",
-      "Plan d’action priorisé",
-      "SOPs versionnés"
-    ],
-    timing: "Engagement 6 mois",
-    payment: "Mensuel"
-  }
-];
-
-export const Pricing: React.FC = () => {
+export const Pricing = () => {
   return (
-    <section id="offres" className="py-24 px-6 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-16 text-center md:text-left">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Choisir la bonne étape.</h2>
-          <p className="text-xl text-gray-500">Un accompagnement adapté à la maturité de votre projet.</p>
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-20">
+          <h3 className="text-sm font-bold text-dodai-red uppercase tracking-widest mb-4">TRANSPARENCE TARIFAIRE</h3>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dodai-charcoal">Nos Offres : Clarté & Efficacité.</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Choisissez l'accompagnement adapté à votre maturité.
+          </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {tiers.map((tier, index) => (
-            <div 
-              key={index} 
-              className={`relative flex flex-col p-8 rounded-3xl ${tier.isPopular ? 'bg-black text-white ring-4 ring-gray-100' : 'bg-gray-50 text-gray-900 border border-gray-100'}`}
-            >
-              {tier.isPopular && (
-                <div className="absolute top-0 right-0 -mt-3 -mr-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                  Recommandé
-                </div>
-              )}
-              
-              <div className="mb-8">
-                <h3 className="text-xl font-bold mb-1">{tier.title}</h3>
-                <p className={`text-sm ${tier.isPopular ? 'text-gray-400' : 'text-gray-500'}`}>{tier.subtitle}</p>
-                <div className="mt-6 flex items-baseline gap-1">
-                  <span className="text-4xl font-bold tracking-tight">{tier.price}</span>
-                </div>
-                <p className={`mt-4 text-sm leading-relaxed ${tier.isPopular ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {tier.description}
-                </p>
+        {/* Phase Diagnostic */}
+        <div className="mb-20">
+          <div className="bg-dodai-gray rounded-3xl p-8 md:p-12 border border-gray-100 max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+              <div>
+                <h3 className="text-sm font-bold text-dodai-red uppercase tracking-wider mb-2">Phase Diagnostic — REALITY CHECK</h3>
+                <h4 className="text-3xl font-bold text-dodai-charcoal">Diagnostic</h4>
               </div>
-
-              <div className="flex-1">
-                <ul className="space-y-4 mb-8">
-                  {tier.features.map((feat, i) => (
-                    <li key={i} className="flex gap-3 text-sm">
-                      <Check size={18} className={`flex-shrink-0 ${tier.isPopular ? 'text-blue-400' : 'text-green-600'}`} />
-                      <span className={tier.isPopular ? 'text-gray-300' : 'text-gray-700'}>{feat}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                {(tier.deliverables || tier.details) && (
-                  <div className={`mt-6 pt-6 border-t ${tier.isPopular ? 'border-gray-800' : 'border-gray-200'}`}>
-                    <p className={`text-xs font-semibold uppercase tracking-wider mb-3 ${tier.isPopular ? 'text-gray-500' : 'text-gray-400'}`}>
-                      {tier.deliverables ? 'Livrables clés' : 'Détails'}
-                    </p>
-                    <ul className="space-y-2">
-                      {(tier.deliverables || tier.details)?.map((item, i) => (
-                        <li key={i} className={`text-xs ${tier.isPopular ? 'text-gray-400' : 'text-gray-500'}`}>• {item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
-
-              <div className={`mt-8 pt-6 border-t ${tier.isPopular ? 'border-gray-800' : 'border-gray-200'}`}>
-                <div className="flex justify-between items-center text-xs">
-                  <span className={tier.isPopular ? 'text-gray-400' : 'text-gray-500'}>{tier.timing}</span>
-                  {tier.payment && <span className={tier.isPopular ? 'text-gray-400' : 'text-gray-500'}>{tier.payment}</span>}
-                </div>
-                <a 
-                  href="#contact"
-                  className={`mt-6 block w-full py-3 rounded-xl text-center font-medium transition-colors ${
-                    tier.isPopular 
-                      ? 'bg-white text-black hover:bg-gray-200' 
-                      : 'bg-black text-white hover:bg-gray-800'
-                  }`}
-                >
-                  Choisir {tier.title.split(' ')[0]}
-                </a>
+              <div className="text-right">
+                <p className="text-2xl font-bold text-dodai-charcoal">600k JPY</p>
+                <p className="text-xs text-gray-500 uppercase tracking-wide">(HORS TAXES)</p>
               </div>
             </div>
-          ))}
+            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+              L'assurance anti-crash de votre projet au Japon. Nous validons la faisabilité business et administrative avant que vous ne signiez le moindre bail.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Audit & Challenge Business Plan</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Interviews terrain & Réseau</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Panel test Tokyo (Dégustation/Concept)</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Mapping des partenaires clés</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-16 bg-gray-50 rounded-2xl p-8 border border-gray-100">
-          <h4 className="font-semibold mb-4">Les jalons critiques d’une ouverture</h4>
-          <div className="flex flex-wrap gap-2 text-sm text-gray-600 items-center justify-center md:justify-start">
-             <span>Concept validé</span> <span className="text-gray-300">→</span>
-             <span>Local & bail</span> <span className="text-gray-300">→</span>
-             <span>Licences</span> <span className="text-gray-300">→</span>
-             <span>Tech stack</span> <span className="text-gray-300">→</span>
-             <span>Recrutement & Formation</span> <span className="text-gray-300">→</span>
-             <span className="font-semibold text-black">Soft opening</span> <span className="text-gray-300">→</span>
-             <span className="font-bold text-black">Ouverture officielle</span>
+        {/* Phase Build */}
+        <div className="mb-20">
+          <h3 className="text-center text-sm font-bold text-dodai-charcoal uppercase tracking-wider mb-12">Phase Build — ZERO-TO-OPEN / À LA CARTE</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Build Essentiel */}
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gray-200 group-hover:bg-dodai-charcoal transition-colors"></div>
+              <h4 className="text-xl font-bold text-dodai-charcoal mb-2">Build Essentiel</h4>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-6">LOCAL TROUVÉ + PROJET MÛR</p>
+              <p className="text-3xl font-bold text-dodai-charcoal mb-1">1.2M - 1.5M JPY</p>
+              <p className="text-xs text-gray-400 uppercase tracking-wide mb-8">(ESTIMÉ)</p>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Pilier 1 : Structure & Conformité</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Pilier 3 : Tech & Opérations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Pilier 4 : Équipe & Lancement</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Pilier 2 : Audit du local existant (sans recherche active)</span>
+                </li>
+              </ul>
+              <p className="text-xs text-gray-400 mt-auto">PAIEMENT : 30% / 40% / 30%</p>
+            </div>
+
+            {/* Build Complet */}
+            <div className="bg-dodai-charcoal rounded-3xl p-8 border border-dodai-charcoal shadow-xl transform md:-translate-y-4 relative overflow-hidden">
+              <div className="absolute top-4 right-4 bg-dodai-red text-white text-xs font-bold px-3 py-1 rounded-full">RECOMMANDÉ</div>
+              <h4 className="text-xl font-bold text-white mb-2">Build Complet</h4>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-6">PROJET INTÉGRAL</p>
+              <p className="text-3xl font-bold text-white mb-1">2.0M - 2.5M JPY</p>
+              <p className="text-xs text-gray-400 uppercase tracking-wide mb-8">(ESTIMÉ)</p>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-300 text-sm">Pilier 1 : Structure & Conformité</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-300 text-sm">Pilier 2 : Local & Design (Recherche incluse)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-300 text-sm">Pilier 3 : Tech & Opérations</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-300 text-sm">Pilier 4 : Équipe & Lancement</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-300 text-sm">Suivi Post-Ouverture (30j)</span>
+                </li>
+              </ul>
+              <p className="text-xs text-gray-500 mt-auto">PAIEMENT : 30% / 40% / 30%</p>
+            </div>
+
+            {/* Build Premium */}
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 relative overflow-hidden group">
+              <div className="absolute top-0 left-0 w-full h-2 bg-gray-200 group-hover:bg-dodai-charcoal transition-colors"></div>
+              <h4 className="text-xl font-bold text-dodai-charcoal mb-2">Build Premium</h4>
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-wide mb-6">AMBITION & FRANCHISE</p>
+              <p className="text-3xl font-bold text-dodai-charcoal mb-1">3.0M - 3.5M JPY</p>
+              <p className="text-xs text-gray-400 uppercase tracking-wide mb-8">(ESTIMÉ)</p>
+              
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Tout le Build Complet</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Option MVP / Éphémère incluse</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Relations Presse (3 mois)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Pack Photos Professionnelles</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-dodai-red font-bold">✓</span>
+                  <span className="text-gray-600 text-sm">Suivi Post-Ouverture (60j)</span>
+                </li>
+              </ul>
+              <p className="text-xs text-gray-400 mt-auto">PAIEMENT : 30% / 40% / 30%</p>
+            </div>
+          </div>
+          
+          <div className="mt-12 bg-gray-50 p-8 rounded-2xl border border-gray-100">
+            <h4 className="font-bold text-dodai-charcoal mb-4">À la carte (sur devis) :</h4>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+              <p><span className="font-bold text-dodai-charcoal">Structure & Conformité</span> — Création de société, licences, banque, comptabilité.</p>
+              <p><span className="font-bold text-dodai-charcoal">Local & Design</span> — Recherche de local, négociation bail, coordination aménagement.</p>
+              <p><span className="font-bold text-dodai-charcoal">Tech & Opérations</span> — POS, CRM, SOPs, process opérationnel, automatisations.</p>
+              <p><span className="font-bold text-dodai-charcoal">Équipe & Lancement</span> — Recrutement, formation, soft opening, lancement.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Phase Run */}
+        <div className="mb-20">
+          <div className="bg-dodai-gray rounded-3xl p-8 md:p-12 border border-gray-100 max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+              <div>
+                <h3 className="text-sm font-bold text-dodai-red uppercase tracking-wider mb-2">Phase Run — GROWTH & SCALE</h3>
+                <h4 className="text-3xl font-bold text-dodai-charcoal">Run</h4>
+              </div>
+              <div className="text-right">
+                <p className="text-2xl font-bold text-dodai-charcoal">150k JPY /MOIS</p>
+              </div>
+            </div>
+            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+              L'après-ouverture, c'est là que les affaires se gagnent ou se perdent. Nous installons les rituels de pilotage pour optimiser la rentabilité et la fidélisation.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Pilotage financier & KPIs</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Optimisation Ops & Food Cost</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Marketing Automation & CRM</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="w-2 h-2 bg-dodai-red rounded-full"></span>
+                <span className="text-gray-700 font-medium">Audit trimestriel complet</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Options */}
+        <div className="max-w-4xl mx-auto">
+          <h4 className="font-bold text-dodai-charcoal mb-6 text-lg">Options & Modules :</h4>
+          <div className="space-y-4">
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4 border-b border-gray-100 pb-4">
+              <span className="font-bold text-dodai-charcoal min-w-[200px]">MVP / Pop-up</span>
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wide min-w-[100px]">SUR DEVIS</span>
+              <span className="text-gray-600 text-sm">Testez votre concept en réel avant de signer un bail commercial de 3 ans. Validez offre et prix.</span>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4 border-b border-gray-100 pb-4">
+              <span className="font-bold text-dodai-charcoal min-w-[200px]">Tokyo Panel Test</span>
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wide min-w-[100px]">SUR DEVIS</span>
+              <span className="text-gray-600 text-sm">Dîners de dégustation intimistes ou activations pop-up, nous concevons et mobilisons la bonne audience pour tester votre concept en conditions réelles.</span>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4 border-b border-gray-100 pb-4">
+              <span className="font-bold text-dodai-charcoal min-w-[200px]">Presse & Image</span>
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wide min-w-[100px]">SUR DEVIS</span>
+              <span className="text-gray-600 text-sm">Pack lancement : Shooting pro + Relations presse & Influenceurs.</span>
+            </div>
+            <div className="flex flex-col md:flex-row gap-2 md:gap-4 pb-4">
+              <span className="font-bold text-dodai-charcoal min-w-[200px]">Recrutement Premium</span>
+              <span className="text-xs font-bold text-gray-400 uppercase tracking-wide min-w-[100px]">SUR DEVIS</span>
+              <span className="text-gray-600 text-sm">Présélection renforcée et garantie de remplacement.</span>
+            </div>
+          </div>
+          
+          <div className="mt-12 p-6 bg-gray-50 rounded-xl text-xs text-gray-500 leading-relaxed">
+            <span className="font-bold">Note tarifaire :</span> Les honoraires couvrent la coordination et le management de Dodai Studio. Les coûts de construction, d'aménagement et les prestataires tiers sont réglés directement aux fournisseurs et font l'objet de devis séparés.
           </div>
         </div>
       </div>
