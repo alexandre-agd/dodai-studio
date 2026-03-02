@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Browser-compatible CSS only */
 body {
   background-color: #FFFEF2;
