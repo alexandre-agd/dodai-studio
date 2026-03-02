@@ -62,9 +62,3 @@ export interface WizardData {
   recommendation?: string;
   resultCase?: 1 | 2 | 3 | 4;
 }
-
-declare module 'react' {
-  interface ImgHTMLAttributes<T> extends React.HTMLAttributes<T> {
-    fetchpriority?: 'high' | 'low' | 'auto';
-  }
-}
