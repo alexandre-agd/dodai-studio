@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
@@ -97,8 +97,8 @@ export const Header: React.FC = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            {/* Language Switcher Desktop & Mobile */}
-            <div className={`flex items-center gap-2 text-[11px] font-mono transition-all duration-500 ${isScrolled ? 'md:border-l border-gray-200 md:pl-4' : 'md:border-l border-gray-200 md:pl-6 md:ml-2'}`}>
+             {/* Language Switcher Desktop */}
+            <div className={`hidden md:flex items-center gap-2 text-[11px] font-mono transition-all duration-500 ${isScrolled ? 'border-l border-gray-200 pl-4' : 'border-l border-gray-200 pl-6 ml-2'}`}>
               {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
                   <button 
                       key={lang}

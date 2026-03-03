@@ -264,7 +264,7 @@ export const BuildPage: React.FC = () => {
 };
 
 // SUB-COMPONENTS
-const TimelineStep: React.FC<{ number: string, icon: React.ReactNode, title: string, desc: string, isLast?: boolean }> = ({ number, icon, title, desc }) => (
+const TimelineStep: React.FC<{ number: string, icon: React.ReactNode, title: string, desc: string }> = ({ number, icon, title, desc }) => (
   <div className="flex flex-col items-center lg:items-start text-center lg:text-left group">
     <div className={`w-16 h-16 rounded-2xl flex items-center justify-center font-bold text-xl mb-8 shadow-lg border-4 bg-white text-dodai-charcoal border-dodai-charcoal group-hover:bg-dodai-charcoal group-hover:text-white transition-all duration-500 z-10`}>
       {icon}
