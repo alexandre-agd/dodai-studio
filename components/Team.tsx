@@ -1,89 +1,50 @@
-
 import React from 'react';
-import { Linkedin } from 'lucide-react';
-import { useLanguage } from '../contexts/LanguageContext';
 
-export const Team: React.FC = () => {
-  const { t } = useLanguage();
-
+export const Team = () => {
   return (
-    <section id="equipe" className="py-32 md:py-48 bg-white border-t border-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Title */}
-        <div className="mb-32">
-             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.95] text-dodai-charcoal mb-6 max-w-5xl text-balance">
-              {t.team.title} <br/>
-              <span className="text-gray-400">{t.team.titleSpan}</span>
-            </h2>
-             <p className="text-gray-600 text-lg font-light max-w-md">
-              {t.team.subtitle}
-            </p>
+    <section className="py-24 bg-dodai-gray">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-dodai-charcoal">L'Équipe : Terrain + Systèmes.</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            L'exécution complète.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-24">
-          <MemberCard 
-            image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Guillaume_fj5if7.png"
-            name="Guillaume Duperier" 
-            role={t.team.g.role}
-            linkedin="https://www.linkedin.com/in/g-duperier-apero/"
-            description={t.team.g.desc}
-            list={t.team.g.list}
-          />
-          <MemberCard 
-            image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Alex_pue16e.png"
-            name="Alexandre Gerard" 
-            role={t.team.a.role}
-            linkedin="https://www.linkedin.com/in/alexandre-gerard-27533453/"
-            description={t.team.a.desc}
-            list={t.team.a.list}
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          {/* Guillaume Dupérier */}
+          <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-2xl font-bold text-dodai-charcoal mb-1">Guillaume Dupérier</h3>
+            <p className="text-xs font-bold text-dodai-red uppercase tracking-wider mb-6">OPÉRATIONS & RÉSEAU</p>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              En 14 ans à Tokyo, j'ai ouvert et opéré 3 restaurants, 2 boutiques et structuré une activité d'import. Je ne suis pas un consultant, je suis un praticien. Je sais calibrer un projet pour qu'il rencontre précisément sa cible idéale. Je mets mon réseau de fournisseurs et mon expérience du terrain au service de Dodai Studio.
+            </p>
+            <ul className="space-y-2 text-sm font-medium text-gray-700">
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>14 ans Tokyo & 5 ouvertures</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Validation concept terrain</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Recherche fournisseurs</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Coordination partenaires</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Recrutement & Standards</li>
+            </ul>
+          </div>
+
+          {/* Alexandre Gerard */}
+          <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+            <h3 className="text-2xl font-bold text-dodai-charcoal mb-1">Alexandre Gerard</h3>
+            <p className="text-xs font-bold text-dodai-red uppercase tracking-wider mb-6">SYSTÈMES & CROISSANCE</p>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              L'hospitalité est un art, mais sa rentabilité est une science. En tant qu'entrepreneur, je sais qu'une bonne idée ne survit pas sans structure. Je ne suis pas là pour installer des logiciels, mais pour concevoir les processus qui rendront votre business efficace, mesurable et scalable avec Dodai Studio.
+            </p>
+            <ul className="space-y-2 text-sm font-medium text-gray-700">
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Entrepreneur & Gestionnaire</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Modélisation Business Plan</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Processus Opérationnels (SOPs)</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Digitalisation & Efficacité</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-dodai-charcoal rounded-full"></span>Stratégie de Croissance</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
   );
 };
-
-const MemberCard: React.FC<{ 
-  image: string, 
-  name: string, 
-  role: string, 
-  description: string, 
-  list: string[],
-  linkedin: string
-}> = ({ image, name, role, description, list, linkedin }) => (
-  <div className="flex flex-col group cursor-default">
-    {/* Image & Header */}
-    <div className="flex items-center gap-6 mb-8">
-        <div className="w-24 h-24 rounded-full overflow-hidden bg-gray-100 flex-shrink-0">
-            <img src={image} alt={name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" />
-        </div>
-        <div>
-            <h3 className="text-2xl font-bold text-dodai-charcoal mb-1 group-hover:text-black transition-colors">{name}</h3>
-            <p className="text-xs font-mono uppercase tracking-widest text-dodai-red mb-2">{role}</p>
-            <a href={linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black transition-colors">
-                <Linkedin size={16} />
-            </a>
-        </div>
-    </div>
-
-    {/* Narrative */}
-    <div className="mb-10">
-        <p className="text-lg text-gray-600 font-light leading-relaxed italic group-hover:text-gray-800 transition-colors duration-500">
-            {description}
-        </p>
-    </div>
-
-    {/* Expertise List (Minimal) */}
-    <div className="mt-auto border-t border-gray-100 pt-6">
-        <ul className="grid gap-3">
-             {list.map((item, i) => (
-                <li key={i} className="text-sm text-gray-500 flex items-center gap-2 group-hover:text-gray-600 transition-colors">
-                    <span className="w-1 h-1 bg-gray-400 rounded-full group-hover:bg-dodai-red transition-colors"></span>
-                    {item}
-                </li>
-             ))}
-        </ul>
-    </div>
-  </div>
-);

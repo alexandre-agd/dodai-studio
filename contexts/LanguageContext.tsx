@@ -1,12 +1,11 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { translations, Language } from '../utils/translations';
 
-type TranslationsType = typeof translations['fr'];
+type Language = 'fr' | 'en' | 'jp';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: TranslationsType;
+  t: (key: string) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -14,7 +13,10 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('fr');
 
-  const t = translations[language];
+  const t = (key: string) => {
+    // Placeholder translation function
+    return key;
+  };
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage, t }}>

@@ -1,75 +1,57 @@
+import { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
-import React, { useState } from 'react';
-import { Plus } from 'lucide-react';
-import { FaqItem } from '../types';
-import { useLanguage } from '../contexts/LanguageContext';
-
-export const FAQ: React.FC = () => {
-  const { t } = useLanguage();
-
-  const faqData: FaqItem[] = [
-    { question: t.faq.q1, answer: t.faq.a1 },
-    { question: t.faq.q2, answer: t.faq.a2 },
-    { question: t.faq.q3, answer: t.faq.a3 },
-    { question: t.faq.q4, answer: t.faq.a4 },
-    { question: t.faq.q5, answer: t.faq.a5 },
-  ];
-
-  return (
-    <section id="faq" className="py-24 md:py-32 bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
-        
-        {/* Standardized Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-6">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter max-w-5xl leading-[1] text-dodai-charcoal text-balance">
-              {t.faq.title} <br/>
-              <span className="text-gray-400">{t.faq.titleSpan}</span>
-            </h2>
-            <div className="hidden md:block text-right">
-                <p className="text-gray-600 max-w-xs pb-2 font-light">
-                  {t.faq.subtitle}
-                </p>
-                <p className="text-[10px] font-mono text-gray-500 uppercase tracking-widest">
-                  {t.faq.tag}
-                </p>
-            </div>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <div className="space-y-4">
-            {faqData.map((item, index) => (
-              <AccordionItem key={index} item={item} />
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-const AccordionItem: React.FC<{ item: FaqItem }> = ({ item }) => {
+const FAQItem = ({ question, answer }: { question: string; answer: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-100 last:border-0">
+    <div className="border-b border-gray-200 py-6">
       <button 
-        className="w-full flex justify-between items-start text-left py-8 group"
+        className="flex justify-between items-center w-full text-left focus:outline-none group"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={`text-xl md:text-2xl font-medium transition-colors duration-300 ${isOpen ? 'text-dodai-charcoal' : 'text-gray-500 group-hover:text-gray-700'}`}>
-            {item.question}
-        </span>
-        <div className={`ml-4 mt-1 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 flex-shrink-0 ${isOpen ? 'bg-dodai-charcoal text-white rotate-45' : 'bg-gray-50 text-gray-400 group-hover:bg-gray-200'}`}>
-             <Plus size={18} />
-        </div>
+        <h4 className="text-lg font-bold text-dodai-charcoal group-hover:text-dodai-red transition-colors pr-8">{question}</h4>
+        {isOpen ? <ChevronUp className="text-dodai-red flex-shrink-0" /> : <ChevronDown className="text-gray-400 flex-shrink-0" />}
       </button>
-      <div 
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100 mb-8' : 'max-h-0 opacity-0'}`}
-      >
-        <p className="text-gray-600 leading-relaxed font-normal text-lg max-w-2xl">
-          {item.answer}
-        </p>
-      </div>
+      {isOpen && (
+        <div className="mt-4 text-gray-600 leading-relaxed animate-fadeIn">
+          {answer}
+        </div>
+      )}
     </div>
+  );
+};
+
+export const FAQ = () => {
+  const faqs = [
+    {
+      question: "Quelle différence entre Build Essentiel, Complet et Premium ?",
+      answer: "L'Essentiel (1.2-1.5M) est pour ceux qui ont déjà un local et un plan solide. Le Complet (2-2.5M) inclut la recherche de local et est choisi par 80% des clients de Dodai Studio. Le Premium (3-3.5M) inclut MVP, Relations Presse et contenus pour les lancements d'envergure."
+    },
+    {
+      question: "Le Diagnostic est-il obligatoire avant le Build ?",
+      answer: "Non, mais fortement recommandé. Il permet de valider la faisabilité et le budget avant de s'engager dans un Build complet."
+    },
+    {
+      question: "Qu'est-ce que le MVP / Éphémère ?",
+      answer: "C'est un test marché en conditions réelles (kitchen car, corner, pop-up) pendant 6 à 10 semaines. Cela permet de valider votre concept et vos produits avant de signer un bail commercial de 3 ans."
+    },
+    {
+      question: "Quels sont les délais entre signature et ouverture ?",
+      answer: "Comptez 6 à 8 semaines pour un Build Essentiel (local trouvé), 12 à 20 semaines pour un Build Complet (avec recherche), et 16 à 24 semaines pour un Premium avec MVP."
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-4 max-w-3xl">
+        <h2 className="text-4xl font-bold mb-12 text-center text-dodai-charcoal">FAQ</h2>
+        <div className="space-y-2">
+          {faqs.map((faq, index) => (
+            <FAQItem key={index} question={faq.question} answer={faq.answer} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
