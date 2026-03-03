@@ -1,13 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
-import './index.css'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './index.css';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+const rootElement = document.getElementById('root');
+if (!rootElement) {
+  throw new Error("Could not find root element to mount to");
+}
+
+const root = createRoot(rootElement);
+
+// We add future flags to silence React Router v6 warnings about v7
+root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
