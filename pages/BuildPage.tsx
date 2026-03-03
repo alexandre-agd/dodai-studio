@@ -90,7 +90,7 @@ export const BuildPage: React.FC = () => {
               <TimelineStep number="01" title={t.buildPage.timeline.s1.t} desc={t.buildPage.timeline.s1.d} icon={<FileText size={24} />} />
               <TimelineStep number="02" title={t.buildPage.timeline.s2.t} desc={t.buildPage.timeline.s2.d} icon={<MapPin size={24} />} />
               <TimelineStep number="03" title={t.buildPage.timeline.s3.t} desc={t.buildPage.timeline.s3.d} icon={<Wrench size={24} />} />
-              <TimelineStep number="04" title={t.buildPage.timeline.s4.t} desc={t.buildPage.timeline.s4.d} icon={<Rocket size={24} />} isLast />
+              <TimelineStep number="04" title={t.buildPage.timeline.s4.t} desc={t.buildPage.timeline.s4.d} icon={<Rocket size={24} />} />
             </div>
           </div>
 

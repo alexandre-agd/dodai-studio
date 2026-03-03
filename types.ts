@@ -1,4 +1,3 @@
-import React from 'react';
 
 export interface ServiceTierProps {
   name: string;
@@ -61,4 +60,11 @@ export interface WizardData {
   challenge: string;
   recommendation?: string;
   resultCase?: 1 | 2 | 3 | 4;
+}
+
+declare module 'react-router-hash-link' {
+  import React from 'react';
+  import { LinkProps, NavLinkProps } from 'react-router-dom';
+  export const HashLink: React.ForwardRefExoticComponent<LinkProps & { smooth?: boolean } & React.RefAttributes<HTMLAnchorElement>>;
+  export const NavHashLink: React.ForwardRefExoticComponent<NavLinkProps & { smooth?: boolean } & React.RefAttributes<HTMLAnchorElement>>;
 }
