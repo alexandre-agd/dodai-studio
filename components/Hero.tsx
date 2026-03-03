@@ -19,7 +19,7 @@ export const Hero: React.FC = () => {
               width="400"
               height="400"
               className="w-full h-full object-contain"
-              fetchPriority="high"
+              fetchpriority="high"
               loading="eager"
               decoding="sync"
             />
