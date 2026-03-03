@@ -1,4 +1,4 @@
-:{$PORT} {
+:{$PORT:3000} {
     root * dist
     file_server
     try_files {path} /index.html
