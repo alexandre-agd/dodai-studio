@@ -1,28 +1,12 @@
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Noto Sans JP", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, monospace;
-
-  --color-dodai-cream: #FFFEF2;
-  --color-dodai-charcoal: #2C2C2C;
-  --color-dodai-red: #C73E1D;
-  --color-dodai-gray: #F5F5F7;
-
-  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-
-  @keyframes fadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Browser-compatible CSS only */
 body {
-  background-color: var(--color-dodai-cream);
-  color: var(--color-dodai-charcoal);
-  font-family: var(--font-sans);
+  background-color: #FFFEF2;
+  color: #2C2C2C;
+  font-family: "Noto Sans JP", sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }

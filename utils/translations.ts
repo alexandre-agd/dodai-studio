@@ -1300,8 +1300,51 @@ export const translations = {
         case4: { title: 'The Run is for you.', desc: "Optimization and piloting.", cta: 'Activate', link: '/run' }
       }
     },
+    team: {
+      title: 'The Team:',
+      titleSpan: 'Field + Systems.',
+      subtitle: 'Full execution.',
+      tag: 'Tokyo-based experts',
+      g: {
+        role: 'Ops & Network',
+        badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
+        desc: 'In 14 years in Tokyo, I have opened and operated 3 restaurants, 2 boutiques and structured an import business. I am not a consultant, I am a practitioner. I know how to calibrate a project to meet its ideal target. I put my supplier network and field experience at the service of Dodai Studio.',
+        list: ['14 years in Tokyo & 5 openings', 'Field concept validation', 'Supplier sourcing', 'Partner coordination', 'Recruitment & Standards']
+      },
+      a: {
+        role: 'Strategy & Systems',
+        badges: ['Entrepreneur', 'Strategy', 'Systems'],
+        desc: 'Hospitality is an art, but its profitability is a science. As an entrepreneur, I know that a good idea does not survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable and scalable with Dodai Studio.',
+        list: ['Entrepreneur & Manager', 'Business Plan Modeling', 'Operational Processes (SOPs)', 'Digitalization & Efficiency', 'Growth Strategy']
+      }
+    },
+    guardrails: {
+      title: 'Transparency.',
+      titleSpan: 'Rules of the game.',
+      subtitle: 'No gray areas. A healthy relationship from the start.',
+      tag: 'The Pact',
+      limits: {
+        title: 'OUR ROLE',
+        list: [
+          'No Lawyers: we drive strategy, certified experts validate.',
+          'No Magic: we reduce risks, we do not erase reality.',
+          'No Concierge: 100% business focus. No personal assistance.'
+        ]
+      },
+      prereq: {
+        title: 'YOUR ROLE',
+        list: [
+          'Decision-maker: you validate options quickly to avoid delays.',
+          'Present: you embody the project on-site at launch.',
+          'Lucid: you accept the complexity of the Japanese market.'
+        ]
+      }
+    },
     faq: {
-      title: 'FAQ',
+      title: 'FAQ:',
+      titleSpan: 'Anticipate.',
+      subtitle: 'Answers to your questions.',
+      tag: 'Clarification',
       q1: 'Difference between tiers?', a1: 'Essential is for those with sites. Complete includes search. Premium adds MVP and PR.',
       q2: 'Diagnostic mandatory?', a2: 'No, but recommended to validate budget.',
       q3: 'What is MVP?', a3: 'Real condition market test (pop-up) before lease.',
@@ -1629,31 +1672,53 @@ export const translations = {
       title: '経路:', titleSpan: '穏やかに. ', subtitle: '工業プロセス. ',
       steps: [
         { phase: '01', title: '診断', subtitle: 'チェック', desc: '確信を. ', details: ['BP監査', '検証', '予算', '地図'] },
-        { phase: '02', title: '構築', subtitle: '4本柱', desc: 'オーケストラ. ', pillars: [{ title: '法', items: ['設立'] }, { title: '地', items: ['探し'] }, { title: '動', items: ['POS'] }, { title: '人', items: ['研修'] }] },
+        { phase: '02', title: '構築', subtitle: '4本柱', desc: 'オーケストラ. ', pillars: [{ title: '法', desc: '法的枠組み.', items: ['設立'] }, { title: '地', desc: '物理的空間.', items: ['探し'] }, { title: '動', desc: '内部エンジン.', items: ['POS'] }, { title: '人', desc: '魂.', items: ['研修'] }] },
         { phase: '03', title: '運用', subtitle: '成長', desc: '最適化. ', details: ['KPI', '原価', 'CRM'] }
       ]
     },
     portfolio: {
       title: '実績:', titleSpan: '結果. ', subtitle: 'F&B/Retail.', note: '* 秘匿',
-      projects: [{ category: '飲食', title: 'Bar', location: '青山', stat: '40%' }, { category: '小売', title: 'Wine', location: 'スカイツリー', stat: '3ヶ月' }, { category: '服', title: 'メガネ', location: '自由が丘', stat: '円滑' }, { category: '食', title: 'チーズ', location: '代官山', stat: '適合' }]
+      projects: [
+        { category: '飲食', title: 'Bar', location: '青山', tags: ['フルビルド', '採用', 'メニュー'], stat: '40%' },
+        { category: '小売', title: 'Wine', location: 'スカイツリー', tags: ['ライセンス', '物流', 'Eコマース'], stat: '3ヶ月' },
+        { category: '服', title: 'メガネ', location: '自由が丘', tags: ['不動産', 'デザイン', '投資'], stat: '円滑' },
+        { category: '食', title: 'チーズ', location: '代官山', tags: ['採用', 'デザイン', '価格戦略'], stat: '適合' }
+      ]
     },
     services: {
       title: 'サービス:', titleSpan: '効率. ', subtitle: '適したものを. ', tag: '透明', paymentLabel: '支払', toggleZero: 'Zero', toggleAlaCarte: '単品', choose: '選ぶ', phaseDiag: '診断', phaseBuild: '構築', phaseRun: '運用', modeZeroTitle: 'フル', modeZeroDesc: '一括. ', modeAlaCarteTitle: 'モジュール', modeAlaCarteDesc: '必要な分. ', alaCartePrice: '見積', recapTitle: '選択', recapAddonsTitle: 'アドオン', recapCta: '見積依頼', pathContext: 'Diag > Build > Run.',
       piliers: [{ title: '法', desc: '会計' }, { title: '地', desc: 'デザイン' }, { title: '動', desc: 'SOP' }, { title: '人', desc: '研修' }],
       addonsTitle: 'アドオン', addonsSubtitle: '専門. ', addonsDisclaimer: 'Dodai管理費. ',
       diagnostic: { title: '診断', subtitle: 'チェック', price: '600k', context: 'Reality Check', description: '保険. ', features: ['監査', '面談', 'テスト', 'マップ'], cta: '予約' } as StandaloneServiceProps,
-      build: [{ name: '基本', price: '1.2M', scope: [{ included: true, text: '法' }] }, { name: '標準', isPopular: true, price: '2.0M', scope: [{ included: true, text: '地' }] }, { name: '上位', price: '3.0M', scope: [{ included: true, text: 'MVP' }] }] as ServiceTierProps[],
+      build: [
+        { name: '基本', price: '1.2M - 1.5M', priceDetail: '概算', duration: '6-8週間', profile: '物件確定済み', payment: '30/40/30', scope: [{ included: true, text: '法' }] },
+        { name: '標準', isPopular: true, price: '2.0M - 2.5M', priceDetail: '概算', duration: '8-20週間', profile: 'フルプロジェクト', payment: '30/40/30', scope: [{ included: true, text: '地' }] },
+        { name: '上位', price: '3.0M - 3.5M', priceDetail: '概算', duration: '16-24週間', profile: '大規模', payment: '30/40/30', scope: [{ included: true, text: 'MVP' }] }
+      ] as ServiceTierProps[],
       run: { title: 'Run', subtitle: 'グロース', price: '150k', context: '月次運営', description: '収益性. ', features: ['財務', '原価', 'MA', '監査'], cta: '開始' } as StandaloneServiceProps,
       addons: [{ title: 'MVP', price: '見積', description: 'テスト. ' }, { title: 'テスト', price: '見積', description: 'パネル. ' }, { title: 'PR', price: '見積', description: '写真. ' }, { title: '採用', price: '見積', description: '選定. ' }] as AddOnProps[],
       footer: '日本での構築. ', footerLink: '詳細. '
     },
     wizard: {
       title: 'プロジェ:', titleSpan: '次は？', subtitle: '3問. ', tag: '解析', reset: 'リセット', step1: '種別？', step2: '段階？', step3: '課題？',
-      options: { fb: { title: '飲食' }, retail: { title: '小売' }, stage1: { title: "案" }, stage2: { title: "計画" }, stage3: { title: "物件" }, stage4: { title: "開店済" }, q3_early: [{ id: 'viable', title: "妥当性" }], q3_ready: [{ id: 'coord', title: "調整" }], q3_open: [{ id: 'margins', title: "マージン" }] },
-      result: { tag: '解析', secondaryCta: '相談', restart: '戻', case1: { title: '診断. ', link: '/diagnostic' }, case2: { title: 'Build. ', link: '/build' }, case3: { title: '単品. ', link: '/build' }, case4: { title: 'Run. ', link: '/run' } }
+      options: { fb: { title: '飲食', sub: 'レストラン、カフェ、バー...' }, retail: { title: '小売', sub: 'ファッション、デザイン、ショップ...' }, stage1: { title: "案", sub: "探索フェーズ" }, stage2: { title: "計画", sub: "物件探し" }, stage3: { title: "物件", sub: "法的・施工フェーズ" }, stage4: { title: "開店済", sub: "運用フェーズ" }, q3_early: [{ id: 'viable', title: "妥当性" }], q3_ready: [{ id: 'coord', title: "調整" }], q3_open: [{ id: 'margins', title: "マージン" }] },
+      result: { tag: '解析', secondaryCta: '相談', restart: '戻', case1: { title: '診断から開始.', desc: "投資前に妥当性を検証しましょう.", cta: '診断詳細', link: '/diagnostic' }, case2: { title: '構築フェーズ.', desc: "フル実行の調整.", cta: '構築詳細', link: '/build' }, case3: { title: '単品構築.', desc: "必要な分だけ選択.", cta: 'ア・ラ・カルト', link: '/build' }, case4: { title: '運営フェーズ.', desc: "最適化とパイロット.", cta: '運営詳細', link: '/run' } }
+    },
+    team: {
+      title: 'チーム:', titleSpan: '現場 + システム.', subtitle: '実行.', tag: '東京拠点のエキスパート',
+      g: { role: 'Ops & ネットワーク', badges: ['東京14年', '5店舗開店', '輸入 & 小売'], desc: '東京で14年、3つのレストランと2つのブティックを運営。実務家としてプロジェクトを最適化します。', list: ['東京14年 & 5店舗', '現場検証', '仕入れ', 'パートナー調整', '採用基準'] },
+      a: { role: '戦略 & システム', badges: ['起業家', '戦略', 'システム'], desc: '収益性は科学です。ビジネスを効率的かつスケーラブルにするプロセスを設計します。', list: ['起業家 & 管理者', 'BPモデリング', 'SOP策定', 'デジタル化', '成長戦略'] }
+    },
+    guardrails: {
+      title: '透明性.', titleSpan: 'ルール.', subtitle: '不透明さなし。最初から健全な関係を。', tag: '協定',
+      limits: { title: '我々の役割', list: ['弁護士ではない: 戦略を主導し、専門家が検証。', '魔法ではない: リスクを軽減し、現実は消さない。', 'コンシェルジュではない: 100%ビジネスに集中。'] },
+      prereq: { title: 'あなたの役割', list: ['意思決定者: 迅速に判断。', '現場にいる: ローンチ時に現場でプロジェクトを体現。', '冷静: 日本市場の複雑さを受け入れる。'] }
     },
     faq: {
-      title: 'よくある質問',
+      title: 'よくある質問:',
+      titleSpan: '先読み.',
+      subtitle: 'あなたの疑問に答えます.',
+      tag: '明確化',
       q1: '違い？', a1: '範囲. ', q2: '必須？', a2: '推奨. ', q3: 'MVP？', a3: 'テスト. ', q4: '期間？', a4: '8-20週. ', q5: '保証？', a5: '基準構築. '
     },
     contact: {
