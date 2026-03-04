@@ -97,8 +97,8 @@ export const Header: React.FC = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            {/* Language Switcher Desktop & Mobile */}
-            <div className={`flex items-center gap-2 text-[11px] font-mono transition-all duration-500 ${isScrolled ? 'md:border-l border-gray-200 md:pl-4' : 'md:border-l border-gray-200 md:pl-6 md:ml-2'}`}>
+             {/* Language Switcher Desktop */}
+            <div className={`hidden md:flex items-center gap-2 text-[11px] font-mono transition-all duration-500 ${isScrolled ? 'border-l border-gray-200 pl-4' : 'border-l border-gray-200 pl-6 ml-2'}`}>
               {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
                   <button 
                       key={lang}
@@ -186,6 +186,7 @@ export const Header: React.FC = () => {
   );
 };
 
+// Added Footer component to resolve "Module './components/Layout' has no exported member 'Footer'" error.
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
   return (
