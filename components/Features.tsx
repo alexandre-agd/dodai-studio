@@ -2,7 +2,7 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { CheckCircle2 } from 'lucide-react';
 
-export const Features = () => {
+export const Philosophy = () => {
   const { t } = useLanguage();
   
   const features = [
