@@ -1,8 +1,11 @@
 [phases.setup]
-nixPkgs = ["nodejs_20"]
+nixPkgs = ['nodejs_20']
+
+[phases.install]
+cmds = ['npm ci']
 
 [phases.build]
-cmds = ["npm run build"]
+cmds = ['npm run build']
 
 [start]
-cmds = ["caddy file-server --root dist --listen :$PORT"]
+cmd = 'npx serve dist -l 3000'
