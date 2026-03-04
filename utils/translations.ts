@@ -1,4 +1,4 @@
-import { ServiceTierProps, StandaloneServiceProps, AddOnProps } from '../types';
+import { ServiceTierProps, StandaloneServiceProps, AddOnProps } from '../types.ts';
 
 export type Language = 'fr' | 'en' | 'jp';
 
@@ -391,7 +391,7 @@ export const translations = {
       title: 'Les fondations de votre',
       titleSpan: 'réussite au Japon.',
       subtitle: 'De la validation terrain à la rentabilité.\nNous transformons votre vision en une entreprise pérenne.',
-      ctaPrimary: 'Réserver un appel découverte (30 min)',
+      ctaPrimary: 'Réserver un audit (30 min)',
       ctaSecondary: 'Découvrir le Diagnostic',
       trust: ['Confidentialité Totale', 'Réseau Activé', 'Transparence'],
       stats: {
@@ -405,22 +405,22 @@ export const translations = {
       title: 'L\'intuition ne suffit pas.',
       titleSpan: 'Il faut une structure.',
       p1: 'Ouvrir un commerce au Japon est un défi de précision. La barrière de la langue, l\'opacité administrative et les codes culturels ne pardonnent aucune approximation.',
-      p2: 'Nous sommes vos partenaires d\'exécution sur le terrain. Nous bâtissons avec vous les fondations juridiques, opérationnelles et techniques pour sécuriser votre investissement.',
+      p2: 'Nous ne sommes pas des consultants de salon. Nous sommes vos partenaires d\'exécution. Nous bâtissons avec vous les fondations juridiques, opérationnelles et techniques pour sécuriser votre investissement.',
       statValue: '30%',
       statLabel: 'Le taux d\'échec.',
       statDesc: '30% des commerces ferment leur première année au Japon par manque de préparation. Ne faites pas partie de cette statistique.',
-      solutionTitle: 'Notre méthode :',
-      solutionSpan: 'Préparer, structurer, exécuter.',
-      solutionTag: 'MÉTHODE ÉPROUVÉE',
+      solutionTitle: 'Notre méthodologie :',
+      solutionSpan: 'Maîtriser, ne pas subir.',
+      solutionTag: 'Méthode Éprouvée',
       cards: [
-        { title: 'Validation Terrain', desc: 'Audit du plan d\'affaires, tests concept en conditions réelles et analyse concurrentielle.' },
-        { title: 'Systèmes & Données', desc: 'POS, CRM et Automatisations pour piloter vos marges avec des données réelles.' },
-        { title: 'Réseau Activé', desc: 'Accès immédiat à nos juristes, agents immobiliers et fournisseurs négociés.' },
-        { title: 'Test Grandeur Nature', desc: 'Testez votre concept en conditions réelles avant de signer un bail de 3 ans.' }
+        { title: 'Validation Terrain', desc: 'Avant le moindre investissement : Audit du plan d\'affaires, tests concept en conditions réelles et analyse concurrentielle. Nous validons la viabilité économique.' },
+        { title: 'Systèmes & Données', desc: 'Installation de votre architecture technique : Caisse (POS), CRM et Automatisations, Tableau de bord financier. Pilotez vos marges avec des données réelles.' },
+        { title: 'Réseau Activé', desc: 'Accès immédiat à notre carnet d\'adresses : Juristes administratifs, agents immobiliers, fournisseurs négociés. Nous ne cherchons pas, nous activons.' },
+        { title: 'Test Grandeur Nature', desc: 'L\'option MVP : Testez votre concept en conditions réelles (Corner, Éphémère) avant de signer un bail commercial de 3 ans.' }
       ],
       ctaTitle: 'Sécurisez votre lancement.',
       ctaDesc: 'Votre vision mérite une exécution d\'excellence.',
-      ctaButton: 'Voir les solutions'
+      ctaButton: 'Voir nos solutions'
     },
     definition: {
       kanji: '土台',
@@ -431,7 +431,7 @@ export const translations = {
     methodology: {
       title: 'Le Parcours :',
       titleSpan: 'Méthodique & Serein.',
-      subtitle: 'Un processus structuré pour transformer une idée en actif rentable, étape par étape.',
+      subtitle: 'Un processus industriel pour transformer une idée en actif rentable, étape par étape.',
       steps: [
         {
           phase: 'Phase 01',
@@ -452,12 +452,12 @@ export const translations = {
               items: ['Création Société (GK/KK)', 'Licences & Permis', 'Compte Bancaire Pro', 'Comptabilité']
             },
             {
-              title: 'Lieu & Design',
+              title: 'Lieu & Architecture',
               desc: 'L\'écrin physique.',
               items: ['Chasse Immobilière', 'Négociation Bail', 'Coordination Design', 'Suivi Travaux']
             },
             {
-              title: 'Tech & Opérations',
+              title: 'Technique & Opérations',
               desc: 'Le moteur interne.',
               items: ['Système Caisse (POS)', 'Sourcing Fournisseurs', 'Process (SOPs)', 'Logistique']
             },
@@ -517,7 +517,7 @@ export const translations = {
       title: 'Nos Offres :',
       titleSpan: 'Clarté & Efficacité.',
       subtitle: 'Choisissez l\'accompagnement adapté à votre maturité.',
-      tag: 'TRANSPARENCE TARIFAIRE',
+      tag: 'Transparence Tarifaire',
       paymentLabel: 'Paiement',
       toggleZero: 'Zero-to-Open',
       toggleAlaCarte: 'À la carte',
@@ -526,76 +526,76 @@ export const translations = {
       phaseBuild: 'Phase Build',
       phaseRun: 'Phase Run',
       modeZeroTitle: 'Accompagnement Complet',
-      modeZeroDesc: 'Des formules clé en main pour une ouverture sereine.',
-      modeAlaCarteTitle: 'Modules',
-      modeAlaCarteDesc: 'Sélectionnez uniquement les piliers dont vous avez besoin.',
-      alaCartePrice: 'SUR DEVIS',
+      modeZeroDesc: 'Des packages clés en main pour une ouverture sereine, de l\'idée jusqu\'au premier client.',
+      modeAlaCarteTitle: 'Modules Spécifiques',
+      modeAlaCarteDesc: 'Besoin d\'aide sur un sujet précis ? Sélectionnez uniquement les piliers dont vous avez besoin.',
+      alaCartePrice: 'Sur devis : ajusté selon périmètre et complexité',
       recapTitle: 'Services sélectionnés',
       recapAddonsTitle: 'Add-ons sélectionnés',
       recapCta: 'Demander un devis personnalisé',
-      pathContext: 'La plupart des clients commencent par un Diagnostic, passent au Build, puis activent le Run.',
+      pathContext: 'La plupart des clients commencent par un Diagnostic, passent au Build, puis activent le Run. Chaque étape est indépendante.',
       piliers: [
-        { title: 'Structure & Conformité', desc: 'Création de société (GK/KK), licences et permis, compte bancaire pro, comptable bilingue.' },
-        { title: 'Local & Design', desc: 'Recherche de local, négociation de bail, coordination design et suivi travaux.' },
-        { title: 'Tech & Opérations', desc: 'Installation POS, configuration CRM, automatisations, process opérationnels documentés (SOPs).' },
-        { title: 'Équipe & Lancement', desc: 'Recrutement, formation, soft opening on-site, contenus de lancement.' }
+        { title: 'Structure & Compliance', desc: 'Création de société, licences, banque, comptabilité.' },
+        { title: 'Location & Design', desc: 'Recherche de local, négociation bail, coordination aménagement.' },
+        { title: 'Tech & Ops', desc: 'POS, CRM, SOPs, process opérationnel, automatisations.' },
+        { title: 'Team & Launch', desc: 'Recrutement, formation, soft opening, lancement.' }
       ],
-      addonsTitle: 'Modules Complémentaires',
-      addonsSubtitle: 'Expertise ciblée, sur devis.',
-      addonsDisclaimer: 'Les honoraires couvrent la coordination et le management de Dodai Studio. Les coûts prestataires sont réglés directement aux fournisseurs.',
+      addonsTitle: 'Options & Modules',
+      addonsSubtitle: 'Des expertises ciblées pour renforcer votre projet.',
+      addonsDisclaimer: 'Les honoraires couvrent la coordination et le management de Dodai Studio. Les coûts de construction, d\'aménagement et les prestataires tiers sont réglés directement aux fournisseurs et font l\'objet de devis séparés.',
       diagnostic: {
         title: 'Diagnostic',
         subtitle: 'REALITY CHECK',
         price: '600k JPY',
-        priceDetail: '(HORS TAXES)',
+        priceDetail: '(Hors taxes)',
         context: 'Reality Check',
-        description: 'L\'assurance anti-crash de votre projet au Japon. Nous validons la faisabilité avant que vous ne signiez le moindre bail.',
-        features: ['Audit Business Plan', 'Interviews Terrain & Réseau', 'Panel Test Tokyo', 'Mapping Partenaires Clés'],
+        description: 'L\'assurance anti-crash de votre projet au Japon. Nous validons la faisabilité business et administrative avant que vous ne signiez le moindre bail.',
+        features: ['Audit & Challenge Business Plan', 'Interviews terrain & Réseau', 'Panel test Tokyo (Dégustation/Concept)', 'Mapping des partenaires clés'],
         cta: 'Réserver un Diagnostic'
       } as StandaloneServiceProps,
       build: [
         {
-          name: 'Essentiel',
+          name: 'Build Essentiel',
           price: '1.2M - 1.5M',
-          priceDetail: 'ESTIMÉ',
+          priceDetail: 'JPY (Estimé)',
           duration: '6-8 semaines',
-          profile: 'LOCAL TROUVÉ',
-          payment: 'PAIEMENT : 30% / 40% / 30%',
+          profile: 'Local trouvé + Projet mûr',
+          payment: '30% / 40% / 30%',
           scope: [
-            { included: true, text: 'Structure & Conformité' },
-            { included: true, text: 'Tech & Opérations' },
-            { included: true, text: 'Équipe & Lancement' },
-            { included: false, text: 'Audit du local existant (sans recherche active)', highlight: false }
+            { included: true, text: 'Pilier 1: Structure & Compliance' },
+            { included: true, text: 'Pilier 3: Technique & Opérations' },
+            { included: true, text: 'Pilier 4: Équipe & Lancement' },
+            { included: false, text: 'Pilier 2: Recherche Local', highlight: false }
           ]
         },
         {
-          name: 'Complet',
+          name: 'Build Complet',
           price: '2.0M - 2.5M',
-          priceDetail: 'ESTIMÉ',
+          priceDetail: 'JPY (Estimé)',
           duration: '8-20 semaines',
-          profile: 'PROJET INTÉGRAL',
-          payment: 'PAIEMENT : 30% / 40% / 30%',
+          profile: 'Projet Intégral',
+          payment: '30% / 40% / 30%',
           isPopular: true,
           scope: [
-            { included: true, text: 'Structure & Conformité' },
-            { included: true, text: 'Local & Design' },
-            { included: true, text: 'Tech & Opérations' },
-            { included: true, text: 'Équipe & Lancement' },
+            { included: true, text: 'Pilier 1: Structure & Compliance' },
+            { included: true, text: 'Pilier 2: Lieu & Design (Recherche incluse)' },
+            { included: true, text: 'Pilier 3: Technique & Opérations' },
+            { included: true, text: 'Pilier 4: Équipe & Lancement' },
             { included: true, text: 'Suivi Post-Ouverture (30j)' }
           ]
         },
         {
-          name: 'Premium',
+          name: 'Build Premium',
           price: '3.0M - 3.5M',
-          priceDetail: 'ESTIMÉ',
+          priceDetail: 'JPY (Estimé)',
           duration: '16-24 semaines',
-          profile: 'AMBITION & FRANCHISE',
-          payment: 'PAIEMENT : 30% / 40% / 30%',
+          profile: 'Ambition & Franchise',
+          payment: '30% / 40% / 30%',
           scope: [
             { included: true, text: 'Tout le Build Complet' },
-            { included: true, text: 'MVP / Éphémère inclus' },
+            { included: true, text: 'Option MVP / Éphémère incluse' },
             { included: true, text: 'Relations Presse (3 mois)' },
-            { included: true, text: 'Pack Photos Pro' },
+            { included: true, text: 'Pack Photos Professionnelles' },
             { included: true, text: 'Suivi Post-Ouverture (60j)' }
           ]
         }
@@ -611,10 +611,10 @@ export const translations = {
         cta: 'Activer le Run'
       } as StandaloneServiceProps,
       addons: [
-        { title: 'MVP / Pop-up', price: 'SUR DEVIS', description: 'Testez votre concept en conditions réelles avant de signer un bail. Validez offre, pricing et flux clients.' },
-        { title: 'Tokyo Panel Test', price: 'SUR DEVIS', description: 'Dîner test ou panel structuré : feedback ciblé sur votre concept avant lancement.' },
-        { title: 'Presse & Image', price: 'SUR DEVIS', description: 'Shooting pro + relations presse et influenceurs pour un lancement calibré.' },
-        { title: 'Recrutement Premium', price: 'SUR DEVIS', description: 'Présélection renforcée (5 candidats minimum par poste) et garantie de remplacement.' }
+        { title: 'MVP / Pop-up', price: 'Sur Devis', description: 'Testez votre concept en réel avant de signer un bail commercial de 3 ans. Validez offre et prix.' },
+        { title: 'Tokyo Panel Test', price: 'Sur Devis', description: 'Dîners de dégustation intimistes ou activations pop-up, nous concevons et mobilisons la bonne audience pour tester votre concept en conditions réelles. Format et périmètre définis ensemble.' },
+        { title: 'Presse & Image', price: 'Sur Devis', description: 'Pack lancement : Shooting pro + Relations presse & Influenceurs.' },
+        { title: 'Recrutement Premium', price: 'Sur Devis', description: 'Présélection renforcée et garantie de remplacement.' }
       ] as AddOnProps[],
       footer: 'Bâtir et piloter des commerces rentables au Japon.\nValidation terrain, exécution opérationnelle et systèmes prêts dès l’ouverture avec Dodai Studio.',
       footerLink: 'Voir le détail.'
@@ -693,7 +693,7 @@ export const translations = {
         list: ['14 ans Tokyo & 5 ouvertures', 'Validation concept terrain', 'Recherche fournisseurs', 'Coordination partenaires', 'Recrutement & Standards']
       },
       a: {
-        role: 'Systèmes & Croissance',
+        role: 'Stratégie & Systèmes',
         badges: ['Entrepreneur', 'Stratégie', 'Systèmes'],
         desc: 'L\'hospitalité est un art, mais sa rentabilité est une science. En tant qu\'entrepreneur, je sais qu\'une bonne idée ne survit pas sans structure. Je ne suis pas là pour installer des logiciels, mais pour concevoir les processus qui rendront votre business efficace, mesurable et scalable avec Dodai Studio.',
         list: ['Entrepreneur & Gestionnaire', 'Modélisation Business Plan', 'Processus Opérationnels (SOPs)', 'Digitalisation & Efficacité', 'Stratégie de Croissance']
@@ -1039,24 +1039,6 @@ export const translations = {
         challenges: ['Margins', 'Retention', 'Staff', 'Scaling', 'Other']
       }
     },
-    team: {
-      title: 'The Team:',
-      titleSpan: 'Ground + Systems.',
-      subtitle: 'Complete execution.',
-      tag: 'Experts based in Tokyo',
-      g: {
-        role: 'Operations & Network',
-        badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
-        desc: "Over 14 years in Tokyo, I've opened and operated 3 restaurants, 2 boutiques, and structured an import business. I'm not a consultant — I'm a practitioner. I know how to calibrate a project to meet its ideal target precisely. I bring my supplier network and ground-level experience to Dodai Studio.",
-        list: ['14 years Tokyo & 5 openings', 'Ground concept validation', 'Supplier sourcing', 'Partner coordination', 'Recruitment & Standards']
-      },
-      a: {
-        role: 'Systems & Growth',
-        badges: ['Entrepreneur', 'Strategy', 'Systems'],
-        desc: "Hospitality is an art, but its profitability is a science. As an entrepreneur, I know a good idea doesn't survive without structure. I'm not here to install software — I'm here to design the processes that will make your business efficient, measurable, and scalable with Dodai Studio.",
-        list: ['Entrepreneur & Manager', 'Business Plan Modeling', 'Operational Processes (SOPs)', 'Digitalization & Efficiency', 'Growth Strategy']
-      }
-    },
     partnersPage: {
       hero: {
         title: 'Know someone opening in Tokyo?',
@@ -1142,7 +1124,7 @@ export const translations = {
       title: 'The foundations of your',
       titleSpan: 'success in Japan.',
       subtitle: 'From field validation to profitability.\nWe transform your vision into a sustainable business.',
-      ctaPrimary: 'Book a discovery call (30 min)',
+      ctaPrimary: 'Book an audit (30 min)',
       ctaSecondary: 'Discover the Diagnostic',
       trust: ['Total Privacy', 'Activated Network', 'Transparency'],
       stats: {
@@ -1161,7 +1143,7 @@ export const translations = {
       statLabel: 'Failure rate.',
       statDesc: '30% of businesses close in Year 1 due to lack of prep. Don\'t be a statistic.',
       solutionTitle: 'Our Method:',
-      solutionSpan: 'Prepare, structure, execute.',
+      solutionSpan: 'Master, don\'t endure.',
       solutionTag: 'Proven Method',
       cards: [
         { title: 'Field Validation', desc: 'BP audit, concept tests and competition analysis.' },
@@ -1180,35 +1162,35 @@ export const translations = {
       def2: 'The invisible but essential base that allows a structure to last.'
     },
     methodology: {
-      title: 'The Journey:',
-      titleSpan: 'Methodical & Steady.',
-      subtitle: 'A structured process to turn an idea into a profitable asset, step by step.',
+      title: 'The Path:',
+      titleSpan: 'Methodical & Serene.',
+      subtitle: 'An industrial process to turn an idea into a profitable asset.',
       steps: [
         {
           phase: 'Phase 01',
           title: 'Diagnostic',
           subtitle: 'REALITY CHECK',
           desc: 'Crash-test before investment. You get certainty.',
-          details: ['BP Audit', 'Concept Validation', 'Real-World Pricing', 'Roadmap']
+          details: ['BP Audit', 'Concept Validation', 'Real Budget', 'Roadmap']
         },
         {
           phase: 'Phase 02',
           title: 'Build',
           subtitle: 'The 4 Pillars',
-          desc: 'Full orchestration. We simultaneously coordinate the 4 critical workstreams for a frictionless opening.',
+          desc: 'Full orchestration for a friction-less opening.',
           pillars: [
-            { title: 'Structure & Compliance', desc: 'Legal frame.', items: ['GK/KK', 'Licenses', 'Banking', 'Accounting'] },
-            { title: 'Location & Design', desc: 'Physical space.', items: ['Search', 'Lease', 'Design', 'Construction'] },
-            { title: 'Tech & Operations', desc: 'Internal engine.', items: ['POS', 'Suppliers', 'SOPs', 'Logistics'] },
-            { title: 'Team & Launch', desc: 'The soul.', items: ['Hiring', 'Training', 'Marketing', 'Soft Open'] }
+            { title: 'Compliance', desc: 'Legal frame.', items: ['GK/KK', 'Licenses', 'Banking', 'Accounting'] },
+            { title: 'Location', desc: 'Physical space.', items: ['Search', 'Lease', 'Design', 'Construction'] },
+            { title: 'Ops', desc: 'Internal engine.', items: ['POS', 'Suppliers', 'SOPs', 'Logistics'] },
+            { title: 'Launch', desc: 'The soul.', items: ['Hiring', 'Training', 'Marketing', 'Soft Open'] }
           ]
         },
         {
           phase: 'Phase 03',
           title: 'Run',
           subtitle: 'Growth',
-          desc: 'Post-opening. We stay for the ramp-up, margin optimization, and customer loyalty anchoring. Goal: sustainable profitability.',
-          details: ['Dashboard', 'Cost Optimization', 'Customer Retention', 'Management Rituals']
+          desc: 'Post-opening optimization for sustainability.',
+          details: ['Dashboard', 'Cost Optimization', 'Loyalty', 'Rituals']
         }
       ]
     },
@@ -1237,7 +1219,7 @@ export const translations = {
       phaseBuild: 'Build',
       phaseRun: 'Run',
       modeZeroTitle: 'Full Support',
-      modeZeroDesc: 'Structured packages for a frictionless opening.',
+      modeZeroDesc: 'Turnkey packages for a serene opening.',
       modeAlaCarteTitle: 'Modules',
       modeAlaCarteDesc: 'Select only the pillars you need.',
       alaCartePrice: 'On quote',
@@ -1246,28 +1228,28 @@ export const translations = {
       recapCta: 'Request a Quote',
       pathContext: 'Most clients start with a Diagnostic, then Build, then Run.',
       piliers: [
-        { title: 'Structure & Compliance', desc: 'Company setup (GK/KK), licenses & permits, business bank account, bilingual accountant.' },
-        { title: 'Location & Design', desc: 'Property search, lease negotiation, design coordination and construction follow-up.' },
-        { title: 'Tech & Operations', desc: 'POS installation, CRM setup, automations, documented operational processes (SOPs).' },
-        { title: 'Team & Launch', desc: 'Recruitment, training, on-site soft opening, launch content package.' }
+        { title: 'Compliance', desc: 'GK/KK, licenses, accounting.' },
+        { title: 'Location', desc: 'Search, lease, design.' },
+        { title: 'Ops', desc: 'POS, CRM, SOPs.' },
+        { title: 'Launch', desc: 'Hiring, training, launch.' }
       ],
       addonsTitle: 'Add-ons',
-      addonsSubtitle: 'Targeted expertise, on quote.',
-      addonsDisclaimer: 'Fees cover Dodai Studio coordination and management. Third-party and vendor costs are paid directly to suppliers.',
+      addonsSubtitle: 'Targeted expertise.',
+      addonsDisclaimer: 'Fees cover Dodai Studio management. Vendor costs are separate.',
       diagnostic: {
         title: 'Diagnostic',
         subtitle: 'REALITY CHECK',
         price: '600k JPY',
         priceDetail: '(Excl. Tax)',
         context: 'Reality Check',
-        description: 'Your anti-crash insurance for your project in Japan. We validate business and administrative feasibility before you sign any lease.',
-        features: ['Business Plan Audit', 'Field Interviews & Network', 'Tokyo Concept Testing Panel', 'Key Partner Mapping'],
+        description: 'Your anti-crash insurance. We validate before you sign.',
+        features: ['BP Audit', 'Field Interviews', 'Panel Test', 'Partner Mapping'],
         cta: 'Book a Diagnostic'
       } as StandaloneServiceProps,
       build: [
-        { name: 'Essential', price: '1.2M - 1.5M', priceDetail: 'Est.', duration: '6-8 wks', profile: 'LOCATION FOUND', payment: 'PAYMENT: 30% / 40% / 30%', scope: [{ included: true, text: 'Structure & Compliance' }, { included: true, text: 'Tech & Operations' }, { included: true, text: 'Team & Launch' }, { included: false, text: 'Existing location audit (no active search)' }] },
-        { name: 'Complete', price: '2.0M - 2.5M', priceDetail: 'Est.', duration: '8-20 wks', profile: 'FULL PROJECT', payment: 'PAYMENT: 30% / 40% / 30%', isPopular: true, scope: [{ included: true, text: 'Structure & Compliance' }, { included: true, text: 'Location & Design' }, { included: true, text: 'Tech & Operations' }, { included: true, text: 'Team & Launch' }, { included: true, text: 'Post-Opening Support (30 days)' }] },
-        { name: 'Premium', price: '3.0M - 3.5M', priceDetail: 'Est.', duration: '16-24 wks', profile: 'AMBITION & FRANCHISE', payment: 'PAYMENT: 30% / 40% / 30%', scope: [{ included: true, text: 'Everything in Complete' }, { included: true, text: 'MVP / Pop-up included' }, { included: true, text: 'PR (3 months)' }, { included: true, text: 'Photography Package' }, { included: true, text: 'Post-Opening Support (60 days)' }] }
+        { name: 'Essential', price: '1.2M - 1.5M', priceDetail: 'Est.', duration: '6-8 wks', profile: 'Site found', payment: '30/40/30', scope: [{ included: true, text: 'Compliance' }, { included: true, text: 'Ops' }, { included: true, text: 'Launch' }, { included: false, text: 'Search' }] },
+        { name: 'Complete', price: '2.0M - 2.5M', priceDetail: 'Est.', duration: '8-20 wks', profile: 'Full project', payment: '30/40/30', isPopular: true, scope: [{ included: true, text: 'Compliance' }, { included: true, text: 'Location' }, { included: true, text: 'Ops' }, { included: true, text: 'Launch' }, { included: true, text: 'Support' }] },
+        { name: 'Premium', price: '3.0M - 3.5M', priceDetail: 'Est.', duration: '16-24 wks', profile: 'Scale', payment: '30/40/30', scope: [{ included: true, text: 'All Complete' }, { included: true, text: 'MVP' }, { included: true, text: 'PR' }, { included: true, text: 'Photos' }, { included: true, text: 'Support' }] }
       ] as ServiceTierProps[],
       run: {
         title: 'Run',
@@ -1280,10 +1262,10 @@ export const translations = {
         cta: 'Activate Run'
       } as StandaloneServiceProps,
       addons: [
-        { title: 'MVP / Pop-up', price: 'ON QUOTE', description: 'Test your concept in real conditions before signing a lease. Validate offer, pricing, and customer flow.' },
-        { title: 'Tokyo Panel Test', price: 'ON QUOTE', description: 'Private dinner or structured panel: targeted feedback on your concept before launch.' },
-        { title: 'PR & Image', price: 'ON QUOTE', description: 'Professional shoot + press and influencer relations for a calibrated launch.' },
-        { title: 'Premium Recruitment', price: 'ON QUOTE', description: 'Enhanced pre-screening (5+ candidates per role) and replacement guarantee.' }
+        { title: 'MVP / Pop-up', price: 'On quote', description: 'Test before signing.' },
+        { title: 'Tokyo Panel Test', price: 'On quote', description: 'Target audience feedback.' },
+        { title: 'PR & Image', price: 'On quote', description: 'Photo + Press pack.' },
+        { title: 'Recruitment', price: 'On quote', description: 'Premium selection.' }
       ] as AddOnProps[],
       footer: 'Building and piloting profitable businesses in Japan.',
       footerLink: 'Details.'
@@ -1318,21 +1300,56 @@ export const translations = {
         case4: { title: 'The Run is for you.', desc: "Optimization and piloting.", cta: 'Activate', link: '/run' }
       }
     },
+    team: {
+      title: 'The Team:',
+      titleSpan: 'Field + Systems.',
+      subtitle: 'Full execution.',
+      tag: 'Tokyo-based experts',
+      g: {
+        role: 'Ops & Network',
+        badges: ['14 years in Tokyo', '5 Own Openings', 'Import & Retail'],
+        desc: 'In 14 years in Tokyo, I have opened and operated 3 restaurants, 2 boutiques and structured an import business. I am not a consultant, I am a practitioner. I know how to calibrate a project to meet its ideal target. I put my supplier network and field experience at the service of Dodai Studio.',
+        list: ['14 years in Tokyo & 5 openings', 'Field concept validation', 'Supplier sourcing', 'Partner coordination', 'Recruitment & Standards']
+      },
+      a: {
+        role: 'Strategy & Systems',
+        badges: ['Entrepreneur', 'Strategy', 'Systems'],
+        desc: 'Hospitality is an art, but its profitability is a science. As an entrepreneur, I know that a good idea does not survive without structure. I am not here to install software, but to design the processes that will make your business efficient, measurable and scalable with Dodai Studio.',
+        list: ['Entrepreneur & Manager', 'Business Plan Modeling', 'Operational Processes (SOPs)', 'Digitalization & Efficiency', 'Growth Strategy']
+      }
+    },
+    guardrails: {
+      title: 'Transparency.',
+      titleSpan: 'Rules of the game.',
+      subtitle: 'No gray areas. A healthy relationship from the start.',
+      tag: 'The Pact',
+      limits: {
+        title: 'OUR ROLE',
+        list: [
+          'No Lawyers: we drive strategy, certified experts validate.',
+          'No Magic: we reduce risks, we do not erase reality.',
+          'No Concierge: 100% business focus. No personal assistance.'
+        ]
+      },
+      prereq: {
+        title: 'YOUR ROLE',
+        list: [
+          'Decision-maker: you validate options quickly to avoid delays.',
+          'Present: you embody the project on-site at launch.',
+          'Lucid: you accept the complexity of the Japanese market.'
+        ]
+      }
+    },
     faq: {
-      title: 'FAQ :',
+      title: 'FAQ:',
       titleSpan: 'Anticipate.',
       subtitle: 'Answers to your questions.',
-      tag: 'CLARIFICATION',
-      q1: 'What is the difference between Build Essential, Complete, and Premium?',
-      a1: 'The Essential (¥1.2–1.5M) is for those who already have a location and a solid plan. The Complete (¥2–2.5M) includes location search and is chosen by 80% of Dodai Studio clients. The Premium (¥3–3.5M) includes MVP, PR, and content for high-profile launches.',
-      q2: 'Is the Diagnostic mandatory before the Build?',
-      a2: 'No, but strongly recommended. It validates feasibility and budget before committing to a full Build.',
-      q3: 'What is the MVP / Pop-up option?',
-      a3: 'It\'s a real-world market test (kitchen car, corner, pop-up) over 6 to 10 weeks. It lets you validate your concept and products before signing a 3-year commercial lease.',
-      q4: 'What are the timelines between signing and opening?',
-      a4: 'Allow 6 to 8 weeks for a Build Essential (location already found), 12 to 20 weeks for a Build Complete (with location search), and 16 to 24 weeks for a Premium with MVP.',
-      q5: 'What results do you guarantee?',
-      a5: 'We do not guarantee success (which depends on you), but Dodai Studio structures everything to reach market standards: financial breakeven at Month+6, food cost 28-32%, labor ratio <35%, and rating >3.0.'
+      tag: 'Clarification',
+      q1: 'Difference between tiers?', a1: 'Essential is for those with sites. Complete includes search. Premium adds MVP and PR.',
+      q2: 'Diagnostic mandatory?', a2: 'No, but recommended to validate budget.',
+      q3: 'What is MVP?', a3: 'Real condition market test (pop-up) before lease.',
+      q4: 'Delays?', a4: '8 to 20 weeks.',
+      q5: 'Guarantees?', a5: 'We structure to reach market standards.'
     },
     contact: {
       title: 'Let\'s talk',
@@ -1593,24 +1610,6 @@ export const translations = {
       },
       form: { concept: 'コンセプト', conceptPlaceholder: '店名', challenge: '課題', challenges: ['利益', 'リピート', 'スタッフ', '拡大', '他'] }
     },
-    team: {
-      title: 'チーム：',
-      titleSpan: '現場とシステム。',
-      subtitle: '完全な実行力。',
-      tag: '東京拠点の専門家',
-      g: {
-        role: 'オペレーション＆ネットワーク',
-        badges: ['東京在住14年', '5店舗開業', '輸入＆小売'],
-        desc: '東京での14年間で、3つのレストラン、2つのブティックを開業・運営し、輸入事業を構築しました。コンサルタントではなく、実践者です。プロジェクトを理想のターゲットに正確に合わせる方法を知っています。サプライヤーネットワークと現場経験をDodai Studioに提供します。',
-        list: ['東京14年 & 5つの開業', '現地コンセプト検証', 'サプライヤー調達', 'パートナーコーディネーション', '採用＆スタンダード']
-      },
-      a: {
-        role: 'システム＆グロース',
-        badges: ['起業家', '戦略', 'システム'],
-        desc: 'ホスピタリティはアートですが、その収益性はサイエンスです。起業家として、良いアイデアは構造なしには生き残れないことを知っています。ソフトウェアをインストールするためではなく、ビジネスを効率的・測定可能・スケーラブルにするプロセスを設計するためにここにいます。',
-        list: ['起業家＆マネージャー', '事業計画モデリング', 'オペレーショナルプロセス（SOP）', 'デジタル化＆効率性', '成長戦略']
-      }
-    },
     partnersPage: {
       hero: { title: '東京で開店したい知人がいますか？', titleSpan: '', subtitle: '土台を築きます。紹介するだけ。', cta: 'パートナーになる' },
       story: { tag: 'なぜ？', title: '他が忘れる', titleSpan: '土台を。', p1: '多くの失敗は土台不足。', p2: '現場とシステムの専門をDodai Studioに。', p3: '紹介してください。' },
@@ -1639,129 +1638,88 @@ export const translations = {
     },
     hero: {
       tag: '日本進出パートナー',
-      title: '日本でのあなたの',
-      titleSpan: '成功の基盤。',
-      subtitle: '現地検証から収益化まで。あなたのビジョンを持続可能なビジネスへと変えます。',
-      ctaPrimary: '無料相談を予約する（30分）',
-      ctaSecondary: '診断サービスを見る',
+      title: '成功の',
+      titleSpan: '土台を. ',
+      subtitle: '検証から収益化まで。\nビジョンを永続的なビジネスへ. ',
+      ctaPrimary: '相談 (30分)',
+      ctaSecondary: '診断を見る',
       trust: ['秘密厳守', '現場網', '透明性'],
       stats: { expertise: { label: '専門', value: '飲食 / 小売' }, method: { label: '手法', value: 'Zero-to-Open' }, philosophy: { label: 'アプローチ', value: '実行パートナー' }, promise: { label: '約束', value: '現場での実行' } }
     },
     philosophy: {
-      title: '直感だけでは不十分です。',
-      titleSpan: '構造が必要です。',
-      p1: '日本でビジネスを開くことは、精度が求められる挑戦です。言語の壁、行政の複雑さ、文化的なコードは、いかなる曖昧さも許しません。',
-      p2: '私たちは現場でのあなたの実行パートナーです。投資を守るための法的・運営的・技術的な基盤をともに構築します。',
+      title: '直感では足りない. ',
+      titleSpan: '仕組みを. ',
+      p1: '日本は精度がすべて. ',
+      p2: '実行パートナー. 法的・実務・技術. ',
       statValue: '30%',
-      statLabel: '失敗率',
-      statDesc: '準備不足により、日本のビジネスの30%が初年度に閉店します。その統計の一部にならないでください。',
-      solutionTitle: '私たちの方法論：',
-      solutionSpan: '準備、構造化、実行。',
-      solutionTag: '実証済みの方法論',
+      statLabel: '失敗率. ',
+      statDesc: '準備不足による. ',
+      solutionTitle: 'メソドロジー:',
+      solutionSpan: '翻弄されず操縦. ',
+      solutionTag: '手法',
       cards: [
-        { title: '現地検証', desc: '事業計画の監査、実際のコンセプトテスト、競合分析。' },
-        { title: 'システム＆データ', desc: 'POS、CRMと自動化で、実際のデータからマージンを管理。' },
-        { title: 'ネットワーク活用', desc: '行政書士、不動産エージェント、交渉済みサプライヤーへの即時アクセス。' },
-        { title: '実地テスト', desc: '3年間の商業リースに署名する前に、実際の条件でコンセプトをテスト。' }
+        { title: '現場検証', desc: 'BP監査とテスト. ' },
+        { title: 'システム', desc: 'POS、CRM. ' },
+        { title: '網', desc: '法務、不動産. ' },
+        { title: 'MVP', desc: 'リース前のテスト. ' }
       ],
       ctaTitle: '安全に. ',
       ctaDesc: '卓越した実行. ',
-      ctaButton: 'ソリューションを見る'
+      ctaButton: '解決策'
     },
-    definition: { kanji: '土台', pronunciation: 'n. Dodai Studio', def1: '基盤。', def2: '建物を長持ちさせる、目に見えないが不可欠な土台。' },
+    definition: { kanji: '土台', pronunciation: 'n. Dodai Studio', def1: '基礎. ', def2: '不可欠な基盤. ' },
     methodology: {
-      title: 'プロセス：', titleSpan: '体系的かつ着実に。', subtitle: 'アイデアを収益性の高い資産に変えるための構造化されたプロセス、ステップバイステップ。',
+      title: '経路:', titleSpan: '穏やかに. ', subtitle: '工業プロセス. ',
       steps: [
-        { phase: '01', title: '診断', subtitle: 'チェック', desc: '確信を. ', details: ['事業計画監査', '検証', 'リアルな資金計画', 'ロードマップ'] },
-        { phase: '02', title: '構築', subtitle: '4本柱', desc: '完全なオーケストレーション。摩擦のないオープニングのために、4つの重要な作業を同時に調整します。', pillars: [{ title: '法的構造とコンプライアンス', items: ['会社設立（GK/KK）', 'ライセンスと許可', 'ビジネス銀行口座', '会計'] }, { title: '物件とデザイン', items: ['物件探し', '賃貸交渉', 'デザインコーディネーション', '工事管理'] }, { title: 'テクノロジーとオペレーション', items: ['POSシステム', 'サプライヤー調達', 'プロセス（SOP）', 'ロジスティクス'] }, { title: 'チームとローンチ', items: ['採用', 'トレーニング＆サービス', 'ローンチマーケティング', 'ソフトオープニング'] }] },
-        { phase: '03', title: '運用', subtitle: '成長', desc: 'オープン後。立ち上げ期、マージン最適化、顧客ロイヤルティ構築のためにサポートを続けます。目標：持続可能な収益性。', details: ['KPI', '原価', '顧客維持', '管理ルーティン'] }
+        { phase: '01', title: '診断', subtitle: 'チェック', desc: '確信を. ', details: ['BP監査', '検証', '予算', '地図'] },
+        { phase: '02', title: '構築', subtitle: '4本柱', desc: 'オーケストラ. ', pillars: [{ title: '法', desc: '法的枠組み.', items: ['設立'] }, { title: '地', desc: '物理的空間.', items: ['探し'] }, { title: '動', desc: '内部エンジン.', items: ['POS'] }, { title: '人', desc: '魂.', items: ['研修'] }] },
+        { phase: '03', title: '運用', subtitle: '成長', desc: '最適化. ', details: ['KPI', '原価', 'CRM'] }
       ]
     },
     portfolio: {
       title: '実績:', titleSpan: '結果. ', subtitle: 'F&B/Retail.', note: '* 秘匿',
-      projects: [{ category: '飲食', title: 'Bar', location: '青山', stat: '40%' }, { category: '小売', title: 'Wine', location: 'スカイツリー', stat: '3ヶ月' }, { category: '服', title: 'メガネ', location: '自由が丘', stat: '円滑' }, { category: '食', title: 'チーズ', location: '代官山', stat: '適合' }]
+      projects: [
+        { category: '飲食', title: 'Bar', location: '青山', tags: ['フルビルド', '採用', 'メニュー'], stat: '40%' },
+        { category: '小売', title: 'Wine', location: 'スカイツリー', tags: ['ライセンス', '物流', 'Eコマース'], stat: '3ヶ月' },
+        { category: '服', title: 'メガネ', location: '自由が丘', tags: ['不動産', 'デザイン', '投資'], stat: '円滑' },
+        { category: '食', title: 'チーズ', location: '代官山', tags: ['採用', 'デザイン', '価格戦略'], stat: '適合' }
+      ]
     },
     services: {
-      title: 'サービス：', titleSpan: '明確さと効率性。', subtitle: 'あなたのプロジェクトのステージに合ったサポートを選んでください。', tag: '透明な料金体系', paymentLabel: '支払', toggleZero: 'Zero', toggleAlaCarte: '単品', choose: '選択する', phaseDiag: '診断', phaseBuild: 'ビルド', phaseRun: '運用', modeZeroTitle: 'フルサポート', modeZeroDesc: 'スムーズなオープニングのための構造化されたパッケージ。', modeAlaCarteTitle: 'モジュール', modeAlaCarteDesc: '必要な柱だけを選択してください。', alaCartePrice: '見積もり', recapTitle: '選択', recapAddonsTitle: 'アドオン', recapCta: '見積依頼', pathContext: 'ほとんどのクライアントは診断から始まり、ビルドに進み、その後ランを開始します。',
-      piliers: [{ title: '法的構造とコンプライアンス', desc: '会社設立（GK/KK）、ライセンスと許可、ビジネス銀行口座、バイリンガル会計士。' }, { title: '物件とデザイン', desc: '物件探し、賃貸交渉、デザインコーディネーション、工事管理。' }, { title: 'テクノロジーとオペレーション', desc: 'POSインストール、CRM設定、自動化、文書化されたオペレーショナルプロセス（SOP）。' }, { title: 'チームとローンチ', desc: '採用、トレーニング、現場ソフトオープニング、ローンチコンテンツパッケージ。' }],
-      addonsTitle: '追加モジュール', addonsSubtitle: '必要な専門知識を、見積もりで。', addonsDisclaimer: '料金はDodai Studioのコーディネーションとマネジメントをカバーします。第三者・ベンダーへの費用はサプライヤーに直接支払われます。',
-      diagnostic: { title: '診断', subtitle: 'リアリティチェック', price: '¥60万', priceDetail: '（税別）', context: 'Reality Check', description: '日本でのプロジェクトのアンチクラッシュ保険。賃貸契約に署名する前に、ビジネスおよび行政上の実現可能性を検証します。', features: ['事業計画の監査', '現地インタビュー＆ネットワーク', '東京コンセプトテストパネル', '主要パートナーマッピング'], cta: '診断を予約する' } as StandaloneServiceProps,
+      title: 'サービス:', titleSpan: '効率. ', subtitle: '適したものを. ', tag: '透明', paymentLabel: '支払', toggleZero: 'Zero', toggleAlaCarte: '単品', choose: '選ぶ', phaseDiag: '診断', phaseBuild: '構築', phaseRun: '運用', modeZeroTitle: 'フル', modeZeroDesc: '一括. ', modeAlaCarteTitle: 'モジュール', modeAlaCarteDesc: '必要な分. ', alaCartePrice: '見積', recapTitle: '選択', recapAddonsTitle: 'アドオン', recapCta: '見積依頼', pathContext: 'Diag > Build > Run.',
+      piliers: [{ title: '法', desc: '会計' }, { title: '地', desc: 'デザイン' }, { title: '動', desc: 'SOP' }, { title: '人', desc: '研修' }],
+      addonsTitle: 'アドオン', addonsSubtitle: '専門. ', addonsDisclaimer: 'Dodai管理費. ',
+      diagnostic: { title: '診断', subtitle: 'チェック', price: '600k', context: 'Reality Check', description: '保険. ', features: ['監査', '面談', 'テスト', 'マップ'], cta: '予約' } as StandaloneServiceProps,
       build: [
-        {
-          name: 'エッセンシャル',
-          price: '1.2M - 1.5M',
-          priceDetail: '目安',
-          duration: '6-8週間',
-          profile: '物件確定済み',
-          payment: '支払い：30% / 40% / 30%',
-          scope: [
-            { included: true, text: '法的構造とコンプライアンス' },
-            { included: true, text: 'テクノロジーとオペレーション' },
-            { included: true, text: 'チームとローンチ' },
-            { included: false, text: '既存物件の監査（物件探しなし）', highlight: false }
-          ]
-        },
-        {
-          name: 'コンプリート',
-          price: '2.0M - 2.5M',
-          priceDetail: '目安',
-          duration: '8-20週間',
-          profile: 'フルプロジェクト',
-          payment: '支払い：30% / 40% / 30%',
-          isPopular: true,
-          scope: [
-            { included: true, text: '法的構造とコンプライアンス' },
-            { included: true, text: '物件とデザイン' },
-            { included: true, text: 'テクノロジーとオペレーション' },
-            { included: true, text: 'チームとローンチ' },
-            { included: true, text: 'オープン後サポート（30日）' }
-          ]
-        },
-        {
-          name: 'プレミアム',
-          price: '3.0M - 3.5M',
-          priceDetail: '目安',
-          duration: '16-24週間',
-          profile: '野心的プロジェクト＆フランチャイズ',
-          payment: '支払い：30% / 40% / 30%',
-          scope: [
-            { included: true, text: 'コンプリートのすべて' },
-            { included: true, text: 'MVP・ポップアップ含む' },
-            { included: true, text: 'PR（3ヶ月）' },
-            { included: true, text: 'プロ写真パッケージ' },
-            { included: true, text: 'オープン後サポート（60日）' }
-          ]
-        }
+        { name: '基本', price: '1.2M - 1.5M', priceDetail: '概算', duration: '6-8週間', profile: '物件確定済み', payment: '30/40/30', scope: [{ included: true, text: '法' }] },
+        { name: '標準', isPopular: true, price: '2.0M - 2.5M', priceDetail: '概算', duration: '8-20週間', profile: 'フルプロジェクト', payment: '30/40/30', scope: [{ included: true, text: '地' }] },
+        { name: '上位', price: '3.0M - 3.5M', priceDetail: '概算', duration: '16-24週間', profile: '大規模', payment: '30/40/30', scope: [{ included: true, text: 'MVP' }] }
       ] as ServiceTierProps[],
-      run: { title: 'ラン', subtitle: 'グロース', price: '150k', priceDetail: '/月', context: '月次運営', description: 'オープン後こそ、すべてが決まります。管理ルーティン、マージン最適化、顧客ロイヤルティ構築。', features: ['財務管理＆KPI', 'オペレーション＆フードコスト最適化', 'マーケティング自動化＆CRM', '四半期フル監査'], cta: 'ランを開始する' } as StandaloneServiceProps,
-      addons: [
-        { title: 'MVP・ポップアップ', price: '見積もり', description: '賃貸契約前に実際の条件でコンセプトをテスト。オファー、価格設定、顧客フローを検証します。' },
-        { title: '東京パネルテスト', price: '見積もり', description: 'プライベートディナーまたは構造化パネル：ローンチ前のコンセプトへのターゲットフィードバック。' },
-        { title: 'プレス＆イメージ', price: '見積もり', description: 'プロ撮影＋プレスおよびインフルエンサーとの連携で、計算されたローンチを実現。' },
-        { title: 'プレミアム採用', price: '見積もり', description: '強化された事前スクリーニング（ポジションごとに最低5名）と交代保証。' }
-      ] as AddOnProps[],
-      footer: '日本でビジネスを構築し、運営する。', footerLink: '詳細. '
+      run: { title: 'Run', subtitle: 'グロース', price: '150k', context: '月次運営', description: '収益性. ', features: ['財務', '原価', 'MA', '監査'], cta: '開始' } as StandaloneServiceProps,
+      addons: [{ title: 'MVP', price: '見積', description: 'テスト. ' }, { title: 'テスト', price: '見積', description: 'パネル. ' }, { title: 'PR', price: '見積', description: '写真. ' }, { title: '採用', price: '見積', description: '選定. ' }] as AddOnProps[],
+      footer: '日本での構築. ', footerLink: '詳細. '
     },
     wizard: {
       title: 'プロジェ:', titleSpan: '次は？', subtitle: '3問. ', tag: '解析', reset: 'リセット', step1: '種別？', step2: '段階？', step3: '課題？',
-      options: { fb: { title: '飲食' }, retail: { title: '小売' }, stage1: { title: "案" }, stage2: { title: "計画" }, stage3: { title: "物件" }, stage4: { title: "開店済" }, q3_early: [{ id: 'viable', title: "妥当性" }], q3_ready: [{ id: 'coord', title: "調整" }], q3_open: [{ id: 'margins', title: "マージン" }] },
-      result: { tag: '解析', secondaryCta: '相談', restart: '戻', case1: { title: '診断. ', link: '/diagnostic' }, case2: { title: 'Build. ', link: '/build' }, case3: { title: '単品. ', link: '/build' }, case4: { title: 'Run. ', link: '/run' } }
+      options: { fb: { title: '飲食', sub: 'レストラン、カフェ、バー...' }, retail: { title: '小売', sub: 'ファッション、デザイン、ショップ...' }, stage1: { title: "案", sub: "探索フェーズ" }, stage2: { title: "計画", sub: "物件探し" }, stage3: { title: "物件", sub: "法的・施工フェーズ" }, stage4: { title: "開店済", sub: "運用フェーズ" }, q3_early: [{ id: 'viable', title: "妥当性" }], q3_ready: [{ id: 'coord', title: "調整" }], q3_open: [{ id: 'margins', title: "マージン" }] },
+      result: { tag: '解析', secondaryCta: '相談', restart: '戻', case1: { title: '診断から開始.', desc: "投資前に妥当性を検証しましょう.", cta: '診断詳細', link: '/diagnostic' }, case2: { title: '構築フェーズ.', desc: "フル実行の調整.", cta: '構築詳細', link: '/build' }, case3: { title: '単品構築.', desc: "必要な分だけ選択.", cta: 'ア・ラ・カルト', link: '/build' }, case4: { title: '運営フェーズ.', desc: "最適化とパイロット.", cta: '運営詳細', link: '/run' } }
+    },
+    team: {
+      title: 'チーム:', titleSpan: '現場 + システム.', subtitle: '実行.', tag: '東京拠点のエキスパート',
+      g: { role: 'Ops & ネットワーク', badges: ['東京14年', '5店舗開店', '輸入 & 小売'], desc: '東京で14年、3つのレストランと2つのブティックを運営。実務家としてプロジェクトを最適化します。', list: ['東京14年 & 5店舗', '現場検証', '仕入れ', 'パートナー調整', '採用基準'] },
+      a: { role: '戦略 & システム', badges: ['起業家', '戦略', 'システム'], desc: '収益性は科学です。ビジネスを効率的かつスケーラブルにするプロセスを設計します。', list: ['起業家 & 管理者', 'BPモデリング', 'SOP策定', 'デジタル化', '成長戦略'] }
+    },
+    guardrails: {
+      title: '透明性.', titleSpan: 'ルール.', subtitle: '不透明さなし。最初から健全な関係を。', tag: '協定',
+      limits: { title: '我々の役割', list: ['弁護士ではない: 戦略を主導し、専門家が検証。', '魔法ではない: リスクを軽減し、現実は消さない。', 'コンシェルジュではない: 100%ビジネスに集中。'] },
+      prereq: { title: 'あなたの役割', list: ['意思決定者: 迅速に判断。', '現場にいる: ローンチ時に現場でプロジェクトを体現。', '冷静: 日本市場の複雑さを受け入れる。'] }
     },
     faq: {
-      title: 'FAQ',
-      titleSpan: '備える。',
-      subtitle: 'よくあるご質問',
+      title: 'よくある質問:',
+      titleSpan: '先読み.',
+      subtitle: 'あなたの疑問に答えます.',
       tag: '明確化',
-      q1: 'Build Essentiel、Complet、Premiumの違いは何ですか？',
-      a1: 'Essentiel（¥120〜150万）は、すでに物件と確固たる計画を持つ方向けです。Complet（¥200〜250万）は物件探しを含み、Dodai Studioのクライアントの80%が選択します。Premium（¥300〜350万）は、大規模ローンチのためのMVP、PR、コンテンツを含みます。',
-      q2: 'BuildはDiagnosticなしで進められますか？',
-      a2: '必須ではありませんが、強くお勧めします。フルビルドにコミットする前に、実現可能性と予算を検証できます。',
-      q3: 'MVP・エフェメラルとは何ですか？',
-      a3: '6〜10週間の実際の市場テスト（キッチンカー、コーナー、ポップアップ）です。3年間の商業リースに署名する前に、コンセプトと製品を検証できます。',
-      q4: '契約からオープンまでの期間はどのくらいですか？',
-      a4: 'Build Essentiel（物件確定済み）は6〜8週間、Build Complet（物件探し含む）は12〜20週間、MVPを含むPremiumは16〜24週間が目安です。',
-      q5: 'どのような結果を保証しますか？',
-      a5: '成功を保証するものではありません（それはあなた次第です）が、Dodai Studioは市場基準に達するようにすべてを構築します：6ヶ月目の黒字化、原価率28-32%、人件費率35%未満、評価3.0以上。'
+      q1: '違い？', a1: '範囲. ', q2: '必須？', a2: '推奨. ', q3: 'MVP？', a3: 'テスト. ', q4: '期間？', a4: '8-20週. ', q5: '保証？', a5: '基準構築. '
     },
     contact: {
       title: '話し', titleSpan: 'ましょう. ', desc: '30分. ', 
