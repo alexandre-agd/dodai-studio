@@ -2,23 +2,13 @@ import React from 'react';
 
 export const Statistics = () => {
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Statistics</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div>
-            <div className="text-4xl font-bold text-blue-600">100+</div>
-            <div className="text-gray-600 mt-2">Clients</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-blue-600">50+</div>
-            <div className="text-gray-600 mt-2">Projects</div>
-          </div>
-          <div>
-            <div className="text-4xl font-bold text-blue-600">10+</div>
-            <div className="text-gray-600 mt-2">Years Experience</div>
-          </div>
-        </div>
+    <section className="py-20 bg-dodai-gray">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-8xl md:text-9xl font-bold text-dodai-red mb-4">30%</h2>
+        <p className="text-xl md:text-2xl font-bold text-dodai-charcoal mb-4">Le taux d'échec.</p>
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          30% des commerces ferment leur première année au Japon par manque de préparation. Ne faites pas partie de cette statistique.
+        </p>
       </div>
     </section>
   );
