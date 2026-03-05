@@ -19,8 +19,13 @@ export const HomePage: React.FC = () => {
   const { t, language } = useLanguage();
 
   useEffect(() => {
-    document.title = "Dodai Studio : Les fondations de votre business au Japon";
-  }, []);
+    const titles: Record<string, string> = {
+      fr: "Dodai Studio : Les fondations de votre business au Japon",
+      en: "Dodai Studio: The foundations of your business in Japan",
+      jp: "Dodai Studio：日本でのビジネスの土台",
+    };
+    document.title = titles[language] || titles.en;
+  }, [language]);
 
   const handleWizardComplete = (data: WizardData) => {
     // Localize data before sending to form
