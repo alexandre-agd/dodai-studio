@@ -617,7 +617,7 @@ export const translations = {
         { title: 'Presse & Image', price: 'Sur Devis', description: 'Pack lancement : Shooting pro + Relations presse & Influenceurs.' },
         { title: 'Recrutement Premium', price: 'Sur Devis', description: 'Présélection renforcée et garantie de remplacement.' }
       ] as AddOnProps[],
-      footer: 'Bâtir et piloter des commerces rentables au Japon.\nValidation terrain, exécution opérationnelle et systèmes prêts dès l’ouverture avec Dodai Studio.',
+      footer: "Bâtir et piloter des commerces rentables au Japon.\nValidation terrain, exécution opérationnelle et systèmes prêts dès l'ouverture avec Dodai Studio.",
       footerLink: 'Voir le détail.'
     },
     wizard: {
@@ -768,7 +768,7 @@ export const translations = {
         successTitle: 'Message envoyé.',
         successDesc: 'Merci. Nous analysons votre demande et revenons vers vous sous 48h ouvrées.',
         new: 'Envoyer un autre message',
-        footer: 'En envoyant ce formulaire, vous acceptez d’être recontacté par Dodai Studio.',
+        footer: "En envoyant ce formulaire, vous acceptez d'être recontacté par Dodai Studio.",
         prefill: 'Pré-rempli via le Diagnostic',
         labelSelected: 'Services "À la carte" sélectionnés :',
         labelAddonsSelected: 'Add-ons sélectionnés :',
@@ -777,14 +777,15 @@ export const translations = {
       }
     },
     footer: {
-      desc: 'Bâtir et piloter des commerces rentables au Japon.\nValidation terrain, exécution opérationnelle et systèmes prêts dès l’ouverture avec Dodai Studio.',
+      desc: "Bâtir et piloter des commerces rentables au Japon.\nValidation terrain, exécution opérationnelle et systèmes prêts dès l'ouverture avec Dodai Studio.",
       studio: 'Studio',
       contact: 'Contact',
       rights: 'Tous droits réservés.',
       legal: 'Mentions légales',
       privacy: 'Confidentialité',
       tokyo: 'Tokyo, Japon',
-      cta: 'Réserver un appel'
+      cta: 'Réserver un appel',
+      linkedinLabel: 'Suivez-nous sur LinkedIn'
     }
   },
   en: {
@@ -1406,7 +1407,8 @@ export const translations = {
       legal: 'Legal',
       privacy: 'Privacy',
       tokyo: 'Tokyo, Japan',
-      cta: 'Book a call'
+      cta: 'Book a call',
+      linkedinLabel: 'Follow us on LinkedIn'
     }
   },
   jp: {
@@ -1962,6 +1964,6 @@ export const translations = {
         labelVisa: 'ビザステータス：'
       }
     },
-    footer: { desc: '日本で収益性の高いビジネスを構築・運営。', studio: 'Studio', contact: 'お問い合わせ', rights: '無断複写・転載を禁じます。', legal: '法的事項', privacy: 'プライバシー', tokyo: '東京、日本', cta: '相談を予約' }
+    footer: { desc: '日本で収益性の高いビジネスを構築・運営。', studio: 'Studio', contact: 'お問い合わせ', rights: '無断複写・転載を禁じます。', legal: '法的事項', privacy: 'プライバシー', tokyo: '東京、日本', cta: '相談を予約', linkedinLabel: 'LinkedInでフォローする' }
   }
 };

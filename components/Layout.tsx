@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown, Linkedin } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 import { HashLink as Link } from 'react-router-hash-link';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -223,6 +223,19 @@ export const Footer: React.FC = () => {
             <p className="text-gray-400 text-lg font-light leading-relaxed max-w-sm whitespace-pre-line">
               {t.footer.desc}
             </p>
+            <a
+              href="https://www.linkedin.com/company/dodai-studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-3 group"
+            >
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-gray-400 group-hover:bg-[#0A66C2] group-hover:border-[#0A66C2] group-hover:text-white transition-all duration-300">
+                <Linkedin size={18} />
+              </span>
+              <span className="text-sm text-gray-400 group-hover:text-white transition-colors duration-300">
+                {t.footer.linkedinLabel}
+              </span>
+            </a>
           </div>
           
           <div>
@@ -253,9 +266,18 @@ export const Footer: React.FC = () => {
           <p className="text-xs text-gray-500">
             © {new Date().getFullYear()} Dodai Studio. {t.footer.rights}
           </p>
-          <div className="flex gap-8">
+          <div className="flex items-center gap-8">
             <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.legal}</a>
             <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.privacy}</a>
+            <a
+              href="https://www.linkedin.com/company/dodai-studio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-7 h-7 rounded-full bg-white/5 border border-white/10 text-gray-500 hover:bg-[#0A66C2] hover:border-[#0A66C2] hover:text-white transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={13} />
+            </a>
           </div>
         </div>
       </div>
