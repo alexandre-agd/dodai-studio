@@ -25,6 +25,7 @@ export const PartenairesPage: React.FC = () => {
   const { t, language } = useLanguage();
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
+
   // Form state
   const [formData, setFormData] = useState({
     firstNameRomaji: '',
@@ -41,8 +42,9 @@ export const PartenairesPage: React.FC = () => {
   });
 
   useEffect(() => {
-    document.title = "Dodai Studio : Devenir Partenaire";
-  }, []);
+    document.title = t.partnersPage.pageTitle;
+    window.scrollTo(0, 0);
+  }, [language]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -101,7 +103,6 @@ export const PartenairesPage: React.FC = () => {
         setFormStatus('error');
       }
     } catch (error) {
-      console.error('Error submitting form:', error);
       setFormStatus('error');
     }
   };
@@ -113,7 +114,7 @@ export const PartenairesPage: React.FC = () => {
   return (
     <main className="flex-grow">
       {/* SECTION 1: HERO (Dark) */}
-      <section className="bg-dodai-charcoal text-white pt-32 pb-24 md:pt-48 md:pb-40 relative overflow-hidden">
+      <section className="bg-dodai-charcoal text-white pt-40 pb-24 md:pt-56 md:pb-40 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-dodai-red opacity-[0.05] rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
            <img 
@@ -141,9 +142,11 @@ export const PartenairesPage: React.FC = () => {
       <section className="py-24 md:py-32 bg-dodai-cream">
         <div className="max-w-4xl mx-auto px-6">
           <div className="mb-12">
-            <span className="text-xs font-mono uppercase tracking-widest text-dodai-red font-bold mb-4 block">
-              {t.partnersPage.story.tag}
-            </span>
+            <div className="flex mb-8">
+              <span className="inline-flex py-2 px-6 rounded-full bg-dodai-red/10 text-dodai-red text-[11px] font-bold uppercase tracking-[0.3em]">
+                {t.partnersPage.story.tag}
+              </span>
+            </div>
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-8 leading-none">
               {t.partnersPage.story.title} <br/>
               <span className="text-gray-400">{t.partnersPage.story.titleSpan}</span>
@@ -218,7 +221,7 @@ export const PartenairesPage: React.FC = () => {
             <p className="text-xl text-gray-500 font-light">{t.partnersPage.referral.subtitle}</p>
           </div>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ReferralBlock 
               icon={<Search size={24} />} 
               title={t.partnersPage.referral.diag.t} 
@@ -268,7 +271,7 @@ export const PartenairesPage: React.FC = () => {
           
           <div className="relative">
              <div className="absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 hidden lg:block"></div>
-             <div className="grid lg:grid-cols-4 gap-12 relative z-10">
+             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
                 <ProcessStep number="01" title={t.partnersPage.process.s1.t} desc={t.partnersPage.process.s1.d} />
                 <ProcessStep number="02" title={t.partnersPage.process.s2.t} desc={t.partnersPage.process.s2.d} />
                 <ProcessStep number="03" title={t.partnersPage.process.s3.t} desc={t.partnersPage.process.s3.d} />
@@ -316,7 +319,7 @@ export const PartenairesPage: React.FC = () => {
                   onClick={() => setFormStatus('idle')}
                   className="mt-8 px-6 py-3 bg-dodai-charcoal text-white rounded-full font-bold hover:bg-black transition-all"
                 >
-                  Envoyer un autre message
+                  {t.contact.form.new}
                 </button>
               </div>
             ) : (

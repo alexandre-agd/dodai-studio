@@ -17,12 +17,12 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { ContactForm } from '../components/ContactForm';
 
 export const RunPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
-    document.title = "Dodai Studio : Le Run - Partenaire Opérationnel au Japon";
+    document.title = t.runPage.pageTitle;
     window.scrollTo(0, 0);
-  }, []);
+  }, [language]);
 
   return (
     <main className="flex-grow">

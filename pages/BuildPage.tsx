@@ -22,14 +22,14 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { ContactForm } from '../components/ContactForm';
 
 export const BuildPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [view, setView] = useState<'tiered' | 'alaCarte'>('tiered');
   const [selectedPillars, setSelectedPillars] = useState<number[]>([]);
 
   useEffect(() => {
-    document.title = "Dodai Studio : Le Build - Du concept à l'ouverture au Japon";
+    document.title = t.buildPage.pageTitle;
     window.scrollTo(0, 0);
-  }, []);
+  }, [language]);
 
   const togglePillar = (index: number) => {
     setSelectedPillars(prev => 
@@ -91,7 +91,7 @@ export const BuildPage: React.FC = () => {
             {/* Timeline Line */}
             <div className="absolute top-1/2 left-0 w-full h-px bg-gray-100 -translate-y-1/2 hidden lg:block"></div>
             
-            <div className="grid lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative z-10">
               <TimelineStep number="01" title={t.buildPage.timeline.s1.t} desc={t.buildPage.timeline.s1.d} icon={<FileText size={24} />} />
               <TimelineStep number="02" title={t.buildPage.timeline.s2.t} desc={t.buildPage.timeline.s2.d} icon={<MapPin size={24} />} />
               <TimelineStep number="03" title={t.buildPage.timeline.s3.t} desc={t.buildPage.timeline.s3.d} icon={<Wrench size={24} />} />
@@ -135,7 +135,7 @@ export const BuildPage: React.FC = () => {
 
           <div className="relative min-h-[600px]">
             {/* VIEW 1: TIERED (Zero-to-Open) */}
-            <div className={`grid lg:grid-cols-3 gap-8 transition-all duration-500 ${view === 'tiered' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none absolute inset-0'}`}>
+            <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 ${view === 'tiered' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none absolute inset-0'}`}>
                <TierCard tag={t.buildPage.tiers.essential.tag} title={t.buildPage.tiers.essential.title} bullets={t.buildPage.tiers.essential.bullets} price={t.buildPage.tiers.essential.price} note={t.buildPage.tiers.essential.note} />
                <TierCard tag={t.buildPage.tiers.complete.tag} title={t.buildPage.tiers.complete.title} bullets={t.buildPage.tiers.complete.bullets} price={t.buildPage.tiers.complete.price} note={t.buildPage.tiers.complete.note} isPopular />
                <TierCard tag={t.buildPage.tiers.premium.tag} title={t.buildPage.tiers.premium.title} bullets={t.buildPage.tiers.premium.bullets} price={t.buildPage.tiers.premium.price} note={t.buildPage.tiers.premium.note} />

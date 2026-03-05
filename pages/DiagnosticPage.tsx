@@ -19,12 +19,12 @@ import { HashLink as Link } from 'react-router-hash-link';
 import { ContactForm } from '../components/ContactForm';
 
 export const DiagnosticPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
-    document.title = "Dodai Studio : Le Diagnostic - Reality Check au Japon";
+    document.title = t.diagnosticPage.pageTitle;
     window.scrollTo(0, 0);
-  }, []);
+  }, [language]);
 
   return (
     <main className="flex-grow">
@@ -37,7 +37,7 @@ export const DiagnosticPage: React.FC = () => {
             {/* AJUSTEMENT 4: Tag "REALITY CHECK" plus contrasté et typé badge rouge */}
             <div className="flex justify-center mb-8">
               <span className="inline-flex py-2 px-6 rounded-full bg-dodai-red text-white text-[11px] font-bold uppercase tracking-[0.3em] shadow-lg shadow-dodai-red/20 animate-fade-in-up">
-                REALITY CHECK
+                {t.diagnosticPage.hero.tag}
               </span>
             </div>
             <h1 className="text-4xl md:text-8xl font-bold tracking-tighter leading-[0.95] text-balance max-w-5xl mx-auto animate-fade-in-up">

@@ -17,6 +17,7 @@ export const translations = {
       build: 'Le Build',
     },
     diagnosticPage: {
+      pageTitle: 'Dodai Studio : Le Diagnostic — Reality Check au Japon',
       hero: {
         tag: 'REALITY CHECK',
         title: 'Validez avant d\'investir.',
@@ -73,6 +74,7 @@ export const translations = {
       }
     },
     buildPage: {
+      pageTitle: 'Dodai Studio : Le Build — Du concept à l\'ouverture au Japon',
       hero: {
         tag: 'ZERO TO OPEN',
         title: 'Du concept au jour d\'ouverture.',
@@ -191,6 +193,7 @@ export const translations = {
       }
     },
     runPage: {
+      pageTitle: 'Dodai Studio : Le Run — Partenaire Opérationnel au Japon',
       hero: {
         tag: 'POST-OUVERTURE',
         h1: 'Le plus dur, ce n\'est pas d\'ouvrir.',
@@ -276,6 +279,7 @@ export const translations = {
       }
     },
     partnersPage: {
+      pageTitle: 'Dodai Studio : Devenir Partenaire',
       hero: {
         title: 'Vous connaissez quelqu\'un qui veut ouvrir à Tokyo ?',
         titleSpan: '',
@@ -773,7 +777,11 @@ export const translations = {
         labelSelected: 'Services "À la carte" sélectionnés :',
         labelAddonsSelected: 'Add-ons sélectionnés :',
         labelProject: 'Projet :',
-        labelVisa: 'Statut Visa :'
+        labelVisa: 'Statut Visa :',
+        timingPlaceholder: 'Ex: 3 mois',
+        budgetPlaceholder: 'Ex: 5 000 000 JPY',
+        messagePlaceholder: 'Décrivez brièvement votre projet...',
+        errorMessage: "Une erreur de connexion est survenue. Réessayez ou contactez-nous : hello@dodai-studio.com",
       }
     },
     footer: {
@@ -802,6 +810,7 @@ export const translations = {
       build: 'Build',
     },
     diagnosticPage: {
+      pageTitle: 'Dodai Studio: Diagnostic — Reality Check in Japan',
       hero: {
         tag: 'REALITY CHECK',
         title: 'Validate before you invest.',
@@ -858,6 +867,7 @@ export const translations = {
       }
     },
     buildPage: {
+      pageTitle: 'Dodai Studio: Build — From Concept to Opening in Japan',
       hero: {
         tag: 'ZERO TO OPEN',
         title: 'From concept to opening day.',
@@ -964,6 +974,7 @@ export const translations = {
       }
     },
     runPage: {
+      pageTitle: 'Dodai Studio: The Run — Monthly Operational Partner in Japan',
       hero: {
         tag: 'POST-OPENING',
         h1: 'Opening is just the beginning.',
@@ -1043,6 +1054,7 @@ export const translations = {
       }
     },
     partnersPage: {
+      pageTitle: 'Dodai Studio: Become a Partner',
       hero: {
         title: 'Know someone opening in Tokyo?',
         titleSpan: '',
@@ -1373,30 +1385,34 @@ export const translations = {
       response: { title: '48h Response', desc: 'Clear recommendation.' },
       noCommitment: { title: 'No Strings', desc: 'We tell you our thoughts.' },
       form: {
-        header: 'Recommendation.',
-        subHeader: 'Fill the form.',
+        header: 'Get a recommendation.',
+        subHeader: 'Fill out the form below.',
         name: 'Name',
         email: 'Email',
         type: 'Type',
-        city: 'City',
+        city: 'Target city',
         timing: 'Timing',
-        projectStatus: 'STATUS',
-        projectOptions: ['Concept', 'BP Ready', 'Site Found', 'Open'],
-        validationNeeds: 'VALIDATION',
-        validationPlaceholder: 'Budget, location...',
-        budget: 'Budget',
+        projectStatus: 'WHERE ARE YOU IN YOUR PROJECT',
+        projectOptions: ['Concept only', 'Business plan ready', 'Site found', 'Already open'],
+        validationNeeds: 'WHAT DO YOU NEED TO VALIDATE',
+        validationPlaceholder: 'Budget, location, concept feasibility...',
+        budget: 'Budget (Optional)',
         message: 'Message',
         submit: 'Send',
         submitting: 'Sending...',
-        successTitle: 'Sent.',
-        successDesc: 'We reach out under 48h.',
-        new: 'New message',
-        footer: 'Consent given.',
-        prefill: 'Pre-filled',
-        labelSelected: 'Selected:',
-        labelAddonsSelected: 'Add-ons:',
+        successTitle: 'Message sent.',
+        successDesc: 'Thank you. We will review your request and get back to you within 48 business hours.',
+        new: 'Send another message',
+        footer: 'By submitting this form, you agree to be contacted by Dodai Studio.',
+        prefill: 'Pre-filled via the Diagnostic',
+        labelSelected: 'Selected à la carte services:',
+        labelAddonsSelected: 'Selected add-ons:',
         labelProject: 'Project:',
-        labelVisa: 'Visa:'
+        labelVisa: 'Visa status:',
+        timingPlaceholder: 'E.g. 3 months',
+        budgetPlaceholder: 'E.g. 5,000,000 JPY',
+        messagePlaceholder: 'Tell us briefly about your project...',
+        errorMessage: 'Connection error. Please try again or reach us at hello@dodai-studio.com',
       }
     },
     footer: {
@@ -1425,6 +1441,7 @@ export const translations = {
       build: '構築 (Build)',
     },
     diagnosticPage: {
+      pageTitle: 'Dodai Studio：ダイアグノスティック — 日本でのリアリティチェック',
       hero: {
         tag: '現実チェック',
         title: '投資する前に検証を。',
@@ -1468,6 +1485,7 @@ export const translations = {
       }
     },
     buildPage: {
+      pageTitle: 'Dodai Studio：ビルド — コンセプトから開業まで',
       hero: {
         tag: 'ZERO TO OPEN',
         title: 'コンセプトからオープンまで. ',
@@ -1569,6 +1587,7 @@ export const translations = {
       }
     },
     runPage: {
+      pageTitle: 'Dodai Studio：ランニング — 日本での月次運営パートナー',
       hero: {
         tag: '開店後サポート',
         h1: '開店は始まりに過ぎない。',
@@ -1614,15 +1633,21 @@ export const translations = {
       },
       faq: {
         title: 'Run FAQ',
-        q1: 'Build必須？', a1: 'いいえ. 既存店も可。',
-        q2: '1年経過店は？', a2: 'はい. クリーンアップから開始。',
-        q3: '契約期間は？', a3: '初期6ヶ月。',
-        q4: '施策は？', a4: '制作から設定まで代行。',
-        q5: 'サポートは？', a5: '48h以内返信のラインと定期コール。',
+        q1: 'Buildを先に行う必要はありますか？',
+        a1: 'いいえ。Runはすでに開店している店舗にも対応しています。最初に初期監査を行うことで、現状を把握してから運営支援を開始します。',
+        q2: '開店から1年以上経っていても対応できますか？',
+        a2: 'はい。その場合は最初の1ヶ月を「クリーンアップ」フェーズとして、システムや運営の見直しから始めます。それからRunのルーティンへ移行します。',
+        q3: '契約期間はどのくらいですか？',
+        a3: '初期契約は6ヶ月間です。その後は月単位で更新できます。継続することで、最大の成果が得られます。',
+        q4: '月次施策はどのように進みますか？',
+        a4: '月次レビューで方向性を一緒に決定します。Dodai Studioがすべて制作（テキスト、ビジュアル、CRM設定）し、ご確認いただいた後に配信します。',
+        q5: '日常のサポートはどのような形ですか？',
+        a5: '日々の質問には48時間以内に返信するダイレクトラインを提供します。それに加え、隔週のコールで運営状況を定期的に確認します。',
       },
       form: { concept: 'コンセプト', conceptPlaceholder: '店名', challenge: '課題', challenges: ['利益', 'リピート', 'スタッフ', '拡大', '他'] }
     },
     partnersPage: {
+      pageTitle: 'Dodai Studio：パートナーになる',
       hero: { title: '東京で開店したい知人がいますか？', titleSpan: '', subtitle: '基盤を構築します。紹介するだけで、あとは私たちが担います。', cta: 'パートナーになる' },
       story: {
         tag: 'なぜこのプログラムなのか？',
@@ -1961,7 +1986,11 @@ export const translations = {
         labelSelected: '選択済みサービス：',
         labelAddonsSelected: '選択済みアドオン：',
         labelProject: 'プロジェクト：',
-        labelVisa: 'ビザステータス：'
+        labelVisa: 'ビザステータス：',
+        timingPlaceholder: '例：3ヶ月',
+        budgetPlaceholder: '例：5,000,000円',
+        messagePlaceholder: 'プロジェクトについて簡単にお聞かせください...',
+        errorMessage: '接続エラーが発生しました。もう一度お試しいただくか、hello@dodai-studio.comにご連絡ください。',
       }
     },
     footer: { desc: '日本で収益性の高いビジネスを構築・運営。', studio: 'Studio', contact: 'お問い合わせ', rights: '無断複写・転載を禁じます。', legal: '法的事項', privacy: 'プライバシー', tokyo: '東京、日本', cta: '相談を予約', linkedinLabel: 'LinkedInでフォローする' }

@@ -139,7 +139,7 @@ export const Services: React.FC<ServicesProps> = ({ onServicesSelected, onAddons
         <div className="mb-12">
             <div className="relative min-h-[550px]">
               {/* TIERED VIEW */}
-              <div className={`grid lg:grid-cols-3 gap-6 items-start transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${view === 'tiered' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none absolute inset-0'}`}>
+              <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 items-start transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${view === 'tiered' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none absolute inset-0'}`}>
                   {build.length > 0 && (
                     <>
                       <div className="lg:mt-8 h-full">

@@ -30,6 +30,16 @@ export const Header: React.FC = () => {
     }
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [mobileMenuOpen]);
+
   const handleLangChange = (lang: Language) => {
     setLanguage(lang);
     setMobileMenuOpen(false);
@@ -68,17 +78,19 @@ export const Header: React.FC = () => {
               onMouseEnter={() => setOffresOpen(true)}
               onMouseLeave={() => setOffresOpen(false)}
             >
-              <button 
+              <button
+                aria-haspopup="true"
+                aria-expanded={offresOpen}
                 className={`flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${
-                    isScrolled 
-                    ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' 
-                    : isDarkPage 
+                    isScrolled
+                    ? 'text-gray-700 hover:text-black hover:bg-gray-100/50'
+                    : isDarkPage
                       ? 'text-gray-100 hover:text-white hover:bg-white/10'
                       : 'text-gray-600 hover:text-dodai-charcoal'
                 }`}
               >
                 {t.nav.offres}
-                <ChevronDown size={14} className={`transition-transform duration-300 ${offresOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown size={14} aria-hidden="true" className={`transition-transform duration-300 ${offresOpen ? 'rotate-180' : ''}`} />
               </button>
               
               {/* Dropdown Menu */}
@@ -146,17 +158,24 @@ export const Header: React.FC = () => {
             </div>
 
             <button
+              aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav"
               className={`md:hidden p-2 rounded-full transition-colors relative z-50 ${isDarkPage && !isScrolled ? 'text-white hover:bg-white/10' : 'text-dodai-charcoal hover:bg-gray-100'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
             </button>
           </div>
         </div>
       </header>
 
       {/* Mobile Nav Overlay */}
-      <div 
+      <div
+        id="mobile-nav"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu de navigation"
         className={`fixed inset-0 bg-dodai-cream/95 backdrop-blur-xl z-40 md:hidden transition-all duration-700 cubic-bezier(0.7, 0, 0.3, 1) flex flex-col justify-center px-6 ${
           mobileMenuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-[20px] pointer-events-none'
         }`}
@@ -267,8 +286,8 @@ export const Footer: React.FC = () => {
             © {new Date().getFullYear()} Dodai Studio. {t.footer.rights}
           </p>
           <div className="flex items-center gap-8">
-            <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.legal}</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.privacy}</a>
+            <Link smooth to="/legal" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.legal}</Link>
+            <Link smooth to="/privacy" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">{t.footer.privacy}</Link>
             <a
               href="https://www.linkedin.com/company/dodai-studio/"
               target="_blank"

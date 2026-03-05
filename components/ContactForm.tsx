@@ -25,6 +25,23 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
     mainChallenge: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [cooldownEnd, setCooldownEnd] = useState<number | null>(null);
+  const [cooldownRemaining, setCooldownRemaining] = useState(0);
+
+  useEffect(() => {
+    if (!cooldownEnd) return;
+    const interval = setInterval(() => {
+      const remaining = Math.ceil((cooldownEnd - Date.now()) / 1000);
+      if (remaining <= 0) {
+        setCooldownEnd(null);
+        setCooldownRemaining(0);
+        clearInterval(interval);
+      } else {
+        setCooldownRemaining(remaining);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [cooldownEnd]);
 
   // Pre-fill form when initialData changes
   useEffect(() => {
@@ -55,6 +72,13 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (cooldownEnd && Date.now() < cooldownEnd) return;
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setStatus('error');
+      return;
+    }
     setStatus('submitting');
     
     const WEBHOOK_URL = 'https://n8n.agdevelopment.co/webhook/website-partenaire';
@@ -71,13 +95,12 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
 
       if (response.ok) {
         setStatus('success');
+        setCooldownEnd(Date.now() + 30000);
         setFormData({ name: '', email: '', type: 'F&B', city: 'Tokyo', timing: '', projectStatus: '', validationNeeds: '', budget: '', message: '', currentConcept: '', mainChallenge: '' });
       } else {
-        console.error('Webhook Error:', response.status, response.statusText);
         setStatus('error');
       }
     } catch (error) {
-      console.error('Network/CORS Error:', error);
       setStatus('error');
     }
   };
@@ -262,7 +285,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
                 value={formData.timing}
                 onChange={handleChange}
                 className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800 placeholder:text-gray-400"
-                placeholder="Ex: 3 mois"
+                placeholder={t.contact.form.timingPlaceholder}
               />
             </>
           )}
@@ -276,7 +299,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
             value={formData.budget}
             onChange={handleChange}
             className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all font-medium text-gray-800 placeholder:text-gray-400"
-            placeholder="JPY"
+            placeholder={t.contact.form.budgetPlaceholder}
           />
         </div>
       </div>
@@ -290,14 +313,14 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
           value={formData.message}
           onChange={handleChange}
           className="w-full px-5 py-4 rounded-2xl bg-gray-50 border border-transparent focus:bg-white focus:border-gray-200 focus:ring-0 outline-none transition-all resize-none font-medium text-gray-800 placeholder:text-gray-400"
-          placeholder="..."
+          placeholder={t.contact.form.messagePlaceholder}
         ></textarea>
       </div>
 
        {status === 'error' && (
         <div className="mb-6 p-4 rounded-xl bg-red-50 text-red-600 flex items-center gap-3 text-sm">
             <AlertCircle size={18} />
-            Erreur de connexion (Serveur/CORS).
+            {t.contact.form.errorMessage}
         </div>
       )}
 
@@ -305,15 +328,17 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
         <p className="text-[10px] text-gray-500 max-w-xs text-center md:text-left leading-relaxed">
           {t.contact.form.footer}
         </p>
-        <button 
-          type="submit" 
-          disabled={status === 'submitting'}
+        <button
+          type="submit"
+          disabled={status === 'submitting' || (!!cooldownEnd && cooldownRemaining > 0)}
           className="w-full md:w-auto px-10 py-4 bg-dodai-charcoal text-white rounded-full font-bold hover:bg-black transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed shadow-lg hover:shadow-xl hover:-translate-y-0.5"
         >
           {status === 'submitting' ? (
             <>
               <Loader2 size={18} className="animate-spin" /> {t.contact.form.submitting}
             </>
+          ) : cooldownRemaining > 0 ? (
+            <>{t.contact.form.submit} ({cooldownRemaining}s)</>
           ) : (
             <>
               {t.contact.form.submit} <ArrowRight size={18} />
