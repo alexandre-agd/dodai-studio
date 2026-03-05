@@ -57,7 +57,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ initialData, isRunPage
     e.preventDefault();
     setStatus('submitting');
     
-    const WEBHOOK_URL = 'https://n8n.agdevelopment.co/webhook/c1363d8c-709b-4aae-ad10-5561597ad0c0';
+    const WEBHOOK_URL = 'https://n8n.agdevelopment.co/webhook/website-partenaire';
 
     try {
       const response = await fetch(WEBHOOK_URL, {

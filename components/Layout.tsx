@@ -126,7 +126,26 @@ export const Header: React.FC = () => {
               {t.nav.contact}
             </Link>
 
-            <button 
+            {/* Language Switcher Mobile (header) */}
+            <div className={`flex md:hidden items-center gap-1 text-[11px] font-mono`}>
+              {(['fr', 'en', 'jp'] as Language[]).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => handleLangChange(lang)}
+                  className={`uppercase w-7 h-7 rounded-full flex items-center justify-center transition-all ${
+                    language === lang
+                      ? 'bg-dodai-charcoal text-white font-bold'
+                      : isDarkPage && !isScrolled
+                        ? 'text-gray-200 hover:text-white hover:bg-white/10'
+                        : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100'
+                  }`}
+                >
+                  {lang}
+                </button>
+              ))}
+            </div>
+
+            <button
               className={`md:hidden p-2 rounded-full transition-colors relative z-50 ${isDarkPage && !isScrolled ? 'text-white hover:bg-white/10' : 'text-dodai-charcoal hover:bg-gray-100'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >

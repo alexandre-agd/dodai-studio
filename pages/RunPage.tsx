@@ -31,6 +31,11 @@ export const RunPage: React.FC = () => {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-dodai-red opacity-[0.05] rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+          <div className="flex justify-center mb-8">
+            <span className="inline-flex py-2 px-6 rounded-full bg-dodai-red text-white text-[11px] font-bold uppercase tracking-[0.3em] shadow-lg shadow-dodai-red/20 animate-fade-in-up">
+              {t.runPage.hero.tag}
+            </span>
+          </div>
           <div className="flex flex-col gap-4 mb-12">
             <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[1] text-balance max-w-5xl mx-auto animate-fade-in-up">
               {t.runPage.hero.h1} <br/>

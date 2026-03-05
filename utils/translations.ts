@@ -192,6 +192,7 @@ export const translations = {
     },
     runPage: {
       hero: {
+        tag: 'POST-OUVERTURE',
         h1: 'Le plus dur, ce n\'est pas d\'ouvrir.',
         h1Span: 'C\'est ce qui vient après.',
         subtitle: 'Marges qui fondent, clients irréguliers, staff instable ou simplement l\'envie de scaler sans tout porter seul. Le Run, c\'est votre partenaire opérationnel mensuel avec Dodai Studio au Japon.',
@@ -963,6 +964,7 @@ export const translations = {
     },
     runPage: {
       hero: {
+        tag: 'POST-OPENING',
         h1: 'Opening is just the beginning.',
         h1Span: 'The hard part is what follows.',
         subtitle: 'Melting margins, staff turnover, or scaling needs. The Run is your monthly operational partner in Japan.',
@@ -1534,6 +1536,7 @@ export const translations = {
     },
     runPage: {
       hero: {
+        tag: '開店後サポート',
         h1: '開店は始まりに過ぎない。',
         h1Span: '本当の課題はその後。',
         subtitle: '利益率、スタッフの入れ替わり、規模拡大. Runは日本での月次運営パートナーです。',
