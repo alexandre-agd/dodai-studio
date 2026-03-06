@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { FAQItem } from '../components/FAQItem';
+import { ContactInfoBlock } from '../components/ContactInfoBlock';
 import { 
   ArrowRight, 
   Check, 
@@ -270,34 +272,3 @@ const ScopeBlock: React.FC<{ number: string, icon: React.ReactNode, title: strin
   </div>
 );
 
-const FAQItem: React.FC<{ q: string, a: string }> = ({ q, a }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="border-b border-gray-100 last:border-none">
-      {/* AJUSTEMENT 5: Bouton et chevron plus contrastés et aérés */}
-      <button onClick={() => setIsOpen(!isOpen)} className="w-full py-10 flex justify-between items-center text-left group">
-        <span className={`text-xl md:text-2xl font-bold transition-colors ${isOpen ? 'text-dodai-charcoal' : 'text-gray-400 group-hover:text-dodai-charcoal'}`}>{q}</span>
-        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all shadow-sm ${isOpen ? 'bg-dodai-charcoal text-white rotate-45' : 'bg-gray-100 text-dodai-charcoal group-hover:bg-dodai-red group-hover:text-white'}`}>
-           <Plus size={24} />
-        </div>
-      </button>
-      <div className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-10 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <p className="text-gray-600 leading-relaxed font-normal text-lg max-w-3xl">{a}</p>
-      </div>
-    </div>
-  );
-};
-
-const ContactInfoBlock: React.FC<{ icon: React.ReactNode, title: string, desc: string }> = ({ icon, title, desc }) => (
-  <div className="flex gap-6 items-start group">
-    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 group-hover:bg-white group-hover:text-dodai-charcoal transition-all duration-500">
-      {icon}
-    </div>
-    <div>
-      <h4 className="font-bold text-lg mb-1 group-hover:text-white transition-colors duration-300">{title}</h4>
-      <p className="text-gray-500 font-light text-sm group-hover:text-gray-400 transition-colors duration-300">
-        {desc}
-      </p>
-    </div>
-  </div>
-);

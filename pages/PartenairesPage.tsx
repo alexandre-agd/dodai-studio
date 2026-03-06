@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { 
-  ArrowRight, 
-  Plus, 
+import { FAQItem } from '../components/FAQItem';
+import {
+  ArrowRight,
   Users, 
   Calculator, 
   Home, 
@@ -288,11 +288,11 @@ export const PartenairesPage: React.FC = () => {
             {t.partnersPage.faq.title}
           </h2>
           <div className="space-y-4">
-             <FAQItem q={t.partnersPage.faq.q1} a={t.partnersPage.faq.a1} />
-             <FAQItem q={t.partnersPage.faq.q2} a={t.partnersPage.faq.a2} />
-             <FAQItem q={t.partnersPage.faq.q3} a={t.partnersPage.faq.a3} />
-             <FAQItem q={t.partnersPage.faq.q4} a={t.partnersPage.faq.a4} />
-             <FAQItem q={t.partnersPage.faq.q5} a={t.partnersPage.faq.a5} />
+             <FAQItem q={t.partnersPage.faq.q1} a={t.partnersPage.faq.a1} compact />
+             <FAQItem q={t.partnersPage.faq.q2} a={t.partnersPage.faq.a2} compact />
+             <FAQItem q={t.partnersPage.faq.q3} a={t.partnersPage.faq.a3} compact />
+             <FAQItem q={t.partnersPage.faq.q4} a={t.partnersPage.faq.a4} compact />
+             <FAQItem q={t.partnersPage.faq.q5} a={t.partnersPage.faq.a5} compact />
           </div>
         </div>
       </section>
@@ -463,22 +463,3 @@ const ProcessStep: React.FC<{ number: string, title: string, desc: string, isHig
   </div>
 );
 
-const FAQItem: React.FC<{ q: string, a: string }> = ({ q, a }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="border-b border-gray-100 last:border-none">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-8 flex justify-between items-center text-left group"
-      >
-        <span className={`text-xl md:text-2xl font-medium transition-colors ${isOpen ? 'text-dodai-charcoal' : 'text-gray-500 group-hover:text-dodai-charcoal'}`}>{q}</span>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${isOpen ? 'bg-dodai-charcoal text-white rotate-45' : 'bg-gray-100 text-gray-400'}`}>
-           <Plus size={18} />
-        </div>
-      </button>
-      <div className={`overflow-hidden transition-all duration-500 ${isOpen ? 'max-h-96 pb-8 opacity-100' : 'max-h-0 opacity-0'}`}>
-        <p className="text-gray-600 leading-relaxed font-normal text-lg max-w-3xl">{a}</p>
-      </div>
-    </div>
-  );
-};

@@ -17,16 +17,13 @@ body {
 
 .reveal {
   opacity: 0;
-  animation: revealFadeIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform, opacity;
 }
 
-@keyframes revealFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-  }
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
