@@ -88,7 +88,7 @@ export const HomePage: React.FC = () => {
       <div className="reveal"><Definition /></div>
       <div className="reveal"><Methodology /></div>
       <div className="reveal"><Portfolio /></div>
-      <div className="reveal"><Services onServicesSelected={handleServicesSelected} onAddonsSelected={handleAddonsSelected} /></div>
+      <div id="offres" className="reveal"><Services onServicesSelected={handleServicesSelected} onAddonsSelected={handleAddonsSelected} /></div>
       <div className="reveal"><ProjectWizard onComplete={handleWizardComplete} /></div>
       <div className="reveal"><Team /></div>
       <div className="reveal"><FAQ /></div>

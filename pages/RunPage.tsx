@@ -122,7 +122,7 @@ export const RunPage: React.FC = () => {
               <div className="rounded-[2.8rem] p-8 md:p-16 bg-[#1d1d1f] text-white border border-white/5">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-4 py-1.5 rounded-full border text-blue-400 border-blue-400/40 bg-blue-400/10 mb-8 inline-block">
+                    <span className="text-[10px] font-mono uppercase tracking-widest font-bold px-4 py-1.5 rounded-full border text-dodai-red border-dodai-red/40 bg-dodai-red/10 mb-8 inline-block">
                         {t.runPage.pricing.tag}
                     </span>
                     <h3 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight">Run</h3>
@@ -144,7 +144,7 @@ export const RunPage: React.FC = () => {
                     <ul className="space-y-6">
                         {t.runPage.pricing.features.map((f, i) => (
                           <li key={i} className="flex gap-4 items-start">
-                            <div className="mt-1 w-5 h-5 rounded-full bg-blue-500 flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/30">
+                            <div className="mt-1 w-5 h-5 rounded-full bg-dodai-red flex items-center justify-center shrink-0 shadow-lg shadow-dodai-red/30">
                               <Check size={12} strokeWidth={4} className="text-white" />
                             </div>
                             <span className="text-gray-200 font-medium leading-tight">{f}</span>

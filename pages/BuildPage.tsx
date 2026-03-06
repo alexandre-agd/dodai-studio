@@ -136,9 +136,9 @@ export const BuildPage: React.FC = () => {
           <div className="relative min-h-[600px]">
             {/* VIEW 1: TIERED (Zero-to-Open) */}
             <div className={`grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 ${view === 'tiered' ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none absolute inset-0'}`}>
-               <TierCard tag={t.buildPage.tiers.essential.tag} title={t.buildPage.tiers.essential.title} bullets={t.buildPage.tiers.essential.bullets} price={t.buildPage.tiers.essential.price} note={t.buildPage.tiers.essential.note} />
-               <TierCard tag={t.buildPage.tiers.complete.tag} title={t.buildPage.tiers.complete.title} bullets={t.buildPage.tiers.complete.bullets} price={t.buildPage.tiers.complete.price} note={t.buildPage.tiers.complete.note} isPopular />
-               <TierCard tag={t.buildPage.tiers.premium.tag} title={t.buildPage.tiers.premium.title} bullets={t.buildPage.tiers.premium.bullets} price={t.buildPage.tiers.premium.price} note={t.buildPage.tiers.premium.note} />
+               <TierCard tag={t.buildPage.tiers.essential.tag} title={t.buildPage.tiers.essential.title} bullets={t.buildPage.tiers.essential.bullets} price={t.buildPage.tiers.essential.price} note={t.buildPage.tiers.essential.note} selectCta={t.buildPage.tiers.selectCta} />
+               <TierCard tag={t.buildPage.tiers.complete.tag} title={t.buildPage.tiers.complete.title} bullets={t.buildPage.tiers.complete.bullets} price={t.buildPage.tiers.complete.price} note={t.buildPage.tiers.complete.note} selectCta={t.buildPage.tiers.selectCta} isPopular />
+               <TierCard tag={t.buildPage.tiers.premium.tag} title={t.buildPage.tiers.premium.title} bullets={t.buildPage.tiers.premium.bullets} price={t.buildPage.tiers.premium.price} note={t.buildPage.tiers.premium.note} selectCta={t.buildPage.tiers.selectCta} />
             </div>
 
             {/* VIEW 2: A LA CARTE */}
@@ -282,7 +282,7 @@ const TimelineStep: React.FC<{ number: string, icon: React.ReactNode, title: str
   </div>
 );
 
-const TierCard: React.FC<{ tag: string, title: string, bullets: string[], price: string, note: string, isPopular?: boolean }> = ({ tag, title, bullets, price, note, isPopular }) => (
+const TierCard: React.FC<{ tag: string, title: string, bullets: string[], price: string, note: string, selectCta: string, isPopular?: boolean }> = ({ tag, title, bullets, price, note, selectCta, isPopular }) => (
   <div className={`relative p-10 md:p-12 rounded-[3rem] h-full transition-all duration-500 flex flex-col group ${isPopular ? 'bg-dodai-charcoal text-white shadow-2xl scale-100 lg:scale-105 z-10 border border-white/5' : 'bg-white border border-gray-200 text-dodai-charcoal hover:shadow-xl hover:-translate-y-1'}`}>
     {isPopular && (
       <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-dodai-red text-white text-[10px] font-bold uppercase tracking-widest py-2.5 px-8 rounded-full shadow-2xl ring-4 ring-dodai-charcoal">
@@ -305,7 +305,7 @@ const TierCard: React.FC<{ tag: string, title: string, bullets: string[], price:
       <span className="text-3xl font-bold block mb-2">{price}</span>
       <p className={`text-[10px] font-mono uppercase tracking-widest ${isPopular ? 'text-gray-500' : 'text-gray-400'}`}>{note}</p>
       <Link smooth to="/build#contact-build" className={`mt-10 block w-full py-5 rounded-2xl text-center font-bold text-sm transition-all duration-300 active:scale-95 ${isPopular ? 'bg-white text-dodai-charcoal hover:bg-dodai-red hover:text-white' : 'bg-dodai-charcoal text-white hover:bg-black'}`}>
-        Select {title.split(' ')[1]}
+        {selectCta} {title}
       </Link>
     </div>
   </div>

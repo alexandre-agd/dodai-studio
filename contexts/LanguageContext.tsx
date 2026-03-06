@@ -53,6 +53,11 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     }
   }, [searchParams]);
 
+  // Keep <html lang=""> in sync with the active language
+  useEffect(() => {
+    document.documentElement.lang = language === 'jp' ? 'ja' : language;
+  }, [language]);
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     setSearchParams({ lang }, { replace: true });

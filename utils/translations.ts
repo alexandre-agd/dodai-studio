@@ -138,7 +138,8 @@ export const translations = {
           ],
           price: '3.0M - 3.5M JPY',
           note: 'Estimé • Paiement 30/40/30'
-        }
+        },
+        selectCta: 'Sélectionner'
       },
       pillars: {
         p1: { t: 'Structure & Conformité', d: 'Création société, licences, banque, comptabilité.', v: 'La fondation légale qui protège votre investissement dès le premier jour.' },
@@ -931,7 +932,8 @@ export const translations = {
           ],
           price: '3.0M - 3.5M JPY',
           note: 'Estimated • 30/40/30 Payment'
-        }
+        },
+        selectCta: 'Select'
       },
       pillars: {
         p1: { t: 'Structure & Compliance', d: 'Company creation, licenses, bank, accounting.', v: 'The legal foundation protecting your investment.' },
@@ -1549,7 +1551,8 @@ export const translations = {
           ],
           price: '3.0M - 3.5M JPY',
           note: '概算 • 30/40/30 支払い'
-        }
+        },
+        selectCta: '選択する'
       },
       pillars: {
         p1: { t: 'コンプライアンス', d: '設立、ライセンス。', v: '法的基盤。' },

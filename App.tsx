@@ -10,6 +10,8 @@ import { PartenairesPage } from './pages/PartenairesPage';
 import { RunPage } from './pages/RunPage';
 import { DiagnosticPage } from './pages/DiagnosticPage';
 import { BuildPage } from './pages/BuildPage';
+import { LegalPage } from './pages/LegalPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 
 const AppContent: React.FC = () => {
   return (
@@ -30,6 +32,8 @@ const AppContent: React.FC = () => {
           <Route path="/run" element={<RunPage />} />
           <Route path="/diagnostic" element={<DiagnosticPage />} />
           <Route path="/build" element={<BuildPage />} />
+          <Route path="/legal" element={<LegalPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
