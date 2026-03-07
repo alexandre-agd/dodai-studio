@@ -12,7 +12,7 @@ export const Header: React.FC = () => {
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
 
-  const isDarkPage = location.pathname.startsWith('/partenaires') || location.pathname.startsWith('/run') || location.pathname.startsWith('/diagnostic') || location.pathname.startsWith('/build');
+  const isDarkPage = location.pathname.startsWith('/partenaires') || location.pathname.startsWith('/run') || location.pathname.startsWith('/diagnostic') || location.pathname.startsWith('/build') || location.pathname.startsWith('/a-propos') || location.pathname.startsWith('/articles');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,6 +106,8 @@ export const Header: React.FC = () => {
             <Link smooth to="/#approche" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.approach}</Link>
             <Link smooth to="/#equipe" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.team}</Link>
             <Link smooth to="/partenaires" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.partners}</Link>
+            <Link smooth to="/a-propos" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.about}</Link>
+            <Link smooth to="/articles" className={`text-sm font-medium px-4 py-2 rounded-full transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:text-black hover:bg-gray-100/50' : isDarkPage ? 'text-gray-100 hover:text-white' : 'text-gray-600 hover:text-dodai-charcoal'}`}>{t.nav.articles ?? 'Articles'}</Link>
           </nav>
 
           <div className="flex items-center gap-4">
@@ -214,6 +216,8 @@ export const Header: React.FC = () => {
           <Link smooth to="/#approche" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.approach}</Link>
           <Link smooth to="/#equipe" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.team}</Link>
           <Link smooth to="/partenaires" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.partners}</Link>
+          <Link smooth to="/a-propos" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.about}</Link>
+          <Link smooth to="/articles" onClick={() => setMobileMenuOpen(false)} className="text-4xl font-light text-dodai-charcoal tracking-tight">{t.nav.articles ?? 'Articles'}</Link>
 
           <div className="w-12 h-px bg-gray-200 my-4"></div>
 
@@ -264,6 +268,8 @@ export const Footer: React.FC = () => {
               <li><Link smooth to="/build" className="text-gray-400 hover:text-white transition-colors">{t.nav.build}</Link></li>
               <li><Link smooth to="/run" className="text-gray-400 hover:text-white transition-colors">{t.nav.run}</Link></li>
               <li><Link smooth to="/partenaires" className="text-gray-400 hover:text-white transition-colors">{t.nav.partners}</Link></li>
+              <li><Link smooth to="/a-propos" className="text-gray-400 hover:text-white transition-colors">{t.nav.about}</Link></li>
+              <li><Link smooth to="/articles" className="text-gray-400 hover:text-white transition-colors">{t.nav.articles ?? 'Articles'}</Link></li>
             </ul>
           </div>
 
