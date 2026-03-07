@@ -818,7 +818,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 44,
   },
   header: {
-    borderBottom: 2,
+    borderBottomWidth: 2,
+    borderBottomStyle: 'solid',
     borderBottomColor: '#C73E1D',
     paddingBottom: 12,
     marginBottom: 22,
@@ -860,7 +861,8 @@ const styles = StyleSheet.create({
   },
   importantBox: {
     backgroundColor: '#FFF9EC',
-    border: 1,
+    borderWidth: 1,
+    borderStyle: 'solid',
     borderColor: '#E5A800',
     borderRadius: 3,
     padding: 10,
@@ -883,7 +885,8 @@ const styles = StyleSheet.create({
     marginTop: 22,
     marginBottom: 12,
     paddingBottom: 6,
-    borderBottom: 1.5,
+    borderBottomWidth: 1.5,
+    borderBottomStyle: 'solid',
     borderBottomColor: '#C73E1D',
   },
   subsectionTitle: {
@@ -901,7 +904,8 @@ const styles = StyleSheet.create({
   checkbox: {
     width: 11,
     height: 11,
-    border: 1.5,
+    borderWidth: 1.5,
+    borderStyle: 'solid',
     borderColor: '#2C2C2C',
     borderRadius: 2,
     marginRight: 9,
@@ -918,7 +922,8 @@ const styles = StyleSheet.create({
   },
   noteBox: {
     backgroundColor: '#F5F5F7',
-    borderLeft: 2,
+    borderLeftWidth: 2,
+    borderLeftStyle: 'solid',
     borderLeftColor: '#2C2C2C',
     paddingVertical: 6,
     paddingHorizontal: 9,
@@ -932,7 +937,8 @@ const styles = StyleSheet.create({
   },
   warningBox: {
     backgroundColor: '#FFF5F2',
-    border: 1,
+    borderWidth: 1,
+    borderStyle: 'solid',
     borderColor: '#C73E1D',
     borderRadius: 3,
     padding: 10,
@@ -970,7 +976,8 @@ const styles = StyleSheet.create({
   table: {
     marginTop: 10,
     marginBottom: 4,
-    border: 1,
+    borderWidth: 1,
+    borderStyle: 'solid',
     borderColor: '#E0E0E0',
     borderRadius: 3,
   },
@@ -980,12 +987,14 @@ const styles = StyleSheet.create({
   },
   tableRow: {
     flexDirection: 'row',
-    borderTop: 1,
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
     borderTopColor: '#E0E0E0',
   },
   tableRowAlt: {
     flexDirection: 'row',
-    borderTop: 1,
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
     borderTopColor: '#E0E0E0',
     backgroundColor: '#FAF9F0',
   },
@@ -1024,7 +1033,8 @@ const styles = StyleSheet.create({
     marginTop: 24,
     marginBottom: 12,
     paddingBottom: 6,
-    borderBottom: 1.5,
+    borderBottomWidth: 1.5,
+    borderBottomStyle: 'solid',
     borderBottomColor: '#C73E1D',
   },
   recapItem: {
@@ -1047,7 +1057,8 @@ const styles = StyleSheet.create({
   // CTA
   ctaBox: {
     backgroundColor: '#F0EEE0',
-    border: 1,
+    borderWidth: 1,
+    borderStyle: 'solid',
     borderColor: '#CCCC99',
     borderRadius: 4,
     padding: 14,
@@ -1080,7 +1091,8 @@ const styles = StyleSheet.create({
     bottom: 24,
     left: 44,
     right: 44,
-    borderTop: 1,
+    borderTopWidth: 1,
+    borderTopStyle: 'solid',
     borderTopColor: '#E0E0E0',
     paddingTop: 8,
     flexDirection: 'row',
