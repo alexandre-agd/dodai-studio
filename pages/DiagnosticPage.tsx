@@ -65,7 +65,7 @@ export const DiagnosticPage: React.FC = () => {
 
       {/* SECTION 2: POUR QUI ? */}
       <section className="py-24 md:py-32 bg-dodai-cream">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="grid md:grid-cols-3 gap-8">
             {/* AJUSTEMENT 2: Cards ressortent du fond crème avec fond blanc et bordure */}
             <AudienceCard title={t.diagnosticPage.audience.p1.t} desc={t.diagnosticPage.audience.p1.d} />
@@ -79,7 +79,7 @@ export const DiagnosticPage: React.FC = () => {
       {/* AJUSTEMENT 3: Fond sombre pour alterner le rythme visuel */}
       <section className="py-32 md:py-48 bg-dodai-charcoal relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px]"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 reveal">
           <div className="mb-24 text-center">
             <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6">
               {t.diagnosticPage.scope.title}
@@ -111,7 +111,7 @@ export const DiagnosticPage: React.FC = () => {
 
       {/* SECTION 4: LES LIVRABLES */}
       <section className="py-32 md:py-48 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6 reveal">
           <div className="mb-20 text-center md:text-left">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.diagnosticPage.deliverables.title}
@@ -138,7 +138,7 @@ export const DiagnosticPage: React.FC = () => {
 
       {/* SECTION 5: PRICING */}
       <section className="py-32 md:py-56 bg-[#F5F5F7] relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 relative">
+        <div className="max-w-4xl mx-auto px-6 relative reveal">
           <div className="group relative">
             <div className="relative rounded-[3.5rem] bg-white p-2 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.1)] overflow-hidden transform group-hover:-translate-y-1 transition-all duration-700">
               <div className="relative rounded-[3.2rem] bg-dodai-charcoal text-white border border-white/5 px-8 py-16 md:px-20 md:py-24 text-center">
@@ -186,7 +186,7 @@ export const DiagnosticPage: React.FC = () => {
 
       {/* SECTION 6: FAQ */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 reveal">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-20 text-center">
             {t.diagnosticPage.faq.title}
           </h2>
@@ -204,7 +204,7 @@ export const DiagnosticPage: React.FC = () => {
       {/* SECTION 7: CONTACT FORM */}
       <section id="contact-diagnostic" className="py-24 md:py-32 bg-[#1d1d1f] text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 reveal">
           <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
             <div>
               <div className="mb-12">

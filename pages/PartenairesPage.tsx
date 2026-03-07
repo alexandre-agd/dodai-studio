@@ -140,7 +140,7 @@ export const PartenairesPage: React.FC = () => {
 
       {/* SECTION 2: NOTRE HISTOIRE (Cream) */}
       <section className="py-24 md:py-32 bg-dodai-cream">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 reveal">
           <div className="mb-12">
             <div className="flex mb-8">
               <span className="inline-flex py-2 px-6 rounded-full bg-dodai-red/10 text-dodai-red text-[11px] font-bold uppercase tracking-[0.3em]">
@@ -162,7 +162,7 @@ export const PartenairesPage: React.FC = () => {
 
       {/* SECTION 3: POUR QUI ? (Cards) */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="mb-20">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.partnersPage.personas.title}
@@ -213,7 +213,7 @@ export const PartenairesPage: React.FC = () => {
 
       {/* SECTION: CE QUE VOUS RÉFÉREZ */}
       <section className="py-24 md:py-32 bg-dodai-cream">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="mb-20 text-center md:text-left">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.partnersPage.referral.title}
@@ -259,7 +259,7 @@ export const PartenairesPage: React.FC = () => {
 
       {/* SECTION 4: COMMENT CA MARCHE (Process) */}
       <section className="py-24 md:py-32 bg-[#F5F5F7] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="text-center mb-24">
              <span className="text-xs font-mono uppercase tracking-widest text-dodai-red font-bold mb-4 block">
               {t.partnersPage.process.tag}
@@ -283,7 +283,7 @@ export const PartenairesPage: React.FC = () => {
 
       {/* SECTION 5: FAQ */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 reveal">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-20 text-center">
             {t.partnersPage.faq.title}
           </h2>
@@ -299,7 +299,7 @@ export const PartenairesPage: React.FC = () => {
 
       {/* SECTION 6: FORM (Dark) */}
       <section id="rejoindre" className="py-24 md:py-32 bg-dodai-charcoal text-white relative">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center reveal">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-4">
               {t.partnersPage.form.title}

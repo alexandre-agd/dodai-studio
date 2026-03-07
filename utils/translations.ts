@@ -6,6 +6,7 @@ export const translations = {
   fr: {
     nav: {
       offres: 'Offres',
+      studio: 'Studio',
       approach: 'Méthode',
       services: 'Nos Offres',
       team: 'L\'Équipe',
@@ -904,6 +905,7 @@ export const translations = {
   en: {
     nav: {
       offres: 'Offers',
+      studio: 'Studio',
       approach: 'Methodology',
       services: 'Services',
       team: 'Team',
@@ -1640,6 +1642,7 @@ export const translations = {
   jp: {
     nav: {
       offres: 'プラン',
+      studio: 'スタジオ',
       approach: '手法',
       services: 'サービス',
       team: 'チーム',

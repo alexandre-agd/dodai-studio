@@ -1,8 +1,39 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { Header, Footer } from './components/Layout';
 import { ScrollToTop } from './components/ScrollToTop';
+
+// Wires up the .reveal / .is-visible scroll animation system globally
+const RevealObserver: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+      );
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        observer.observe(el);
+      });
+
+      return () => observer.disconnect();
+    }, 80);
+
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
+  return null;
+};
 
 // Import direct
 import { HomePage } from './pages/HomePage';
@@ -26,6 +57,7 @@ const AppContent: React.FC = () => {
       </div>
 
       <ScrollToTop />
+      <RevealObserver />
       <Header />
       
       <div className="flex-grow">

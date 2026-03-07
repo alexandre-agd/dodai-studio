@@ -61,7 +61,7 @@ export const RunPage: React.FC = () => {
 
       {/* AJUSTEMENT 4: Encart sobre sous le hero */}
       <div className="bg-gray-50 py-10 border-b border-gray-200">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 reveal">
           <div className="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm text-center">
             <p className="text-base md:text-lg text-gray-600 font-medium italic">
               {t.runPage.hero.pathway}
@@ -72,7 +72,7 @@ export const RunPage: React.FC = () => {
 
       {/* SECTION 2: POUR QUI ? */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="mb-20 text-center md:text-left">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.runPage.audience.title}
@@ -97,7 +97,7 @@ export const RunPage: React.FC = () => {
       {/* AJUSTEMENT 1: Section Mensuelle en fond sombre et resserrée */}
       <section className="py-32 md:py-48 bg-dodai-charcoal relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px]"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 reveal">
           <div className="mb-20 text-center">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4 leading-none">
               {t.runPage.monthly.title}
@@ -117,7 +117,7 @@ export const RunPage: React.FC = () => {
 
       {/* SECTION 4: PRICING */}
       <section className="py-24 md:py-32 bg-[#F5F5F7] relative">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6 reveal">
            <div className="rounded-[3rem] p-1 bg-[#1d1d1f] shadow-2xl shadow-black/30">
               <div className="rounded-[2.8rem] p-8 md:p-16 bg-[#1d1d1f] text-white border border-white/5">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
@@ -160,7 +160,7 @@ export const RunPage: React.FC = () => {
 
       {/* AJUSTEMENT 2: Section équipe plus proche et bullets plus grands */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6 reveal">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
             <MemberCard 
               image="https://res.cloudinary.com/dehnuytil/image/upload/v1770627984/Guillaume_fj5if7.png"
@@ -188,7 +188,7 @@ export const RunPage: React.FC = () => {
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 reveal">
           <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
             <div>
               <div className="mb-12">

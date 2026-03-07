@@ -81,7 +81,7 @@ export const BuildPage: React.FC = () => {
 
       {/* SECTION 2: TIMELINE (What actually happens) */}
       <section className="py-24 md:py-48 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="mb-24 text-center md:text-left">
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.buildPage.timeline.title}
@@ -112,7 +112,7 @@ export const BuildPage: React.FC = () => {
 
       {/* SECTION 3: FORMAT SELECTION (Toggle) */}
       <section className="py-24 md:py-32 bg-[#F5F5F7]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="mb-20 text-center">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-12">
               {t.buildPage.format.title}
@@ -178,7 +178,7 @@ export const BuildPage: React.FC = () => {
 
       {/* SECTION 4: THE NETWORK */}
       <section className="py-24 md:py-48 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 reveal">
           <div className="mb-24 text-center md:text-left">
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter text-dodai-charcoal mb-4">
               {t.buildPage.network.title}
@@ -202,7 +202,7 @@ export const BuildPage: React.FC = () => {
       {/* SECTION 5: MODULES AND OPTIONS (Dark) */}
       <section className="py-32 md:py-56 bg-dodai-charcoal relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px]"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 reveal">
           <div className="mb-24 text-center md:text-left">
             <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6 leading-none">{t.buildPage.addons.title}</h2>
             <p className="text-xl text-gray-400 font-light">{t.buildPage.addons.subtitle}</p>
@@ -218,7 +218,7 @@ export const BuildPage: React.FC = () => {
 
       {/* SECTION 6: FAQ */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6 reveal">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-dodai-charcoal mb-20 text-center">
             {t.buildPage.faq.title}
           </h2>
@@ -235,7 +235,7 @@ export const BuildPage: React.FC = () => {
       {/* CONTACT FORM */}
       <section id="contact-build" className="py-24 md:py-32 bg-[#1d1d1f] text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 reveal">
           <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-start">
             <div>
               <div className="mb-12">
