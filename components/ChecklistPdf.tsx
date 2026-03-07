@@ -1107,7 +1107,7 @@ const styles = StyleSheet.create({
 // ─── Sub-components ──────────────────────────────────────────────────────────
 
 const CheckRow: React.FC<{ item: CheckItem; font: string; boldFont: string }> = ({ item, font, boldFont }) => (
-  <View style={styles.checkItem}>
+  <View style={styles.checkItem} wrap={false}>
     <View style={styles.checkbox} />
     <View style={styles.checkContent}>
       <Text style={[styles.checkText, { fontFamily: font }]}>{item.text}</Text>
@@ -1201,34 +1201,41 @@ export const ChecklistPdf: React.FC<ChecklistPdfProps> = ({ language = 'fr' }) =
         {/* Blocs */}
         {c.blocs.map((bloc, bi) => (
           <View key={bi}>
-            <BoldText style={styles.blocTitle}>{bloc.title}</BoldText>
+            {bloc.subsections.length > 0 ? (
+              // Blocs with subsections: keep blocTitle attached to first subsectionTitle
+              bloc.subsections.map((sub, si) => (
+                <View key={si}>
+                  {/* Wrap bloc title + subsection title together — prevents orphan headings */}
+                  <View wrap={false}>
+                    {si === 0 && <BoldText style={styles.blocTitle}>{bloc.title}</BoldText>}
+                    <BoldText style={styles.subsectionTitle}>{sub.title}</BoldText>
+                  </View>
 
-            {/* Subsections */}
-            {bloc.subsections.map((sub, si) => (
-              <View key={si}>
-                <BoldText style={styles.subsectionTitle}>{sub.title}</BoldText>
+                  {sub.items.map((item, ii) => (
+                    <CheckRow key={ii} item={item} font={font} boldFont={boldFont} />
+                  ))}
 
-                {sub.items.map((item, ii) => (
-                  <CheckRow key={ii} item={item} font={font} boldFont={boldFont} />
-                ))}
+                  {sub.separator && (
+                    <>
+                      <View style={styles.separatorRow}>
+                        <View style={styles.separatorLine} />
+                        <Text style={[styles.separatorText, { fontFamily: boldFont }]}>{sub.separator}</Text>
+                        <View style={styles.separatorLine} />
+                      </View>
+                      {sub.afterSeparator?.map((item, ii) => (
+                        <CheckRow key={`after-${ii}`} item={item} font={font} boldFont={boldFont} />
+                      ))}
+                    </>
+                  )}
 
-                {sub.separator && (
-                  <>
-                    <View style={styles.separatorRow}>
-                      <View style={styles.separatorLine} />
-                      <Text style={[styles.separatorText, { fontFamily: boldFont }]}>{sub.separator}</Text>
-                      <View style={styles.separatorLine} />
-                    </View>
-                    {sub.afterSeparator?.map((item, ii) => (
-                      <CheckRow key={`after-${ii}`} item={item} font={font} boldFont={boldFont} />
-                    ))}
-                  </>
-                )}
-
-                {sub.warning && <WarningBox warning={sub.warning} font={font} boldFont={boldFont} />}
-                {sub.note && <NoteBox text={sub.note} font={font} />}
-              </View>
-            ))}
+                  {sub.warning && <WarningBox warning={sub.warning} font={font} boldFont={boldFont} />}
+                  {sub.note && <NoteBox text={sub.note} font={font} />}
+                </View>
+              ))
+            ) : (
+              // Blocs without subsections (e.g. Bloc 6): just the title
+              <BoldText style={styles.blocTitle}>{bloc.title}</BoldText>
+            )}
 
             {/* Expert table (Bloc 6) */}
             {bloc.expertTable && (
@@ -1242,17 +1249,23 @@ export const ChecklistPdf: React.FC<ChecklistPdfProps> = ({ language = 'fr' }) =
           </View>
         ))}
 
-        {/* Recap */}
-        <BoldText style={styles.recapTitle}>{c.recapTitle}</BoldText>
-        {c.recapItems.map((item, i) => (
-          <View key={i} style={styles.recapItem}>
-            <Text style={[styles.recapNum, { fontFamily: boldFont }]}>{i + 1}.</Text>
+        {/* Recap — title kept with first item, each item wrap={false} */}
+        <View wrap={false}>
+          <BoldText style={styles.recapTitle}>{c.recapTitle}</BoldText>
+          <View style={styles.recapItem}>
+            <Text style={[styles.recapNum, { fontFamily: boldFont }]}>1.</Text>
+            <Text style={[styles.recapText, { fontFamily: font }]}>{c.recapItems[0]}</Text>
+          </View>
+        </View>
+        {c.recapItems.slice(1).map((item, i) => (
+          <View key={i + 1} style={styles.recapItem} wrap={false}>
+            <Text style={[styles.recapNum, { fontFamily: boldFont }]}>{i + 2}.</Text>
             <Text style={[styles.recapText, { fontFamily: font }]}>{item}</Text>
           </View>
         ))}
 
         {/* CTA */}
-        <View style={styles.ctaBox}>
+        <View style={styles.ctaBox} wrap={false}>
           <BoldText style={styles.ctaTitle}>{c.ctaTitle}</BoldText>
           <Text style={[styles.ctaBody, { fontFamily: font }]}>{c.ctaBody}</Text>
           <Text style={[styles.ctaContact, { fontFamily: font }]}>{c.ctaContact}</Text>
