@@ -11,13 +11,13 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-5xl mx-auto text-center flex flex-col items-center relative z-10">
           
-          {/* Logo Container with Min-Height for CLS protection */}
-          <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] mb-4 flex items-center justify-center overflow-hidden bg-transparent">
-            <img 
-              src="https://res.cloudinary.com/dehnuytil/image/upload/f_auto,q_auto,w_800/v1770612903/Dodai-logo_mfemab.png" 
-              alt="Dodai Studio Logo" 
-              width="400"
-              height="400"
+          {/* Logo Container — compact to prioritise H1 above the fold */}
+          <div className="w-[100px] h-[100px] md:w-[130px] md:h-[130px] mb-10 flex items-center justify-center overflow-hidden bg-transparent">
+            <img
+              src="https://res.cloudinary.com/dehnuytil/image/upload/f_auto,q_auto,w_260/v1770612903/Dodai-logo_mfemab.png"
+              alt="Dodai Studio Logo"
+              width="130"
+              height="130"
               className="w-full h-full object-contain"
               fetchpriority="high"
               loading="eager"

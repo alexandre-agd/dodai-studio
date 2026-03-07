@@ -4,13 +4,13 @@ import { Philosophy } from '../components/Features';
 import { Definition } from '../components/Definition';
 import { Methodology } from '../components/Methodology';
 import { Portfolio } from '../components/Portfolio';
-import { Services } from '../components/Services';
 import { Team } from '../components/Team';
 import { ProjectWizard } from '../components/ProjectWizard';
 import { FAQ } from '../components/FAQ';
 import { ContactForm } from '../components/ContactForm';
-import { Lock, Clock, MessageSquare } from 'lucide-react';
+import { Lock, Clock, MessageSquare, ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 // Import WizardData from centralized types
 import { WizardData } from '../types';
 
@@ -30,7 +30,7 @@ export const HomePage: React.FC = () => {
   const handleWizardComplete = (data: WizardData) => {
     // Localize data before sending to form
     const localizedData = { ...data };
-    
+
     // Resolve stage label with safety
     const options = t.wizard?.options;
     if (options) {
@@ -57,42 +57,99 @@ export const HomePage: React.FC = () => {
     }
   };
 
-  const handleServicesSelected = (services: string[]) => {
-    const localizedSector = language === 'fr' ? 'Services Sélectionnés' : (language === 'jp' ? '選択されたサービス' : 'Selected Services');
-    const localizedVisa = language === 'fr' ? 'À la carte' : (language === 'jp' ? 'ア・ラ・カルト' : 'À la carte');
-
-    setPrefilledData({
-      sector: localizedSector,
-      stage: services.join(', '),
-      challenge: localizedVisa,
-    });
-  };
-
-  const handleAddonsSelected = (addons: string[]) => {
-    const localizedSector = language === 'fr' ? 'Add-ons Sélectionnés' : (language === 'jp' ? '選択されたアドオン' : 'Selected Add-ons');
-    const localizedVisa = language === 'fr' ? 'Modules Optionnels' : (language === 'jp' ? '追加モジュール' : 'Optional Modules');
-
-    setPrefilledData({
-      sector: localizedSector,
-      stage: addons.join(', '),
-      challenge: localizedVisa,
-    });
-  };
+  const ot = t.offersTeaser;
 
   return (
     <main>
       {/* Hero displays instantly for best performance */}
       <Hero />
-      
+
+      {/* Philosophy — white */}
       <div className="reveal"><Philosophy /></div>
-      <div className="reveal"><Definition /></div>
+
+      {/* Methodology — light gray */}
       <div className="reveal"><Methodology /></div>
-      <div className="reveal"><Portfolio /></div>
-      <div id="offres" className="reveal"><Services onServicesSelected={handleServicesSelected} onAddonsSelected={handleAddonsSelected} /></div>
+
+      {/* OFFERS TEASER — dark section (replaces the full Services section) */}
+      <section id="offres" className="py-32 md:py-48 bg-dodai-charcoal text-white relative overflow-hidden reveal">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-dodai-red opacity-[0.04] rounded-full blur-[140px] transform translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+          {/* Header */}
+          <div className="mb-20 text-center">
+            <span className="inline-block text-[10px] font-mono font-bold uppercase tracking-[0.3em] text-dodai-red mb-6">
+              {ot.tag}
+            </span>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-[0.95] mb-6">
+              {ot.title}{' '}
+              <span className="text-gray-500">{ot.titleSpan}</span>
+            </h2>
+            <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto leading-relaxed">
+              {ot.subtitle}
+            </p>
+          </div>
+
+          {/* 3 Offer Cards */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {ot.cards.map((card: any, i: number) => (
+              <Link
+                key={i}
+                to={card.link}
+                className="group relative bg-white/5 border border-white/10 rounded-[2rem] p-8 md:p-10 flex flex-col hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1"
+              >
+                {/* Phase tag */}
+                <span className="text-[10px] font-mono font-bold uppercase tracking-[0.25em] text-dodai-red mb-6 block">
+                  {card.tag}
+                </span>
+
+                {/* Title + Price */}
+                <div className="mb-6">
+                  <h3 className="text-3xl md:text-4xl font-bold tracking-tighter text-white mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-xl font-mono text-gray-300 font-medium">
+                    {card.price}
+                  </p>
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-400 leading-relaxed font-light flex-grow mb-8">
+                  {card.desc}
+                </p>
+
+                {/* Duration + CTA */}
+                <div className="flex items-center justify-between mt-auto pt-6 border-t border-white/10">
+                  <span className="text-xs font-mono text-gray-500 uppercase tracking-widest">
+                    {card.duration}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-sm font-bold text-white group-hover:text-dodai-red transition-colors">
+                    {ot.cta}
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* Project Wizard — moved up for earlier conversion */}
       <div className="reveal"><ProjectWizard onComplete={handleWizardComplete} /></div>
+
+      {/* Portfolio */}
+      <div className="reveal"><Portfolio /></div>
+
+      {/* Team */}
       <div className="reveal"><Team /></div>
+
+      {/* FAQ */}
       <div className="reveal"><FAQ /></div>
 
+      {/* Definition — closing brand moment before Contact */}
+      <div className="reveal"><Definition /></div>
+
+      {/* Contact */}
       <section id="contact" className="py-24 md:py-32 bg-[#1d1d1f] text-white relative overflow-hidden reveal">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-dodai-red opacity-[0.03] rounded-full blur-[120px] transform translate-x-1/2 -translate-y-1/2"></div>

@@ -624,6 +624,39 @@ export const translations = {
         }
       ]
     },
+    offersTeaser: {
+      tag: 'NOS OFFRES',
+      title: 'Trois phases.',
+      titleSpan: 'Une seule direction.',
+      subtitle: 'La plupart des clients commencent par un Diagnostic, passent au Build, puis activent le Run. Chaque étape est autonome.',
+      cta: 'En savoir plus',
+      cards: [
+        {
+          tag: 'Phase 01',
+          title: 'Diagnostic',
+          price: '¥600 000',
+          desc: 'Validez votre projet avant d\'investir. Reality check complet : marché, budget, emplacement.',
+          duration: '3–4 semaines',
+          link: '/diagnostic',
+        },
+        {
+          tag: 'Phase 02',
+          title: 'Build',
+          price: 'à partir de ¥1,2M',
+          desc: 'Du concept à l\'ouverture. Coordination juridique, local, équipe, tech et lancement.',
+          duration: '8–24 semaines',
+          link: '/build',
+        },
+        {
+          tag: 'Phase 03',
+          title: 'Run',
+          price: '¥150 000 / mois',
+          desc: 'Optimisation continue après ouverture. Acquisition, rentabilité, gestion opérationnelle.',
+          duration: 'Minimum 6 mois',
+          link: '/run',
+        },
+      ],
+    },
     services: {
       title: 'Nos Offres :',
       titleSpan: 'Clarté & Efficacité.',
@@ -1465,6 +1498,39 @@ export const translations = {
         { category: 'Food', title: 'Cheese Shop', location: 'Tokyo, Daikanyama', tags: ['Recruitment', 'Design', 'Pricing'], stat: 'Market Fit Offer' }
       ]
     },
+    offersTeaser: {
+      tag: 'OUR OFFERS',
+      title: 'Three phases.',
+      titleSpan: 'One direction.',
+      subtitle: 'Most clients start with a Diagnostic, move to Build, then activate Run. Each step stands on its own.',
+      cta: 'Learn more',
+      cards: [
+        {
+          tag: 'Phase 01',
+          title: 'Diagnostic',
+          price: '¥600,000',
+          desc: 'Validate your project before investing. Full reality check: market, budget, location.',
+          duration: '3–4 weeks',
+          link: '/diagnostic',
+        },
+        {
+          tag: 'Phase 02',
+          title: 'Build',
+          price: 'from ¥1.2M',
+          desc: 'Concept to opening day. Legal, location, team, tech and launch coordination.',
+          duration: '8–24 weeks',
+          link: '/build',
+        },
+        {
+          tag: 'Phase 03',
+          title: 'Run',
+          price: '¥150,000 / month',
+          desc: 'Ongoing optimization after opening. Acquisition, profitability, operations.',
+          duration: 'Minimum 6 months',
+          link: '/run',
+        },
+      ],
+    },
     services: {
       title: 'Services:',
       titleSpan: 'Clarity & Efficiency.',
@@ -2148,6 +2214,39 @@ export const translations = {
         { category: 'ファッション', title: 'アイウェアフラッグシップ', location: '東京、自由が丘', tags: ['不動産', 'デザイン', '投資'], stat: 'スムーズな開業' },
         { category: '食品', title: 'チーズショップ', location: '東京、代官山', tags: ['採用', 'デザイン', '価格設定'], stat: '市場適合オファー' }
       ]
+    },
+    offersTeaser: {
+      tag: 'サービス一覧',
+      title: '3つのフェーズ。',
+      titleSpan: 'ひとつの方向性。',
+      subtitle: 'ほとんどのクライアントはDiagnosticからスタートし、Buildへ移行し、Runを起動します。各ステップは独立しています。',
+      cta: '詳しく見る',
+      cards: [
+        {
+          tag: 'フェーズ01',
+          title: 'Diagnostic',
+          price: '¥600,000',
+          desc: '投資前にプロジェクトを検証。市場・予算・立地の現実チェック。',
+          duration: '3〜4週間',
+          link: '/diagnostic',
+        },
+        {
+          tag: 'フェーズ02',
+          title: 'Build',
+          price: '¥1.2Mから',
+          desc: 'コンセプトからオープンまで。法人設立・物件・チーム・テック・ローンチ。',
+          duration: '8〜24週間',
+          link: '/build',
+        },
+        {
+          tag: 'フェーズ03',
+          title: 'Run',
+          price: '¥150,000 / 月',
+          desc: 'オープン後の継続的な最適化。集客・収益性・運営管理。',
+          duration: '最低6ヶ月',
+          link: '/run',
+        },
+      ],
     },
     services: {
       title: 'サービス：',
