@@ -89,6 +89,7 @@ export const LeadCaptureModal: React.FC<Props> = ({ isOpen, onClose, articleTitl
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', lang: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [downloading, setDownloading] = useState(false);
+  const [downloadError, setDownloadError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -119,16 +120,23 @@ export const LeadCaptureModal: React.FC<Props> = ({ isOpen, onClose, articleTitl
 
   const handleDownload = async () => {
     setDownloading(true);
+    setDownloadError(null);
     try {
       const blob = await pdf(<ChecklistPdf language={lang} />).toBlob();
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
       a.download = 'Dodai-Studio-Checklist-Visa-Business-Manager-2026.pdf';
+      a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 100);
+    } catch (err) {
+      console.error('[ChecklistPdf] download error:', err);
+      setDownloadError(err instanceof Error ? err.message : String(err));
     } finally {
       setDownloading(false);
     }
@@ -269,6 +277,12 @@ export const LeadCaptureModal: React.FC<Props> = ({ isOpen, onClose, articleTitl
                 </>
               )}
             </button>
+
+            {downloadError && (
+              <p className="text-dodai-red text-xs mt-3 break-all">
+                Erreur : {downloadError}
+              </p>
+            )}
           </div>
         )}
       </div>
