@@ -33,24 +33,36 @@ function deepMerge(target: any, source: any): any {
   return output;
 }
 
+const LANG_STORAGE_KEY = 'dodai_lang';
+
+function isValidLang(lang: string | null): lang is Language {
+  return lang === 'fr' || lang === 'en' || lang === 'jp';
+}
+
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [searchParams, setSearchParams] = useSearchParams();
-  
-  const getUrlLanguage = (): Language => {
-    const lang = searchParams.get('lang');
-    if (lang === 'en' || lang === 'jp' || lang === 'fr') {
-      return lang as Language;
-    }
+
+  const getInitialLanguage = (): Language => {
+    // 1. URL param takes priority (allows sharing links in a specific language)
+    const urlLang = searchParams.get('lang');
+    if (isValidLang(urlLang)) return urlLang;
+    // 2. Persisted preference from localStorage
+    const stored = localStorage.getItem(LANG_STORAGE_KEY);
+    if (isValidLang(stored)) return stored;
+    // 3. Default
     return 'en';
   };
 
-  const [language, setLanguageState] = useState<Language>(getUrlLanguage());
+  const [language, setLanguageState] = useState<Language>(getInitialLanguage);
 
+  // Sync when URL param changes explicitly (e.g. user pastes a shared link)
   useEffect(() => {
-    const urlLang = getUrlLanguage();
-    if (urlLang !== language) {
+    const urlLang = searchParams.get('lang');
+    if (isValidLang(urlLang) && urlLang !== language) {
       setLanguageState(urlLang);
+      localStorage.setItem(LANG_STORAGE_KEY, urlLang);
     }
+    // If no lang param in URL, do NOT reset — keep the persisted preference
   }, [searchParams]);
 
   // Keep <html lang=""> in sync with the active language
@@ -60,6 +72,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
+    localStorage.setItem(LANG_STORAGE_KEY, lang);
     setSearchParams({ lang }, { replace: true });
   };
 
